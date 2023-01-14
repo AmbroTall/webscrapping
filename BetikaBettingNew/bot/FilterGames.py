@@ -34,7 +34,7 @@ class SelectFilter:
     def select_team(self):
         teams = Teams(self.driver)
         self.driver.execute_script("window.scrollBy(0,document.body.scrollHeight)")
-        time.sleep(3)
+        time.sleep(2)
         teams.teams_to_analyse()
         placement = teams.wekelea()
         print(placement)

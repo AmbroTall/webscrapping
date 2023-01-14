@@ -1,4 +1,6 @@
 import time
+
+from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By   #find_element(By.ID)
 from selenium.webdriver.remote.webdriver import WebDriver
 from .analysis import Analyze
@@ -36,13 +38,17 @@ class Teams:
                 time.sleep(2)
 
                 # Explicit Wait until team is visible
-                WebDriverWait(self.driver, 10).until(
+                WebDriverWait(self.driver, 30).until(
                     EC.element_to_be_clickable(
                         (By.CLASS_NAME, 'prebet-match__teams__home'),
                     )
                 )
-                self.driver.execute_script("arguments[0].scrollIntoView();",home_team)
 
+                htmlelement = self.driver.find_element(By.TAG_NAME, 'html')
+                htmlelement.send_keys(Keys.HOME)
+                time.sleep(2)
+                self.driver.execute_script("return arguments[0].scrollIntoView(true);",home_team)
+                print("Nafika hapa", home_team.text)
                 if place != "X":
                     home_team.click()
                     # time.sleep(2)

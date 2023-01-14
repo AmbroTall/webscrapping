@@ -7,8 +7,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 options = webdriver.ChromeOptions()
-options.add_argument('--headless')
-options.add_argument('--disable-gpu')
+# options.add_argument('--headless')
+# options.add_argument('--disable-gpu')
 
 path = '/home/ambrose/Documents/chromedriver'
 driver = webdriver.Chrome(path, chrome_options=options)
