@@ -3,8 +3,8 @@ from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.common.by import By   #find_element(By.ID)
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from prettytable import PrettyTable
-import pandas as pd
+# from prettytable import PrettyTable
+# import pandas as pd
 import time
 
 class Analysis:
@@ -22,10 +22,10 @@ class Analysis:
             home_team = i[0]
             away_team = i[1]
 
-            if len(home_team) > 10:
-                home_team = home_team[0:10]
-            elif len(away_team) > 10:
-                away_team = away_team[0:10]
+            if len(home_team.split(" ")) > 1:
+                home_team = max(home_team.split(" "))
+            elif len(away_team.split(" ")) > 1:
+                away_team = max(away_team.split(" "))
             else:
                 home_team = home_team
                 away_team = away_team

@@ -4,24 +4,33 @@ from .FilterGames import SelectFilter
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+
+
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')
+options.add_argument('--disable-gpu')
+
 path = '/home/ambrose/Documents/chromedriver'
-driver = webdriver.Chrome(path)
+driver = webdriver.Chrome(path, chrome_options=options)
 driver.execute_script("window.open('http://old.statarea.com/');")
 
 class Login:
     def __init__(self):
+        # print("Ambro1")
         pass
 
     def quit_automation(self):
         driver.quit()
 
     def start_site(self):
+        # print("Ambro1")
         driver.get('https://www.betika.com/en-ke/?utm_medium=pop_under&utm_source=propeller-ads&utm_campaign=pop-under_ke_acq_en_sb')
 
     def maximize_window(self):
         driver.maximize_window()
 
     def login(self, tel_no, password):
+        driver.switch_to.window(driver.window_handles[0])
         # Explicit Wait until login button is clickable
         WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable(
@@ -43,7 +52,7 @@ class Login:
 
         password_input = driver.find_element(By.XPATH,'//input[@type="password"]')
         password_input.send_keys(password)
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
         login_btn = driver.find_element(By.XPATH,'//button[@class="button account__payments__submit session__form__button login button button__secondary"]')
         login_btn.click()
 

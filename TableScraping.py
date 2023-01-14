@@ -37,6 +37,9 @@ df = pd.DataFrame({"date":date, "HomeTeam":homeTeam, "Results":scores, "awayTeam
 print(df)
 
 
-
+# api_key = BFyLtYVc1FALLtqH68TgX8m6e
+# api_key_secret = y7ngTcE5Yg94YvcQ3y91bsfJXmlTcdwUZd3rzhzBT4JDxWjBqZ
+# access_token = 895702399968587777-aOk2qkLdT7BGLQppZh8ukZEmNcyXHbe
+# access_token_secret = FwWMGwDW33qaSFN6tIBxmY0vFR1GGMNTzpGVaLwnvTDBk
 
 driver.quit()

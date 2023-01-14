@@ -12,9 +12,14 @@ class Analyze:
         self.away_team = away_team
         self.league = league
         if len(self.away_team.split(" ")) > 1:
-            self.away_team = f'{self.away_team.split(" ")[0]} {self.away_team.split(" ")[1][0:1]}'
+            self.away_team = max(self.away_team.split(" "), key=len)
+            # self.away_team = f'{self.away_team.split(" ")[0]} {self.away_team.split(" ")[1][0:1]}'
         if len(self.home_team.split(" ")) > 1:
-            self.home_team = f'{self.home_team.split(" ")[0]} {self.home_team.split(" ")[1][0:1]}'
+            self.home_team = max(self.home_team.split(" "), key=len)
+            # self.home_team = f'{self.home_team.split(" ")[0]} {self.home_team.split(" ")[1][0:1]}'
+
+        # print('----------------->**AwayTeam', self.away_team)
+        # print('----------------->**HomeTeam', self.home_team)
 
     # navigate between tabs
     def switch_statarea(self):
@@ -29,9 +34,13 @@ class Analyze:
             )
         )
         table = self.driver.find_element(By.ID, 'tat_table')
-        team_options = table.find_element(By.ID, "tat_td1")
-        if self.league in team_options.text:
-            return team_options.click()
+        team_options = table.find_elements(By.TAG_NAME, "td")
+        for x in team_options:
+            table_league = x.text[x.text.find("(")+1:x.text.find(")")]
+            # print("----->", x.text[x.text.find("(")+1:x.text.find(")")])
+            if self.league == table_league:
+                # print("----->", self.league)
+                return x.click()
 
     def teams_to_analyze(self):
         # Explicit Wait until input is visible
@@ -73,7 +82,7 @@ class Analyze:
             # print(under_two_five.text.strip("%"))
 
             # Check odds of winning by higher percantage
-            if float(over_one_five.text.strip("%")) > 80:
+            if float(over_one_five.text.strip("%")) > 70:
                 place = "Over 1.5"
             if float(over_two_five.text.strip("%")) > 80:
                 place = "Over 2.5"
