@@ -1,5 +1,4 @@
 import time
-
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By   #find_element(By.ID)
 from selenium.webdriver.remote.webdriver import WebDriver
@@ -35,34 +34,24 @@ class Teams:
                     place = analyze.get_prediction()
                     print(place)
                 analyze.close_page()
-                time.sleep(2)
+                self.driver.execute_script("return arguments[0].scrollIntoView(true);", home_team)
 
-                # Explicit Wait until team is visible
-                WebDriverWait(self.driver, 30).until(
-                    EC.element_to_be_clickable(
-                        (By.CLASS_NAME, 'prebet-match__teams__home'),
-                    )
-                )
-
-                htmlelement = self.driver.find_element(By.TAG_NAME, 'html')
-                htmlelement.send_keys(Keys.HOME)
-                time.sleep(2)
-                self.driver.execute_script("return arguments[0].scrollIntoView(true);",home_team)
-                print("Nafika hapa", home_team.text)
                 if place != "X":
-                    home_team.click()
-                    # time.sleep(2)
+                    self.driver.execute_script(
+                        "arguments[0].scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest', offsetTop: -arguments[0].offsetHeight * 0.05}); arguments[0].click();",
+                        home_team)
+
                     wekelea = PlaceBet(self.driver, place)
                     wekelea.goals_section()
                     wekelea.go_back()
                     # print(wekelea)
                 time.sleep(2)
-
+                print("Nafika hapa", home_team.text)
     def wekelea(self):
         try:
             amount_input = self.driver.find_element(By.XPATH, '//input[@placeholder="Enters stake"]')
             amount_input.clear()
-            amount_input.send_keys(20)
+            amount_input.send_keys(50)
 
             btn_div = self.driver.find_element(By.CLASS_NAME, "betslip__details__buttons")
             place_bet = btn_div.find_element(By.TAG_NAME, "span")

@@ -12,11 +12,11 @@ class Analyze:
         self.away_team = away_team
         self.league = league
         if len(self.away_team.split(" ")) > 1:
-            self.away_team = max(self.away_team.split(" "), key=len)
-            # self.away_team = f'{self.away_team.split(" ")[0]} {self.away_team.split(" ")[1][0:1]}'
+            self.away_team = self.away_team.split(" ")
+            # self.away_team = max(self.away_team.split(" "), key=len)
         if len(self.home_team.split(" ")) > 1:
-            self.home_team = max(self.home_team.split(" "), key=len)
-            # self.home_team = f'{self.home_team.split(" ")[0]} {self.home_team.split(" ")[1][0:1]}'
+            self.home_team = self.home_team.split(" ")
+            # self.home_team = max(self.home_team.split(" "), key=len)
 
         # print('----------------->**AwayTeam', self.away_team)
         # print('----------------->**HomeTeam', self.home_team)
@@ -26,7 +26,7 @@ class Analyze:
         self.driver.switch_to.window(self.driver.window_handles[1])
         # print(self.driver.current_url)
 
-    def check_team(self):
+    def check_team(self, team):
         # Explicit Wait until input is visible
         WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(
@@ -35,12 +35,21 @@ class Analyze:
         )
         table = self.driver.find_element(By.ID, 'tat_table')
         team_options = table.find_elements(By.TAG_NAME, "td")
+
+        perfect_match = None  # Initialize a variable to store the perfect match
+
         for x in team_options:
+            team_names = x.text.split("(")[0].strip()
             table_league = x.text[x.text.find("(")+1:x.text.find(")")]
             # print("----->", x.text[x.text.find("(")+1:x.text.find(")")])
-            if self.league == table_league:
-                # print("----->", self.league)
+            for home_word in team:
+                if home_word in team_names.split(" "):
+                    perfect_match = x  # Store the perfect match
+                    break  # Exit the inner loop if a match is found
+            if perfect_match and self.league == table_league:  # Exit the outer loop if a perfect match is found
                 return x.click()
+            # if self.league == table_league:
+            #     return x.click()
 
     def teams_to_analyze(self):
         # Explicit Wait until input is visible
@@ -49,16 +58,26 @@ class Analyze:
                 (By.ID, 'h_team'),
             )
         )
+
+        #Checking if incoming team names has more than two words
+        if type(self.away_team) == list:
+            away_team = max(self.away_team, key=len)
+        else:
+            away_team = self.away_team
+        if type(self.home_team) == list:
+            home_team = max(self.home_team, key=len)
+        else:
+            home_team = self.home_team
         try:
             h_team = self.driver.find_element(By.ID, 'h_team')
-            h_team.send_keys(self.home_team)
+            h_team.send_keys(home_team)
             time.sleep(1)
-            self.check_team()
+            self.check_team(self.home_team)
 
             g_team = self.driver.find_element(By.ID, 'g_team')
-            g_team.send_keys(self.away_team)
+            g_team.send_keys(away_team)
             time.sleep(1)
-            self.check_team()
+            self.check_team(self.away_team)
 
             get_info = self.driver.find_element(By.XPATH, '//*[@id="main_subbody"]/form/table/tbody/tr[4]/td[4]/input')
             get_info.click()

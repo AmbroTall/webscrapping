@@ -13,7 +13,7 @@ class PlaceBet:
     def goals_section(self):
         try:
             # Explicit Wait until goals btn is visible
-            WebDriverWait(self.driver, 10).until(
+            WebDriverWait(self.driver, 20).until(
                 EC.element_to_be_clickable(
                     (By.CLASS_NAME, 'market-btn'),
                 )
