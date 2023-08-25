@@ -1,0 +1,64 @@
+{'Home Team': 'CANTHO CATFISH', 'Away Team': 'SAIGON HEAT', 'Current Totals': 13, 'Odds': 43, 'Bet Choice': 'Under'}
+{'Home Team': 'PRAWIRA BANDUNG', 'Away Team': 'DEWA UNITED BANTEN', 'Current Totals': 35, 'Odds': 46, 'Bet Choice': 'Under'}
+{'Home Team': 'CANTHO CATFISH', 'Away Team': 'SAIGON HEAT', 'Current Totals': 20, 'Odds': 45, 'Bet Choice': 'Over'}
+{'Home Team': 'PRAWIRA BANDUNG', 'Away Team': 'DEWA UNITED BANTEN', 'Current Totals': 16, 'Odds': 36, 'Bet Choice': 'Under'}
+{'Home Team': 'MIKE PERO NELSON GIANTS', 'Away Team': 'SIT ZEROFEES SOUTHLAND SHARKS', 'Quarter': 'Second Quarter', 'Time Elapsed': 594.3333333333334, 'Current Totals': 20, 'Odds': 46, 'Bet Choice': 'Over'}
+{'Home Team': 'MIKE PERO NELSON GIANTS', 'Away Team': 'SIT ZEROFEES SOUTHLAND SHARKS', 'Quarter': 'Second Quarter', 'Time Elapsed': 595.1666666666666, 'Current Totals': 22, 'Odds': 44, 'Bet Choice': 'Under'}
+{'Home Team': 'MIKE PERO NELSON GIANTS', 'Away Team': 'SIT ZEROFEES SOUTHLAND SHARKS', 'Quarter': 'Second Quarter', 'Time Elapsed': 595.3333333333334, 'Current Totals': 24, 'Odds': 44, 'Bet Choice': 'Over'}
+{'Home Team': 'MIKE PERO NELSON GIANTS', 'Away Team': 'SIT ZEROFEES SOUTHLAND SHARKS', 'Quarter': 'Second Quarter', 'Time Elapsed': 596.1, 'Current Totals': 26, 'Odds': 44, 'Bet Choice': 'Under'}
+{'Home Team': 'MIKE PERO NELSON GIANTS', 'Away Team': 'SIT ZEROFEES SOUTHLAND SHARKS', 'Quarter': 'Second Quarter', 'Time Elapsed': 596.1, 'Current Totals': 26, 'Odds': 43, 'Bet Choice': 'Under'}
+{'Home Team': 'MIKE PERO NELSON GIANTS', 'Away Team': 'SIT ZEROFEES SOUTHLAND SHARKS', 'Quarter': 'Second Quarter', 'Time Elapsed': 597.5833333333334, 'Current Totals': 32, 'Odds': 44, 'Bet Choice': 'Under'}
+{'Home Team': 'FRANCE U20', 'Away Team': 'ISRAEL U20', 'Quarter': 'Second Quarter', 'Time Elapsed': 7.1, 'Current Totals': 36, 'Odds': 47, 'Bet Choice': 'Over'}
+{'Home Team': 'FRANCE WOMEN U19', 'Away Team': 'SPAIN WOMEN U19', 'Quarter': 'Second Quarter', 'Time Elapsed': 7.866666666666666, 'Current Totals': 20, 'Odds': 28, 'Bet Choice': 'Under'}
+{'Home Team': 'FRANCE U20', 'Away Team': 'ISRAEL U20', 'Quarter': 'Third Quarter', 'Time Elapsed': 2.2333333333333334, 'Current Totals': 6, 'Odds': 37, 'Bet Choice': 'Under'}
+{'Home Team': 'FRANCE U20', 'Away Team': 'ISRAEL U20', 'Quarter': 'Third Quarter', 'Time Elapsed': 5.85, 'Current Totals': 21, 'Odds': 36, 'Bet Choice': 'Under'}
+{'Home Team': 'FRANCE WOMEN U19', 'Away Team': 'SPAIN WOMEN U19', 'Quarter': 'Third Quarter', 'Time Elapsed': 0.4666666666666667, 'Current Totals': 2, 'Odds': 35, 'Bet Choice': 'Over'}
+{'Home Team': 'AUSTRALIA WOMEN U19', 'Away Team': 'ARGENTINA WOMEN U19', 'Quarter': 'Second Quarter', 'Time Elapsed': 5.016666666666667, 'Current Totals': 9, 'Odds': 28, 'Bet Choice': 'Under'}
+{'Home Team': 'FRANCE WOMEN U19', 'Away Team': 'SPAIN WOMEN U19', 'Quarter': 'Third Quarter', 'Time Elapsed': 4.016666666666667, 'Current Totals': 13, 'Odds': 33, 'Bet Choice': 'Under'}
+{'Home Team': 'AUSTRALIA WOMEN U19', 'Away Team': 'ARGENTINA WOMEN U19', 'Quarter': 'Second Quarter', 'Time Elapsed': 7.75, 'Current Totals': 22, 'Odds': 30, 'Bet Choice': 'Under'}
+{'Home Team': 'FRANCE WOMEN U19', 'Away Team': 'SPAIN WOMEN U19', 'Quarter': 'Third Quarter', 'Time Elapsed': 6.483333333333333, 'Current Totals': 19, 'Odds': 31, 'Bet Choice': 'Under'}
+{'Home Team': 'NORTH MACEDONIA U20', 'Away Team': 'CZECH REPUBLIC U20', 'Quarter': 'Second Quarter', 'Time Elapsed': 3.45, 'Current Totals': 8, 'Odds': 32, 'Bet Choice': 'Under'}
+{'Home Team': 'NORTH MACEDONIA U20', 'Away Team': 'CZECH REPUBLIC U20', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.266666666666667, 'Current Totals': 33, 'Odds': 45, 'Bet Choice': 'Over'}
+{'Home Team': 'JAPAN WOMEN U19', 'Away Team': 'LITHUANIA WOMEN U19', 'Quarter': 'Second Quarter', 'Time Elapsed': 7.183333333333334, 'Current Totals': 37, 'Odds': 47, 'Bet Choice': 'Over'}
+{'Home Team': 'CANTHO CATFISH', 'Away Team': 'HOCHIMINH CITY WINGS', 'Quarter': 'Second Quarter', 'Time Elapsed': 7.083333333333333, 'Current Totals': 22, 'Odds': 34, 'Bet Choice': 'Under'}
+{'Home Team': 'CANTHO CATFISH', 'Away Team': 'HOCHIMINH CITY WINGS', 'Quarter': 'Second Quarter', 'Time Elapsed': 7.983333333333333, 'Current Totals': 28, 'Odds': 37, 'Bet Choice': 'Under'}
+{'Home Team': 'CANTHO CATFISH', 'Away Team': 'HOCHIMINH CITY WINGS', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.35, 'Current Totals': 17, 'Odds': 28, 'Bet Choice': 'Under'}
+{'Home Team': 'CANTHO CATFISH', 'Away Team': 'HOCHIMINH CITY WINGS', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.35, 'Current Totals': 18, 'Odds': 30, 'Bet Choice': 'Under'}
+{'Home Team': 'CANTHO CATFISH', 'Away Team': 'HOCHIMINH CITY WINGS', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.35, 'Current Totals': 19, 'Odds': 30, 'Bet Choice': 'Under'}
+{'Home Team': 'CANTHO CATFISH', 'Away Team': 'HOCHIMINH CITY WINGS', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.933333333333334, 'Current Totals': 19, 'Odds': 27, 'Bet Choice': 'Under'}
+{'Home Team': 'MALI WOMEN U19', 'Away Team': 'GERMANY WOMEN U19', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.4, 'Current Totals': 26, 'Odds': 36, 'Bet Choice': 'Under'}
+{'Home Team': 'MALI WOMEN U19', 'Away Team': 'GERMANY WOMEN U19', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.4, 'Current Totals': 28, 'Odds': 37, 'Bet Choice': 'Over'}
+{'Time Placed': '2023-07-18 22:24:17', 'Home Team': 'AUSTRALIA WOMEN U19', 'Away Team': 'FRANCE WOMEN U19', 'Quarter': 'Second Quarter', 'Time Elapsed': 7.283333333333333, 'Current Totals': 21, 'Odds': 28, 'Bet Choice': 'Over'}
+{'Time Placed': '2023-07-18 22:58:04', 'Home Team': 'AUSTRALIA WOMEN U19', 'Away Team': 'FRANCE WOMEN U19', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.3, 'Current Totals': 21, 'Odds': 30, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-07-18 22:59:35', 'Home Team': 'AUSTRALIA WOMEN U19', 'Away Team': 'FRANCE WOMEN U19', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.683333333333334, 'Current Totals': 21, 'Odds': 29, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-07-18 23:01:31', 'Home Team': 'ARGENTINA WOMEN U19', 'Away Team': 'SPAIN WOMEN U19', 'Quarter': 'Third Quarter', 'Time Elapsed': 6.7, 'Current Totals': 27, 'Odds': 38, 'Bet Choice': 'Over'}
+{'Time Placed': '2023-07-18 23:03:18', 'Home Team': 'ARGENTINA WOMEN U19', 'Away Team': 'SPAIN WOMEN U19', 'Quarter': 'Third Quarter', 'Time Elapsed': 6.7, 'Current Totals': 27, 'Odds': 37, 'Bet Choice': 'Over'}
+{'Time Placed': '2023-07-18 23:04:00', 'Home Team': 'ARGENTINA WOMEN U19', 'Away Team': 'SPAIN WOMEN U19', 'Quarter': 'Third Quarter', 'Time Elapsed': 6.7, 'Current Totals': 29, 'Odds': 38, 'Bet Choice': 'Over'}
+{'Time Placed': '2023-07-18 23:04:32', 'Home Team': 'ARGENTINA WOMEN U19', 'Away Team': 'SPAIN WOMEN U19', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.866666666666666, 'Current Totals': 29, 'Odds': 36, 'Bet Choice': 'Over'}
+{'Time Placed': '2023-07-19 16:15:43', 'Home Team': 'SAIGON HEAT', 'Away Team': 'NHA TRANG DOLPHINS', 'Quarter': 'Second Quarter', 'Time Elapsed': 6.916666666666667, 'Current Totals': 31, 'Odds': 45, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-07-19 16:17:31', 'Home Team': 'SAIGON HEAT', 'Away Team': 'NHA TRANG DOLPHINS', 'Quarter': 'Second Quarter', 'Time Elapsed': 7.0, 'Current Totals': 31, 'Odds': 44, 'Bet Choice': 'Over'}
+{'Time Placed': '2023-07-19 16:18:11', 'Home Team': 'SAIGON HEAT', 'Away Team': 'NHA TRANG DOLPHINS', 'Quarter': 'Second Quarter', 'Time Elapsed': 7.0, 'Current Totals': 36, 'Odds': 44, 'Bet Choice': 'Over'}
+{'Time Placed': '2023-07-19 20:42:48', 'Home Team': 'NEW YORK LIBERTY', 'Away Team': 'DALLAS WINGS', 'Quarter': 'Second Quarter', 'Time Elapsed': 7.15, 'Current Totals': 34, 'Odds': 47, 'Bet Choice': 'Over'}
+{'Time Placed': '2023-07-19 20:46:27', 'Home Team': 'NEW YORK LIBERTY', 'Away Team': 'DALLAS WINGS', 'Quarter': 'Second Quarter', 'Time Elapsed': 7.15, 'Current Totals': 42, 'Odds': 50, 'Bet Choice': 'Over'}
+{'Time Placed': '2023-07-19 21:21:46', 'Home Team': 'NEW YORK LIBERTY', 'Away Team': 'DALLAS WINGS', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.383333333333334, 'Current Totals': 35, 'Odds': 48, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-07-19 21:22:28', 'Home Team': 'NEW YORK LIBERTY', 'Away Team': 'DALLAS WINGS', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.483333333333333, 'Current Totals': 35, 'Odds': 45, 'Bet Choice': 'Over'}
+{'Time Placed': '2023-07-20 09:53:58', 'Home Team': 'THE WHEELER MOTOR CANTERBURY RAMS', 'Away Team': 'TAYLOR HAWKS', 'Quarter': 'First Quarter', 'Time Elapsed': 7.1, 'Current Totals': 26, 'Odds': 39, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-07-20 09:54:38', 'Home Team': 'THE WHEELER MOTOR CANTERBURY RAMS', 'Away Team': 'TAYLOR HAWKS', 'Quarter': 'First Quarter', 'Time Elapsed': 7.1, 'Current Totals': 28, 'Odds': 41, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-07-20 10:48:40', 'Home Team': 'THE WHEELER MOTOR CANTERBURY RAMS', 'Away Team': 'TAYLOR HAWKS', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.266666666666667, 'Current Totals': 31, 'Odds': 44, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-07-20 10:49:38', 'Home Team': 'THE WHEELER MOTOR CANTERBURY RAMS', 'Away Team': 'TAYLOR HAWKS', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.7, 'Current Totals': 33, 'Odds': 44, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-07-20 18:48:10', 'Home Team': 'CONNECTICUT SUN', 'Away Team': 'ATLANTA DREAM', 'Quarter': 'First Quarter', 'Time Elapsed': 7.083333333333333, 'Current Totals': 31, 'Odds': 41, 'Bet Choice': 'Over'}
+{'Time Placed': '2023-07-20 19:12:34', 'Home Team': 'CONNECTICUT SUN', 'Away Team': 'ATLANTA DREAM', 'Quarter': 'Second Quarter', 'Time Elapsed': 7.0, 'Current Totals': 29, 'Odds': 43, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-07-21 11:21:32', 'Home Team': 'AUCKLAND TUATARA', 'Away Team': 'ENVIRONZ FRANKLIN BULLS', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.333333333333333, 'Current Totals': 15, 'Odds': 27, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-07-21 11:22:25', 'Home Team': 'AUCKLAND TUATARA', 'Away Team': 'ENVIRONZ FRANKLIN BULLS', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.333333333333333, 'Current Totals': 17, 'Odds': 29, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-07-21 11:23:22', 'Home Team': 'AUCKLAND TUATARA', 'Away Team': 'ENVIRONZ FRANKLIN BULLS', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.733333333333333, 'Current Totals': 17, 'Odds': 27, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-08-09 22:12:11', 'Home Team': 'FRANCE', 'Away Team': 'LITHUANIA', 'Quarter': 'Second Quarter', 'Time Elapsed': 7.3, 'Current Totals': 30, 'Odds': 42, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-08-10 20:31:48', 'Home Team': 'ITALY', 'Away Team': 'GREECE', 'Quarter': 'Second Quarter', 'Time Elapsed': 6.2, 'Current Totals': 13, 'Odds': 28, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-08-10 20:32:30', 'Home Team': 'ITALY', 'Away Team': 'GREECE', 'Quarter': 'Second Quarter', 'Time Elapsed': 6.45, 'Current Totals': 15, 'Odds': 29, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-08-10 21:10:07', 'Home Team': 'ITALY', 'Away Team': 'GREECE', 'Quarter': 'Third Quarter', 'Time Elapsed': 6.75, 'Current Totals': 26, 'Odds': 38, 'Bet Choice': 'Over'}
+{'Time Placed': '2023-08-10 21:12:40', 'Home Team': 'ITALY', 'Away Team': 'GREECE', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.916666666666667, 'Current Totals': 29, 'Odds': 37, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-08-10 21:14:19', 'Home Team': 'ITALY', 'Away Team': 'GREECE', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.916666666666667, 'Current Totals': 31, 'Odds': 39, 'Bet Choice': 'Over'}
+{'Time Placed': '2023-08-11 20:56:34', 'Home Team': 'LITHUANIA', 'Away Team': 'FRANCE', 'Quarter': 'Third Quarter', 'Time Elapsed': 6.1, 'Current Totals': 18, 'Odds': 36, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-08-11 20:57:57', 'Home Team': 'LITHUANIA', 'Away Team': 'FRANCE', 'Quarter': 'Third Quarter', 'Time Elapsed': 6.433333333333334, 'Current Totals': 22, 'Odds': 37, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-08-11 20:58:33', 'Home Team': 'LITHUANIA', 'Away Team': 'FRANCE', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.15, 'Current Totals': 24, 'Odds': 36, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-08-11 20:59:12', 'Home Team': 'LITHUANIA', 'Away Team': 'FRANCE', 'Quarter': 'Third Quarter', 'Time Elapsed': 7.15, 'Current Totals': 26, 'Odds': 38, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-08-11 21:01:30', 'Home Team': 'LITHUANIA', 'Away Team': 'FRANCE', 'Quarter': 'Third Quarter', 'Time Elapsed': 8.2, 'Current Totals': 28, 'Odds': 36, 'Bet Choice': 'Under'}

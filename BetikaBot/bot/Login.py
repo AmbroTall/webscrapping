@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By   #find_element(By.ID)
 from selenium.webdriver.support.ui import Select
 from .constants import WEBSITE
 
-path = '/home/ambrose/Documents/chromedriver'
+path = '/home/ambrose/PycharmProjects/WebScraping/chromedriver'
 driver = webdriver.Chrome(path)
 driver.execute_script("window.open('http://old.statarea.com/');")
 driver.implicitly_wait(15)
