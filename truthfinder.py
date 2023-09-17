@@ -1,3 +1,4 @@
+import pickle
 import time
 from selenium import webdriver
 import undetected_chromedriver as uc
@@ -30,37 +31,48 @@ def init_driver():
     return browser
 
 def verify_human():
-    time.sleep(5)
+    time.sleep(15)
     try:
         iframe = driver.find_element(By.TAG_NAME,"iframe")
+        print(len(driver.find_elements(By.TAG_NAME,"iframe")))
         driver.switch_to.frame(iframe)
+        # time.sleep(120)
 
-        input_elements = driver.find_element(By.TAG_NAME, "input")
+        input_elements = driver.find_element(By.CLASS_NAME, "mark")
         input_elements.click()
         time.sleep(5)
         driver.switch_to.default_content()
     except NoSuchElementException:
         print("No iframe found")
-
 def login_to_truthfinder(email, password):
-    WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable(
-            (By.XPATH, '//*[@id="login"]/div/div[2]/form/div[1]/input'),  # Element filtration
-        )
-    )
-
-    email_input = driver.find_element(By.XPATH, '//*[@id="login"]/div/div[2]/form/div[1]/input')
+    time.sleep(120)
+    email_input = try_catch('//*[@id="login"]/div/div[2]/form/div[1]/input')
     email_input.send_keys(email)
 
     password_input = driver.find_element(By.XPATH, '//*[@id="login"]/div/div[2]/form/div[2]/input')
     password_input.send_keys(password)
-
+    time.sleep(3)
     login_btn = driver.find_element(By.XPATH, '//*[@id="login"]/div/div[2]/form/div[3]/button')
     login_btn.click()
+# def login_to_truthfinder(email, password):
+#     WebDriverWait(driver, 10).until(
+#         EC.element_to_be_clickable(
+#             (By.XPATH, '//*[@id="login"]/div/div[2]/form/div[1]/input'),  # Element filtration
+#         )
+#     )
+#
+#     email_input = driver.find_element(By.XPATH, '//*[@id="login"]/div/div[2]/form/div[1]/input')
+#     email_input.send_keys(email)
+#
+#     password_input = driver.find_element(By.XPATH, '//*[@id="login"]/div/div[2]/form/div[2]/input')
+#     password_input.send_keys(password)
+#
+#     login_btn = driver.find_element(By.XPATH, '//*[@id="login"]/div/div[2]/form/div[3]/button')
+#     login_btn.click()
 
 def open_webmail():
-    print("Opening gmail...")
-    driver.execute_script("window.open('https://www.gmail.com');")
+    print("Opening webmail...")
+    driver.execute_script("window.open('http://client1.jewelercart.com:2096/');")
     driver.switch_to.window(driver.window_handles[0])
 
 def verification_by_email():
@@ -71,32 +83,81 @@ def verification_by_email():
     )
     verification_btn = driver.find_element(By.XPATH, '//*[@id="verification"]/div/div[2]/button')
     verification_btn.click()
+def try_catch(xpath):
+    max_attempts = 5
+    current_attempt = 1
+    while current_attempt <= max_attempts:
+        try:
+            element = driver.find_element(By.XPATH, f'{xpath}')
+            print("located")
+            return element
+        except Exception as e:
+            print(f"Attempt {current_attempt} failed with error: {e}")
+            if current_attempt < max_attempts:
+                # driver.refresh()
+                print("Retrying...")
+            else:
+                print("Max attempts reached. Moving on to the next part of the code.")
+
+        current_attempt += 1
 
 def switch_tabs_webmail():
     driver.switch_to.window(driver.window_handles[1])
     print("this is my current url", driver.current_url)
+# def login_to_email(email, password):  #Gmail
+#     email_input = driver.find_element(By.ID, 'identifierId')
+#     email_input.send_keys(email)
+#     next_button = driver.find_element(By.XPATH, "//span[text()='Next']")
+#     next_button.click()
+#     time.sleep(5)  # wait for next page to load
+#
+#     # enter password and click sign in button
+#     password_input = driver.find_element(By.XPATH, "//input[@type='password']")
+#     password_input.send_keys(password)
+#     signin_button = driver.find_element(By.XPATH, "//span[text()='Next']")
+#     signin_button.click()
+#     time.sleep(5)  # wait for sign-in to complete
+#
+#     conversation_link = driver.find_element(By.XPATH, "(//span[@class='bog'])[1]")
+#     conversation_link.click()
+#     time.sleep(5)  # wait for conversation to load
+#
+#     # click the first hyperlink in the conversation
+#     verify_link = driver.find_element(By.XPATH, "//a[text()='VERIFY ACCOUNT']")
+#     verify_link.click()
+#     time.sleep(2)
+
 def login_to_email(email, password):
-    email_input = driver.find_element(By.ID, 'identifierId')
+    # By passing Your connection is not private
+    try:
+        WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable(
+                (By.ID, 'details-button'),
+            )
+        )
+
+        advanced_btn = driver.find_element(By.ID, 'details-button')
+        advanced_btn.click()
+
+        proceed_link = driver.find_element(By.ID, 'proceed-link')
+        proceed_link.click()
+    except:
+        print("All clear")
+
+    WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable(
+            (By.ID, 'user'),
+        )
+    )
+
+    email_input = driver.find_element(By.ID, 'user')
     email_input.send_keys(email)
-    next_button = driver.find_element(By.XPATH, "//span[text()='Next']")
-    next_button.click()
-    time.sleep(5)  # wait for next page to load
 
-    # enter password and click sign in button
-    password_input = driver.find_element(By.XPATH, "//input[@type='password']")
-    password_input.send_keys(password)
-    signin_button = driver.find_element(By.XPATH, "//span[text()='Next']")
-    signin_button.click()
-    time.sleep(5)  # wait for sign-in to complete
+    pswd_input = driver.find_element(By.ID, 'pass')
+    pswd_input.send_keys(password)
 
-    conversation_link = driver.find_element(By.XPATH, "(//span[@class='bog'])[1]")
-    conversation_link.click()
-    time.sleep(5)  # wait for conversation to load
-
-    # click the first hyperlink in the conversation
-    verify_link = driver.find_element(By.XPATH, "//a[text()='VERIFY ACCOUNT']")
-    verify_link.click()
-    time.sleep(2)
+    login_btn = driver.find_element(By.ID, 'login_submit')
+    login_btn.click()
 
 def click_mail_to_verify():
     WebDriverWait(driver, 30).until(
@@ -267,17 +328,29 @@ if __name__ == '__main__':
     truth_email = "cashhomebuyersincusa@gmail.com"
     truth_password = "tech6491"
 
-    web_email = "cashhomebuyersincusa@gmail.com"
-    web_password = "tech6491"
+    web_email = "cashpro@cashprohomebuyers.com"
+    web_password = "l.ZtLZX}e_vT"
+
     link = "https://www.truthfinder.com/login"
-    # link = "https://www.truthfinder.com/login"
 
     print("Initializing webdriver...")
     driver = init_driver()
     print('Loading: "{}"'.format(link))
     open_webmail()
+    driver.get(
+        'https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&hl=en&flowName=GlifWebSignIn&flowEntry=ServiceLogin')
+    google_cookies = pickle.load(
+        open("/home/ambrose/PycharmProjects/WebScraping/webscrapping/twitterBots/bot/google_cookies.pkl", "rb"))
+
+    for cookie in google_cookies:
+        cookie['domain'] = ".google.com"
+        try:
+            driver.add_cookie(cookie)
+        except Exception as e:
+            pass
+
     driver.get(link)
-    time.sleep(5)
+    time.sleep(10)
     # verify_human()
     print('Connection Security ByPassed...')
     login = login_to_truthfinder(truth_email, truth_password)

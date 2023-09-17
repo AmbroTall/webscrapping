@@ -12,8 +12,8 @@ from selenium.webdriver.support.ui import Select, WebDriverWait
 options = uc.ChromeOptions()
 # options.add_argument("--headless")  # Run in headless mode if needed
 # options.add_argument("--no-sandbox")
-# options.add_argument("--disable-dev-shm-usage")
-# options.add_argument("--disable-gpu")
+# options.addimport requests
+
 website = 'https://twitter.com/'
 # path = '/home/ambrose/Documents/chromedriver'
 driver = uc.Chrome(options=options)
@@ -23,7 +23,7 @@ password = "ambroseTall3436"
 
 driver.get(
     'https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&hl=en&flowName=GlifWebSignIn&flowEntry=ServiceLogin')
-google_cookies = pickle.load(open("google_cookies.pkl", "rb"))
+google_cookies = pickle.load(open("/home/ambrose/PycharmProjects/WebScraping/webscrapping/twitterBots/bot/google_cookies.pkl", "rb"))
 for cookie in google_cookies:
     cookie['domain'] = ".google.com"
     try:

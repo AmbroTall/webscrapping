@@ -7,6 +7,9 @@ driver = uc.Chrome()
 
 email = "ambrosetall@gmail.com"
 password = "ambroseTall3436"
+
+driver.get('https://www.gmail.com')
+time.sleep(5)
 def login_to_email(email, password):
     email_input = driver.find_element(By.ID, 'identifierId')
     email_input.send_keys(email)
@@ -28,3 +31,7 @@ def login_to_email(email, password):
     time.sleep(30)
     cookies = driver.get_cookies()
     pickle.dump(cookies, open("google_cookies.pkl", "wb"))
+    print("Coookie saved successfully")
+
+
+login_to_email(email, password)

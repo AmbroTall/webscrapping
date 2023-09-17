@@ -135,6 +135,7 @@ def get_games():
     import requests
 
     url = "https://www.ke.sportpesa.com/api/live/sports/4/events?count=15&offset=0"
+    url = "https://www.ke.sportpesa.com/api/live/sports/4/events?count=15&offset=0"
 
     payload = {}
     headers = {

@@ -1,12 +1,8 @@
-#!/usr/bin/env python3
 import datetime
 import undetected_chromedriver as uc
 import mysql.connector
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import Select, WebDriverWait
 
 import time
@@ -21,15 +17,17 @@ options = uc.ChromeOptions()
 # options.add_argument("--disable-dev-shm-usage")
 # options.add_argument("--disable-gpu")
 website = 'https://app.propstream.com/'
-# path = '/home/ambrose/Documents/chromedriver'
 driver = uc.Chrome(options=options)
-driver.implicitly_wait(10)
 driver.execute_script("window.open('https://www.truthfinder.com/login');")
 web_email = "cashpro@cashprohomebuyers.com"
-web_password = "Tech6491@@"
+web_password = "l.ZtLZX}e_vT"
 
 truth_email = "cashpro@cashprohomebuyers.com"
 truth_pwd = "tech6491"
+
+propstream_email = "jewelercart@gmail.com"
+propstream_pwd = "Taqwah79@@"
+
 
 def log(msg):
     print(f"LOG: {msg}")
@@ -45,59 +43,46 @@ def log(msg):
 
 def start_page():
     driver.get(website)
-    switch_to_popstream = switch_tabs_webmail(0)
-    driver.maximize_window()
-    switch_to_truthfinder = switch_tabs_webmail(1)
-    window_handles = driver.window_handles
-    login_truthfinder = login_to_truthfinder(truth_email, truth_pwd)
-    verification = verification_by_email()
+    print("0")
+
+    # switch to popstream
+    switch_tabs_webmail(0)
+    print("2")
+
+    # driver.maximize_window()
+    print("1")
+    verify_human()
+    # switch to truthfinder
+    switch_tabs_webmail(1)
+    # window_handles = driver.window_handles
+    # login to truthfinder
+    login_to_truthfinder(truth_email, truth_pwd)
+    # email verification
+    verification_by_email()
     time.sleep(2)
-    driver.execute_script("window.open('https://client.jewelercart.com:2096/');")
+    driver.execute_script("window.open('http://client1.jewelercart.com:2096/');")
     time.sleep(35)
-    switch_to_google = switch_tabs_webmail(2)
-    login_to_mail = login_to_email(web_email, web_password)
-    verify_email = click_mail_to_verify()
+    # switch_to_google
+    switch_tabs_webmail(2)
+    # login_to_mail
+    login_to_email(web_email, web_password)
+    # verify_email
+    click_mail_to_verify()
     time.sleep(5)
     driver.close()
-    close_gmail = switch_tabs_webmail(2)
+    # close_gmail
+    switch_tabs_webmail(2)
     time.sleep(3)
     driver.close()
     time.sleep(2)
-    switch_to_popstream = switch_tabs_webmail(0)
+    # switch to popstream
+    switch_tabs_webmail(0)
     login_popstream()
 
 
 def switch_tabs_webmail(no):
     driver.switch_to.window(driver.window_handles[no])
 
-
-# def login_to_email(email, password):
-# 	email_input = WebDriverWait(driver, 30).until(
-# 		EC.element_to_be_clickable(
-# 			(By.ID, 'identifierId')
-# 		)
-# 	)
-# 	# email_input = driver.find_element(By.ID, 'identifierId')
-# 	email_input.send_keys(email)
-# 	next_button = driver.find_element(By.XPATH, "//span[text()='Next']")
-# 	next_button.click()
-# 	time.sleep(10)  # wait for next page to load
-#
-# 	# enter password and click sign in button
-# 	password_input = driver.find_element(By.XPATH, "//input[@type='password']")
-# 	password_input.send_keys(password)
-# 	signin_button = driver.find_element(By.XPATH, "//span[text()='Next']")
-# 	signin_button.click()
-# 	time.sleep(5)  # wait for sign-in to complete
-#
-# 	conversation_link = driver.find_element(By.XPATH, "(//span[@class='bog'])[1]")
-# 	conversation_link.click()
-# 	time.sleep(5)  # wait for conversation to load
-#
-# 	# click the first hyperlink in the conversation
-# 	verify_link = driver.find_element(By.XPATH, "//a[text()='VERIFY ACCOUNT']")
-# 	verify_link.click()
-# 	time.sleep(3)
 
 def verify_human():
     time.sleep(5)
@@ -112,13 +97,14 @@ def verify_human():
     except:
         print("No iframe found")
 
+
 def try_catch(xpath):
     max_attempts = 5
     current_attempt = 1
     while current_attempt <= max_attempts:
         try:
-            time.sleep(30)
             element = driver.find_element(By.XPATH, f'{xpath}')
+            print("located")
             return element
         except Exception as e:
             print(f"Attempt {current_attempt} failed with error: {e}")
@@ -129,8 +115,9 @@ def try_catch(xpath):
                 print("Max attempts reached. Moving on to the next part of the code.")
 
         current_attempt += 1
-def login_to_truthfinder(email, password):
-    email_input = try_catch( '//*[@id="login"]/div/div[2]/form/div[1]/input')
+
+def login_to_truthfinder(email, password):  
+    email_input = try_catch('//*[@id="login"]/div/div[2]/form/div[1]/input')
     email_input.send_keys(email)
 
     password_input = driver.find_element(By.XPATH, '//*[@id="login"]/div/div[2]/form/div[2]/input')
@@ -189,18 +176,17 @@ def click_mail_to_verify():
         )
     )
 
-    msg = driver.find_element(By.XPATH, '//*[@id]/td[2]/span[4]/a/span')
+    msg = try_catch('//*[@id]/td[2]/span[4]/a/span')
     msg.click()
 
     msg_frame = driver.switch_to.frame("messagecontframe")
 
-    verify_account = driver.find_element(By.XPATH,
-                                         '//*[@id="message-htmlpart1"]/div/center/div/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td[2]/a')
+    verify_account = try_catch(
+        '//*[@id="message-htmlpart1"]/div/center/div/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td[2]/a')
     verify_account.click()
 
-
 def verification_by_email():
-    WebDriverWait(driver, 100).until(
+    WebDriverWait(driver, 30).until(
         EC.element_to_be_clickable(
             (By.XPATH, '//*[@id="verification"]/div/div[2]/button'),  # Element filtration
         )
@@ -208,33 +194,33 @@ def verification_by_email():
     verification_btn = driver.find_element(By.XPATH, '//*[@id="verification"]/div/div[2]/button')
     verification_btn.click()
 
-
 def login_popstream():
     # Explicit Wait until username is visible
     driver.refresh()
-    email_input = try_catch("//input[@name='username']") # Element filtration
+    email_input = WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, "//input[@name='username']") ))
+    # email_input = try_catch("//input[@name='username']")  # Element filtration
 
-    email_input.send_keys("jewelercart@gmail.com")
-
+    email_input.send_keys(propstream_email)
     # Explicit Wait until password input is visible
-    password_input = WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable(
-            (By.XPATH, "//input[@name='password']"),  # Element filtration
-        )
-    )
-    password_input.send_keys("Taqwah79@@")
+    password_input = driver.find_element(By.XPATH, "//input[@name='password']")  # Element filtration
+    password_input.send_keys(propstream_pwd)
     login_btn = driver.find_element(By.XPATH, '//*[@id="form-content"]/form/button')
     login_btn.click()
+    time.sleep(10)
 
 
 def popstream_information(address):
     switch_tabs_webmail(0)
-    driver.refresh()
-    time.sleep(2)
     # Performing search
+
     try:
-        login_btn = driver.find_element(By.XPATH, '//*[@id="form-content"]/form/button')
+        login_btn = WebDriverWait(driver, 100).until(
+            EC.element_to_be_clickable(
+                (By.XPATH, '//*[@id="form-content"]/form/button'),
+            )
+        )
         login_btn.click()
+        time.sleep(10)
     except:
         log("No login button")
     # Performing search
@@ -347,7 +333,8 @@ def scrape_user_data(address):
     scrapped_data['url'] = driver.current_url
 
     # TruthFinder Code
-    switch_to_truthfinder = switch_tabs_webmail(1)
+    # switch_to_truthfinder
+    switch_tabs_webmail(1)
     street = address.split(",")[0]
     city = address.split(",")[1]
     zip = address.split(",")[-1].split(" ")[-1]
@@ -427,7 +414,9 @@ def click_property_report():
 
 def click_residents():
     links = driver.find_elements(By.CLASS_NAME, "nav-text")
+    print(len(links))
     for x in links:
+        print("Hello this are all links", x.text)
         if x.text.lower() == "residents":
             x.click()
             break
@@ -499,6 +488,7 @@ def return_to_dashboard():
             break
     time.sleep(2)
 
+
 def save_data_to_mysql(data):
     try:
         # Connect to the MySQL database
@@ -546,6 +536,7 @@ def save_data_to_databases(data):
     except (sqlite3.Error, mysql.connector.Error) as e:
         print("An error occurred while saving data:", str(e))
 
+
 def fetch_all_ids_from_sqlite():
     try:
         # Connect to the SQLite database or create a new one if it doesn't exist
@@ -569,6 +560,7 @@ def fetch_all_ids_from_sqlite():
 
 def main():
     gapubs_data = get_data()
+    print(gapubs_data)
     print(len(gapubs_data))
     exisiting_ids = fetch_all_ids_from_sqlite()
     print(exisiting_ids)
@@ -581,7 +573,8 @@ def main():
         address = json.loads(x)
         if address["Street"] != "" and address["Zip_Code"] != "" and address['Id'] not in exisiting_ids:
             print("Record no", count)
-            address_db = f'{address["Street"]}, {address["City"]}, GA {address["Zip_Code"]}'
+            address_db = '3440 Freedom Lane, Dalton, GA 30721'
+            # address_db = f'{address["Street"]}, {address["City"]}, GA {address["Zip_Code"]}'
             log(address_db)
             try:
                 # step 2 Propstream information (TruthFinder Code)
@@ -603,6 +596,10 @@ def main():
     return db_data_holder
 
 
-print(main())
+# print(main())
+address_db = '3440 Freedom Lane, Dalton, GA 30721'
+start_page()
+time.sleep(5)
+print(popstream_information(address_db))
 
 # //*[@id="dashboard"]/div[1]/div/div/div/div/form/div/div[1]/div/div

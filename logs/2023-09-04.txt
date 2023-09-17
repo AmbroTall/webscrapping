@@ -1,0 +1,79 @@
+17:58:10 : 552 Filter Plant Road, Summerville, GA 30747
+17:58:24 : 47 Maddox Rd Se, Acworth, GA 30102
+17:58:32 : 504 Firethorn Ct, Villa Rica, GA 30180
+17:58:50 : 27 Martin Luther King Drive, Cartersville, GA 30120
+17:59:04 : 534 Simmons Street Sw, Atlanta, GA 30318
+17:59:16 : 1304 Avon Avenue Sw, Atlanta, GA 30310
+17:59:27 : 2337 Abner Place Nw, Atlanta, GA 30318
+17:59:39 : 2398 Herring Road Sw, Atlanta, GA 30311
+17:59:49 : 342 Schoen Street Se, Atlanta, GA 30315
+17:59:58 : 108 Wellington Street Sw, Atlanta, GA 30314
+18:00:10 : 165 Edwards Street Sw, Atlanta, GA 30314
+18:00:19 : 156 Hyacinth Avenue Nw, Atlanta, GA 30314
+18:00:23 : No login button
+18:30:18 : 552 Filter Plant Road, Summerville, GA 30747
+18:30:31 : No login button
+18:30:45 : 47 Maddox Rd Se, Acworth, GA 30102
+18:31:00 : 504 Firethorn Ct, Villa Rica, GA 30180
+18:31:19 : 27 Martin Luther King Drive, Cartersville, GA 30120
+19:03:07 : 552 Filter Plant Road, Summerville, GA 30747
+19:03:32 : 47 Maddox Rd Se, Acworth, GA 30102
+19:03:51 : 504 Firethorn Ct, Villa Rica, GA 30180
+19:04:17 : 27 Martin Luther King Drive, Cartersville, GA 30120
+19:12:56 : 552 Filter Plant Road, Summerville, GA 30747
+19:12:59 : No login button
+19:25:40 : 552 Filter Plant Road, Summerville, GA 30747
+19:26:06 : pop up closed
+19:26:30 : 47 Maddox Rd Se, Acworth, GA 30102
+19:26:43 : No login button
+19:28:43 : 504 Firethorn Ct, Villa Rica, GA 30180
+19:46:09 : 552 Filter Plant Road, Summerville, GA 30747
+19:46:09 : No login button
+19:46:19 : pop up closed
+19:46:53 : 47 Maddox Rd Se, Acworth, GA 30102
+19:46:53 : No login button
+19:47:03 : pop up closed
+19:47:27 : 504 Firethorn Ct, Villa Rica, GA 30180
+19:47:27 : No login button
+19:47:37 : pop up closed
+19:47:58 : 27 Martin Luther King Drive, Cartersville, GA 30120
+19:47:58 : No login button
+19:48:08 : pop up closed
+19:48:26 : 534 Simmons Street Sw, Atlanta, GA 30318
+19:48:26 : No login button
+19:48:36 : pop up closed
+19:48:58 : 1304 Avon Avenue Sw, Atlanta, GA 30310
+19:48:58 : No login button
+19:49:08 : pop up closed
+19:49:27 : 2337 Abner Place Nw, Atlanta, GA 30318
+19:49:27 : No login button
+19:49:37 : pop up closed
+19:51:01 : 2398 Herring Road Sw, Atlanta, GA 30311
+19:51:01 : No login button
+19:52:20 : Close details
+19:52:26 : 342 Schoen Street Se, Atlanta, GA 30315
+19:52:26 : No login button
+19:55:18 : 108 Wellington Street Sw, Atlanta, GA 30314
+19:55:36 : pop up closed
+19:55:52 : 165 Edwards Street Sw, Atlanta, GA 30314
+19:55:52 : No login button
+19:56:19 : pop up closed
+19:56:41 : 156 Hyacinth Avenue Nw, Atlanta, GA 30314
+19:56:41 : No login button
+19:59:02 : 1636 Sandtown Road Sw, Atlanta, GA 30311
+19:59:20 : pop up closed
+19:59:42 : 183 Linkwood Road Nw, Atlanta, GA 30318
+19:59:42 : No login button
+19:59:52 : pop up closed
+20:00:12 : 719 Caron Circle Nw, Atlanta, GA 30318
+20:00:12 : No login button
+20:00:23 : pop up closed
+20:00:57 : 1220 Second Street Nw, Atlanta, GA 30318
+20:00:57 : No login button
+20:03:11 : 1705 Spooner Road, Douglas, GA 31533
+20:05:23 : 3044 Griggs Ct, Augusta, GA 30906
+20:05:51 : pop up closed
+20:06:12 : 323 Sleepy Hollow Ct, Martinez, GA 30907
+20:06:12 : No login button
+20:07:39 : 1202 Atlanta Hwy, Gainesville, GA 30501
+20:07:39 : No login button

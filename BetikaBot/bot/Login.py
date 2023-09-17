@@ -21,6 +21,8 @@ class Login:
     def start_site(self):
         driver.get(WEBSITE)
 
+
+
     def login(self, tel_no, password):
         login = driver.find_element(By.XPATH, '//a[@class="top-session-button button button__secondary outline link"]')
         login.click()

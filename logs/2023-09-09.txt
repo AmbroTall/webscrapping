@@ -1,0 +1,66 @@
+10:15:21 : 552 Filter Plant Road, Summerville, GA 30747
+10:15:52 : No login button
+10:15:52 : pop up closed
+10:17:13 : 47 Maddox Rd Se, Acworth, GA 30102
+10:17:43 : No login button
+10:17:43 : Close details
+10:19:14 : 504 Firethorn Ct, Villa Rica, GA 30180
+10:19:44 : No login button
+10:19:45 : Close details
+10:21:14 : 27 Martin Luther King Drive, Cartersville, GA 30120
+10:21:45 : No login button
+10:21:46 : Close details
+10:22:05 : 534 Simmons Street Sw, Atlanta, GA 30318
+10:22:35 : No login button
+10:22:35 : pop up closed
+10:24:04 : 1304 Avon Avenue Sw, Atlanta, GA 30310
+10:24:34 : No login button
+10:24:34 : Close details
+10:24:55 : 2337 Abner Place Nw, Atlanta, GA 30318
+10:25:25 : No login button
+10:25:25 : pop up closed
+10:26:51 : 2398 Herring Road Sw, Atlanta, GA 30311
+10:27:21 : No login button
+10:27:21 : Close details
+10:28:51 : 342 Schoen Street Se, Atlanta, GA 30315
+10:29:21 : No login button
+10:29:21 : Close details
+10:29:44 : 108 Wellington Street Sw, Atlanta, GA 30314
+10:30:14 : No login button
+10:30:14 : pop up closed
+10:31:48 : 165 Edwards Street Sw, Atlanta, GA 30314
+10:32:19 : No login button
+10:32:19 : Close details
+10:33:50 : 156 Hyacinth Avenue Nw, Atlanta, GA 30314
+10:34:20 : No login button
+10:34:21 : Close details
+10:35:48 : 1636 Sandtown Road Sw, Atlanta, GA 30311
+10:36:19 : No login button
+10:36:19 : Close details
+10:38:00 : 183 Linkwood Road Nw, Atlanta, GA 30318
+10:38:30 : No login button
+10:38:30 : Close details
+10:40:09 : 719 Caron Circle Nw, Atlanta, GA 30318
+10:40:14 : No login button
+21:50:48 : 552 Filter Plant Road, Summerville, GA 30747
+21:51:19 : No login button
+21:51:20 : 47 Maddox Rd Se, Acworth, GA 30102
+21:51:50 : No login button
+21:52:22 : 504 Firethorn Ct, Villa Rica, GA 30180
+21:52:52 : No login button
+21:52:59 : 27 Martin Luther King Drive, Cartersville, GA 30120
+21:53:29 : No login button
+21:53:30 : 534 Simmons Street Sw, Atlanta, GA 30318
+21:54:00 : No login button
+21:54:01 : 1304 Avon Avenue Sw, Atlanta, GA 30310
+21:54:31 : No login button
+21:54:32 : 2337 Abner Place Nw, Atlanta, GA 30318
+21:55:02 : No login button
+21:55:05 : 2398 Herring Road Sw, Atlanta, GA 30311
+21:55:13 : No login button
+22:00:27 : 552 Filter Plant Road, Summerville, GA 30747
+22:00:58 : No login button
+22:00:58 : pop up closed
+22:02:07 : 47 Maddox Rd Se, Acworth, GA 30102
+22:02:37 : No login button
+22:02:38 : Close details

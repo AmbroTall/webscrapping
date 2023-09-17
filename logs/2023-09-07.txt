@@ -1,0 +1,81 @@
+18:01:34 : 552 Filter Plant Road, Summerville, GA 30747
+18:01:45 : 47 Maddox Rd Se, Acworth, GA 30102
+18:01:45 : No login button
+18:01:49 : 504 Firethorn Ct, Villa Rica, GA 30180
+18:01:49 : No login button
+18:01:53 : 27 Martin Luther King Drive, Cartersville, GA 30120
+18:01:53 : No login button
+18:01:57 : 534 Simmons Street Sw, Atlanta, GA 30318
+18:01:57 : No login button
+18:02:01 : 1304 Avon Avenue Sw, Atlanta, GA 30310
+18:02:01 : No login button
+18:02:06 : 2337 Abner Place Nw, Atlanta, GA 30318
+18:02:06 : No login button
+18:02:10 : 2398 Herring Road Sw, Atlanta, GA 30311
+18:02:10 : No login button
+18:02:14 : 342 Schoen Street Se, Atlanta, GA 30315
+18:02:14 : No login button
+18:02:18 : 108 Wellington Street Sw, Atlanta, GA 30314
+18:02:18 : No login button
+18:02:24 : 165 Edwards Street Sw, Atlanta, GA 30314
+18:02:24 : No login button
+18:02:28 : 156 Hyacinth Avenue Nw, Atlanta, GA 30314
+18:02:28 : No login button
+18:02:33 : 1636 Sandtown Road Sw, Atlanta, GA 30311
+18:02:33 : No login button
+18:02:37 : 183 Linkwood Road Nw, Atlanta, GA 30318
+18:02:37 : No login button
+18:02:42 : 719 Caron Circle Nw, Atlanta, GA 30318
+18:02:42 : No login button
+18:02:51 : 1220 Second Street Nw, Atlanta, GA 30318
+18:02:51 : No login button
+18:02:52 : 1705 Spooner Road, Douglas, GA 31533
+18:02:53 : No login button
+18:02:53 : 3044 Griggs Ct, Augusta, GA 30906
+18:02:53 : No login button
+18:02:58 : 323 Sleepy Hollow Ct, Martinez, GA 30907
+18:03:07 : 1202 Atlanta Hwy, Gainesville, GA 30501
+18:03:08 : No login button
+18:03:12 : 105 Dogwood Circle, Gainesville, GA 30501
+18:03:12 : No login button
+18:03:16 : 164 Beacon Drive, Maysville, GA 30558
+18:03:16 : No login button
+18:03:20 : 6710 Stillmeadow Drive, Cumming, GA 30040
+18:03:20 : No login button
+18:03:25 : 110 Glen Eagle Way, Mcdonough, GA 30253
+18:03:25 : No login button
+18:03:25 : 407 Sorrow Road, Stockbridge, GA 30281
+18:03:26 : No login button
+18:03:28 : 4000 Harness Ln, Conyers, GA 30013
+18:03:28 : No login button
+18:03:28 : 3408 Charter Ct, Conyers, GA 30013
+18:03:29 : No login button
+18:03:29 : 3219 Quincey Xing, Conyers, GA 30013
+18:03:29 : No login button
+18:03:30 : 3505 Tiffany Drive, Conyers, GA 30013
+18:03:30 : No login button
+18:03:30 : 1200 Brookside Drive Ne, Conyers, GA 30012
+18:03:31 : No login button
+18:03:31 : 113 Willow Drive, Guyton, GA 31312
+18:03:31 : No login button
+18:03:32 : 20 Clydesdale Ct, Newnan, GA 30263
+18:03:32 : No login button
+18:03:33 : 101 Woodland Court, Warner Robins, GA 31088
+18:03:33 : No login button
+18:03:36 : 1505 Windsor Road, Perry, GA 31069
+18:03:48 : 4014 Radford Gay Road, Dearing, GA 30808
+18:03:48 : No login button
+18:03:52 : 314 S. Grady Street, Portal, GA 30450
+18:03:52 : No login button
+18:03:58 : 5072 Woodridge Way, Tucker, GA 30084
+18:04:08 : 1021 Stewarts Creek, Greensboro, GA 30642
+18:04:08 : No login button
+18:04:12 : 3367 Raes Creek Road, Marietta, GA 30008
+18:04:12 : No login button
+18:04:17 : 1405 Hawthorne Ave Se, Smyrna, GA 30080
+18:04:17 : No login button
+18:04:21 : 1267 Misty Valley Court, Lawtenceville, GA 30045
+18:04:39 : 2218 Perkerson Mill Road, Austell, GA 30106
+18:04:39 : No login button
+18:04:40 : 7254 Bridgeport Ct, Austell, GA 30168
+18:04:41 : No login button
