@@ -1,5 +1,7 @@
 import time
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
 import re
 from datetime import datetime
 from selenium.webdriver.common.by import By  # find_element(By.ID)
@@ -10,11 +12,12 @@ from urllib.parse import urlparse, parse_qs
 import requests
 
 
-driver = webdriver.Chrome()
+# Set up Chrome options for headless mode
+chrome_options = Options()
+chrome_options.add_argument("--headless")  # Run in headless mode without a GUI
 
 
 def get_quarter_info(quarter):
-
     print("This is my quarter", quarter)
     quarter_lower = quarter.lower().strip()
     if quarter_lower == "firstquarter":
@@ -69,57 +72,25 @@ def predict_over_under(current_scores, remaining_quarter_secs, overall_total, to
     return prediction
 
 
-def configure_betslip(stake):
-    # Find the element using WebDriverWait
-    slip_bar = WebDriverWait(driver, 30).until(
-        EC.presence_of_element_located((By.CLASS_NAME, "betslip-options-trigger"))
-    )
-
-    # Click the element after it's found
-    slip_bar.click()
-
-    accept_oddschange = driver.find_elements(By.XPATH, '//input[@type="radio"]')
-    accept_oddschange[0].click()
-
-    default_amount = driver.find_element(By.ID, 'amount-user')
-    default_amount.clear()
-    default_amount.send_keys(int(stake))
-
-    direct_bet_mode = driver.find_elements(By.CLASS_NAME, 'material-toggle')[0]
-    driver.execute_script(
-        "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});",
-        direct_bet_mode)
-    direct_bet_mode.click()
-    driver.execute_script(
-        "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});",
-        slip_bar)
-    time.sleep(5)
-
-    slip_bar.click()
 
 
-
-def request_function(url, headers, payload):
-    while True:
-        response = requests.request("GET", url, headers=headers, data=payload)
-        r = response.json()
-        time.sleep(2)
-        if r:
-            return r
 class Login:
     def __init__(self):
+        driver = webdriver.Chrome(options=chrome_options)
         self.driver = driver
 
     def quit_automation(self):
-        driver.quit()
+        self.driver.quit()
 
     def start_site(self):
-        driver.get('https://www.ke.sportpesa.com/en/live/events?sportId=4')
+        self.driver.get('https://www.ke.sportpesa.com/en/live/events?sportId=4')
 
     def maximize_window(self):
-        driver.maximize_window()
+        self.driver.maximize_window()
 
     def login(self, tel_no, password):
+        print("Logging in : ", tel_no
+              )
         # Explicit Wait until login button is clickable
         WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(
@@ -147,6 +118,34 @@ class Login:
             "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});", back_btn)
         time.sleep(2)
         back_btn.click()
+
+    def configure_betslip(self, stake):
+        # Find the element using WebDriverWait
+        slip_bar = WebDriverWait(self.driver, 30).until(
+            EC.presence_of_element_located((By.CLASS_NAME, "betslip-options-trigger"))
+        )
+
+        # Click the element after it's found
+        slip_bar.click()
+
+        accept_oddschange = self.driver.find_elements(By.XPATH, '//input[@type="radio"]')
+        accept_oddschange[0].click()
+
+        default_amount = self.driver.find_element(By.ID, 'amount-user')
+        default_amount.clear()
+        default_amount.send_keys(int(stake))
+
+        direct_bet_mode = self.driver.find_elements(By.CLASS_NAME, 'material-toggle')[0]
+        self.driver.execute_script(
+            "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});",
+            direct_bet_mode)
+        direct_bet_mode.click()
+        self.driver.execute_script(
+            "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});",
+            slip_bar)
+        time.sleep(5)
+
+        slip_bar.click()
 
     def request_function(self, url, headers, payload):
         while True:
@@ -331,7 +330,7 @@ class Login:
         print(self.place_bet())
     def main_call(self):
         time.sleep(5)
-        configure_betslip(50)
+        self.configure_betslip(50)
         i = 0
         while True:
             try:

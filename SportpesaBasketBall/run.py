@@ -79,9 +79,11 @@ while True:
             # Record the start time
             start_time = time.time()
             for _ in range(total_duration // interval):
+                print("Started")
+                bot = Login()
+                time.sleep(10)
                 try:
-                    print("Started")
-                    bot = Login()
+                    print("Bot started successfully")
                     bot.start_site()
                     bot.maximize_window()
 
@@ -94,18 +96,35 @@ while True:
                         bot.quit_automation()
                         break
                 except:
+                    print("Qui")
                     bot.quit_automation()
                     time.sleep(10)
-                    pass
+                    continue
         else:
             print("Game has started")
             continue
 
-
-# bot = Login()
-# bot.start_site()
-# bot.maximize_window()
 #
-# bot.login(tel_no='0722808670', password='ambroseTall3436')
-# time.sleep(5)
-# x = bot.main_call()
+#
+# for i in range(1,6):
+#     print("Started")
+#     bot = Login()
+#     time.sleep(10)
+#     try:
+#         print("Bot started successfully")
+#         bot.start_site()
+#         bot.maximize_window()
+#
+#         bot.login(tel_no='0722808670', password='ambroseTall3436')
+#         time.sleep(5)
+#         x = bot.main_call()
+#         print("this is what I get from bot", x)
+#         if x == "No games":
+#             print("Hello Ambrose")
+#             bot.quit_automation()
+#             break
+#     except:
+#         print("Qui")
+#         bot.quit_automation()
+#         time.sleep(10)
+#         continue
