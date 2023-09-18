@@ -90,3 +90,5 @@
 {'Time Placed': '2023-09-17 14:15:04', 'Home Team': 'CB GRAN CANARIA', 'Away Team': 'LENOVO TENERIFE', 'Quarter': 'First Quarter', 'Time Elapsed': 6.2, 'Current Totals': 18, 'Odds': 34, 'Bet Choice': 'Under'}
 {'Time Placed': '2023-09-17 14:15:56', 'Home Team': 'CB GRAN CANARIA', 'Away Team': 'LENOVO TENERIFE', 'Quarter': 'First Quarter', 'Time Elapsed': 6.85, 'Current Totals': 18, 'Odds': 31, 'Bet Choice': 'Under'}
 {'Time Placed': '2023-09-17 14:16:51', 'Home Team': 'CB GRAN CANARIA', 'Away Team': 'LENOVO TENERIFE', 'Quarter': 'First Quarter', 'Time Elapsed': 7.483333333333333, 'Current Totals': 20, 'Odds': 32, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-09-17 22:40:08', 'Home Team': 'LAS VEGAS ACES', 'Away Team': 'CHICAGO SKY', 'Quarter': 'Second Quarter', 'Time Elapsed': 2.216666666666667, 'Current Totals': 7, 'Odds': 40, 'Bet Choice': 'Under'}
+{'Time Placed': '2023-09-17 22:47:29', 'Home Team': 'LAS VEGAS ACES', 'Away Team': 'CHICAGO SKY', 'Quarter': 'Second Quarter', 'Time Elapsed': 5.733333333333333, 'Current Totals': 13, 'Odds': 31, 'Bet Choice': 'Under'}

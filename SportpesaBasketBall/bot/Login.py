@@ -32,35 +32,29 @@ def get_quarter_info(quarter):
     else:
         print("No match To Place")
         return None  # Handle the case where there's no match
-    print("Hellooz")
     return quarter_no, quarter_name
 
 def find_below_260_or_nearest_second(dictionary_list):
-    below_260 = None
+    print("Result function", dictionary_list)
     nearest_second = None
     min_time_diff = float("inf")
 
     for item in dictionary_list:
         if "remaining_quarter_secs" in item:
-            if item["remaining_quarter_secs"] < 260:
-                return item  # Return the dictionary if "second" is below 260
-            else:
-                time_diff = abs(item["second"] - 260)
-                if time_diff < min_time_diff:
-                    nearest_second = item
-                    min_time_diff = time_diff
+            if 170 < item["remaining_quarter_secs"] < 260:
+                continue  # Skip dictionaries with "remaining_quarter_secs" between 170 and 260
+            time_diff = abs(item["remaining_quarter_secs"] - 260)
+            if time_diff < min_time_diff:
+                nearest_second = item
+                min_time_diff = time_diff
 
-    if below_260 is not None:
-        return below_260  # If a "second" below 260 was found, return it
-    elif nearest_second is not None:
-        time_to_wait = nearest_second["second"] - 260
+    if nearest_second is not None:
+        time_to_wait = nearest_second["remaining_quarter_secs"] - 260
         if time_to_wait > 0:
             print(f"Waiting for {time_to_wait} seconds...")
             time.sleep(time_to_wait)
-        return nearest_second  # If not below 260, return the nearest to 260
-
-    return None  # Return None if no "second" values found
-
+            return nearest_second  # Return the nearest to 260
+        return None  # Return None if no suitable "remaining_quarter_secs" values found
 
 def predict_over_under(current_scores, remaining_quarter_secs, overall_total, total_quarter_secs):
     # Calculate the expected score per minute by the bookie
@@ -104,16 +98,6 @@ def configure_betslip(stake):
     slip_bar.click()
 
 
-# def confirm_bet_placed(self, team):
-#     try:
-#         betslip_anchor = self.driver.find_element(By.ID, 'betslip-anchor')
-#         betslip_list_container = betslip_anchor.find_element(By.ID, 'selected-bets')
-#         betslip_lists = betslip_list_container.find_elements(By.TAG_NAME, 'li')
-#         for x in betslip_lists:
-#             if team in x.text:
-#                 return True
-#     except:
-#
 
 def request_function(url, headers, payload):
     while True:
@@ -134,11 +118,6 @@ class Login:
 
     def maximize_window(self):
         driver.maximize_window()
-
-        # # Accept Cookies
-        # cookies_bar = self.driver.find_element(By.ID, 'cookies-law-info-content')
-        # cookie_btn = cookies_bar.find_element(By.TAG_NAME, "button")
-        # cookie_btn.click()
 
     def login(self, tel_no, password):
         # Explicit Wait until login button is clickable
@@ -169,6 +148,14 @@ class Login:
         time.sleep(2)
         back_btn.click()
 
+    def request_function(self, url, headers, payload):
+        while True:
+            response = requests.request("GET", url, headers=headers, data=payload)
+            r = response.json()
+            time.sleep(2)
+            if r:
+                return r
+
     def extract_integer_from_text(self, value):
         text = value
         match = re.search(r"\d+", text)
@@ -196,8 +183,7 @@ class Login:
             'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
         }
 
-        response = requests.request("GET", url, headers=headers, data=payload)
-        r = request_function(url, headers, payload)
+        r = self.request_function(url, headers, payload)
         data = r['Scoreboard']
         league = data['CompetitionName']
         teams_playing = data['DisplayName']
@@ -275,6 +261,17 @@ class Login:
         i += 1
         return i, all_teams_containers
 
+    def confirm_bet_placed(self, home_team, away_team, event_id, quarter_no, market_selections, quarter_name, odds):
+        try:
+            betslip_anchor = self.driver.find_element(By.ID, 'betslip-anchor')
+            betslip_list_container = betslip_anchor.find_element(By.ID, 'selected-bets')
+            betslip_lists = betslip_list_container.find_elements(By.TAG_NAME, 'li')
+            for x in betslip_lists:
+                if home_team and away_team in x.text:
+                    return True
+        except:
+            print("Replacing the bet ...")
+            self.prediction_function(self, event_id, quarter_no, market_selections, quarter_name, odds)
 
     def live_games_display(self):
         url = "https://www.ke.sportpesa.com/api/live/sports/4/events?count=15&offset=0"
@@ -297,7 +294,7 @@ class Login:
             'sec-ch-ua-platform': '"Linux"'
         }
 
-        r = request_function(url, headers, payload)
+        r = self.request_function(url, headers, payload)
         events = r['events']
         all_games = []
         for index, x in enumerate(events, start=0):
@@ -316,10 +313,6 @@ class Login:
                 games['quarter_name'] = quarter_name
                 games['quarter_no'] = quarter_no
                 all_games.append(games)
-            else:
-                time.sleep(10)
-                return None
-
         result = find_below_260_or_nearest_second(all_games)
         if result is not None:
             print("Found dictionary:")
@@ -328,43 +321,38 @@ class Login:
             print("hello")
             return None
 
-
+    def prediction_function(self, event_id, quarter_no,market_selections,quarter_name, odds):
+        # Get real live scores
+        quarter_scores, total_quarter_secs, remaining_quarter_secs, _ = self.quater_scores_api(event_id, quarter_no)
+        print("API", quarter_scores, total_quarter_secs, remaining_quarter_secs)
+        prediction = predict_over_under(quarter_scores, int(remaining_quarter_secs), odds, int(total_quarter_secs))
+        print(f"\n++++++++💰💰💰Signal (Stake High): \033[1m{prediction}\033[0m 💰💰💰")
+        self.click_odd_prediction(market_selections, quarter_name, prediction)
+        print(self.place_bet())
     def main_call(self):
         time.sleep(5)
         configure_betslip(50)
-        all_teams_containers = self.driver.find_elements(By.CLASS_NAME, 'event-row-live')
-        no_of_games = len(all_teams_containers)
-        print("Lenghth", no_of_games)
         i = 0
         while True:
-            if i >= no_of_games:
-                i = 0
-            if no_of_games == 0:
-                return "No games"
-            else:
-                try:
-                    event_id, game_position, quarter_name, quarter_no = self.live_games_display()
-                except:
-                    print("Not yet time")
-                    continue
-            x = all_teams_containers[int(game_position)]
-            self.driver.execute_script(
-                "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});", x)
-            # Disecting the data
-            summary = x.text.split('\n')
-            quater = summary[0]
-            time_elapsed = summary[1]
-            home_team = summary[2]
-            away_team = summary[3]
-            print(quater)
-            print(time_elapsed)
-            print(home_team)
-            print(away_team)
-            # if "to start" and "end of" in x.text.lower() :
-            #     print("No match To Place")
-            #     i += 1
-            #     continue
             try:
+                event_id, game_position, quarter_name, quarter_no = self.live_games_display()
+                print(game_position)
+                self.driver.refresh()
+                all_teams_containers = self.driver.find_elements(By.CLASS_NAME, 'event-row-live')
+                no_of_games = len(all_teams_containers)
+                if no_of_games == 0:
+                    return "No games"
+                x = all_teams_containers[int(game_position)]
+
+                self.driver.execute_script(
+                "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});", x)
+                # Disecting the data
+                summary = x.text.split('\n')
+                quater = summary[0]
+                time_elapsed = summary[1]
+                home_team = summary[2]
+                away_team = summary[3]
+
                 x.click()
                 time.sleep(5)
                 market_selections = self.driver.find_elements(By.CLASS_NAME, 'market-selections-2')
@@ -382,23 +370,14 @@ class Login:
                                 EC.presence_of_element_located((By.CLASS_NAME, 'event-row-live')))
                             all_teams_containers = self.driver.find_elements(By.CLASS_NAME, 'event-row-live')
                     else:
-                        # Get real live scores
-                        quarter_scores, total_quarter_secs, remaining_quarter_secs,_ = self.quater_scores_api(event_id, quarter_no)
-                        print("API", quarter_scores, total_quarter_secs, remaining_quarter_secs)
-                        prediction = predict_over_under(quarter_scores, int(remaining_quarter_secs), odds, int(total_quarter_secs))
-                        print(f"\n++++++++💰💰💰Signal (Stake High): \033[1m{prediction}\033[0m 💰💰💰")
-                        self.click_odd_prediction(market_selections, quarter_name, prediction)
-                        print(self.place_bet())
-                        # if prediction == "Over":
-                        #     print(self.place_bet(200))
-                        # else:
-                        #     print(self.place_bet(150))
+                        self.prediction_function(event_id, quarter_no,market_selections,quarter_name, odds)
 
+                        self.confirm_bet_placed(home_team, away_team, event_id, quarter_no, market_selections,quarter_name, odds)
                         # Get the current date and time
-                        current_datetime = datetime.now()
+                        # current_datetime = datetime.now()
                         # Format the current date and time as "YYYY-MM-DD HH:MM:SS"
-                        formatted_datetime = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
-                        self.report_module({"Time Placed": formatted_datetime,"Home Team": home_team, "Away Team": away_team, "Quarter": quater, "Time Elapsed":(int(total_quarter_secs) - int(remaining_quarter_secs))/60,  "Current Totals":quarter_scores, "Odds": odds, "Bet Choice": prediction})
+                        # formatted_datetime = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
+                        # self.report_module({"Time Placed": formatted_datetime,"Home Team": home_team, "Away Team": away_team, "Quarter": quater, "Time Elapsed":(int(total_quarter_secs) - int(remaining_quarter_secs))/60,  "Current Totals":quarter_scores, "Odds": odds, "Bet Choice": prediction})
                         # time.sleep(3)
                         try:
                             i, all_teams_containers = self.error_function(i)

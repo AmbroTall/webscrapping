@@ -138,4 +138,4 @@ def quater_scores_api( event_id, quater):
     game_total_scores = int(total_home) + int(total_away)
     return total_scores, total_quarter_secs, remaining_quarter_secs, game_total_scores
 
-print(quater_scores_api(eventId, 4))
+print(quater_scores_api(10499186, 4))
