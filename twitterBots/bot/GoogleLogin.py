@@ -1,4 +1,6 @@
 import pickle
+from selenium import webdriver
+
 import undetected_chromedriver as uc
 import time
 from selenium.webdriver.common.by import By
@@ -28,10 +30,10 @@ def login_to_email(email, password):
     signin_button = driver.find_element(By.XPATH, "//span[text()='Next']")
     signin_button.click()
 
-    time.sleep(30)
+    time.sleep(40)
     cookies = driver.get_cookies()
     pickle.dump(cookies, open("google_cookies.pkl", "wb"))
     print("Coookie saved successfully")
-
+    time.sleep(333)
 
 login_to_email(email, password)

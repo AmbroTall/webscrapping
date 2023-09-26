@@ -31,14 +31,6 @@ for cookie in google_cookies:
     except Exception as e:
         pass
 
-# twitter_cookies = pickle.load(open("twitter_cookies.pkl", "rb"))
-# for cookie in twitter_cookies:
-#     cookie['domain'] = ".twitter.com"
-#     try:
-#         driver.add_cookie(cookie)
-#     except Exception as e:
-#         pass
-
 driver.get(website)
 
 
@@ -65,7 +57,7 @@ def find_posts():
 def post():
     input = try_catch('//div[@role="textbox"]')
     input.click()
-    input.send_keys("Hello guys.")
+    input.send_keys("Evening blessings to all! 🌟 Embrace the tranquil moments, for in the stillness, you find your inner strength and clarity. Let gratitude fill your heart tonight, and may your dreams be woven with hope and possibility. 🌙💫 #EveningInspiration #InnerPeace Kate Actress Rihanna #UoNClass2023 #ShameOnMPWamaua #BoniForest #loans #AlShabaab #Biden #tuesdayvibe #ShameOnMPWamaua #Duale, #UoNClass2023, #Tanzania")
 
     time.sleep(2)
 
