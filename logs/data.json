@@ -1,0 +1,2431 @@
+{
+  "catalogs": [
+    {
+      "id": 85108874,
+      "hero_pid": 292248644,
+      "name": "Classy Makeup Kits",
+      "category_id": 5486,
+      "sub_sub_category_name": "Makeup Kits",
+      "min_catalog_price": 163,
+      "min_product_price": 163,
+      "description": "Classy Makeup Kits",
+      "full_details": "Color: 15 Fair\nFlavour: White Tea\nNet Quantity (N): 1\n\nDispatch: 2-2 Days",
+      "share_text": "Catalog Name:*Classy Makeup Kits*\nColor: 15 Fair\nFlavour: White Tea\nNet Quantity (N): 1\n\nDispatch: 2 Days\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 1,
+      "image": "https://images.meesho.com/images/catalogs/85108874/cover/1/2/eee38302975cf43ae02c5151d7c6b295b85842dc8afb6281fb92867fa67b02104edc3b811ee17a116be092ff1f96495ebfb7932f5e301ec060e4c510cddf3184_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/85108874/notifications/1/1/eee38302975cf43ae02c5151d7c6b295b85842dc8afb6281fb92867fa67b02104edc3b811ee17a116be092ff1f96495ebfb7932f5e301ec060e4c510cddf3184.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/85108874/collages/1/1/eee38302975cf43ae02c5151d7c6b295b85842dc8afb6281fb92867fa67b02104edc3b811ee17a116be092ff1f96495ebfb7932f5e301ec060e4c510cddf3184.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2023-06-01 21:36:00",
+      "created_iso": "2023-06-01T21:36:00+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": false,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 77,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 3.9,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 90
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [],
+      "gray_tags": [],
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 292248644,
+          "url": "https://images.meesho.com/images/products/292248644/k1plw_512.jpg"
+        }
+      ],
+      "activated": "2023-06-02 04:21:30",
+      "activated_iso": "2023-06-02T04:21:30+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 292248644,
+          "name": "T.Y.A mini mekup kit "
+        }
+      ],
+      "returns_offer_text": "₹162 with Special Offer",
+      "special_offers": {
+        "display_text": "₹126 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "cod_unbundling",
+            "amount": 21
+          },
+          {
+            "type": "meesho_burn_coin",
+            "amount": 15
+          },
+          {
+            "type": "return_options",
+            "amount": 1
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/4tzwhw?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "T.Y.A mini mekup kit ",
+      "images": [
+        "https://images.meesho.com/images/products/292248644/k1plw_512.jpg"
+      ],
+      "product_id": "4tzwhw",
+      "slug": "tya-mini-mekup-kit",
+      "original_slug": "tya-mini-mekup-kit",
+      "original_product_id": 292248644,
+      "catalogId": 85108874
+    },
+    {
+      "id": 93049525,
+      "hero_pid": 319676712,
+      "name": "Trendy Club16 Makeup Kits",
+      "category_id": 5486,
+      "sub_sub_category_name": "Makeup Kits",
+      "min_catalog_price": 343,
+      "min_product_price": 343,
+      "description": "Trendy Club16 Makeup Kits",
+      "full_details": "Brand: Club16\nColor: Multicolor\nFlavour: No Flavour\nNet Quantity (N): 16\n\nDispatch: 2-2 Days",
+      "share_text": "Catalog Name:*Trendy Club16 Makeup Kits*\nColor: Multicolor\nFlavour: No Flavour\nNet Quantity (N): 16\n\nDispatch: 1 Day\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 3,
+      "image": "https://images.meesho.com/images/catalogs/93049525/cover/1/2/cff7c5ca4526d199bfe7b7e007d1208eda78b38e56caf447ec2fe47c61f776fd9cdf4e89a3082eded449e0e8d2fbaf77844b5e8af32836f9efd840da7b5c343c_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/93049525/notifications/1/1/cff7c5ca4526d199bfe7b7e007d1208eda78b38e56caf447ec2fe47c61f776fd9cdf4e89a3082eded449e0e8d2fbaf77844b5e8af32836f9efd840da7b5c343c.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/93049525/collages/1/1/cff7c5ca4526d199bfe7b7e007d1208eda78b38e56caf447ec2fe47c61f776fd9cdf4e89a3082eded449e0e8d2fbaf77844b5e8af32836f9efd840da7b5c343c.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2023-08-05 14:57:19",
+      "created_iso": "2023-08-05T14:57:19+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": true,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 78,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 4.1,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 150
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [
+        {
+          "name": "NEXT DAY DISPATCH"
+        }
+      ],
+      "gray_tags": [],
+      "value_prop_tag": {
+        "name": "NEXT DAY DISPATCH"
+      },
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 319676712,
+          "url": "https://images.meesho.com/images/products/319676712/ciwxj_512.jpg"
+        },
+        {
+          "id": 319676713,
+          "url": "https://images.meesho.com/images/products/319676713/dpkaj_512.jpg"
+        },
+        {
+          "id": 319676714,
+          "url": "https://images.meesho.com/images/products/319676714/thbtq_512.jpg"
+        }
+      ],
+      "activated": "2023-08-07 10:40:33",
+      "activated_iso": "2023-08-07T10:40:33+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 319676713,
+          "name": "Club 16 Offer premium Makeup Kit  For Women And Girls Np 2,9"
+        },
+        {
+          "id": 319676712,
+          "name": "Club 16 Offer premium Makeup Kit  For Women And Girls Np 2,3"
+        },
+        {
+          "id": 319676714,
+          "name": "Club 16 Offer premium Makeup Kit  For Women And Girls Np 5,6"
+        },
+        {
+          "id": 319676711,
+          "name": "Club 16 Offer premium Makeup Kit  For Women And Girls Np 5,8"
+        }
+      ],
+      "returns_offer_text": "₹338 with Special Offer",
+      "special_offers": {
+        "display_text": "₹286 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "meesho_burn_coin",
+            "amount": 31
+          },
+          {
+            "type": "cod_unbundling",
+            "amount": 21
+          },
+          {
+            "type": "return_options",
+            "amount": 5
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/5abs4o?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "Club 16 Offer premium Makeup Kit  For Women And Girls Np 2,3",
+      "images": [
+        "https://images.meesho.com/images/products/319676712/ciwxj_512.jpg"
+      ],
+      "product_id": "5abs4o",
+      "slug": "club-16-offer-premium-makeup-kit-for-women-and-girls-np-23",
+      "original_slug": "club-16-offer-premium-makeup-kit-for-women-and-girls-np-23",
+      "original_product_id": 319676712,
+      "catalogId": 93049525
+    },
+    {
+      "id": 11397432,
+      "hero_pid": 46353320,
+      "name": "Vonzo New Collections Of Face Scrubs & Exfoliators",
+      "category_id": 5663,
+      "sub_sub_category_name": "Face Scrubs & Exfoliators",
+      "min_catalog_price": 150,
+      "min_product_price": 150,
+      "description": "Vonzo New Collections Of Face Scrubs & Exfoliators",
+      "full_details": "Brand: Vonzo\nBrand: A.D.S\nFlavour: Variable (Product Dependent)\nMultipack: 1\nSkin Type: All Skin Types\nType: Cream\nCapacity: 200-300ml\n\nDispatch: 2-3 Days",
+      "share_text": "Catalog Name:*Vonzo New Collections Of Face Scrubs & Exfoliators*\nFlavour: Product Dependent\nNet Quantity (N): 1\nSkin Type: All Skin Types\nType: Cream\nCapacity: 200-300ml\n\nDispatch: 2 Days\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 5,
+      "image": "https://images.meesho.com/images/catalogs/11397432/cover/1/2/a9fbe3982ab108bb0d30a6c0a9379fe256ddf740e8ecab98ee81971128bf08897af46bc6b112e9698af4fe2ca820acf44f351f46c3eec1656537dc4b6e42e42e_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/11397432/notifications/1/1/a9fbe3982ab108bb0d30a6c0a9379fe256ddf740e8ecab98ee81971128bf08897af46bc6b112e9698af4fe2ca820acf44f351f46c3eec1656537dc4b6e42e42e.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/11397432/collages/1/1/a9fbe3982ab108bb0d30a6c0a9379fe256ddf740e8ecab98ee81971128bf08897af46bc6b112e9698af4fe2ca820acf44f351f46c3eec1656537dc4b6e42e42e.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2021-08-17 11:54:05",
+      "created_iso": "2021-08-17T11:54:05+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": false,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 72,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 4,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 4548
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [],
+      "gray_tags": [],
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 46353320,
+          "url": "https://images.meesho.com/images/products/46353320/k8wwx_512.jpg"
+        },
+        {
+          "id": 46353318,
+          "url": "https://images.meesho.com/images/products/46353318/rdo6p_512.jpg"
+        },
+        {
+          "id": 46353316,
+          "url": "https://images.meesho.com/images/products/46353316/f21xq_512.jpg"
+        },
+        {
+          "id": 46353319,
+          "url": "https://images.meesho.com/images/products/46353319/xjkoj_512.jpg"
+        },
+        {
+          "id": 46353317,
+          "url": "https://images.meesho.com/images/products/46353317/uh24e_512.jpg"
+        }
+      ],
+      "activated": "2022-06-20 19:56:00",
+      "activated_iso": "2022-06-20T19:56:00+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 46353319,
+          "name": "Vonzo wine and beer face scrub 200 ml"
+        },
+        {
+          "id": 46353318,
+          "name": "Vonzo fruit scrub 200 ml"
+        },
+        {
+          "id": 46353317,
+          "name": "Vonzo apricot face scrub  200 ml"
+        },
+        {
+          "id": 46353316,
+          "name": "Vonzo detan scrub 200 ml"
+        },
+        {
+          "id": 46353320,
+          "name": "Vonzo coffee scrub 200 ml"
+        }
+      ],
+      "returns_offer_text": "₹141 with Special Offer",
+      "special_offers": {
+        "display_text": "₹111 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "cod_unbundling",
+            "amount": 16
+          },
+          {
+            "type": "meesho_burn_coin",
+            "amount": 14
+          },
+          {
+            "type": "return_options",
+            "amount": 9
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/rlig8?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "Vonzo coffee scrub 200 ml",
+      "images": [
+        "https://images.meesho.com/images/products/46353320/k8wwx_512.jpg"
+      ],
+      "product_id": "rlig8",
+      "slug": "vonzo-coffee-scrub-200-ml",
+      "original_slug": "vonzo-coffee-scrub-200-ml",
+      "original_product_id": 46353320,
+      "catalogId": 11397432
+    },
+    {
+      "id": 54884795,
+      "hero_pid": 180213733,
+      "name": " Fancy Stretch Marks And Scars Creams & Oils",
+      "category_id": 5540,
+      "sub_sub_category_name": "Stretch Marks And Scars Creams & Oils",
+      "min_catalog_price": 132,
+      "min_product_price": 132,
+      "description": " Fancy Stretch Marks And Scars Creams & Oils",
+      "full_details": "Capacity: 100ml\nType: Oil\nSkin Type: All Skin Types\nFlavour: Amla\nNet Quantity (N): 1\n\nDispatch: 2-2 Days",
+      "share_text": "Catalog Name:* Fancy Stretch Marks And Scars Creams & Oils*\nBrand: LA'BANGERRY\nCapacity: 100ml\nType: Oil\nSkin Type: All Skin Types\nFlavour: Amla\nNet Quantity (N): 1\n\nDispatch: 1 Day\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 1,
+      "image": "https://images.meesho.com/images/catalogs/54884795/cover/1/2/10086e1710ef616ded9445da760dd189f068393b73085e38883f21ac3e1e891f52c12c40fe11c0f9cc6c6b05bdcaf4b59749de8c4e6551b0ba3e70134a0274dc_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/54884795/notifications/1/1/10086e1710ef616ded9445da760dd189f068393b73085e38883f21ac3e1e891f52c12c40fe11c0f9cc6c6b05bdcaf4b59749de8c4e6551b0ba3e70134a0274dc.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/54884795/collages/1/1/10086e1710ef616ded9445da760dd189f068393b73085e38883f21ac3e1e891f52c12c40fe11c0f9cc6c6b05bdcaf4b59749de8c4e6551b0ba3e70134a0274dc.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2022-10-17 12:11:47",
+      "created_iso": "2022-10-17T12:11:47+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": false,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 72,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 3.9,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 97
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [
+        {
+          "name": "NEXT DAY DISPATCH"
+        }
+      ],
+      "gray_tags": [],
+      "value_prop_tag": {
+        "name": "NEXT DAY DISPATCH"
+      },
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 180213733,
+          "url": "https://images.meesho.com/images/products/180213733/2w96i_512.jpg"
+        }
+      ],
+      "activated": "2022-10-17 18:06:28",
+      "activated_iso": "2022-10-17T18:06:28+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 180213733,
+          "name": "La'Bangerry Present Repair Stretch Marks Removal - Natural Heal Pregnancy Breast, Hip, Legs, Mark oil 100 ml pack of 1"
+        }
+      ],
+      "returns_offer_text": "₹131 with Special Offer",
+      "special_offers": {
+        "display_text": "₹100 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "cod_unbundling",
+            "amount": 19
+          },
+          {
+            "type": "meesho_burn_coin",
+            "amount": 12
+          },
+          {
+            "type": "return_options",
+            "amount": 1
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/2zalt1?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "La'Bangerry Present Repair Stretch Marks Removal - Natural Heal Pregnancy Breast, Hip, Legs, Mark oil 100 ml pack of 1",
+      "images": [
+        "https://images.meesho.com/images/products/180213733/2w96i_512.jpg"
+      ],
+      "product_id": "2zalt1",
+      "slug": "labangerry-present-repair-stretch-marks-removal-natural-heal-pregnancy-breast-hip-legs-mark-oil-100-ml-pack-of-1",
+      "original_slug": "labangerry-present-repair-stretch-marks-removal-natural-heal-pregnancy-breast-hip-legs-mark-oil-100-ml-pack-of-1",
+      "original_product_id": 180213733,
+      "catalogId": 54884795
+    },
+    {
+      "id": 93217695,
+      "hero_pid": 320298349,
+      "name": " Superior Absolute Relax Shower Gel & Body Wash",
+      "category_id": 5494,
+      "sub_sub_category_name": "Shower Gel & Body Wash",
+      "min_catalog_price": 127,
+      "min_product_price": 127,
+      "description": " Superior Absolute Relax Shower Gel & Body Wash",
+      "full_details": "Type: Liquid\nSkin Type: All Skin Types\nNet Quantity (N): 1\nFlavour: Milk\nDispatch: 2-2 Days",
+      "share_text": "Catalog Name:* Superior Absolute Relax Shower Gel & Body Wash*\nType: Scruc Liquid\nSkin Type: All Skin Types\nNet Quantity (N): 1\nFlavour: No Flavour\nDispatch: 1 Day\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 1,
+      "image": "https://images.meesho.com/images/catalogs/93217695/cover/1/2/7bcf1431bb5f69306cac442f1c4155c59304e8ec81a42bbf7ee332a2962beab6c2ee13e0bc20661028d97aab2ea8d0bf8fc5e59689d900105729380392d7f542_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/93217695/notifications/1/1/7bcf1431bb5f69306cac442f1c4155c59304e8ec81a42bbf7ee332a2962beab6c2ee13e0bc20661028d97aab2ea8d0bf8fc5e59689d900105729380392d7f542.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/93217695/collages/1/1/7bcf1431bb5f69306cac442f1c4155c59304e8ec81a42bbf7ee332a2962beab6c2ee13e0bc20661028d97aab2ea8d0bf8fc5e59689d900105729380392d7f542.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2023-08-07 17:10:56",
+      "created_iso": "2023-08-07T17:10:56+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": false,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 79,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 3.9,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 98
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [
+        {
+          "name": "NEXT DAY DISPATCH"
+        }
+      ],
+      "gray_tags": [],
+      "value_prop_tag": {
+        "name": "NEXT DAY DISPATCH"
+      },
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 320298349,
+          "url": "https://images.meesho.com/images/products/320298349/iqbjd_512.jpg"
+        }
+      ],
+      "activated": "2023-08-09 10:34:59",
+      "activated_iso": "2023-08-09T10:34:59+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 320298349,
+          "name": "ALIA WHITENING BODY WASH 300ML(1) 08"
+        }
+      ],
+      "returns_offer_text": "₹125 with Special Offer",
+      "special_offers": {
+        "display_text": "₹99 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "cod_unbundling",
+            "amount": 15
+          },
+          {
+            "type": "meesho_burn_coin",
+            "amount": 11
+          },
+          {
+            "type": "return_options",
+            "amount": 2
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/5ap3sd?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "ALIA WHITENING BODY WASH 300ML(1) 08",
+      "images": [
+        "https://images.meesho.com/images/products/320298349/iqbjd_512.jpg"
+      ],
+      "product_id": "5ap3sd",
+      "slug": "alia-whitening-body-wash-300ml1-08",
+      "original_slug": "alia-whitening-body-wash-300ml1-08",
+      "original_product_id": 320298349,
+      "catalogId": 93217695
+    },
+    {
+      "id": 75176988,
+      "hero_pid": 252256882,
+      "name": " Classic Baby Powder",
+      "category_id": 5506,
+      "sub_sub_category_name": "Baby Powder",
+      "min_catalog_price": 139,
+      "min_product_price": 139,
+      "description": " Classic Baby Powder",
+      "full_details": "Capacity: 30gm\nSkin Type: All Skin Types\nFlavour: No Flavour\nShelf life (Best Before): 12 months\nNet Quantity (N): 2\n\nDispatch: 2-2 Days",
+      "share_text": "Catalog Name:* Classic Baby Powder*\nCapacity: 30gm\nSkin Type: All Skin Types\nFlavour: No Flavour\nShelf life (Best Before): 12 months\nNet Quantity (N): 2\n\nDispatch: 1 Day\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 1,
+      "image": "https://images.meesho.com/images/catalogs/75176988/cover/1/2/982600c376ced8c6495713a9d5721428db53a3db009000c0fe79bc3740e72dfb2dc9f4888bd92452a07dc4f4fdd646e92731e219fdb05d80fd93a54cdab700d2_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/75176988/notifications/1/1/982600c376ced8c6495713a9d5721428db53a3db009000c0fe79bc3740e72dfb2dc9f4888bd92452a07dc4f4fdd646e92731e219fdb05d80fd93a54cdab700d2.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/75176988/collages/1/1/982600c376ced8c6495713a9d5721428db53a3db009000c0fe79bc3740e72dfb2dc9f4888bd92452a07dc4f4fdd646e92731e219fdb05d80fd93a54cdab700d2.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2023-03-15 22:54:41",
+      "created_iso": "2023-03-15T22:54:41+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": false,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 66,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 4,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 710
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [
+        {
+          "name": "NEXT DAY DISPATCH"
+        }
+      ],
+      "gray_tags": [],
+      "value_prop_tag": {
+        "name": "NEXT DAY DISPATCH"
+      },
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 252256882,
+          "url": "https://images.meesho.com/images/products/252256882/gtnqm_512.jpg"
+        }
+      ],
+      "activated": "2023-03-16 10:25:45",
+      "activated_iso": "2023-03-16T10:25:45+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 252256882,
+          "name": "baby powdr puff (multicolour)"
+        }
+      ],
+      "returns_offer_text": "₹135 with Special Offer",
+      "special_offers": {
+        "display_text": "₹105 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "cod_unbundling",
+            "amount": 17
+          },
+          {
+            "type": "meesho_burn_coin",
+            "amount": 13
+          },
+          {
+            "type": "return_options",
+            "amount": 4
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/466qnm?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "baby powdr puff (multicolour)",
+      "images": [
+        "https://images.meesho.com/images/products/252256882/gtnqm_512.jpg"
+      ],
+      "product_id": "466qnm",
+      "slug": "baby-powdr-puff-multicolour",
+      "original_slug": "baby-powdr-puff-multicolour",
+      "original_product_id": 252256882,
+      "catalogId": 75176988
+    },
+    {
+      "id": 95448815,
+      "hero_pid": 328314779,
+      "name": "Stylish Syzol Makeup Kits",
+      "category_id": 5486,
+      "sub_sub_category_name": "Makeup Kits",
+      "min_catalog_price": 323,
+      "min_product_price": 323,
+      "description": "Stylish Syzol Makeup Kits",
+      "full_details": "Brand: Syzol\nColor: Multicolor\nFlavour: No Flavour\nNet Quantity (N): 11\n\nDispatch: 2-2 Days",
+      "share_text": "Catalog Name:*Stylish Syzol Makeup Kits*\nBrand: Syzol\nColor: Multicolor\nFlavour: No Flavour\nNet Quantity (N): 11\n\nDispatch: 1 Day\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 3,
+      "image": "https://images.meesho.com/images/catalogs/95448815/cover/1/2/4f0590bd1c815c7d0d614bb0e5edbacc24a5ca403a3db0257ad6cdc5ac76ca8e64f342a2050096334f7cbd3152c55d15c6c515667d7717142715d41f095d15ee_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/95448815/notifications/1/1/4f0590bd1c815c7d0d614bb0e5edbacc24a5ca403a3db0257ad6cdc5ac76ca8e64f342a2050096334f7cbd3152c55d15c6c515667d7717142715d41f095d15ee.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/95448815/collages/1/1/4f0590bd1c815c7d0d614bb0e5edbacc24a5ca403a3db0257ad6cdc5ac76ca8e64f342a2050096334f7cbd3152c55d15c6c515667d7717142715d41f095d15ee.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2023-08-25 17:01:50",
+      "created_iso": "2023-08-25T17:01:50+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": true,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 78,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 3.9,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 36
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [
+        {
+          "name": "NEXT DAY DISPATCH"
+        }
+      ],
+      "gray_tags": [],
+      "value_prop_tag": {
+        "name": "NEXT DAY DISPATCH"
+      },
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 328314779,
+          "url": "https://images.meesho.com/images/products/328314779/lbel6_512.jpg"
+        },
+        {
+          "id": 328314780,
+          "url": "https://images.meesho.com/images/products/328314780/ow9o7_512.jpg"
+        },
+        {
+          "id": 328314781,
+          "url": "https://images.meesho.com/images/products/328314781/txebw_512.jpg"
+        }
+      ],
+      "activated": "2023-08-26 00:18:35",
+      "activated_iso": "2023-08-26T00:18:35+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 328314779,
+          "name": "New syzol professional meakeup kit for women and girls np 5,6"
+        },
+        {
+          "id": 328314781,
+          "name": "New syzol professional meakeup kit for women and girls np 9,11"
+        },
+        {
+          "id": 328314780,
+          "name": "New syzol professional meakeup kit for women and girls np 2,3"
+        }
+      ],
+      "returns_offer_text": "₹318 with Special Offer",
+      "special_offers": {
+        "display_text": "₹268 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "meesho_burn_coin",
+            "amount": 29
+          },
+          {
+            "type": "cod_unbundling",
+            "amount": 21
+          },
+          {
+            "type": "return_options",
+            "amount": 5
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/5fgxaz?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "New syzol professional meakeup kit for women and girls np 5,6",
+      "images": [
+        "https://images.meesho.com/images/products/328314779/lbel6_512.jpg"
+      ],
+      "product_id": "5fgxaz",
+      "slug": "new-syzol-professional-meakeup-kit-for-women-and-girls-np-56",
+      "original_slug": "new-syzol-professional-meakeup-kit-for-women-and-girls-np-56",
+      "original_product_id": 328314779,
+      "catalogId": 95448815
+    },
+    {
+      "id": 60322564,
+      "hero_pid": 198716869,
+      "name": "Stylish Makeup Kits",
+      "category_id": 5486,
+      "sub_sub_category_name": "Makeup Kits",
+      "min_catalog_price": 162,
+      "min_product_price": 162,
+      "description": "Stylish Makeup Kits",
+      "full_details": "Color: Multicolor\nNet Quantity (N): 1\n\nDispatch: 2-2 Days",
+      "share_text": "Catalog Name:*Stylish Makeup Kits*\nBrand: Others\nColor: Multicolor\nFlavour: No Flavour\nNet Quantity (N): 1\n\nDispatch: 1 Day\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 1,
+      "image": "https://images.meesho.com/images/catalogs/60322564/cover/1/2/6ff565e02361447cdad53f32adcf5aab1231450583035beabfe555f60e1dcff25585541be1d1a787419fcb0671650b0bf37cce04b796c40032e1fb1ea2a88c53_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/60322564/notifications/1/1/6ff565e02361447cdad53f32adcf5aab1231450583035beabfe555f60e1dcff25585541be1d1a787419fcb0671650b0bf37cce04b796c40032e1fb1ea2a88c53.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/60322564/collages/1/1/6ff565e02361447cdad53f32adcf5aab1231450583035beabfe555f60e1dcff25585541be1d1a787419fcb0671650b0bf37cce04b796c40032e1fb1ea2a88c53.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2022-11-28 16:26:52",
+      "created_iso": "2022-11-28T16:26:52+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": false,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 78,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 3.9,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 763
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [
+        {
+          "name": "NEXT DAY DISPATCH"
+        }
+      ],
+      "gray_tags": [],
+      "value_prop_tag": {
+        "name": "NEXT DAY DISPATCH"
+      },
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 198716869,
+          "url": "https://images.meesho.com/images/products/198716869/dkugn_512.jpg"
+        }
+      ],
+      "activated": "2022-11-28 22:05:23",
+      "activated_iso": "2022-11-28T22:05:23+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 198716869,
+          "name": "Mini Makeup kit for girl "
+        }
+      ],
+      "returns_offer_text": "₹161 with Special Offer",
+      "special_offers": {
+        "display_text": "₹125 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "cod_unbundling",
+            "amount": 21
+          },
+          {
+            "type": "meesho_burn_coin",
+            "amount": 15
+          },
+          {
+            "type": "return_options",
+            "amount": 1
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/3ab6x1?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "Mini Makeup kit for girl ",
+      "images": [
+        "https://images.meesho.com/images/products/198716869/dkugn_512.jpg"
+      ],
+      "product_id": "3ab6x1",
+      "slug": "mini-makeup-kit-for-girl",
+      "original_slug": "mini-makeup-kit-for-girl",
+      "original_product_id": 198716869,
+      "catalogId": 60322564
+    },
+    {
+      "id": 93215282,
+      "hero_pid": 320291423,
+      "name": " Premium Sooting Shower Gel & Body Wash",
+      "category_id": 5494,
+      "sub_sub_category_name": "Shower Gel & Body Wash",
+      "min_catalog_price": 127,
+      "min_product_price": 127,
+      "description": " Premium Sooting Shower Gel & Body Wash",
+      "full_details": "Type: Liquid\nSkin Type: All Skin Types\nNet Quantity (N): 1\nFlavour: Milk\nDispatch: 2-2 Days",
+      "share_text": "Catalog Name:* Premium Sooting Shower Gel & Body Wash*\nType: Liquid\nSkin Type: All Skin Types\nNet Quantity (N): 1\nFlavour: Milk\nDispatch: 1 Day\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 1,
+      "image": "https://images.meesho.com/images/catalogs/93215282/cover/1/2/991b1fa4abced4ab88f5276d43539e030e9908a83b5fb67be8928bd888df45761dc935bb17657b94819add70319e2b0781fff1242c4a9c128176522340f58cbe_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/93215282/notifications/1/1/991b1fa4abced4ab88f5276d43539e030e9908a83b5fb67be8928bd888df45761dc935bb17657b94819add70319e2b0781fff1242c4a9c128176522340f58cbe.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/93215282/collages/1/1/991b1fa4abced4ab88f5276d43539e030e9908a83b5fb67be8928bd888df45761dc935bb17657b94819add70319e2b0781fff1242c4a9c128176522340f58cbe.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2023-08-07 16:51:13",
+      "created_iso": "2023-08-07T16:51:13+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": false,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 79,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 3.5,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 278
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [
+        {
+          "name": "NEXT DAY DISPATCH"
+        }
+      ],
+      "gray_tags": [],
+      "value_prop_tag": {
+        "name": "NEXT DAY DISPATCH"
+      },
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 320291423,
+          "url": "https://images.meesho.com/images/products/320291423/cz9jm_512.jpg"
+        }
+      ],
+      "activated": "2023-08-09 10:34:59",
+      "activated_iso": "2023-08-09T10:34:59+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 320291423,
+          "name": "ALIA WHITENING  BODY WASH  300ML(1) 01"
+        }
+      ],
+      "returns_offer_text": "₹125 with Special Offer",
+      "special_offers": {
+        "display_text": "₹99 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "cod_unbundling",
+            "amount": 15
+          },
+          {
+            "type": "meesho_burn_coin",
+            "amount": 11
+          },
+          {
+            "type": "return_options",
+            "amount": 2
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/5aoyfz?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "ALIA WHITENING  BODY WASH  300ML(1) 01",
+      "images": [
+        "https://images.meesho.com/images/products/320291423/cz9jm_512.jpg"
+      ],
+      "product_id": "5aoyfz",
+      "slug": "alia-whitening-body-wash-300ml1-01",
+      "original_slug": "alia-whitening-body-wash-300ml1-01",
+      "original_product_id": 320291423,
+      "catalogId": 93215282
+    },
+    {
+      "id": 96909067,
+      "hero_pid": 333576866,
+      "name": " Everyday Baby Teeth & Dental Care",
+      "category_id": 5481,
+      "sub_sub_category_name": "Baby Teeth & Dental Care",
+      "min_catalog_price": 297,
+      "min_product_price": 297,
+      "description": " Everyday Baby Teeth & Dental Care",
+      "full_details": "Material: Silicone\nFlavour: Unflavoured\nNet Quantity (N): 1\n\nDispatch: 2-2 Days",
+      "share_text": "Catalog Name:* Everyday Baby Teeth & Dental Care*\nMaterial: Silicone\nFlavour: Unflavoured\nNet Quantity (N): 3\n\nDispatch: 2 Days\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 1,
+      "image": "https://images.meesho.com/images/catalogs/96909067/cover/1/2/70ff9f89b977f45431ba4717d9acdf677bd2f090ba2c9bf97cbb49412daf7e3f057a7301488534841686cc036054169ff1a5ee4ba957e36ed0122ea48c3822db_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/96909067/notifications/1/1/70ff9f89b977f45431ba4717d9acdf677bd2f090ba2c9bf97cbb49412daf7e3f057a7301488534841686cc036054169ff1a5ee4ba957e36ed0122ea48c3822db.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/96909067/collages/1/1/70ff9f89b977f45431ba4717d9acdf677bd2f090ba2c9bf97cbb49412daf7e3f057a7301488534841686cc036054169ff1a5ee4ba957e36ed0122ea48c3822db.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2023-09-06 13:10:22",
+      "created_iso": "2023-09-06T13:10:22+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": true,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 87,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 4.4,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 66
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [],
+      "gray_tags": [],
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 333576866,
+          "url": "https://images.meesho.com/images/products/333576866/tbru7_512.jpg"
+        }
+      ],
+      "activated": "2023-09-07 02:19:13",
+      "activated_iso": "2023-09-07T02:19:13+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 333576866,
+          "name": "Combo of 3 Baby Safe Silicone Squeeze Fresh Food Feeder Bottle with Food Dispensing Spoon, Infant Food Nibbler Teething Toy Feeding Pacifier and Plastic Sipper Cup"
+        }
+      ],
+      "returns_offer_text": "₹292 with Special Offer",
+      "special_offers": {
+        "display_text": "₹243 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "meesho_burn_coin",
+            "amount": 27
+          },
+          {
+            "type": "cod_unbundling",
+            "amount": 22
+          },
+          {
+            "type": "return_options",
+            "amount": 5
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/5ilpk2?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "Combo of 3 Baby Safe Silicone Squeeze Fresh Food Feeder Bottle with Food Dispensing Spoon, Infant Food Nibbler Teething Toy Feeding Pacifier and Plastic Sipper Cup",
+      "images": [
+        "https://images.meesho.com/images/products/333576866/tbru7_512.jpg"
+      ],
+      "product_id": "5ilpk2",
+      "slug": "combo-of-3-baby-safe-silicone-squeeze-fresh-food-feeder-bottle-with-food-dispensing-spoon-infant-food-nibbler-teething-toy-feeding-pacifier-and-plastic-sipper-cup",
+      "original_slug": "combo-of-3-baby-safe-silicone-squeeze-fresh-food-feeder-bottle-with-food-dispensing-spoon-infant-food-nibbler-teething-toy-feeding-pacifier-and-plastic-sipper-cup",
+      "original_product_id": 333576866,
+      "catalogId": 96909067
+    },
+    {
+      "id": 19147789,
+      "hero_pid": 70248773,
+      "name": " Superior Infinite Highlighter",
+      "category_id": 5475,
+      "sub_sub_category_name": "Highlighter",
+      "min_catalog_price": 157,
+      "min_product_price": 157,
+      "max_product_discount": 2,
+      "original_price": 160,
+      "description": " Superior Infinite Highlighter",
+      "full_details": "Finish: Natural\nMultipack: 1\nDispatch: 2-3 Days",
+      "share_text": "Catalog Name:* Superior Infinite Highlighter*\nFinish: Natural\nNet Quantity (N): 1\nDispatch: 1 Day\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 5,
+      "image": "https://images.meesho.com/images/catalogs/19147789/cover/1/2/f4c698a33c418dad683466711523ca77021daace4243c2ef4098356fa89b95fc985142793ab5bf43c5319913e0acdbb01632483f771c4fe3c2616360194cfdc5_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/19147789/notifications/1/1/f4c698a33c418dad683466711523ca77021daace4243c2ef4098356fa89b95fc985142793ab5bf43c5319913e0acdbb01632483f771c4fe3c2616360194cfdc5.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/19147789/collages/1/1/f4c698a33c418dad683466711523ca77021daace4243c2ef4098356fa89b95fc985142793ab5bf43c5319913e0acdbb01632483f771c4fe3c2616360194cfdc5.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2022-01-06 16:21:30",
+      "created_iso": "2022-01-06T16:21:30+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": false,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": true,
+      "shipping_charges_adjustment": 74,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 3.8,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 3198
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [
+        {
+          "name": "NEXT DAY DISPATCH"
+        }
+      ],
+      "gray_tags": [],
+      "value_prop_tag": {
+        "name": "NEXT DAY DISPATCH"
+      },
+      "deal": {
+        "id": 0,
+        "bg_color": "#F64976",
+        "logo_text": "Daily Deals",
+        "name": "",
+        "start_time": 1695900600,
+        "end_time": 1695911400,
+        "server_time": 1695910980,
+        "icon_image": "https://images.meesho.com/images/marketing/1657272929894.png",
+        "text_color": "#F64976",
+        "deal_price": {
+          "price": 157,
+          "shipping": {
+            "charges": 0,
+            "discount": 70
+          },
+          "shipping_2": {
+            "charges": 0,
+            "discount": 70
+          },
+          "discount": {
+            "type": "percent",
+            "amount": 2
+          },
+          "original_price": 160
+        },
+        "original_price": {
+          "price": 159,
+          "shipping": {
+            "charges": 0,
+            "discount": 70
+          },
+          "shipping_2": {
+            "charges": 0,
+            "discount": 70
+          }
+        }
+      },
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 70248773,
+          "url": "https://images.meesho.com/images/products/70248773/pg8sc_512.jpg"
+        },
+        {
+          "id": 70248776,
+          "url": "https://images.meesho.com/images/products/70248776/xqfil_512.jpg"
+        },
+        {
+          "id": 70248775,
+          "url": "https://images.meesho.com/images/products/70248775/l7rol_512.jpg"
+        },
+        {
+          "id": 70248777,
+          "url": "https://images.meesho.com/images/products/70248777/o09uz_512.jpg"
+        },
+        {
+          "id": 70248774,
+          "url": "https://images.meesho.com/images/products/70248774/ybj2y_512.jpg"
+        }
+      ],
+      "activated": "2022-02-13 21:12:00",
+      "activated_iso": "2022-02-13T21:12:00+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 70248777,
+          "name": "RONZILLE Cosmetics Professional  Shimmer Brick Highlighter-03 "
+        },
+        {
+          "id": 70248776,
+          "name": "RONZILLE Cosmetics Professional  Shimmer Brick Highlighter-03 "
+        },
+        {
+          "id": 70248775,
+          "name": "RONZILLE Cosmetics Professional  Shimmer Brick Highlighter-03 "
+        },
+        {
+          "id": 70248774,
+          "name": "RONZILLE Cosmetics Professional  Shimmer Brick Highlighter-03 "
+        },
+        {
+          "id": 70248773,
+          "name": "RONZILLE Cosmetics Professional  Shimmer Brick Highlighter-03 "
+        }
+      ],
+      "returns_offer_text": "₹156 with Special Offer",
+      "special_offers": {
+        "display_text": "₹124 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "cod_unbundling",
+            "amount": 18
+          },
+          {
+            "type": "meesho_burn_coin",
+            "amount": 14
+          },
+          {
+            "type": "return_options",
+            "amount": 1
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/15toat?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "RONZILLE Cosmetics Professional  Shimmer Brick Highlighter-03 ",
+      "images": [
+        "https://images.meesho.com/images/products/70248773/pg8sc_512.jpg"
+      ],
+      "product_id": "15toat",
+      "slug": "ronzille-cosmetics-professional-shimmer-brick-highlighter-03",
+      "original_slug": "ronzille-cosmetics-professional-shimmer-brick-highlighter-03",
+      "original_product_id": 70248773,
+      "catalogId": 19147789
+    },
+    {
+      "id": 81017046,
+      "hero_pid": 275758757,
+      "name": "AFFLATUS Proffesional Relief Body Massage Oils",
+      "category_id": 5539,
+      "sub_sub_category_name": "Massage Oils",
+      "min_catalog_price": 135,
+      "min_product_price": 135,
+      "description": "AFFLATUS Proffesional Relief Body Massage Oils",
+      "full_details": "Brand: AFFLATUS\nFlavour: Green Tea\nNet Quantity (N): 2\nDispatch: 2-2 Days",
+      "share_text": "Catalog Name:*AFFLATUS Proffesional Relief Body Massage Oils*\nFlavour: Sandalwood\nNet Quantity (N): 2\nDispatch: 1 Day\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 1,
+      "image": "https://images.meesho.com/images/catalogs/81017046/cover/1/2/b79774adb11242b0a8ca7bd3f5617a18b6c797c4349273ab99a22111c151e461ee2879d08cc90392553ff85fa6de25f5cf7c964294eca2b8f14e582ab35ba1c0_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/81017046/notifications/1/1/b79774adb11242b0a8ca7bd3f5617a18b6c797c4349273ab99a22111c151e461ee2879d08cc90392553ff85fa6de25f5cf7c964294eca2b8f14e582ab35ba1c0.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/81017046/collages/1/1/b79774adb11242b0a8ca7bd3f5617a18b6c797c4349273ab99a22111c151e461ee2879d08cc90392553ff85fa6de25f5cf7c964294eca2b8f14e582ab35ba1c0.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2023-04-30 16:33:38",
+      "created_iso": "2023-04-30T16:33:38+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": false,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 76,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 3.9,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 927
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [
+        {
+          "name": "NEXT DAY DISPATCH"
+        }
+      ],
+      "gray_tags": [],
+      "value_prop_tag": {
+        "name": "NEXT DAY DISPATCH"
+      },
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 275758757,
+          "url": "https://images.meesho.com/images/products/275758757/gbvjx_512.jpg"
+        }
+      ],
+      "activated": "2023-04-30 22:19:43",
+      "activated_iso": "2023-04-30T22:19:43+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 275758757,
+          "name": "Afflatus Tummy Ginger Oil, for Belly Drainage Ginger Massage Oils For Belly / Fat Reduction for Weight Loss, Fat Burner Oil, Weight Loss Oil For Men & Women-30ml"
+        }
+      ],
+      "returns_offer_text": "₹131 with Special Offer",
+      "special_offers": {
+        "display_text": "₹100 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "cod_unbundling",
+            "amount": 19
+          },
+          {
+            "type": "meesho_burn_coin",
+            "amount": 12
+          },
+          {
+            "type": "return_options",
+            "amount": 4
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/4k6gth?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "Afflatus Tummy Ginger Oil, for Belly Drainage Ginger Massage Oils For Belly / Fat Reduction for Weight Loss, Fat Burner Oil, Weight Loss Oil For Men & Women-30ml",
+      "images": [
+        "https://images.meesho.com/images/products/275758757/gbvjx_512.jpg"
+      ],
+      "product_id": "4k6gth",
+      "slug": "afflatus-tummy-ginger-oil-for-belly-drainage-ginger-massage-oils-for-belly-fat-reduction-for-weight-loss-fat-burner-oil-weight-loss-oil-for-men-women-30ml",
+      "original_slug": "afflatus-tummy-ginger-oil-for-belly-drainage-ginger-massage-oils-for-belly-fat-reduction-for-weight-loss-fat-burner-oil-weight-loss-oil-for-men-women-30ml",
+      "original_product_id": 275758757,
+      "catalogId": 81017046
+    },
+    {
+      "id": 45836857,
+      "hero_pid": 152489416,
+      "name": " Proffesional Extreme BB & CC Cream",
+      "category_id": 5535,
+      "sub_sub_category_name": "BB & CC Cream",
+      "min_catalog_price": 176,
+      "min_product_price": 176,
+      "description": " Proffesional Extreme BB & CC Cream",
+      "full_details": "Type: Cream\nNet Quantity (N): 1\nDispatch: 2-2 Days",
+      "share_text": "Catalog Name:* Proffesional Extreme BB & CC Cream*\nBrand: Others\nType: Cream\nShade: Natural\nNet Quantity (N): 1\nAdd On: BB & CC Cream\nDispatch: 1 Day\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 1,
+      "image": "https://images.meesho.com/images/catalogs/45836857/cover/1/2/4274d5056da165dd8af7c8d6168a24be54735bcebc5b342eef23cbcf6bb1d86ae60e837e869baf6f26864883830760b42211c3908ac197726a0ef314bc8f845e_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/45836857/notifications/1/1/4274d5056da165dd8af7c8d6168a24be54735bcebc5b342eef23cbcf6bb1d86ae60e837e869baf6f26864883830760b42211c3908ac197726a0ef314bc8f845e.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/45836857/collages/1/1/4274d5056da165dd8af7c8d6168a24be54735bcebc5b342eef23cbcf6bb1d86ae60e837e869baf6f26864883830760b42211c3908ac197726a0ef314bc8f845e.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2022-08-16 15:57:14",
+      "created_iso": "2022-08-16T15:57:14+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": false,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 75,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 3.9,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 167
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [
+        {
+          "name": "NEXT DAY DISPATCH"
+        }
+      ],
+      "gray_tags": [],
+      "value_prop_tag": {
+        "name": "NEXT DAY DISPATCH"
+      },
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 152489416,
+          "url": "https://images.meesho.com/images/products/152489416/v1g1r_512.jpg"
+        }
+      ],
+      "activated": "2022-08-16 22:06:26",
+      "activated_iso": "2022-08-16T22:06:26+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 152489416,
+          "name": "BB Cream Air Cushion Foundation Korean Mushroom Head CC Cream Concealer Whitening Cosmetic Waterproof Brighten Face Base Tone Foundation (lvory White, 25 g) (Pack of 1)"
+        }
+      ],
+      "returns_offer_text": "₹175 with Special Offer",
+      "special_offers": {
+        "display_text": "₹141 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "cod_unbundling",
+            "amount": 18
+          },
+          {
+            "type": "meesho_burn_coin",
+            "amount": 16
+          },
+          {
+            "type": "return_options",
+            "amount": 1
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/2isdl4?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "BB Cream Air Cushion Foundation Korean Mushroom Head CC Cream Concealer Whitening Cosmetic Waterproof Brighten Face Base Tone Foundation (lvory White, 25 g) (Pack of 1)",
+      "images": [
+        "https://images.meesho.com/images/products/152489416/v1g1r_512.jpg"
+      ],
+      "product_id": "2isdl4",
+      "slug": "bb-cream-air-cushion-foundation-korean-mushroom-head-cc-cream-concealer-whitening-cosmetic-waterproof-brighten-face-base-tone-foundation-lvory-white-25-g-pack-of-1",
+      "original_slug": "bb-cream-air-cushion-foundation-korean-mushroom-head-cc-cream-concealer-whitening-cosmetic-waterproof-brighten-face-base-tone-foundation-lvory-white-25-g-pack-of-1",
+      "original_product_id": 152489416,
+      "catalogId": 45836857
+    },
+    {
+      "id": 47853589,
+      "hero_pid": 158399498,
+      "name": "Vonzo Sensational Full Coverage Blush",
+      "category_id": 5619,
+      "sub_sub_category_name": "Blush",
+      "min_catalog_price": 170,
+      "min_product_price": 170,
+      "description": "Vonzo Sensational Full Coverage Blush",
+      "full_details": "Brand: Vonzo\nFinish: Matte\nNet Quantity (N): 1\nDispatch: 2-2 Days",
+      "share_text": "Catalog Name:*Vonzo Sensational Full Coverage Blush*\nBrand: Others\nFinish: Matte\nNet Quantity (N): 1\nDispatch: 1 Day\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 4,
+      "image": "https://images.meesho.com/images/catalogs/47853589/cover/1/2/cfe37c9801a11d85fa8139111b1378588c5d1b9a255297ec6f1cdfe5982de699ffc22c0687533681a8927737d47ca5c0e0486c8b0ff7c701f1b65965516a59d1_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/47853589/notifications/1/1/cfe37c9801a11d85fa8139111b1378588c5d1b9a255297ec6f1cdfe5982de699ffc22c0687533681a8927737d47ca5c0e0486c8b0ff7c701f1b65965516a59d1.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/47853589/collages/1/1/cfe37c9801a11d85fa8139111b1378588c5d1b9a255297ec6f1cdfe5982de699ffc22c0687533681a8927737d47ca5c0e0486c8b0ff7c701f1b65965516a59d1.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2022-08-31 09:25:58",
+      "created_iso": "2022-08-31T09:25:58+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": false,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 75,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 4.1,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 2826
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [],
+      "gray_tags": [],
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 158399498,
+          "url": "https://images.meesho.com/images/products/158399498/op2gi_512.jpg"
+        },
+        {
+          "id": 158399499,
+          "url": "https://images.meesho.com/images/products/158399499/9qrbf_512.jpg"
+        },
+        {
+          "id": 158399500,
+          "url": "https://images.meesho.com/images/products/158399500/qauzi_512.jpg"
+        },
+        {
+          "id": 158399501,
+          "url": "https://images.meesho.com/images/products/158399501/ydaqw_512.jpg"
+        }
+      ],
+      "activated": "2022-08-31 16:05:55",
+      "activated_iso": "2022-08-31T16:05:55+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 158399498,
+          "name": "Vonzo lip and cheek tint enriched with essential oils for lips  and cheeks  shade 102"
+        },
+        {
+          "id": 158399499,
+          "name": "Vonzo lip and cheek tint enriched with essential oils for lips  and cheeks  shade 101"
+        },
+        {
+          "id": 158399500,
+          "name": "Vonzo lip and cheek tint enriched with essential oils for lips  and cheeks  shade 103"
+        },
+        {
+          "id": 158399501,
+          "name": "Vonzo lip and cheek tint enriched with essential oils for lips  and cheeks  shade 104"
+        }
+      ],
+      "returns_offer_text": "₹165 with Special Offer",
+      "special_offers": {
+        "display_text": "₹133 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "cod_unbundling",
+            "amount": 17
+          },
+          {
+            "type": "meesho_burn_coin",
+            "amount": 15
+          },
+          {
+            "type": "return_options",
+            "amount": 5
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/2mb1u2?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "Vonzo lip and cheek tint enriched with essential oils for lips  and cheeks  shade 102",
+      "images": [
+        "https://images.meesho.com/images/products/158399498/op2gi_512.jpg"
+      ],
+      "product_id": "2mb1u2",
+      "slug": "vonzo-lip-and-cheek-tint-enriched-with-essential-oils-for-lips-and-cheeks-shade-102",
+      "original_slug": "vonzo-lip-and-cheek-tint-enriched-with-essential-oils-for-lips-and-cheeks-shade-102",
+      "original_product_id": 158399498,
+      "catalogId": 47853589
+    },
+    {
+      "id": 48805856,
+      "hero_pid": 161250095,
+      "name": "Makeup Kits",
+      "category_id": 5486,
+      "sub_sub_category_name": "Makeup Kits",
+      "min_catalog_price": 250,
+      "min_product_price": 250,
+      "description": "Makeup Kits",
+      "full_details": "Color: Multicolor\nNet Quantity (N): 1\nDispatch: 2-2 Days",
+      "share_text": "Catalog Name:*Makeup Kits*\nColor: Multicolor\nNet Quantity (N): 7\n\nDispatch: 1 Day\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 1,
+      "image": "https://images.meesho.com/images/catalogs/48805856/cover/1/2/07d272f638d0160d6e3751c95a9f30ba74d5d8f55bfa9700bd3a5ed7caf85f227934649a569352f58f833f7178b8e9dc79572f6508c23773309570eef56c67fc_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/48805856/notifications/1/1/07d272f638d0160d6e3751c95a9f30ba74d5d8f55bfa9700bd3a5ed7caf85f227934649a569352f58f833f7178b8e9dc79572f6508c23773309570eef56c67fc.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/48805856/collages/1/1/07d272f638d0160d6e3751c95a9f30ba74d5d8f55bfa9700bd3a5ed7caf85f227934649a569352f58f833f7178b8e9dc79572f6508c23773309570eef56c67fc.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2022-09-06 09:30:12",
+      "created_iso": "2022-09-06T09:30:12+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": false,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 87,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 4,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 2982
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [
+        {
+          "name": "NEXT DAY DISPATCH"
+        }
+      ],
+      "gray_tags": [],
+      "value_prop_tag": {
+        "name": "NEXT DAY DISPATCH"
+      },
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 161250095,
+          "url": "https://images.meesho.com/images/products/161250095/on4xu_512.jpg"
+        }
+      ],
+      "activated": "2023-06-22 16:24:48",
+      "activated_iso": "2023-06-22T16:24:48+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 161250095,
+          "name": " TYA  6155 H 36 BRUSH 5 PC Makeup Kits"
+        },
+        {
+          "id": 161250096,
+          "name": "GURIYA 6155  5 PC BRUSH OR BLINDER Makeup Kits"
+        },
+        {
+          "id": 161250097,
+          "name": "GURIYA HELLO KITY OR TYA 6155 Makeup Kits"
+        }
+      ],
+      "returns_offer_text": "₹249 with Special Offer",
+      "special_offers": {
+        "display_text": "₹201 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "cod_unbundling",
+            "amount": 25
+          },
+          {
+            "type": "meesho_burn_coin",
+            "amount": 23
+          },
+          {
+            "type": "return_options",
+            "amount": 1
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/2o05db?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": " TYA  6155 H 36 BRUSH 5 PC Makeup Kits",
+      "images": [
+        "https://images.meesho.com/images/products/161250095/on4xu_512.jpg"
+      ],
+      "product_id": "2o05db",
+      "slug": "tya-6155-h-36-brush-5-pc-makeup-kits",
+      "original_slug": "tya-6155-h-36-brush-5-pc-makeup-kits",
+      "original_product_id": 161250095,
+      "catalogId": 48805856
+    },
+    {
+      "id": 91672187,
+      "hero_pid": 314830270,
+      "name": " Fancy Unisex Perfumes",
+      "category_id": 5545,
+      "sub_sub_category_name": "Unisex Perfumes",
+      "min_catalog_price": 137,
+      "min_product_price": 137,
+      "description": " Fancy Unisex Perfumes",
+      "full_details": "Capacity: 100-200ml\nFlavour: Dead Sea\nNet Quantity (N): 2\n\nDispatch: 2-2 Days",
+      "share_text": "Catalog Name:* Fancy Unisex Perfumes*\nCapacity: 100-200ml\nFlavour: Dead Sea\nNet Quantity (N): 2\n\nDispatch: 1 Day\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 1,
+      "image": "https://images.meesho.com/images/catalogs/91672187/cover/1/2/2f0787ec10ef20df0dcfa4ed6486cfa3489f51ac96ac75b84d47faeef14bdde9ece75a33ba91e0124c3ffbd7b4e272f5f8049f253a118575ad6c46cf46679de0_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/91672187/notifications/1/1/2f0787ec10ef20df0dcfa4ed6486cfa3489f51ac96ac75b84d47faeef14bdde9ece75a33ba91e0124c3ffbd7b4e272f5f8049f253a118575ad6c46cf46679de0.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/91672187/collages/1/1/2f0787ec10ef20df0dcfa4ed6486cfa3489f51ac96ac75b84d47faeef14bdde9ece75a33ba91e0124c3ffbd7b4e272f5f8049f253a118575ad6c46cf46679de0.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2023-07-25 16:27:08",
+      "created_iso": "2023-07-25T16:27:08+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": false,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 72,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 4.2,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 44
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [
+        {
+          "name": "NEXT DAY DISPATCH"
+        }
+      ],
+      "gray_tags": [],
+      "value_prop_tag": {
+        "name": "NEXT DAY DISPATCH"
+      },
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 314830270,
+          "url": "https://images.meesho.com/images/products/314830270/4ydxk_512.jpg"
+        }
+      ],
+      "activated": "2023-07-26 10:38:56",
+      "activated_iso": "2023-07-26T10:38:56+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 314830270,
+          "name": "CASSIDY BLACK CODE AND ROSE AIR FRESHNER 100ML "
+        }
+      ],
+      "returns_offer_text": "₹132 with Special Offer",
+      "special_offers": {
+        "display_text": "₹104 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "cod_unbundling",
+            "amount": 16
+          },
+          {
+            "type": "meesho_burn_coin",
+            "amount": 12
+          },
+          {
+            "type": "return_options",
+            "amount": 5
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/57fwla?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "CASSIDY BLACK CODE AND ROSE AIR FRESHNER 100ML ",
+      "images": [
+        "https://images.meesho.com/images/products/314830270/4ydxk_512.jpg"
+      ],
+      "product_id": "57fwla",
+      "slug": "cassidy-black-code-and-rose-air-freshner-100ml",
+      "original_slug": "cassidy-black-code-and-rose-air-freshner-100ml",
+      "original_product_id": 314830270,
+      "catalogId": 91672187
+    },
+    {
+      "id": 62253527,
+      "hero_pid": 205502088,
+      "name": " Advanced Nourshing Shampoo",
+      "category_id": 5534,
+      "sub_sub_category_name": "Shampoo",
+      "min_catalog_price": 148,
+      "min_product_price": 148,
+      "description": " Advanced Nourshing Shampoo",
+      "full_details": "Hair Type: All Hair Type\nFlavour: Hibiscus\nNet Quantity (N): 1\nDispatch: 2-2 Days",
+      "share_text": "Catalog Name:* Advanced Nourshing Shampoo*\nBrand: LA'BANGERRY\nHair Type: All Hair Type\nFlavour: Hibiscus\nNet Quantity (N): 1\nDispatch: 1 Day\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 1,
+      "image": "https://images.meesho.com/images/catalogs/62253527/cover/1/2/1dbdf7d2b14426148691a061d11bdc02e2a4a17caef1b5460eb910998f78553026a41973d66d015b6163c213ef6c83223c36f0c091e685676517e890751dca0a_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/62253527/notifications/1/1/1dbdf7d2b14426148691a061d11bdc02e2a4a17caef1b5460eb910998f78553026a41973d66d015b6163c213ef6c83223c36f0c091e685676517e890751dca0a.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/62253527/collages/1/1/1dbdf7d2b14426148691a061d11bdc02e2a4a17caef1b5460eb910998f78553026a41973d66d015b6163c213ef6c83223c36f0c091e685676517e890751dca0a.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2022-12-12 16:37:23",
+      "created_iso": "2022-12-12T16:37:23+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": false,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 72,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 4,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 245
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [
+        {
+          "name": "NEXT DAY DISPATCH"
+        }
+      ],
+      "gray_tags": [],
+      "value_prop_tag": {
+        "name": "NEXT DAY DISPATCH"
+      },
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 205502088,
+          "url": "https://images.meesho.com/images/products/205502088/vjxjc_512.jpg"
+        }
+      ],
+      "activated": "2023-07-15 12:32:28",
+      "activated_iso": "2023-07-15T12:32:28+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 205502088,
+          "name": "103% Original Anti hair dandruff ke liye shampoo,   anti dandruff shampoo ,Hair Regrowth|Aadivasi shampoo|Anti Dandruff Shampoo|Adivasi shampoo|dandruff se chhutkara pane ke liye sabse achha vala shampoo|baalo me khujali- 250ml , pack of 1"
+        }
+      ],
+      "returns_offer_text": "₹146 with Special Offer",
+      "special_offers": {
+        "display_text": "₹113 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "cod_unbundling",
+            "amount": 20
+          },
+          {
+            "type": "meesho_burn_coin",
+            "amount": 13
+          },
+          {
+            "type": "return_options",
+            "amount": 2
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/3ecmfc?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "103% Original Anti hair dandruff ke liye shampoo,   anti dandruff shampoo ,Hair Regrowth|Aadivasi shampoo|Anti Dandruff Shampoo|Adivasi shampoo|dandruff se chhutkara pane ke liye sabse achha vala shampoo|baalo me khujali- 250ml , pack of 1",
+      "images": [
+        "https://images.meesho.com/images/products/205502088/vjxjc_512.jpg"
+      ],
+      "product_id": "3ecmfc",
+      "slug": "103-original-anti-hair-dandruff-ke-liye-shampoo-anti-dandruff-shampoo-hair-regrowthaadivasi-shampooanti-dandruff-shampooadivasi-shampoodandruff-se-chhutkara-pane-ke-liye-sabse-achha-vala-shampoobaalo-me-khujali-250ml-pack-of-1",
+      "original_slug": "103-original-anti-hair-dandruff-ke-liye-shampoo-anti-dandruff-shampoo-hair-regrowthaadivasi-shampooanti-dandruff-shampooadivasi-shampoodandruff-se-chhutkara-pane-ke-liye-sabse-achha-vala-shampoobaalo-me-khujali-250ml-pack-of-1",
+      "original_product_id": 205502088,
+      "catalogId": 62253527
+    },
+    {
+      "id": 86338412,
+      "hero_pid": 296631275,
+      "name": " Hair Straightener",
+      "category_id": 5489,
+      "sub_sub_category_name": "Hair Straighteners",
+      "min_catalog_price": 136,
+      "min_product_price": 136,
+      "description": " Hair Straightener",
+      "full_details": "Material: Metal\nNet Quantity (N): 3\nColor: Multicolor\nType: Wired\nIdeal For: Unisex\nWarranty: 1 Month Seller Warranty\nWarranty Type: Replacement\nOperating Voltage: 240 Volts\nPower Consumption: 100 Watts\nCord Length: 0.5 Mtr\nHeat Up Time: 20 Sec\nTemperature: 100 °C\nStraightening Type: Permanent\nSizes: \nFree Size\nDispatch: 2-2 Days",
+      "share_text": "Catalog Name:* Hair Straightener*\nMaterial: Metal\nNet Quantity (N): 3\nColor: Pink\nType: Wired\nIdeal For: Unisex\nWarranty: 1 Month Seller Warranty\nWarranty Type: Replacement\nOperating Voltage: 240 Volts\nPower Consumption: 100 Watts\nCord Length: 0.5 Mtr\nHeat Up Time: 20 Sec\nTemperature: 100 °C\nStraightening Type: Permanent\nSizes: \nFree Size\nDispatch: 1 Day\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 1,
+      "image": "https://images.meesho.com/images/catalogs/86338412/cover/1/2/438962da105c65d82ffc5fe09c8612f15244ce160191a55c52f392996e43c3fe4e84f0fff36c26d45013cd9605d1d925aa5530d5b03f4b7f5a4dfcfbab94c43b_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/86338412/notifications/1/1/438962da105c65d82ffc5fe09c8612f15244ce160191a55c52f392996e43c3fe4e84f0fff36c26d45013cd9605d1d925aa5530d5b03f4b7f5a4dfcfbab94c43b.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/86338412/collages/1/1/438962da105c65d82ffc5fe09c8612f15244ce160191a55c52f392996e43c3fe4e84f0fff36c26d45013cd9605d1d925aa5530d5b03f4b7f5a4dfcfbab94c43b.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2023-06-11 15:56:21",
+      "created_iso": "2023-06-11T15:56:21+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": false,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 0,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 3.6,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 14
+      },
+      "shipping": {
+        "charges": 74,
+        "discount": 0
+      },
+      "shipping_2": {
+        "charges": 74,
+        "discount": 0
+      },
+      "tags": [
+        {
+          "name": "NEXT DAY DISPATCH"
+        }
+      ],
+      "gray_tags": [],
+      "value_prop_tag": {
+        "name": "NEXT DAY DISPATCH"
+      },
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 296631275,
+          "url": "https://images.meesho.com/images/products/296631275/3bwjy_512.jpg"
+        }
+      ],
+      "activated": "2023-06-11 22:18:11",
+      "activated_iso": "2023-06-11T22:18:11+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 296631275,
+          "name": "Mini Straightener, 36H Long Wear Eye Liner Pen and 4in1 Red Edition Liquid Matte Lipstick Cosmetic Combo of 3! Set of 3 Hair and Lips Makeup Combo3"
+        }
+      ],
+      "returns_offer_text": "₹121 with Special Offer",
+      "special_offers": {
+        "display_text": "₹92 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "cod_unbundling",
+            "amount": 17
+          },
+          {
+            "type": "return_options",
+            "amount": 15
+          },
+          {
+            "type": "meesho_burn_coin",
+            "amount": 12
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/4wlu5n?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "Mini Straightener, 36H Long Wear Eye Liner Pen and 4in1 Red Edition Liquid Matte Lipstick Cosmetic Combo of 3! Set of 3 Hair and Lips Makeup Combo3",
+      "images": [
+        "https://images.meesho.com/images/products/296631275/3bwjy_512.jpg"
+      ],
+      "product_id": "4wlu5n",
+      "slug": "mini-straightener-36h-long-wear-eye-liner-pen-and-4in1-red-edition-liquid-matte-lipstick-cosmetic-combo-of-3-set-of-3-hair-and-lips-makeup-combo3",
+      "original_slug": "mini-straightener-36h-long-wear-eye-liner-pen-and-4in1-red-edition-liquid-matte-lipstick-cosmetic-combo-of-3-set-of-3-hair-and-lips-makeup-combo3",
+      "original_product_id": 296631275,
+      "catalogId": 86338412
+    },
+    {
+      "id": 29956197,
+      "hero_pid": 103840656,
+      "name": " Useful Face Scrubs & Exfoliators",
+      "category_id": 5663,
+      "sub_sub_category_name": "Face Scrubs & Exfoliators",
+      "min_catalog_price": 220,
+      "min_product_price": 220,
+      "description": " Useful Face Scrubs & Exfoliators",
+      "full_details": "Flavour: Coffee\nNet Quantity (N): 1\nSkin Type: All Skin Types\nType: Scrub\nCapacity: 300-400ml\n\nDispatch: 2-3 Days",
+      "share_text": "Catalog Name:* Useful Face Scrubs & Exfoliators*\nBrand: Others/vonzo\nBrand: Product Dependent\nFlavour: Coffee\nNet Quantity (N): 2\nSkin Type: All Skin Types\nType: Scrub\nCapacity: 300-400ml\n\nDispatch: 2 Days\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 7,
+      "image": "https://images.meesho.com/images/catalogs/29956197/cover/1/2/eb84f9d5718f6781b33aa5d9d7fb68ca7a8d56e08a941c6ac34d5672fc09fa30e6f5a3922a3e6b2494dcf157b7670560741d12485c686b7739256dd413dbd1bf_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/29956197/notifications/1/1/eb84f9d5718f6781b33aa5d9d7fb68ca7a8d56e08a941c6ac34d5672fc09fa30e6f5a3922a3e6b2494dcf157b7670560741d12485c686b7739256dd413dbd1bf.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/29956197/collages/1/1/eb84f9d5718f6781b33aa5d9d7fb68ca7a8d56e08a941c6ac34d5672fc09fa30e6f5a3922a3e6b2494dcf157b7670560741d12485c686b7739256dd413dbd1bf.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2022-04-21 16:11:04",
+      "created_iso": "2022-04-21T16:11:04+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": false,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 80,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 4.1,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 3368
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [],
+      "gray_tags": [],
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 103840656,
+          "url": "https://images.meesho.com/images/products/103840656/vvaeo_512.jpg"
+        },
+        {
+          "id": 103840659,
+          "url": "https://images.meesho.com/images/products/103840659/5q5wu_512.jpg"
+        },
+        {
+          "id": 103840663,
+          "url": "https://images.meesho.com/images/products/103840663/b8ji7_512.jpg"
+        },
+        {
+          "id": 103840665,
+          "url": "https://images.meesho.com/images/products/103840665/gfadk_512.jpg"
+        },
+        {
+          "id": 103840662,
+          "url": "https://images.meesho.com/images/products/103840662/bh8tz_512.jpg"
+        },
+        {
+          "id": 103840655,
+          "url": "https://images.meesho.com/images/products/103840655/nwv3e_512.jpg"
+        },
+        {
+          "id": 103840664,
+          "url": "https://images.meesho.com/images/products/103840664/feu8v_512.jpg"
+        }
+      ],
+      "activated": "2023-04-15 10:28:23",
+      "activated_iso": "2023-04-15T10:28:23+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 103840656,
+          "name": "Vonzo combo of coffee and papaya scrub 200 ml"
+        },
+        {
+          "id": 103840659,
+          "name": "Vonzo combo of coffee and wine scrub 200 ml"
+        },
+        {
+          "id": 103840662,
+          "name": "Vonzo combo of coffee and charcoal scrub 200 ml"
+        },
+        {
+          "id": 103840663,
+          "name": "Vonzo combo of coffee and Dtan scrub 200 ml"
+        },
+        {
+          "id": 103840664,
+          "name": "Vonzo combo of coffee and chocolate scrub 200 ml"
+        },
+        {
+          "id": 103840665,
+          "name": "Vonzo combo of coffee and fruit scrub 200 ml"
+        },
+        {
+          "id": 103840655,
+          "name": "Vonzo combo of coffee and apricot scrub 200 ml"
+        }
+      ],
+      "returns_offer_text": "₹200 with Special Offer",
+      "special_offers": {
+        "display_text": "₹162 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "return_options",
+            "amount": 20
+          },
+          {
+            "type": "meesho_burn_coin",
+            "amount": 20
+          },
+          {
+            "type": "cod_unbundling",
+            "amount": 18
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/1ptnyo?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "Vonzo combo of coffee and papaya scrub 200 ml",
+      "images": [
+        "https://images.meesho.com/images/products/103840656/vvaeo_512.jpg"
+      ],
+      "product_id": "1ptnyo",
+      "slug": "vonzo-combo-of-coffee-and-papaya-scrub-200-ml",
+      "original_slug": "vonzo-combo-of-coffee-and-papaya-scrub-200-ml",
+      "original_product_id": 103840656,
+      "catalogId": 29956197
+    },
+    {
+      "id": 52019452,
+      "hero_pid": 171136164,
+      "name": " Fancy Baby Lotion And Creams",
+      "category_id": 5476,
+      "sub_sub_category_name": "Baby Lotion And Creams",
+      "min_catalog_price": 129,
+      "min_product_price": 129,
+      "description": " Fancy Baby Lotion And Creams",
+      "full_details": "Capacity: 100-200ml\nSkin Type: All Skin Types\nType: Lotion/Body Butter\nFlavour: Almond\nNet Quantity (N): 1\n\nDispatch: 2-2 Days",
+      "share_text": "Catalog Name:* Fancy Baby Lotion And Creams*\nBrand: Others\nCapacity: 100-200ml\nSkin Type: All Skin Types\nType: Lotion/Body Butter\nFlavour: Almond\nNet Quantity (N): 1\n\nDispatch: 1 Day\n\n*Proof of Safe Delivery! Click to know on Safety Standards of Delivery Partners- https://ltl.sh/y_nZrAV3",
+      "hot": false,
+      "type": "catalog",
+      "pre_booking": false,
+      "priority": 0,
+      "num_suppliers": 1,
+      "num_designs": 1,
+      "image": "https://images.meesho.com/images/catalogs/52019452/cover/1/2/d0c45eb4ab70e3593d695b54a28b857cb4cca74fa3e214eaeb577a54789bb725d46f8cf2535d2ccbe922690b6d3fb0c8365959436199a0114a7747110685d196_512.jpg",
+      "notification_image": "https://images.meesho.com/images/catalogs/52019452/notifications/1/1/d0c45eb4ab70e3593d695b54a28b857cb4cca74fa3e214eaeb577a54789bb725d46f8cf2535d2ccbe922690b6d3fb0c8365959436199a0114a7747110685d196.jpg",
+      "collage_image": "https://images.meesho.com/images/catalogs/52019452/collages/1/1/d0c45eb4ab70e3593d695b54a28b857cb4cca74fa3e214eaeb577a54789bb725d46f8cf2535d2ccbe922690b6d3fb0c8365959436199a0114a7747110685d196.jpg",
+      "image_aspect_ratio": 1.77,
+      "collage_image_aspect_ratio": 1.48,
+      "created": "2022-09-26 19:19:52",
+      "created_iso": "2022-09-26T19:19:52+0530",
+      "valid": true,
+      "trend": "",
+      "popular": false,
+      "has_mrp": true,
+      "is_added_to_wishlist": false,
+      "assured_details": {
+        "is_assured": false,
+        "message": "Best quality products from trusted suppliers."
+      },
+      "mall_verified": false,
+      "shipping_charges_adjustment": 73,
+      "story_images": [],
+      "catalog_reviews_summary": {
+        "average_rating": 3.7,
+        "absolute_average_rating": 0,
+        "average_rating_str": "",
+        "rating_scale": 5,
+        "review_count": 0,
+        "rating_count": 401
+      },
+      "shipping": {
+        "charges": 0,
+        "discount": 70
+      },
+      "shipping_2": {
+        "charges": 0,
+        "discount": 70
+      },
+      "tags": [
+        {
+          "name": "NEXT DAY DISPATCH"
+        }
+      ],
+      "gray_tags": [],
+      "value_prop_tag": {
+        "name": "NEXT DAY DISPATCH"
+      },
+      "has_same_price_products": true,
+      "product_images": [
+        {
+          "id": 171136164,
+          "url": "https://images.meesho.com/images/products/171136164/jgb9u_512.jpg"
+        }
+      ],
+      "activated": "2022-09-27 02:05:59",
+      "activated_iso": "2022-09-27T02:05:59+0530",
+      "num_shares": "0 Shares",
+      "margin": {
+        "enabled": false
+      },
+      "price_type_id": "premium_return_price",
+      "products": [
+        {
+          "id": 171136164,
+          "name": "LA'BANGERRY Whitening Body Lotion On SPF15+ Skin Lighten & Brightening Body Lotion Cream (150 ml) Pack Of 1"
+        }
+      ],
+      "returns_offer_text": "₹128 with Special Offer",
+      "special_offers": {
+        "display_text": "₹97 with 3 Special Offers",
+        "offers": [
+          {
+            "type": "cod_unbundling",
+            "amount": 19
+          },
+          {
+            "type": "meesho_burn_coin",
+            "amount": 12
+          },
+          {
+            "type": "return_options",
+            "amount": 1
+          }
+        ]
+      },
+      "is_hidden": false,
+      "consumer_share_text": "Shop now on Meesho! \nhttps://www.meesho.com/s/p/2tw1ic?utm_source=s",
+      "product_attributes": [],
+      "hero_product_name": "LA'BANGERRY Whitening Body Lotion On SPF15+ Skin Lighten & Brightening Body Lotion Cream (150 ml) Pack Of 1",
+      "images": [
+        "https://images.meesho.com/images/products/171136164/jgb9u_512.jpg"
+      ],
+      "product_id": "2tw1ic",
+      "slug": "labangerry-whitening-body-lotion-on-spf15-skin-lighten-brightening-body-lotion-cream-150-ml-pack-of-1",
+      "original_slug": "labangerry-whitening-body-lotion-on-spf15-skin-lighten-brightening-body-lotion-cream-150-ml-pack-of-1",
+      "original_product_id": 171136164,
+      "catalogId": 52019452
+    }
+  ],
+  "count": 10000,
+  "corrected_search_term": "cosmetics"
+}

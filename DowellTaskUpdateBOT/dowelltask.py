@@ -73,8 +73,6 @@ def click_products():
                                           '//*[@id="productlogo"]/div/div/div/div/div/div[9]/div/form/div/div[4]')
     scroll_element_into_view(login_hr_portal)
     login_hr_portal.click()
-
-
 def main():
     dowell_login()
     click_portfolio()

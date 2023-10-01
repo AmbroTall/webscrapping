@@ -1,6 +1,7 @@
 import datetime
 import undetected_chromedriver as uc
 import mysql.connector
+import requests
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select, WebDriverWait
@@ -28,7 +29,8 @@ truth_pwd = "tech6491"
 propstream_email = "jewelercart@gmail.com"
 propstream_pwd = "Taqwah79@@"
 
-
+propstream_session = requests.Session()
+truthfinder_session = requests.Session()
 def log(msg):
     print(f"LOG: {msg}")
     if not os.path.isdir("logs"):
@@ -48,7 +50,6 @@ def start_page():
     # switch to popstream
     switch_tabs_webmail(0)
     print("2")
-
     # driver.maximize_window()
     print("1")
     verify_human()
@@ -175,14 +176,15 @@ def click_mail_to_verify():
             (By.ID, 'messagelist'),
         )
     )
+    wait = WebDriverWait(driver, 150)
 
-    msg = try_catch('//*[@id]/td[2]/span[4]/a/span')
+    msg = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id]/td[2]/span[4]/a/span')))
+
     msg.click()
 
     msg_frame = driver.switch_to.frame("messagecontframe")
 
-    verify_account = try_catch(
-        '//*[@id="message-htmlpart1"]/div/center/div/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td[2]/a')
+    verify_account = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="message-htmlpart1"]/div/center/div/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td[2]/a')))
     verify_account.click()
 
 def verification_by_email():
@@ -197,7 +199,7 @@ def verification_by_email():
 def login_popstream():
     # Explicit Wait until username is visible
     driver.refresh()
-    email_input = WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, "//input[@name='username']") ))
+    email_input = WebDriverWait(driver, 150).until(EC.presence_of_element_located((By.XPATH, "//input[@name='username']") ))
     # email_input = try_catch("//input[@name='username']")  # Element filtration
 
     email_input.send_keys(propstream_email)
@@ -206,7 +208,23 @@ def login_popstream():
     password_input.send_keys(propstream_pwd)
     login_btn = driver.find_element(By.XPATH, '//*[@id="form-content"]/form/button')
     login_btn.click()
-    time.sleep(10)
+    wait = WebDriverWait(driver, 150)
+
+    # Define the XPath for the element you want to wait for
+    element_xpath = '//*[@id="alert"]/div/div/div/div/div/div/div[2]/button/span'
+
+    # Wait until the element is visible
+    element = wait.until(EC.visibility_of_element_located((By.XPATH, element_xpath)))
+
+    # Get the cookies
+    cookies = driver.get_cookies()
+
+    # Print the cookies
+    for cookie in cookies:
+        propstream_session.cookies.set(cookie['name'], cookie['value'])
+
+    print("Logging in successfully ...")
+    # self.quit_automation()
 
 
 def popstream_information(address):
@@ -214,7 +232,7 @@ def popstream_information(address):
     # Performing search
 
     try:
-        login_btn = WebDriverWait(driver, 100).until(
+        login_btn = WebDriverWait(driver, 150).until(
             EC.element_to_be_clickable(
                 (By.XPATH, '//*[@id="form-content"]/form/button'),
             )
@@ -595,11 +613,15 @@ def main():
                 continue
     return db_data_holder
 
+# def propstream_search():
 
-# print(main())
-address_db = '3440 Freedom Lane, Dalton, GA 30721'
-start_page()
-time.sleep(5)
-print(popstream_information(address_db))
+#
+print(main())
+# address_db = '3440 Freedom Lane, Dalton, GA 30721'
+# start_page()
+# time.sleep(5)
+# # driver.quit()
+#
+# print(popstream_information(address_db))
 
-# //*[@id="dashboard"]/div[1]/div/div/div/div/form/div/div[1]/div/div
+# //*[@id="dashboar d"]/div[1]/div/div/div/div/form/div/div[1]/div/div

@@ -18,14 +18,20 @@ def get_start_time():
     nairobi_timezone = datetime.timezone(datetime.timedelta(hours=3))  # Nairobi timezone is UTC+3
     current_date = datetime.datetime.now(nairobi_timezone).date()
 
-    # Calculate the end of the day by setting the time to 23:59:59
-    end_of_day = datetime.datetime.combine(current_date, datetime.time(23, 59, 59, 999999), tzinfo=nairobi_timezone)
+    # Calculate the start of the next day by adding one day to the current date
+    start_of_next_day = datetime.datetime.combine(current_date + datetime.timedelta(days=1), datetime.time(0, 0, 0),
+                                                  tzinfo=nairobi_timezone)
 
-    # Convert the end of the day to a Unix timestamp (seconds since the epoch)
-    end_of_day_unix_timestamp = int(end_of_day.timestamp())
+    # Calculate the end of the next day by setting the time to 23:59:59
+    end_of_next_day = datetime.datetime.combine(current_date + datetime.timedelta(days=1),
+                                                datetime.time(23, 59, 59, 999999), tzinfo=nairobi_timezone)
+
+    # Convert the end of the next day to a Unix timestamp (seconds since the epoch)
+    end_of_next_day_unix_timestamp = int(end_of_next_day.timestamp())
+    print(end_of_next_day_unix_timestamp)
     current_time_unix = int(time.time())  # Current time in Linux timestamp (seconds)
 
-    url = f"https://www.ke.sportpesa.com/api/upcoming/games?type=prematch&sportId=2&section=upcoming&markets_layout=multiple&o=startTime&pag_count=15&pag_min=1&from={current_time_unix}&to={end_of_day_unix_timestamp}"
+    url = f"https://www.ke.sportpesa.com/api/upcoming/games?type=prematch&sportId=2&section=upcoming&markets_layout=multiple&o=startTime&pag_count=15&pag_min=1&from={current_time_unix}&to={end_of_next_day_unix_timestamp}"
 
     payload = {}
     headers = {

@@ -23,7 +23,7 @@ def init_driver():
     else:
         # path_to_driver = os.path.join(drivers_path, "chromedriver.exe")
         # browser = webdriver.Chrome(executable_path=path_to_driver)
-        browser = uc.Chrome(use_subprocess=True)
+        browser = uc.Chrome()
 
     browser.maximize_window()
     browser.implicitly_wait(30)

@@ -53,11 +53,8 @@ def convert_unix_timestampes_datetime(next_start_time, current_time_unix):
 
 while True:
     games = get_start_time()
-
-    print(games)
     # Get the next game's start time using Linux timestamps
     next_start_time = find_next_start_time(games)
-
     # Get the current time in Linux timestamp
     current_time_unix = int(time.time())
 
@@ -79,52 +76,45 @@ while True:
             # Record the start time
             start_time = time.time()
             for _ in range(total_duration // interval):
-                print("Started")
-                bot = Login()
-                time.sleep(10)
                 try:
+                    print("Started")
+                    bot = Login()
+                    time.sleep(10)
+
                     print("Bot started successfully")
                     bot.start_site()
                     bot.maximize_window()
 
                     bot.login(tel_no='0722808670', password='ambroseTall3436')
                     time.sleep(5)
-                    x = bot.main_call()
-                    print("this is what I get from bot", x)
-                    if x == "No games":
-                        print("Hello Ambrose")
-                        bot.quit_automation()
-                        break
-                except:
-                    print("Qui")
                     bot.quit_automation()
+                    bot.main_call()
+
+                except:
                     time.sleep(10)
-                    continue
+                    pass
+            print("\n Finished placing check if profits of losses \n")
+
         else:
             print("Game has started")
             continue
 
-#
+
 #
 # for i in range(1,6):
-#     print("Started")
-#     bot = Login()
-#     time.sleep(10)
 #     try:
+#         print("Started")
+#         bot = Login()
+#         time.sleep(10)
 #         print("Bot started successfully")
 #         bot.start_site()
 #         bot.maximize_window()
 #
 #         bot.login(tel_no='0722808670', password='ambroseTall3436')
 #         time.sleep(5)
-#         x = bot.main_call()
-#         print("this is what I get from bot", x)
-#         if x == "No games":
-#             print("Hello Ambrose")
-#             bot.quit_automation()
-#             break
+#         bot.quit_automation()
+#         bot.main_call()
 #     except:
 #         print("Qui")
-#         bot.quit_automation()
 #         time.sleep(10)
 #         continue

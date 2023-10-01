@@ -1,48 +1,132 @@
-
-import mysql.connector
-from datetime import datetime
+import requests
 import json
 
-def db_gapubs_connect():
-    # Establish a connection to the first database
-    conn1 = mysql.connector.connect(
-        host='168.119.4.62',
-        user='helixhel_oldcrawlersusr',
-        password='NdSZIAfVZHoA',
-        database='helixhel_oldcrawlersdb',
-    )
-    cursor1 = conn1.cursor()
-    return cursor1, conn1
+def login_truthfinder():
+    url = "https://api2.truthfinder.com/v1/authenticate"
 
-def get_data():
-    cursor1 , conn1= db_gapubs_connect()
-    cursor1.execute("SELECT * FROM GaPub")
-    column_names = cursor1.column_names
-    # Fetch all the results and display them
-    results1 = cursor1.fetchall()
-    print("hello")
+    payload = json.dumps({
+        "email": "cashpro@cashprohomebuyers.com",
+        "password": "tech6491",
+        "sessionId": "1d565c79",
+        "sessionCreated": "1695449537"
+    })
+    headers = {
+        'authority': 'api2.truthfinder.com',
+        'accept': '*/*',
+        'accept-language': 'en-US,en;q=0.9',
+        'api-key': 'B7QbTIt3PtAID67cRtfQwrgzL0H3qU5buaxp17PoZ98',
+        'app-id': 'tf-web',
+        'content-type': 'application/json',
+        'device-id': 'ba3be71b-83f8-4b43-bdcb-aa9d52eb8367',
+        'origin': 'https://www.truthfinder.com',
+        'referer': 'https://www.truthfinder.com/login',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Linux"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'Cookie': '__cf_bm=Ha6rl_lgi9_ykeTFajsG8MsCR9cX8XjlwiMoSim4Jlw-1695461085-0-AWaMc2g2Ov5Yq1cE/OQnxDikV26HN3oqwugWO6Akbv5kCH/Mt2kVMSDTt4N5yfscEh5oSzDZDTreRy21F7IsT56YSeg7zUd55YU6DPWpuWw4'
+    }
 
-    result = []
+    response = requests.request("POST", url, headers=headers, data=payload)
+    r = response.json()
+    token = r['accessToken']
+    print(token)
+    return token
 
-    # Loop over the rows and create a JSON object for each row
-    for row in results1:
-        # Create a dictionary to store the row data
-        data = {}
-        for i in range(len(column_names)):
-            # Only add the data for the specified columns to the dictionary
-            if column_names[i] in ["Street", "City", "State", "Zip_Code", "Id"]:
-                # Convert the datetime object to a string before adding it to the dictionary
-                if isinstance(row[i], datetime):
-                    data[column_names[i]] = row[i].strftime('%Y-%m-%d %H:%M:%S')
-                else:
-                    data[column_names[i]] = row[i]
-            # Convert the dictionary to a JSON object and append it to the result list
-        result.append(json.dumps(data))
+def truth_search_address(address):
+    url = f"https://us-autocomplete-pro.api.smartystreets.com/lookup?auth-id=2617637110263865&search={address}"
+    base = "https://www.truthfinder.com/dashboard/reports/"
 
-    # Close the cursor and connection for the first database
-    cursor1.close()
-    conn1.close()
-    return result
+    payload = {}
+    headers = {
+        'authority': 'us-autocomplete-pro.api.smartystreets.com',
+        'accept': '*/*',
+        'accept-language': 'en-US,en;q=0.9',
+        'origin': 'https://www.truthfinder.com',
+        'referer': 'https://www.truthfinder.com/dashboard',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Linux"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'cross-site',
+        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36'
+    }
 
+    response = requests.request("GET", url, headers=headers, data=payload)
+    r = response.json()['suggestions']
+    if r:
+        for address in r:
+            print(address)
+            if address['state'] == "GA":
+                # ga:dalton:30721:3440freedomln
+                url = f"{base}{address['state'].lower()}:{address['city'].lower()}:{address['zipcode']}:{address['street_line'].lower().replace(' ', '')}"
+                return url
+    return None
 
-print(get_data())
+def report_truthfinder(address, jwt):
+    url = f"https://api2.truthfinder.com/v1/me/records/{address.split('/')[-1]}/report?defer_extended_data=false"
+
+    payload = {}
+    headers = {
+        'authority': 'api2.truthfinder.com',
+        'accept': '*/*',
+        'accept-language': 'en-US,en;q=0.9',
+        'api-key': 'B7QbTIt3PtAID67cRtfQwrgzL0H3qU5buaxp17PoZ98',
+        'app-id': 'tf-web',
+        'authorization': f'Bearer {jwt}',
+        'device-id': 'ba3be71b-83f8-4b43-bdcb-aa9d52eb8367',
+        'origin': 'https://www.truthfinder.com',
+        'referer': 'https://www.truthfinder.com/dashboard/reports/ga:dalton:30721:3440freedomln',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Linux"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'Cookie': '__cf_bm=wLzTbwmTQl8ITfizbSI_Eb9wxMELAsTMZP4qSWbO0Io-1695463099-0-AQGIa5LuYsilxmSwBqLwgLEG8IhjZCL7A80kzkPZelMRSDJ30G11U9kiGlyjjdToAVliim+cgxHXcpiuhMr9q4Wf+axArSwREeI+CHNy2w/V'
+    }
+
+    response = requests.request("GET", url, headers=headers, data=payload)
+    r = response.json()
+    print(r)
+    return r
+
+def send_request_truthfinder(jwt, url):
+    headers = {
+        'authority': 'api2.truthfinder.com',
+        'accept': '*/*',
+        'accept-language': 'en-US,en;q=0.9',
+        'api-key': 'B7QbTIt3PtAID67cRtfQwrgzL0H3qU5buaxp17PoZ98',
+        'app-id': 'tf-web',
+        'authorization': f'Bearer {jwt}',
+        'device-id': 'ba3be71b-83f8-4b43-bdcb-aa9d52eb8367',
+        'origin': 'https://www.truthfinder.com',
+        'referer': 'https://www.truthfinder.com/dashboard/reports/ga:dalton:30721:3440freedomln',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Linux"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'Cookie': '__cf_bm=wLzTbwmTQl8ITfizbSI_Eb9wxMELAsTMZP4qSWbO0Io-1695463099-0-AQGIa5LuYsilxmSwBqLwgLEG8IhjZCL7A80kzkPZelMRSDJ30G11U9kiGlyjjdToAVliim+cgxHXcpiuhMr9q4Wf+axArSwREeI+CHNy2w/V'
+    }
+    response = requests.request("GET", url, headers=headers)
+    print(response.text)
+
+def main():
+    address_db = '3440 Freedom Lane'
+    jwt_token = login_truthfinder()
+    url = truth_search_address(address_db)
+    print(send_request_truthfinder(jwt_token, url))
+    if url:
+        r = report_truthfinder(url, jwt_token)
+    return url
+
+print(main())
+
