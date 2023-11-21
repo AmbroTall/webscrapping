@@ -1,0 +1,46 @@
+00:00:28 : 552 Filter Plant Road, Summerville, GA 30747
+00:07:25 : 552 Filter Plant Road, Summerville, GA 30747
+00:07:40 : 47 Maddox Rd Se, Acworth, GA 30102
+00:08:23 : 504 Firethorn Ct, Villa Rica, GA 30180
+00:09:12 : 27 Martin Luther King Drive, Cartersville, GA 30120
+00:09:19 : 1304 Avon Avenue Sw, Atlanta, GA 30310
+00:09:24 : 2337 Abner Place Nw, Atlanta, GA 30318
+00:09:28 : 2398 Herring Road Sw, Atlanta, GA 30311
+00:09:31 : 342 Schoen Street Se, Atlanta, GA 30315
+00:09:35 : 108 Wellington Street Sw, Atlanta, GA 30314
+00:09:40 : 165 Edwards Street Sw, Atlanta, GA 30314
+00:09:43 : 156 Hyacinth Avenue Nw, Atlanta, GA 30314
+00:09:48 : 1636 Sandtown Road Sw, Atlanta, GA 30311
+00:09:56 : 183 Linkwood Road Nw, Atlanta, GA 30318
+00:10:05 : 719 Caron Circle Nw, Atlanta, GA 30318
+00:10:12 : 1220 Second Street Nw, Atlanta, GA 30318
+00:10:17 : 1705 Spooner Road, Douglas, GA 31533
+00:10:23 : 3044 Griggs Ct, Augusta, GA 30906
+00:11:04 : 323 Sleepy Hollow Ct, Martinez, GA 30907
+00:11:09 : 1202 Atlanta Hwy, Gainesville, GA 30501
+00:11:52 : 105 Dogwood Circle, Gainesville, GA 30501
+00:12:00 : 164 Beacon Drive, Maysville, GA 30558
+00:12:07 : 6710 Stillmeadow Drive, Cumming, GA 30040
+00:12:12 : 110 Glen Eagle Way, Mcdonough, GA 30253
+00:12:48 : 407 Sorrow Road, Stockbridge, GA 30281
+00:12:53 : 4000 Harness Ln, Conyers, GA 30013
+00:13:35 : 3408 Charter Ct, Conyers, GA 30013
+00:14:13 : 3219 Quincey Xing, Conyers, GA 30013
+00:14:37 : 3505 Tiffany Drive, Conyers, GA 30013
+00:14:44 : 1200 Brookside Drive Ne, Conyers, GA 30012
+00:14:51 : 113 Willow Drive, Guyton, GA 31312
+00:14:55 : 20 Clydesdale Ct, Newnan, GA 30263
+00:15:38 : 101 Woodland Court, Warner Robins, GA 31088
+00:15:42 : 1505 Windsor Road, Perry, GA 31069
+00:15:47 : 4014 Radford Gay Road, Dearing, GA 30808
+00:15:52 : 314 S. Grady Street, Portal, GA 30450
+00:15:56 : 5072 Woodridge Way, Tucker, GA 30084
+00:16:43 : 1021 Stewarts Creek, Greensboro, GA 30642
+00:16:49 : 3367 Raes Creek Road, Marietta, GA 30008
+00:16:53 : 1405 Hawthorne Ave Se, Smyrna, GA 30080
+00:17:31 : 1267 Misty Valley Court, Lawtenceville, GA 30045
+00:17:37 : 2218 Perkerson Mill Road, Austell, GA 30106
+00:17:39 : 7254 Bridgeport Ct, Austell, GA 30168
+00:29:19 : 552 Filter Plant Road, Summerville, GA 30747
+00:29:27 : 47 Maddox Rd Se, Acworth, GA 30102
+00:30:19 : 504 Firethorn Ct, Villa Rica, GA 30180

@@ -1,0 +1,57 @@
+14:08:24 : 537 Windstone Trail, Alpharetta, GA 30004
+14:08:37 : 106 Larkin Ct, Hinesville, GA 31313
+14:08:45 : 560 Margaret Road, Hinesville, GA 31313
+14:08:58 : 1015 Meredith Lane, Hinesville, GA 31313
+14:09:07 : 2861 Pine Mountain Circle, Kennesaw, GA 30152
+14:09:14 : 1126 Oakdale Road, Augusta, GA 30904
+14:09:21 : 42 Johnston Road, Griffin, GA 30224
+14:09:26 : 112 Apache Road, Jackson, GA 30233
+14:09:30 : 552 Filter Plant Road, Summerville, GA 30747
+14:09:34 : 504 Firethorn Ct, Villa Rica, GA 30180
+14:09:40 : 27 Martin Luther King Drive, Cartersville, GA 30120
+14:09:44 : 1304 Avon Avenue Sw, Atlanta, GA 30310
+14:09:48 : 2337 Abner Place Nw, Atlanta, GA 30318
+14:09:53 : 2398 Herring Road Sw, Atlanta, GA 30311
+14:09:57 : 342 Schoen Street Se, Atlanta, GA 30315
+14:10:00 : 108 Wellington Street Sw, Atlanta, GA 30314
+14:10:02 : 165 Edwards Street Sw, Atlanta, GA 30314
+14:10:06 : 156 Hyacinth Avenue Nw, Atlanta, GA 30314
+14:10:09 : 1636 Sandtown Road Sw, Atlanta, GA 30311
+14:10:11 : 183 Linkwood Road Nw, Atlanta, GA 30318
+14:10:14 : 719 Caron Circle Nw, Atlanta, GA 30318
+14:10:17 : 1220 Second Street Nw, Atlanta, GA 30318
+14:10:21 : 1705 Spooner Road, Douglas, GA 31533
+14:10:25 : 3044 Griggs Ct, Augusta, GA 30906
+14:10:32 : 323 Sleepy Hollow Ct, Martinez, GA 30907
+14:10:34 : 1202 Atlanta Hwy, Gainesville, GA 30501
+14:10:42 : 105 Dogwood Circle, Gainesville, GA 30501
+14:10:45 : 164 Beacon Drive, Maysville, GA 30558
+14:10:47 : 6710 Stillmeadow Drive, Cumming, GA 30040
+14:10:50 : 110 Glen Eagle Way, Mcdonough, GA 30253
+14:10:57 : 407 Sorrow Road, Stockbridge, GA 30281
+14:11:00 : 4000 Harness Ln, Conyers, GA 30013
+14:11:07 : 3408 Charter Ct, Conyers, GA 30013
+14:11:14 : 3219 Quincey Xing, Conyers, GA 30013
+14:11:20 : 3505 Tiffany Drive, Conyers, GA 30013
+14:11:26 : 1200 Brookside Drive Ne, Conyers, GA 30012
+14:11:28 : 113 Willow Drive, Guyton, GA 31312
+14:11:30 : 20 Clydesdale Ct, Newnan, GA 30263
+14:11:37 : 101 Woodland Court, Warner Robins, GA 31088
+14:11:43 : 1505 Windsor Road, Perry, GA 31069
+14:11:45 : 4014 Radford Gay Road, Dearing, GA 30808
+14:11:49 : 314 S. Grady Street, Portal, GA 30450
+14:11:52 : 5072 Woodridge Way, Tucker, GA 30084
+14:12:00 : 1021 Stewarts Creek, Greensboro, GA 30642
+14:12:02 : 3367 Raes Creek Road, Marietta, GA 30008
+14:12:05 : 1405 Hawthorne Ave Se, Smyrna, GA 30080
+14:12:13 : 1267 Misty Valley Court, Lawtenceville, GA 30045
+14:12:16 : 2218 Perkerson Mill Road, Austell, GA 30106
+14:12:19 : 7254 Bridgeport Ct, Austell, GA 30168
+14:12:27 : 94 Vann Dr Nw, Rome, GA 30165
+14:12:34 : 2486 Alston Drive, Marietta, GA 30062
+14:12:39 : 1726 Wilkerson Rd Sw, Rome, GA 30165
+14:12:46 : 226 Coosawattee Avenue, Rome, GA 30165
+14:12:49 : 21 Summit Drive, Lindale, GA 30147
+14:12:53 : 1414 Sienna Drive, Dalton, GA 30721
+14:12:56 : 770 Anna Ln, Alpharetta, GA 30004
+14:13:04 : 580 Hutchens Road, Hapeville, GA 30354
