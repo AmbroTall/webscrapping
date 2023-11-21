@@ -28,14 +28,14 @@ Scotland_Premiership = ['Celtic', 'Glasgow Rangers (Rangers)', 'Hibernian Hibs (
                         'St Johnstone (St. Johnstone)', 'Kilmarnock Killie (Kilmarnock)', 'Aberdeen', 'St Mirren', 'Dundee Dark Blues (Dundee)', 'Livingston']
 
 # SCOTLAND Scottish Championship
-Scotland_Championship = ['Dundee (Dundee United)', 'Greenock Morton (Morton)', 'Dunfermline', "Queen`s Park (Queen's Park)", 'Partick Thistle (Partick Thistle)', 'Raith Rovers', 'Inverness (Inverness Caledonian Thistle)',
-                         'Airdrieonians (Airdrie Utd)', 'Ayr United (Ayr)', 'Arbroath']
+Scotland_Championship = ['Dundee (Dundee United)', 'Greenock Morton', 'Dunfermline Athletic', "Queen`s Park (Queen's Park)", 'Partick Thistle (Partick Thistle)', 'Raith Rovers', 'Inverness CT',
+                         'Airdrieonians', 'Ayr United', 'Arbroath']
 # SCOTLAND Scottish League One
-Scotland_League_One = ['Alloa Athletic (Alloa)', 'Falkirk', 'Hamilton (Hamilton Academical)', 'Queen of South', 'Stirling Albion', 'Kelty Hearts', 'Cove Rangers (Cove Rangers FC)',
+Scotland_League_One = ['Alloa Athletic', 'Falkirk', 'Hamilton', 'Queen of the South', 'Stirling Albion', 'Kelty Hearts', 'Cove Rangers',
                          'Montrose', 'Edinburgh City']
 
 # Scotland -League Two
-Scotland_League_Two = ['Bonnyrigg Rose', 'Clyde', 'Dumbarton ', 'East Fife', 'Elgin', 'Forfar', 'Peterhead', 'Stenhousemuir', 'Stranraer', 'Spartans']
+Scotland_League_Two = ['Bonnyrig Rose Athletic', 'Clyde', 'Dumbarton ', 'East Fife', 'Elgin City', 'Forfar Athletic', 'Peterhead', 'Stenhousemuir', 'Stranraer', 'Spartans']
 
 
 

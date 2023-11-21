@@ -7,7 +7,7 @@ English_Premier_League = ['Arsenal (Arsenal FC)', 'Aston Villa', 'Bournemouth (A
 # ENGLAND Championship
 English_Football_League = ['Birmingham City', 'Blackburn Rovers', 'Bristol City', 'Cardiff City ', 'Coventry City', 'Huddersfield Town',
                            'Hull City', 'Ipswich Town', 'Leeds United', 'Leicester City', 'Middlesbrough (Middlesbrough FC)', 'Millwall (Millwall FC)', 'Norwich City',
-                           'Plymouth Argyle', 'Preston North End', 'Queens Park Rangers', 'Rotherham United', 'Sheffield Wednesday',
+                           'Plymouth Argyle', 'Preston North End FC', 'Queens Park Rangers', 'Rotherham United', 'Sheffield Wednesday',
                            'Southampton (Southampton FC)', 'Stoke City', 'Sunderland (Sunderland AFC)' , 'Swansea City ', 'Watford (Watford FC)', 'West Bromwich Albion']
 
 # ENGLAND League One

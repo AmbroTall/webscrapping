@@ -25,13 +25,13 @@ England_League_Two = ['Sutton United', 'Accrington Stanley', 'Milton Keynes Dons
 
 # SCOTLAND Premiership
 Scotland_Premiership = ['Celtic', 'Rangers', 'Hibernian', 'Hearts', 'Ross County', 'Motherwell ',
-                        'St Johnstone ', 'Kilmarnock', 'Aberdeen', 'St. Mirren', 'Dundee', 'Livingston']
+                        'St Johnstone ', 'Kilmarnock', 'Aberdeen', 'St Mirren FC', 'Dundee', 'Livingston']
 
 # SCOTLAND Championship
 Scotland_Championship = ['Dundee (Dundee United)', 'Greenock Morton', 'Dunfermline', "Queen`s Park (Queen's Park)", 'Partick Thistle ', 'Raith', 'Inverness',
                          'Airdrieonians', 'Ayr United', 'Arbroath (Arbroath FC)']
 # SCOTLAND League One
-Scotland_League_One = ['Alloa', 'Falkirk', 'Hamilton (Hamilton Academical)', 'Queen of South', 'Stirling Albion', 'Kelty Hearts', 'Cove Rangers',
+Scotland_League_One = ['Alloa', 'Falkirk', 'Hamilton (Hamilton Academical)', 'Queen Of South', 'Stirling Albion', 'Kelty Hearts', 'Cove Rangers',
                          'Montrose', 'Edinburgh City (Edinburgh City)']
 
 # Scotland -League Two
