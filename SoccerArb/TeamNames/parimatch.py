@@ -19,12 +19,12 @@ England_League_One = ['Barnsley', 'Bolton ', 'Exeter City', 'Blackpool', 'Cambri
 # ENGLAND League Two
 England_League_Two = ['Sutton Utd', 'Accrington Stanley', 'Milton Keynes Dons', 'Salford City', 'Morecambe', 'Barrow A.F.C. ', 'Crawley Town',
                       'Gillingham', 'Harrogate (Harrogate Town)', 'Crewe Alexandra ', 'Mansfield Town', 'Grimsby', 'AFC Wimbledon', 'Swindon', 'Colchester',
-                      'Tranmere', 'Bradford City AFC', 'Doncaster Rovers', 'Stockport County', 'Wrexham', 'Forest Green', 'Newport County', 'Notts County',
+                      'Tranmere', 'Bradford City AFC', 'Doncaster Rovers', 'Stockport County', 'Wrexham', 'Forest Green Rovers', 'Newport County', 'Notts County',
                       'Walsall ']
 
 
 # SCOTLAND Premiership
-Scotland_Premiership = ['Celtic', 'Cove Rangers', 'Hibernian', 'Hearts', 'Ross County', 'Motherwell ',
+Scotland_Premiership = ['Celtic', 'Rangers', 'Hibernian', 'Hearts', 'Ross County', 'Motherwell ',
                         'St Johnstone ', 'Kilmarnock', 'Aberdeen', 'St Mirren', 'Dundee FC', 'Livingston']
 
 # SCOTLAND Championship

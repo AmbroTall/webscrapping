@@ -1,5 +1,5 @@
 # ENGLAND PREMIER LEAGUE
-English_Premier_League = ['Arsenal', 'Aston Villa', 'Bournemouth', 'Brentford', 'Brighton & Hove Albion', 'Burnley', 'Chelsea' , 'Everton',
+English_Premier_League = ['Arsenal', 'Aston Villa', 'AFC Bournemouth', 'Brentford', 'Brighton and Hove Albion', 'Burnley', 'Chelsea' , 'Everton',
                           'Crystal Palace', 'Fulham', 'Liverpool', 'Luton Town', 'Manchester City', 'Manchester United ', 'Newcastle United',
                           'Nottingham Forest', 'Sheffield United ', 'Tottenham Hotspur', 'West Ham United', 'Wolverhampton Wanderers']
 
@@ -12,20 +12,20 @@ English_Football_League = ['Birmingham City', 'Blackburn Rovers', 'Bristol City'
 
 # ENGLAND League One
 England_League_One = ['Barnsley', 'Bolton Wanderers', 'Exeter City', 'Blackpool', 'Cambridge United', 'Charlton Athletic ', 'Peterborough United ', 'Shrewsbury Town',
-                      'Stevenage ', 'Portsmouth', 'Carlisle United', 'Fleetwood Town', 'Bristol Rovers', 'Derby County ', 'Leyton Orient',
+                          'Stevenage ', 'Portsmouth', 'Carlisle United', 'Fleetwood Town', 'Bristol Rovers', 'Derby County ', 'Leyton Orient',
                       'Northampton (Northampton Town)', 'Reading', 'Cheltenham Town', 'Oxford United', 'Burton Albion', 'Wycombe Wanderers', 'Lincoln City', 'Port Vale',
                       'Wigan Athletic']
 
 # ENGLAND League Two
-England_League_Two = ['Sutton United', 'Accrington Stanley', 'Milton Keynes Dons', 'Salford City', 'Morecambe (Morecambe FC)', 'Barrow ', 'Crawley Town',
-                      'Gillingham (Gillingham FC)', 'Harrogate (Harrogate Town)', 'Crewe ', 'Mansfield (Mansfield Town)', 'Grimsby (Grimsby)', 'AFC Wimbledon', 'Swindon (Swindon Town)', 'Colchester (Colchester United)',
-                      'Tranmere', 'Bradford City', 'Doncaster', 'Stockport', 'Wrexham', 'Forest Green', 'Newport County', 'Notts County',
-                      'Walsall ']
+England_League_Two = ['Sutton United', 'Accrington Stanley', 'Milton Keynes Dons', 'Salford City', 'Morecambe', 'Barrow AFC', 'Crawley Town',
+                      'Gillingham', 'Harrogate (Harrogate Town)', 'Crewe Alexandra ', 'Mansfield (Mansfield Town)', 'Grimsby (Grimsby Town)', 'AFC Wimbledon', 'Swindon (Swindon Town)', 'Colchester (Colchester United)',
+                      'Tranmere Rovers', 'Bradford City', 'Doncaster Rovers', 'Stockport County', 'Wrexham', 'Forest Green Rovers', 'Newport County AFC', 'Notts County',
+                      'Walsall']
 
 
 # SCOTLAND Premiership
-Scotland_Premiership = ['Celtic', 'Rangers', 'Hibernian', 'Heart of Midlothian', 'Ross County', 'Motherwell ',
-                        'St. Johnstone ', 'Kilmarnock', 'Aberdeen', 'St. Mirren', 'Dundee', 'Livingston']
+Scotland_Premiership = ['Celtic', 'Glasgow Rangers', 'Hibernian', 'Heart of Midlothian', 'Ross County', 'Motherwell ',
+                        'St Johnstone ', 'Kilmarnock', 'Aberdeen', 'St Mirren', 'Dundee', 'Livingston']
 
 # SCOTLAND Championship
 Scotland_Championship = ['Dundee (Dundee United)', 'Greenock Morton', 'Dunfermline Athletic', "Queen`s Park (Queen's Park)", 'Partick Thistle ', 'Raith Rovers', 'Inverness',
@@ -83,7 +83,6 @@ def return_df(df=None):
     # Apply the custom function to all columns
     df = df.applymap(extract_values)
     df.to_csv("bet188.csv")
-
     return df
 
 # print(df.columns)
