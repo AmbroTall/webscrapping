@@ -77,9 +77,9 @@ df = df.applymap(extract_values)
 # Define a custom function to extract values within brackets
 def extract_values(text):
     if '(' in text and ')' in text:
-        result = text.split('(')[-1].replace(')', '')
+        result = text.split('(')[-1].replace(')', '').strip()
     else:
-        result = text
+        result = text.strip()
     return result
 
 def return_df(df=None):
