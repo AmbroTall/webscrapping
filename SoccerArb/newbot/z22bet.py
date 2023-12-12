@@ -1,4 +1,11 @@
+import time
+
 from SoccerArb.newbot.utils import map_teams, testing_function, request_function
+from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError
+import time
+
+MAX_RETRIES = 3
+TIMEOUT_LIMIT = 400  # 2 minutes
 
 
 def api_calls_events(code):
@@ -92,6 +99,9 @@ def exctract_odds(match, league, bookie_name):
         elif market == 19:
             gg.append(x['E'][0][0]['C'])
             gg.append(x['E'][1][0]['C'])
+        elif market == 49:
+            draw_no_bet.append(x['E'][0][0]['C'])
+            draw_no_bet.append(x['E'][1][0]['C'])
         elif market == 17:
             over_two_five.append(x['E'][0][4]['C'])
             over_two_five.append(x['E'][1][4]['C'])
@@ -107,6 +117,25 @@ def exctract_odds(match, league, bookie_name):
     wager_types.append({"over_three_five": over_three_five})
     wager_types.append({"fasthalf1X2": fasthalf1X2})
     wager_types.append({"gg": gg})
+    try:
+        for x in wager_types:
+            for key, value in x.items():
+                if key == "1X2":
+                    away_odd = value[-1]
+                    home_odd = value[0]
+                    draw_odd = value[1]
+                if key == "double_chance":
+                    double_chance1X = value[0]
+                    double_chance12 = value[1]
+                    double_chanceX2 = value[2]
+        away2_home1X = [away_odd, double_chance1X]
+        home1_awayX2 = [home_odd, double_chanceX2]
+        X_away12 = [draw_odd, double_chance12]
+        wager_types.append({"21X": away2_home1X})
+        wager_types.append({"12X": home1_awayX2})
+        wager_types.append({"X12": X_away12})
+    except:
+        pass
     games['wager_types'] = wager_types
     return games
 
@@ -131,52 +160,71 @@ def check_team_names_in_match_details(team_names, match_details):
 def process_league(league_dict):
     for league_name, league_id in league_dict.items():
         return  league_name, league_id
+
+
 def main():
     bookie_name = '22bet'
-    # leagues = [{"Scotland. League Two":281717} ]
-    leagues = [{"England. Premier League": 88637},{"England. Championship": 105759}, {"England. League One": 13709}, {"England. League Two": 24637}, {"Scotland. Premiership": 13521}, {"Scotland. Championship":281713}, {"Scotland. League One":281719}, {"Scotland. League Two":281717} ]
-
+    leagues = [
+        {"England Premier League": 88637},
+        {"England Championship": 105759},
+        {"England League One": 13709},
+        {"England League Two": 24637},
+        {"Scotland Premiership": 13521},
+        {"Scotland Championship": 281713},
+        {"Scotland League One": 281719},
+        {"Scotland League Two": 281717}
+    ]
 
     bookmaker_data = []
     for league in leagues:
-        print(league)
-        league_name, league_id = process_league(league)
-        match_details = api_calls_events(f"{league_id}")
+        try:
+            print(league)
+            league_name, league_id = process_league(league)
+            match_details = api_calls_events(f"{league_id}")
 
-        league_mapping = {
-            "England. Premier League": "England-Premier League",
-            "England. Championship": "England-EFL Cup",
-            "England. League One": "England-League One",
-            "England. League Two": "England-League Two",
-            "Scotland. Premiership": "Scotland-Premiership",
-            "Scotland. Championship": "Scotland-Championship",
-            "Scotland. League One": "Scotland-League One",
-            "Scotland. League Two": "Scotland-League Two",
-        }
-        # Check if the league_name is in the mapping dictionary, if yes, update it
-        if league_name in league_mapping:
-            league_name = league_mapping[league_name]
+            league_mapping = {
+                "England Premier League": "England-Premier League",
+                "England Championship": "England-EFL Cup",
+                "England League One": "England-League One",
+                "England League Two": "England-League Two",
+                "Scotland Premiership": "Scotland-Premiership",
+                "Scotland Championship": "Scotland-Championship",
+                "Scotland League One": "Scotland-League One",
+                "Scotland League Two": "Scotland-League Two",
+            }
+            # Check if the league_name is in the mapping dictionary, if yes, update it
+            if league_name in league_mapping:
+                league_name = league_mapping[league_name]
 
-        # Testing Function To See if teams are correctly named
-        testing = testing_function(bookie_name, league_name)
-        missing_names = check_team_names_in_match_details(testing, match_details)
-        print("**** This are the missing matches", missing_names)
+            # Testing Function To See if teams are correctly named
+            testing = testing_function(bookie_name, league_name)
+            missing_names = check_team_names_in_match_details(testing, match_details)
+            print("**** This are the missing matches", missing_names)
 
-        liga = {}
-        league_data = []
+            liga = {}
+            league_data = []
 
-
-        for match in match_details:
-            try:
-                league_wager_dic =  exctract_odds(match, league_name, bookie_name)
-                league_data.append(league_wager_dic)
-            except Exception as e:
-                print("Ambrose", e)
-                continue
-        liga[league_name] = league_data
-        bookmaker_data.append(liga)
-        print(bookmaker_data)
+            for match in match_details:
+                try:
+                    league_wager_dic = exctract_odds(match, league_name, bookie_name)
+                    league_data.append(league_wager_dic)
+                except:
+                    continue
+            liga[league_name] = league_data
+            bookmaker_data.append(liga)
+            print("22bet", bookmaker_data)
+        except Exception as e:
+            print("Ambrose", e)
+            continue
     return bookmaker_data
+
 if __name__ == '__main__':
+    start_time = time.time()
     games = main()
+    end_time = time.time()
+    # Calculate elapsed time
+    elapsed_time_seconds = end_time - start_time
+    elapsed_time_minutes = elapsed_time_seconds / 60
+
+    print(f"Elapsed Time: {elapsed_time_seconds:.2f} seconds ({elapsed_time_minutes:.2f} minutes)")
     print("This is my output", games)
