@@ -39,6 +39,7 @@ Scotland_League_One = ['Alloa Athletic (Alloa Athletic FC)', 'Falkirk (Falkirk F
 Scotland_League_Two = ['Bonnyrigg Rose', 'Clyde (Clyde FC)', 'Dumbarton (Dumbarton FC)', 'East Fife (East Fife FC)', 'Elgin City (Elgin City FC)', 'Forfar Athletic (Forfar Athletic FC)', 'Peterhead (Peterhead FC)', 'Stenhousemuir (Stenhousemuir FC)', 'Stranraer (Stranraer FC)', 'Spartans (Spartans FC)']
 
 
+
 import pandas as pd
 
 data = {

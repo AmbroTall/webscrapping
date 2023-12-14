@@ -37,7 +37,29 @@ Scotland_League_One = ['Alloa Athletic (Alloa Athletic FC)', 'Falkirk (Falkirk F
 # Scotland -League Two
 Scotland_League_Two = ['Bonnyrigg Rose', 'Clyde FC', 'Dumbarton FC', 'East Fife FC', 'Elgin City FC', 'Forfar Athletic FC', 'Peterhead FC', 'Stenhousemuir FC', 'Stranraer FC', 'Spartans FC']
 
+# ------------------------------------ Start Here ------------------------------------
+# Irish_Premier_League_Division = ["Shamrock Rovers", 'Derry City', 'St. Patricks', ' Shelbourne', 'Dundalk', 'Bohemians', 'Drogheda Utd', 'Sligo Rovers', 'Cork City', 'UC Dublin']
+Northern_Irish_Premiership = ['Linfield FC', 'Larne FC', 'Cliftonville FC', 'Crusaders FC', 'Glentoran FC', 'Coleraine FC', 'Glenavon FC', 'Loughgall FC', 'Carrick Rangers','Dungannon Swifts','Ballymena United', 'Newry City AFC']
 
+France_Ligue1 = ['Olympique Marseille', 'Lille OSC', 'OGC Nice', 'FC Lorient', 'Paris Saint Germain', 'Stade Brest', 'Clermont Foot 63', 'Le Havre AC', 'RC Lens', 'Olympique Lyon', 'FC Metz',
+                 'AS Monaco', 'Montpellier HSC', 'FC Nantes', 'Stade Rennes', 'Strasbourg Alsace', 'Toulouse FC', 'Stade Reims']
+
+France_Ligue2 = ['SM Caen', 'Grenoble Foot', 'Amiens SC', 'SC Bastia', 'ESTAC Troyes', 'Rodez Aveyron Football', 'USL Dunkerque', 'AC Ajaccio', 'AJ Auxerre',
+                 'EA Guingamp', 'Pau FC', 'Stade Lavallois MFC', 'US Concarneau', 'Angers SCO', 'FC Annecy', 'AS Saint Etienne', 'Quevilly Rouen Metropole', 'Paris FC',
+                 'Valenciennes FC', 'Girondins Bordeaux']
+
+Laliga = ['Rayo Vallecano', 'Valencia CF', 'Deportivo Alaves', 'Athletic Bilbao', 'Atletico Madrid', 'FC Barcelona', 'Cadiz CF', 'RC Celta de Vigo',
+                          'Getafe CF', 'Girona FC', 'Granada CF', 'UD Las Palmas', 'RCD Mallorca', 'CA Osasuna', 'Real Betis Seville', 'Real Madrid', 'Villarreal CF',
+                          'Real Sociedad', 'Sevilla FC', 'UD Almeria']
+# spain secunda jina tashwishi
+# Spain_Secunda_Division = ['Real Valladolid Promesas', 'Amorebieta', 'Levante', 'Albacete', 'Alcorcon', 'Burgos', 'Mar Menor FC', 'Eibar', 'Elche',
+#                           'Eldense', 'Espanyol', 'Andorra', 'Huesca', 'Leganes', 'Mirandes', 'Racing Ferrol', 'Racing Santander',
+#                           'Real Oviedo B', 'Real Zaragoza', 'Tenerife', 'Villarreal B', 'Sporting Gijon']
+#
+# Japan_League = ['Vissel Kobe', 'Yokohama F Marinos', 'Sanfrecce Hiroshima','Urawa Reds', 'Kashima Antlers', 'Nagoya Grampus','Avispa Fukuoka','Kawasaki Frontale','Cerezo Osaka', 'Albirex Niigata','FC Tokyo','Consadole Sapporo', 'Kyoto Sanga FC','Sagan Tosu','Shonan Bellmare','Gamba Osaka','Kashiwa Reysol','Yokohama FC']
+# Chinese_Super_League = ['Shanghai Port', 'S. Taishan','Zhejiang', 'Chengdu', 'S. Shenhua', 'Beijing Guoan', 'Wuhan Three T', 'Tianjin T', 'Changchun Yatai', 'Henan SL','Meizhou Hakka','Cangzhou','Qingdao Jonoon','Nantong Zhiyun','Dalian P','Shenzhen']
+# Polish_1_Liga = ['']
+# # ------------------------------------ End Here ------------------------------------
 
 import pandas as pd
 
@@ -49,7 +71,11 @@ data = {
     'Scotland-Premiership': Scotland_Premiership,
     'Scotland-Championship': Scotland_Championship,
     'Scotland-League One': Scotland_League_One,
-    'Scotland-League Two': Scotland_League_Two
+    'Scotland-League Two': Scotland_League_Two,
+    'Northern_Irish_Premiership':Northern_Irish_Premiership,
+    'France_Ligue1': France_Ligue1,
+    'France_Ligue2': France_Ligue2,
+    'Laliga': Laliga,
 }
 
 # Find the maximum length among all arrays
