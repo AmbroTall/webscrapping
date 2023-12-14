@@ -4,6 +4,7 @@ from thefuzz import process, fuzz
 from db import *
 import network_utils as nu
 import time
+import re
 
 headers = {
     'authority': 'www.bovada.lv',
@@ -129,17 +130,17 @@ def bovadaExtractData(tag, responses):
                             under[2.5] = round(float(outcome['price']['decimal']), 2)
                 if(market['description'] == "3-Way Moneyline" and market['period']['description'] == "First Half" and len(market['outcomes']) == 3):
                     fh1_data.extend((round(float(market['outcomes'][0]['price']['decimal']), 2),
-                                    round(float(market['outcomes'][1]['price']['decimal']), 2), 
+                                    round(float(market['outcomes'][1]['price']['decimal']), 2),
                                     round(float(market['outcomes'][2]['price']['decimal']), 2)))
                 if(market['description'] == "Double Chance" and market['period']['description'] == "Regulation Time" and len(market['outcomes']) == 3):
-                    dc_data.extend((round(float(market['outcomes'][0]['price']['decimal']), 2), 
-                                    round(float(market['outcomes'][1]['price']['decimal']), 2), 
+                    dc_data.extend((round(float(market['outcomes'][0]['price']['decimal']), 2),
+                                    round(float(market['outcomes'][1]['price']['decimal']), 2),
                                     round(float(market['outcomes'][2]['price']['decimal']), 2)))
                 if(market['description'] == "Both Teams To Score" and market['period']['description'] == "Regulation Time" and len(market['outcomes']) == 2):
-                        ggng.extend((round(float(market['outcomes'][0]['price']['decimal']),2), 
+                        ggng.extend((round(float(market['outcomes'][0]['price']['decimal']),2),
                                     round(float(market['outcomes'][1]['price']['decimal']),2)))
                 if(market['description'] == "Draw No Bet" and market['period']['description'] == "Regulation Time" and len(market['outcomes']) == 2):
-                    dnb.extend((round(float(market['outcomes'][0]['price']['decimal']), 2), 
+                    dnb.extend((round(float(market['outcomes'][0]['price']['decimal']), 2),
                                 round(float(market['outcomes'][1]['price']['decimal']), 2)))
         name = f"{normalizeName(tag, name1)} - {normalizeName(tag, name2)}"
         match = Match(name=name, home_odd=h_odd, away_odd=a_odd, draw_odd=d_odd, over=over, under=under, dc=dc_data, dnb=dnb, fh1x2=fh1_data, ggng=ggng)
@@ -243,3 +244,5 @@ if __name__ == '__main__':
     pd.set_option('display.max_colwidth', None)
     bovadadF = pd.DataFrame.from_dict(bovada_dict)
     print(bovadadF)
+
+

@@ -1,0 +1,2 @@
+1. Str object has no attribute get (Check Dictionary mapping of league names)
+2. list indices must be integers or slices, not str

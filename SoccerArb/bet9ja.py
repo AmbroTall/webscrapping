@@ -1,3 +1,5 @@
+import re
+
 import pandas as pd
 from match import Match
 from thefuzz import process
@@ -262,8 +264,9 @@ def normalizeBet9jaFL2TeamNames(team_name):
   return process.extractOne(team_name, France_Ligue2)[0]
 
 if __name__ == '__main__':
-  bet9ja_dict = bet9jaBSA()
-  pd.set_option('display.max_colwidth', None)
-  bet9jadF = pd.DataFrame.from_dict(bet9ja_dict)
-  print(bet9jadF)
+    print("Running")
+    bet9ja_dict = bet9jaBSA()
+    pd.set_option('display.max_colwidth', None)
+    bet9jadF = pd.DataFrame.from_dict(bet9ja_dict)
+    print(bet9jadF)
 

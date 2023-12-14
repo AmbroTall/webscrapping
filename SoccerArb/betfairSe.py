@@ -162,8 +162,11 @@ async def betfairExtractGGNG(tag, page):
 
 def combineMatchesData(matches, ggng):
    for match, ggng_match in zip_longest(matches, ggng):
-      if(match.name == ggng_match.name):
-         match.ggng = ggng_match.ggng
+       try:
+          if(match.name == ggng_match.name):
+             match.ggng = ggng_match.ggng
+       except:
+           pass
    betfair_dict = {"Name":"Betfair", "Matches": matches}
    return betfair_dict
 
