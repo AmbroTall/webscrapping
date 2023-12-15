@@ -50,7 +50,10 @@ Spain_Secunda_Division = ['Valladolid', 'Amorebieta', 'Levante', 'Albacete', 'Al
 
 Japan_League = ['Vissel Kobe', 'Yokohama F Marinos', 'Sanfrecce Hiroshima','Urawa Reds', 'Kashima Antlers', 'Nagoya Grampus','Avispa Fukuoka','Kawasaki Frontale','Cerezo Osaka', 'Albirex Niigata','FC Tokyo','Consadole Sapporo', 'Kyoto Sanga FC','Sagan Tosu','Shonan Bellmare','Gamba Osaka','Kashiwa Reysol','Yokohama FC']
 Chinese_Super_League = ['Shanghai Port', 'S. Taishan','Zhejiang', 'Chengdu', 'S. Shenhua', 'Beijing Guoan', 'Wuhan Three T', 'Tianjin T', 'Changchun Yatai', 'Henan SL','Meizhou Hakka','Cangzhou','Qingdao Jonoon','Nantong Zhiyun','Dalian P','Shenzhen']
-Polish_1_Liga = ['']
+Polish_1_Liga = ['Arka Gdynia', 'Lechia Gdansk', 'Odra Opole', 'Tychy', 'Motor Lublin','Wisla Krakow', 'Miedz Legnica','Wisla Plock','Gornik Leczna','T. Nieciecza', 'Stal Rzeszow','Znicz Pruszkow','Katowice','Polonia Warszaw','Chrobry Glogow','Resovia Rzeszow','Podbeskidzie','Z. Sosnowiec']
+German_Bundesliga_3 = ['Regensburg', 'Dynamo Dresden', 'Verl', 'Sandhausen', 'Ulm', 'FC Ingolstadt', 'Erzgebirge Aue', 'RW Essen', 'Saarbrucken', 'Preuss. Munster', 'Unterhaching', 'Dortmund B', 'Bielefeld', 'Viktoria Koln', '1860 Munchen', 'Hallescher', 'VfB Lubeck', 'Mannheim','MSV Duisburg','Freiburg B']
+German_Bundesliga_2 = ['Sankt Pauli', 'Holstein Kiel', 'Hamburger SV','Greuther Furth','Dusseldorf', 'Hannover 96','Hertha Berlin','Elversberg','Paderborn', 'FC Nurnberg','Wehen Wiesbaden','Magdeburg', 'Schalke 04','Karlsruher SC','Kaiserslautern','Hansa Rostock','Braunschweig','Osnabruck']
+
 # ------------------------------------ End Here ------------------------------------
 
 import pandas as pd
