@@ -96,7 +96,7 @@ def sbobetFL2():
    return sbobetGetData(url, "FL2")
 
 def sbobetGetData(url, tag):
-   driver = webdriver.Chrome(service=ser, options=option)
+   driver = webdriver.Chrome()
    try:
       driver.get(url)
       element = WebDriverWait(driver, 7).until(EC.presence_of_element_located((By.ID, 'bu:od:go:mt:4')))

@@ -1,4 +1,4 @@
-Liga_Profesional = ['River Plate', 'Boca Juniors', 'San Lorenzo', 'Racing Club', 'Arsenal de Sarandi', 'Independiente', 'Belgrano', 
+Liga_Profesional = ['River Plate', 'Boca Juniors', 'San Lorenzo', 'Racing Club', 'Arsenal de Sarandi', 'Independiente', 'Belgrano',
                     'Rosario Central', 'Estudiantes La Plata', 'Defensa y Justicia', "Newell's Old Boys", 'Argentinos Juniors',
                     'Atletico Lanus', 'Velez Sarsfield', 'Union', 'Tigre', 'Colon de Santa Fe', 'Platense', 'Huracan', 'Esgrima La Plata',
                     'Atletico Tucuman', 'Banfield', "Instituto AC Cordoba", 'Central Cordoba SDE', 'Sarmiento', 'Barracas Central',
@@ -110,7 +110,7 @@ France_Ligue2 = ['Caen', 'Grenoble', 'Amiens', 'SC Bastia', 'Troyes', 'Rodez Ave
 
 soccer_leagues = {'ALP':'Argentina Liga Profesional', 'BSA':'Brazil Serie A', 'BSB':'Brazil Serie B', 'CPA':'Colombia Primera A',
                   'CPB':'Colombia Primera B', 'PP':'Paraguay Primera', 'ELP':'Ecuador Pro Liga', 'PL1':'Peru Liga 1',
-                  'USD':'Uruguay Segunda Div', 'BPD':'Bolivia Primera', 'MLM':'Mexico Liga MX', 'USM':'United States MLS', 
+                  'USD':'Uruguay Segunda Div', 'BPD':'Bolivia Primera', 'MLM':'Mexico Liga MX', 'USM':'United States MLS',
                   'EPL':'English Premier League', 'EFL':'English Football League Championship', 'EL1':'English League One',
                   'EL2':'English League Two', 'SP':'Scotland Premiership', 'SC':'Scotland Championship',
                   'IPD':'Ireland Premier Division', 'IFD':'Ireland First Division', 'SPD':'Spain Primera Division LaLiga',

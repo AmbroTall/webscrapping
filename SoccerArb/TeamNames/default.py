@@ -32,22 +32,17 @@ Scotland_League_Two = ['Bonnyrigg Rose', 'Clyde (Clyde FC)', 'Dumbarton (Dumbart
 # ------------------------------------ Start Here ------------------------------------
 Irish_Premier_League_Division = ["Shamrock Rovers", 'Derry City', 'St. Patricks', ' Shelbourne', 'Dundalk', 'Bohemians', 'Drogheda Utd', 'Sligo Rovers', 'Cork City', 'UC Dublin']
 Northern_Irish_Premiership = ['Linfield', 'Larne', 'Cliftonville', 'Crusaders', 'Glentoran', 'Coleraine', 'Glenavon', 'Loughgall', 'Carrick','Dungannon Swifts','Ballymena', 'Newry City AFC']
-
 France_Ligue1 = ['Marseille', 'Lille', 'Nice', 'Lorient', 'Paris SG', 'Brest', 'Clermont', 'Le Havre', 'Lens', 'Lyon', 'Metz',
                  'Monaco', 'Montpellier', 'Nantes', 'Rennes', 'Strasbourg', 'Toulouse', 'Reims']
-
 France_Ligue2 = ['Caen', 'Grenoble', 'Amiens', 'SC Bastia', 'Troyes', 'Rodez Aveyron', 'USL Dunkerque', 'AC Ajaccio', 'Auxerre',
                  'Guingamp', 'Pau FC', 'Laval', 'Concarneau', 'Angers', 'Annecy', 'St Etienne', 'Quevilly Rouen', 'Paris',
                  'Valenciennes', 'Bordeaux']
-
 Laliga = ['Rayo Vallecano', 'Valencia', 'Alaves', 'A Bilbao', 'Atl. Madrid', 'Barcelona', 'Cadiz', 'Celta Vigo',
                           'Getafe', 'Girona', 'Granada', 'Las Palmas', 'Mallorca', 'Osasuna', 'Real Betis', 'Real Madrid', 'Villarreal',
                           'Real Sociedad', 'Sevilla', 'Almeria']
-
 Spain_Secunda_Division = ['Valladolid', 'Amorebieta', 'Levante', 'Albacete', 'Alcorcon', 'Burgos', 'Cartagena', 'Eibar', 'Elche',
                           'Eldense', 'Espanyol', 'Andorra', 'Huesca', 'Leganes', 'Mirandes', 'Racing Ferrol', 'Racing Santander',
                           'Real Oviedo', 'Real Zaragoza', 'Tenerife', 'Villarreal B', 'Sporting Gijon']
-
 Japan_League = ['Vissel Kobe', 'Yokohama F Marinos', 'Sanfrecce Hiroshima','Urawa Reds', 'Kashima Antlers', 'Nagoya Grampus','Avispa Fukuoka','Kawasaki Frontale','Cerezo Osaka', 'Albirex Niigata','FC Tokyo','Consadole Sapporo', 'Kyoto Sanga FC','Sagan Tosu','Shonan Bellmare','Gamba Osaka','Kashiwa Reysol','Yokohama FC']
 Chinese_Super_League = ['Shanghai Port', 'S. Taishan','Zhejiang', 'Chengdu', 'S. Shenhua', 'Beijing Guoan', 'Wuhan Three T', 'Tianjin T', 'Changchun Yatai', 'Henan SL','Meizhou Hakka','Cangzhou','Qingdao Jonoon','Nantong Zhiyun','Dalian P','Shenzhen']
 Polish_1_Liga = ['Arka Gdynia', 'Lechia Gdansk', 'Odra Opole', 'Tychy', 'Motor Lublin','Wisla Krakow', 'Miedz Legnica','Wisla Plock','Gornik Leczna','T. Nieciecza', 'Stal Rzeszow','Znicz Pruszkow','Katowice','Polonia Warszaw','Chrobry Glogow','Resovia Rzeszow','Podbeskidzie','Z. Sosnowiec']

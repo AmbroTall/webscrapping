@@ -21,9 +21,12 @@ class MyThread(threading.Thread):
 
 def main():
     colorama.init()
-    #for league in soccer_leagues.keys():
-        #matchLeague(league)
-    matchLeague('EPL') #EPL - English Premier League
+    for league in soccer_leagues.keys():
+        try:
+            matchLeague(league)
+        except:
+            pass
+    # matchLeague('EPL') #EPL - English Premier League
 
 def matchBookmakers(sport_list, max_x_odds, max_x_odds_fh, max_x_odds_sh, league):
     for k in range(len(sport_list) - 1):
@@ -35,8 +38,8 @@ def matchLeague(league):
     tasks = []
     threads = []
     bookmakers = []
-    if hasattr(sbobetSe, f"sbobet{league}"):
-        tasks.append(getattr(sbobetSe, f"sbobet{league}"))
+    # if hasattr(sbobetSe, f"sbobet{league}"):
+    #     tasks.append(getattr(sbobetSe, f"sbobet{league}"))
     if hasattr(dafabet, f"dafabet{league}"):
         tasks.append(getattr(dafabet, f"dafabet{league}"))
     if hasattr(betking, f"betking{league}"):
@@ -85,15 +88,18 @@ def matchLeague(league):
             else:
                 bookmakers.append(thread._result)
 
-    if hasattr(betfairSe, f"betfair{league}"):
-        betfair_dict = asyncio.run(getattr(betfairSe, f"betfair{league}")())
-        bookmakers.append(betfair_dict)
+    # if hasattr(betfairSe, f"betfair{league}"):
+    #     betfair_dict = asyncio.run(getattr(betfairSe, f"betfair{league}")())
+    #     bookmakers.append(betfair_dict)
     max_x_odds = highestDrawOdd(bookmakers, 'draw_odd')
     max_x_odds_fh = highestDrawOdd(bookmakers, 'fh1x2')
     max_x_odds_sh = highestDrawOdd(bookmakers, 'sh1x2')
     #max_nogoal_odds_fg = highestDrawOdd(bookmakers, 'fg')
     #max_nogoal_odds_lg = highestDrawOdd(bookmakers, 'ltts')
-    matchBookmakers(bookmakers, max_x_odds, max_x_odds_fh, max_x_odds_sh, league)
+    print(bookmakers)
+    return
+
+    # matchBookmakers(bookmakers, max_x_odds, max_x_odds_fh, max_x_odds_sh, league)
 
 def highestDrawOdd(bookmakers, attribute):
     max_draw_odds = {}
@@ -207,7 +213,7 @@ def findArbOppThreeway(bookie1_dict, bookie2_dict, max_draw_odds, max_x_odds_fh,
             arbs.append(arb)
             print(f"{team2:<35} {bookie1AwayOdd:^5} {team1:<35} {bookie2HomeOdd:^5} {max_draw:^5} \033[32m{format(roi2, '.2f'):>25}\033[0m")
         else:
-            print(f"{team2:<35} {bookie1AwayOdd:^5} {team1:<35} {bookie2HomeOdd:^5} {max_draw:^5} \033[31m{format(roi2, '.2f'):>25}\033[0m")
+                print(f"{team2:<35} {bookie1AwayOdd:^5} {team1:<35} {bookie2HomeOdd:^5} {max_draw:^5} \033[31m{format(roi2, '.2f'):>25}\033[0m")
         
         # FH 1X2
         if(bookie1_dict["Matches"][key[0]].fh1x2 and bookie2_dict["Matches"][key[1]].fh1x2):
@@ -498,3 +504,5 @@ if __name__ == '__main__':
     if(arbs):
         for arb in arbs:
             print(arb)
+    else:
+        print("No arbs opportunity found")

@@ -9,7 +9,7 @@ import random
 
 headers = {
   'Accept': '*/*',
-  'Accept-Language': 'en-US,en;q=0.9,mk;q=0.8,sr;q=0.7',
+  'Accept-Language': 'en-US,en;q=0.9,mk;q=0.8,sr;q=',
   'Authorization': '',
   'Cache-Control': 'no-cache',
   'Connection': 'keep-alive',
@@ -237,8 +237,9 @@ def normalize188betCPBTeamNames(team_name):
   return process.extractOne(team_name, Colombia_Primera_B)[0]
 def normalize188betUSMTeamNames(team_name):
   return process.extractOne(team_name, UnitedS_Major_League)[0]
-  
+
 if __name__ == '__main__':
+  print("Ambrsoe")
   bet188_dict = bet188EFL()
   pd.set_option('display.max_colwidth', None)
   bet188dF = pd.DataFrame.from_dict(bet188_dict)
