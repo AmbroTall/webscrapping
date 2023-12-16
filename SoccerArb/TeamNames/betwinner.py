@@ -59,7 +59,10 @@ Spain_Secunda_Division = ['Real Valladolid', 'SD Amorebieta', 'Levante UD', 'Alb
 
 # Japan_League = ['Vissel Kobe', 'Yokohama F Marinos', 'Sanfrecce Hiroshima','Urawa Reds', 'Kashima Antlers', 'Nagoya Grampus','Avispa Fukuoka','Kawasaki Frontale','Cerezo Osaka', 'Albirex Niigata','FC Tokyo','Consadole Sapporo', 'Kyoto Sanga FC','Sagan Tosu','Shonan Bellmare','Gamba Osaka','Kashiwa Reysol','Yokohama FC']
 # Chinese_Super_League = ['Shanghai Port', 'S. Taishan','Zhejiang', 'Chengdu', 'S. Shenhua', 'Beijing Guoan', 'Wuhan Three T', 'Tianjin T', 'Changchun Yatai', 'Henan SL','Meizhou Hakka','Cangzhou','Qingdao Jonoon','Nantong Zhiyun','Dalian P','Shenzhen']
-# Polish_1_Liga = ['']
+Polish_1_Liga = ['Arka Gdynia', 'Lechia Gdansk', 'Odra Opole', 'GKS Tychy', 'Motor Lublin','Wisla Krakow', 'Miedz Legnica','Wisla Plock','Gornik Leczna','Bruk-Bet Termalica', 'Stal Rzeszow','Znicz Pruszkow','Katowice','KSP Polonia Warszawa','Chrobry Glogow','CWKS Resovia Rzeszow','Podbeskidzie Bielsko-Biala','Zaglebie Sosnowiec']
+German_Bundesliga_3 = ['Jahn Regensburg', 'Dynamo Dresden', 'Verl', 'Sandhausen', 'SSV Ulm 1846', 'Ingolstadt 04', 'Erzgebirge Aue', 'Rot-Wweiss Essen', 'Saarbrucken', 'Preussen Munster', 'SpVgg Unterhaching', 'Borussia Dortmund II', 'Arminia Bielefeld', 'Viktoria Koln', '1860 Munchen', 'Hallescher', 'VfB Lubeck', 'Waldohof Mannheim','MSV Duisburg','Freiburg II']
+German_Bundesliga_2 = ['St. Pauli', 'Holstein', 'Hamburger','Greuther Furth','Fortuna Dusseldorf', 'Hannover 96','Hertha BSC','Elversberg','Paderborn 07', 'Nurnberg','Wehen Wiesbaden','1. Magdeburg', 'Schalke 04','Karlsruher','1. Kaiserslautern','Hansa Rostock','Eintracht Braunschweig','VfL Osnabruck']
+
 # ------------------------------------ End Here ------------------------------------
 
 
@@ -78,7 +81,10 @@ data = {
     'France_Ligue1': France_Ligue1,
     'France_Ligue2': France_Ligue2,
     'Laliga': Laliga,
-    'Spain_Secunda_Division':Spain_Secunda_Division
+    'Spain_Secunda_Division':Spain_Secunda_Division,
+    'Polish_1_Liga': Polish_1_Liga,
+    'German_Bundesliga_3': German_Bundesliga_3,
+    'German_Bundesliga_2':German_Bundesliga_2
 }
 
 # Find the maximum length among all arrays

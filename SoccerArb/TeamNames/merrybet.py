@@ -52,13 +52,16 @@ Laliga = ['Rayo Vallecano', 'Valencia CF', 'Deportivo Alaves', 'Athletic Bilbao'
                           'Getafe CF', 'Girona FC', 'Granada CF', 'Las Palmas UD', 'RCD Mallorca', 'CA Osasuna', 'Real Betis', 'Real Madrid', 'Villarreal CF',
                           'Real Sociedad', 'FC Sevilla', 'UD Almeria']
 
-# Spain_Secunda_Division = ['Valladolid', 'Amorebieta', 'Levante', 'Albacete', 'Alcorcon', 'Burgos', 'Cartagena', 'Eibar', 'Elche',
-#                           'Eldense', 'Espanyol', 'Andorra', 'Huesca', 'Leganes', 'Mirandes', 'Racing Ferrol', 'Racing Santander',
-#                           'Real Oviedo', 'Real Zaragoza', 'Tenerife', 'Villarreal B', 'Sporting Gijon']
-#
+Spain_Secunda_Division = ['Real Valladolid', 'SD Amorebieta', 'Levante UD', 'Albacete Balompie', 'AD Alcorcon', 'Burgos CF', 'FC Cartagena', 'SD Eibar', 'Elche CF',
+                          'Club Deportivo Eldense', 'Espanyol Barcelona', 'Fc Andorra', 'SD Huesca', 'CD Leganes', 'CD Mirandes', 'Racing de Ferrol', 'Racing Santander',
+                          'Real Oviedo', 'Real Zaragoza', 'CD Tenerife', 'CF Villarreal B', 'Sporting Gijon']
+
 # Japan_League = ['Vissel Kobe', 'Yokohama F Marinos', 'Sanfrecce Hiroshima','Urawa Reds', 'Kashima Antlers', 'Nagoya Grampus','Avispa Fukuoka','Kawasaki Frontale','Cerezo Osaka', 'Albirex Niigata','FC Tokyo','Consadole Sapporo', 'Kyoto Sanga FC','Sagan Tosu','Shonan Bellmare','Gamba Osaka','Kashiwa Reysol','Yokohama FC']
 # Chinese_Super_League = ['Shanghai Port', 'S. Taishan','Zhejiang', 'Chengdu', 'S. Shenhua', 'Beijing Guoan', 'Wuhan Three T', 'Tianjin T', 'Changchun Yatai', 'Henan SL','Meizhou Hakka','Cangzhou','Qingdao Jonoon','Nantong Zhiyun','Dalian P','Shenzhen']
-# Polish_1_Liga = ['']
+Polish_1_Liga = ['Arka Gdynia', 'Lechia Gdansk', 'Odra Opole', 'GKS Tychy', 'Motor Lublin','Wisla Krakow', 'Miedz Legnica','Wisla Plock','Gornik Leczna','Termalica Bruk-Bet', 'Stal Rzeszow','MKS Znicz Pruszkow','GKS Katowice','Polonia Warszaw','Chrobry Glogow','Resovia Rzeszow','Podbeskidzie Bielsko Biala','Zaglebie Sosnowiec']
+German_Bundesliga_3 = ['Jahn Regensburg', 'Dynamo Dresden', 'SC Verl', 'SV Sandhausen', 'SSV Ulm 1846', 'FC Ingolstadt', 'Erzgebirge Aue', 'Rot-Weiss Essen', 'FC Saarbrucken', 'Preussen Munster', 'Unterhaching', 'Borussia Dortmund II', 'Arminia Bielefeld', 'FC Viktoria Cologne', '1860 Munich', 'Hallescher', 'VfB Lubeck', 'SV Waldhof Mannheim','MSV Duisburg','SC Freiburg II']
+German_Bundesliga_2 = ['FC St. Pauli', 'Holstein Kiel', 'Hamburger SV','Greuther Furth','Fortuna Dusseldorf', 'Hannover 96','Hertha BSC','Spvgg Elversberg 07','SC Paderborn', '1 FC Nuremberg','Wehen Wiesbaden','FC Magdeburg', 'Schalke 04','Karlsruher','FC Kaiserslautern','Hansa Rostock','Eintracht Braunschweig','VfL Osnabruck']
+
 # ------------------------------------ End Here ------------------------------------
 
 
@@ -80,6 +83,10 @@ data = {
     'France_Ligue1': France_Ligue1,
     'France_Ligue2': France_Ligue2,
     'Laliga': Laliga,
+    'Spain_Secunda_Division':Spain_Secunda_Division,
+    'Polish_1_Liga': Polish_1_Liga,
+    'German_Bundesliga_3': German_Bundesliga_3,
+    'German_Bundesliga_2':German_Bundesliga_2
 }
 
 # Find the maximum length among all arrays
