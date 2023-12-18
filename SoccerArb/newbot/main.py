@@ -31,16 +31,16 @@ from tabulate import tabulate
 all_main_functions = {
     "bet9ja": bet9ja_main,
     "betbonanza": betbonanza_main,
-    # "sunbet": sunbet_main,
-    # "merrybet": merrybet_main,
-    # "sportybet": sportybet_main,
-    # "22bet": z22bet_main,
-    # "nairabet": nairabet_main,
-    # "dafabet": dafabet_main,
+    "sunbet": sunbet_main,
+    "merrybet": merrybet_main,
+    "sportybet": sportybet_main,
+    "22bet": z22bet_main,
+    "nairabet": nairabet_main,
+    "dafabet": dafabet_main,
     "betking": betking_main,
     # "bet188": bet188_main,
-    # "ps3838": ps3838_main,
-    # "parimatch": parimatch_main,
+    "ps3838": ps3838_main,
+    "parimatch": parimatch_main,
 }
 
 sender_email = 'ambrosetall@gmail.com'
@@ -319,14 +319,14 @@ def prepare_matches_calc_arbs(results):
                             match_data['odds'] = values
                             home_draw_win.append(match_data)
 
-                            match_data2 = {}
-                            match_data2['bookname'] = bookie_name
-                            match_data2['league'] = league_name
-                            match_data2['event'] = key
-                            match_data2['home_team'] = home_team
-                            match_data2['away_team'] = away_team
-                            match_data2['odds'] = [values[0], values[-1]]
-                            testing.append(match_data2)
+                            # match_data2 = {}
+                            # match_data2['bookname'] = bookie_name
+                            # match_data2['league'] = league_name
+                            # match_data2['event'] = key
+                            # match_data2['home_team'] = home_team
+                            # match_data2['away_team'] = away_team
+                            # match_data2['odds'] = [values[0], values[-1]]
+                            # testing.append(match_data2)
                         if key == "draw_no_bet":
                             match_data = {}
                             match_data['bookname'] = bookie_name
@@ -759,7 +759,6 @@ def main():
         elapsed_time = end_time - start_time
         print(f"Total Elapsed Time: {elapsed_time:.2f} seconds")
         time.sleep(90)
-
 
 if __name__ == '__main__':
     main()

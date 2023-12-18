@@ -71,14 +71,25 @@ def exctract_odds(match, league, bookie_name):
     games = {}
 
     wager_types = []
-    draw_no_bet = []
-    double_chance = []
-    handicap1 = [] # -1.5 / 1.5
-    over_one_five = []
-    over_two_five = []
-    over_three_five = []
-    fasthalf1X2 = []
-    gg = []
+
+    draw_no_bet_first_half = []
+    fasthalf_dc = []
+    over_ofive_five = []
+    over_ofive_five_first_half = []
+    over_one_five_first_half = []
+    over_two_five_first_half = []
+    over_four_five = []
+    over_five_five = []
+    odd_even = []
+    odd_even_firsthalf = []
+    first_team_to_score = []  # hometeam, draw, away_team
+    first_team_to_score_first_half = []  # hometeam, draw, away_team
+    home_team_overunder15 = []
+    home_team_overunder25 = []
+    home_team_overunder05 = []
+    away_team_overunder15 = []
+    away_team_overunder25 = []
+    away_team_overunder05 = []
 
     games['match_id'] = match['id']
     # Get the team mapping for the specified bookie and league
@@ -113,7 +124,7 @@ def exctract_odds(match, league, bookie_name):
             draw_odd = outcomes[1]['consolidatedPrice']['currentPrice']['decimal']
             away_odd = outcomes[2]['consolidatedPrice']['currentPrice']['decimal']
             home_draw_away = [home_odd, draw_odd, away_odd]
-            wager_types.append({"fasthalf1X2": fasthalf1X2})
+            wager_types.append({"fasthalf1X2": home_draw_away})
 
         if x['description'] == "Both teams to score" and x['period']['fullDescription'] == 'Regular Time':
             outcomes = x['outcomes']
@@ -121,6 +132,13 @@ def exctract_odds(match, league, bookie_name):
             ggno = outcomes[1]['consolidatedPrice']['currentPrice']['decimal']
             gg = [ggyes, ggno]
             wager_types.append({"gg": gg})
+
+        if x['description'] == "Both teams to score" and x['period']['fullDescription'] == 'First Half':
+            outcomes = x['outcomes']
+            ggyes = outcomes[0]['consolidatedPrice']['currentPrice']['decimal']
+            ggno = outcomes[1]['consolidatedPrice']['currentPrice']['decimal']
+            gg_firsthalf = [ggyes, ggno]
+            wager_types.append({"gg_firsthalf": gg_firsthalf})
 
         if x['description'] == "Win Match - Draw No Bet" and x['period']['fullDescription'] == 'Regular Time':
             outcomes = x['outcomes']
@@ -137,25 +155,32 @@ def exctract_odds(match, league, bookie_name):
             double_chance = [dnbhome, dnbdraw, dnbaway]
             wager_types.append({"double_chance": double_chance})
 
-        if x['description'] == "Over / Under" and x['period']['fullDescription'] == 'Regular Time':
+        # if x['description'] == "Over / Under" and x['outcomes'][0]['description'] == 'Over 2.5,3':
+        if x['description'] == "Over / Under" and x['outcomes'][0]['description'] == 'Over 2.5':
             outcomes = x['outcomes']
             over25 = outcomes[0]['consolidatedPrice']['currentPrice']['decimal']
             under25 = outcomes[1]['consolidatedPrice']['currentPrice']['decimal']
             over_two_five = [over25, under25]
             wager_types.append({"over_two_five": over_two_five})
 
+        # if x['description'] == "Over / Under" and x['outcomes'][0]['description'] == 'Over 3,3.5':
+        if x['description'] == "Over / Under" and x['outcomes'][0]['description'] == 'Over 3.5':
+            outcomes = x['outcomes']
+            over25 = outcomes[0]['consolidatedPrice']['currentPrice']['decimal']
+            under25 = outcomes[1]['consolidatedPrice']['currentPrice']['decimal']
+            over_three_five = [over25, under25]
+            wager_types.append({"over_three_five": over_three_five})
+
 
     handicap1 = []  # -1.5 / 1.5
 
-    away2_home1X = [away_odd, double_chance[0]]
-    home1_awayX2 = [home_odd, double_chance[2]]
-    X_away12 = [draw_odd, double_chance[1]]
-
-    # wager_types.append({"over_one_five": over_one_five})
-    # wager_types.append({"over_three_five": over_three_five})
-    wager_types.append({"21X": away2_home1X})
-    wager_types.append({"12X": home1_awayX2})
-    wager_types.append({"X12": X_away12})
+    # away2_home1X = [away_odd, double_chance[0]]
+    # home1_awayX2 = [home_odd, double_chance[2]]
+    # X_away12 = [draw_odd, double_chance[1]]
+    #
+    # wager_types.append({"21X": away2_home1X})
+    # wager_types.append({"12X": home1_awayX2})
+    # wager_types.append({"X12": X_away12})
 
     games['wager_types'] = wager_types
     return games

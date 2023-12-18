@@ -196,7 +196,6 @@ def main():
             liga = {}
             league_data = []
 
-
             for match in match_details:
                     league_wager_dic =  exctract_odds(match, league_name, bookie_name)
                     league_data.append(league_wager_dic)
