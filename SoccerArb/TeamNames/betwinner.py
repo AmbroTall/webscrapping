@@ -38,6 +38,34 @@ Scotland_League_One = ['Alloa Athletic', 'Falkirk ', 'Hamilton Academical ', ' Q
 Scotland_League_Two = ['Bonnyrigg Rose', 'Clyde', 'Dumbarton', 'East Fife', 'Elgin City', 'Forfar Athletic', 'Peterhead', 'Stenhousemuir ', 'Stranraer', 'Spartans']
 
 
+# ------------------------------------ Start Here ------------------------------------
+# Irish_Premier_League_Division = ["Shamrock Rovers", 'Derry City', 'St. Patricks', ' Shelbourne', 'Dundalk', 'Bohemians', 'Drogheda Utd', 'Sligo Rovers', 'Cork City', 'UC Dublin']
+Northern_Irish_Premiership = ['Linfield', 'Larne', 'Cliftonville', 'Crusaders', 'Glentoran', 'Coleraine', 'Glenavon', 'Loughgall', 'Carrick Rangers','Dungannon Swifts','Ballymena United', 'Newry City AFC']
+
+France_Ligue1 = ['Olympique de Marseille', 'Lille OSC', 'Nice', 'Lorient', 'Paris Saint-Germain', 'Stade Brestois 29', 'Clermont Foot', 'Le Havre', 'RC Lens', 'Lyon', 'Metz',
+                 'AS Monaco', 'Montpellier HSC', 'Nantes', 'Stade Rennais', 'Strasbourg', 'Toulouse', 'Stade de Reims']
+
+France_Ligue2 = ['Stade Malherbe Caen', 'Grenoble Foot 38', 'Amiens SC', 'Bastia', 'Troyes AC', 'Rodez Aveyron', 'USL Dunkerque', 'AC Ajaccio', 'Auxerre',
+                 'En Avant de Guingamp', 'Pau', 'Stade Lavallois', 'Concarneau', 'Angers SCO', 'Annecy', 'AS Saint-Etienne', 'Quevilly', 'Paris',
+                 'Valenciennes', 'Girondins de Bordeaux']
+
+Laliga = ['Rayo Vallecano', 'Valencia', 'Deportivo Alaves', 'Athletic Bilbao', 'Atletico Madrid', 'Barcelona', 'Cadiz', 'Celta',
+                          'Getafe', 'Girona', 'Granada', 'Las Palmas', 'Mallorca', 'Osasuna', 'Real Betis', 'Real Madrid', 'Villarreal',
+                          'Real Sociedad', 'Sevilla', 'UD Almería']
+
+Spain_Secunda_Division = ['Real Valladolid', 'SD Amorebieta', 'Levante UD', 'Albacete Balompie', 'AD Alcorcon', 'Burgos', 'Cartagena', 'Eibar', 'Elche',
+                          'Eldense', 'Espanyol', 'Andorra Andorra la Vella', 'Huesca', 'Leganes', 'Mirandes', 'Racing de Ferrol', 'Racing de Santander',
+                          'Real Oviedo', 'Real Zaragoza', 'Tenerife', 'Villarreal II', 'Sporting de Gijon']
+
+# Japan_League = ['Vissel Kobe', 'Yokohama F Marinos', 'Sanfrecce Hiroshima','Urawa Reds', 'Kashima Antlers', 'Nagoya Grampus','Avispa Fukuoka','Kawasaki Frontale','Cerezo Osaka', 'Albirex Niigata','FC Tokyo','Consadole Sapporo', 'Kyoto Sanga FC','Sagan Tosu','Shonan Bellmare','Gamba Osaka','Kashiwa Reysol','Yokohama FC']
+# Chinese_Super_League = ['Shanghai Port', 'S. Taishan','Zhejiang', 'Chengdu', 'S. Shenhua', 'Beijing Guoan', 'Wuhan Three T', 'Tianjin T', 'Changchun Yatai', 'Henan SL','Meizhou Hakka','Cangzhou','Qingdao Jonoon','Nantong Zhiyun','Dalian P','Shenzhen']
+Polish_1_Liga = ['Arka Gdynia', 'Lechia Gdansk', 'Odra Opole', 'GKS Tychy', 'Motor Lublin','Wisla Krakow', 'Miedz Legnica','Wisla Plock','Gornik Leczna','Bruk-Bet Termalica', 'Stal Rzeszow','Znicz Pruszkow','Katowice','KSP Polonia Warszawa','Chrobry Glogow','CWKS Resovia Rzeszow','Podbeskidzie Bielsko-Biala','Zaglebie Sosnowiec']
+German_Bundesliga_3 = ['Jahn Regensburg', 'Dynamo Dresden', 'Verl', 'Sandhausen', 'SSV Ulm 1846', 'Ingolstadt 04', 'Erzgebirge Aue', 'Rot-Wweiss Essen', 'Saarbrucken', 'Preussen Munster', 'SpVgg Unterhaching', 'Borussia Dortmund II', 'Arminia Bielefeld', 'Viktoria Koln', '1860 Munchen', 'Hallescher', 'VfB Lubeck', 'Waldohof Mannheim','MSV Duisburg','Freiburg II']
+German_Bundesliga_2 = ['St. Pauli', 'Holstein', 'Hamburger','Greuther Furth','Fortuna Dusseldorf', 'Hannover 96','Hertha BSC','Elversberg','Paderborn 07', 'Nurnberg','Wehen Wiesbaden','1. Magdeburg', 'Schalke 04','Karlsruher','1. Kaiserslautern','Hansa Rostock','Eintracht Braunschweig','VfL Osnabruck']
+
+# ------------------------------------ End Here ------------------------------------
+
+
 import pandas as pd
 
 data = {
@@ -48,7 +76,15 @@ data = {
     'Scotland-Premiership': Scotland_Premiership,
     'Scotland-Championship': Scotland_Championship,
     'Scotland-League One': Scotland_League_One,
-    'Scotland-League Two': Scotland_League_Two
+    'Scotland-League Two': Scotland_League_Two,
+    'Northern_Irish_Premiership':Northern_Irish_Premiership,
+    'France_Ligue1': France_Ligue1,
+    'France_Ligue2': France_Ligue2,
+    'Laliga': Laliga,
+    'Spain_Secunda_Division':Spain_Secunda_Division,
+    'Polish_1_Liga': Polish_1_Liga,
+    'German_Bundesliga_3': German_Bundesliga_3,
+    'German_Bundesliga_2':German_Bundesliga_2
 }
 
 # Find the maximum length among all arrays
