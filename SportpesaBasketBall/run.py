@@ -85,7 +85,7 @@ while True:
                     bot.start_site()
                     bot.maximize_window()
 
-                    bot.login(tel_no='0722808670', password='ambroseTall3436')
+                    bot.login(tel_no='0707458414', password='Pesa@2023')
                     time.sleep(5)
                     bot.quit_automation()
                     bot.main_call()
@@ -110,7 +110,7 @@ while True:
 #         bot.start_site()
 #         bot.maximize_window()
 #
-#         bot.login(tel_no='0722808670', password='ambroseTall3436')
+#         bot.login(tel_no='0707458414', password='Pesa@2023')
 #         time.sleep(5)
 #         bot.quit_automation()
 #         bot.main_call()
