@@ -74,6 +74,25 @@ def exctract_odds(match, league, bookie_name):
     fasthalf1X2 = []
     gg = []
 
+    draw_no_bet_first_half = []
+    fasthalf_dc = []
+    over_ofive_five = []
+    over_ofive_five_first_half = []
+    over_one_five_first_half = []
+    over_two_five_first_half = []
+    over_four_five = []
+    over_five_five = []
+    odd_even = []
+    odd_even_firsthalf = []
+    first_team_to_score = []  # hometeam, draw, away_team
+    first_team_to_score_first_half = []  # hometeam, draw, away_team
+    home_team_overunder15 = []
+    home_team_overunder25 = []
+    home_team_overunder05 = []
+    away_team_overunder15 = []
+    away_team_overunder25 = []
+    away_team_overunder05 = []
+
     games['match_id'] = match['CI']
     # Get the team mapping for the specified bookie and league
     team_mapping = map_teams(bookie_name, league)
@@ -110,7 +129,7 @@ def exctract_odds(match, league, bookie_name):
             over_three_five.append(x['E'][0][6]['C'])
             over_three_five.append(x['E'][1][6]['C'])
 
-    wager_types.append({"draw_no_bet": draw_no_bet})
+    # wager_types.append({"draw_no_bet": draw_no_bet})
     wager_types.append({"double_chance": double_chance})
     wager_types.append({"over_one_five": over_one_five})
     wager_types.append({"over_two_five": over_two_five})
@@ -131,9 +150,9 @@ def exctract_odds(match, league, bookie_name):
         away2_home1X = [away_odd, double_chance1X]
         home1_awayX2 = [home_odd, double_chanceX2]
         X_away12 = [draw_odd, double_chance12]
-        wager_types.append({"21X": away2_home1X})
-        wager_types.append({"12X": home1_awayX2})
-        wager_types.append({"X12": X_away12})
+        # wager_types.append({"21X": away2_home1X})
+        # wager_types.append({"12X": home1_awayX2})
+        # wager_types.append({"X12": X_away12})
     except:
         pass
     games['wager_types'] = wager_types
