@@ -279,7 +279,7 @@ class BetikaBot():
 
 
 
-bot = BetikaBot("0740129131", "lawandauntamed")
+bot = BetikaBot("phone number", "username")
 # bot.signIn()
 bot.sortGames("Start time", "Tomorrow", "Both Teams To Score") 
 bot.getMatchInformation(market="Both Teams To Score")
