@@ -61,11 +61,76 @@ def exctract_odds(match, league, bookie_name):
     draw_no_bet = []
     double_chance = []
     handicap1 = [] # -1.5 / 1.5
-    over_one_five = []
-    over_two_five = []
-    over_three_five = []
     fasthalf1X2 = []
-    gg = []
+
+    draw_no_bet_first_half = []
+    draw_no_bet_second_half = []
+    over_ofive_five_first_half = []
+    over_one_five_first_half = []
+    over_two_five_first_half = []
+    over_ofive_five_second_half = []
+    over_one_five_second_half = []
+    over_two_five_second_half = []
+
+    fasthalf_dc = []
+    secondhalf_dc = []
+    gg_firsthalf = []
+    gg_secondhalf = []
+    odd_even = []
+    odd_even_firsthalf = []
+    odd_even_secondhalf = []
+    hometeam_odd_even = []
+    awayteam_odd_even = []
+    first_team_to_score = []  # hometeam, draw, away_team
+    first_team_to_score_1st_half = []  # hometeam, draw, away_team
+    first_team_to_score_2nd_half = []  # hometeam, draw, away_team
+    last_team_to_score = []  # hometeam, draw, away_team
+    home_team_overunder15 = []
+    home_team_overunder25 = []
+    home_team_overunder05 = []
+    away_team_overunder15 = []
+    away_team_overunder25 = []
+    away_team_overunder05 = []
+
+    corners_overunder65 = []
+    corners_overunder75 = []
+    corners_overunder85 = []
+    corners_overunder95 = []
+    corners_overunder105 = []
+    corners_overunder115 = []
+    corners_overunder125 = []
+    corners_overunder135 = []
+
+    corners_overunder65_3way = []
+    corners_overunder75_3way = []
+    corners_overunder85_3way = []
+    corners_overunder95_3way = []
+    corners_overunder105_3way = []
+    corners_overunder115_3way = []
+    corners_overunder125_3way = []
+    corners_overunder135_3way = []
+
+
+    home_clean_sheet = []
+    away_clean_sheet = []
+    home_clean_sheet_first_half = []
+    away_clean_sheet_first_half = []
+    home_clean_sheet_second_half = []
+    away_clean_sheet_second_half = []
+    first_half_home_team_overunder15 = []
+    first_half_home_team_overunder25 = []
+    first_half_home_team_overunder05 = []
+    first_half_away_team_overunder15 = []
+    first_half_away_team_overunder25 = []
+    first_half_away_team_overunder05 = []
+
+    second_half_home_team_overunder15 = []
+    second_half_home_team_overunder25 = []
+    second_half_home_team_overunder05 = []
+    second_half_away_team_overunder15 = []
+    second_half_away_team_overunder25 = []
+    second_half_away_team_overunder05 = []
+    second1X2 = []
 
     games['match_id'] = match['id']
     # Get the team mapping for the specified bookie and league
@@ -86,80 +151,262 @@ def exctract_odds(match, league, bookie_name):
         if (marketgroup['name'] == 'Main'):
             markets = marketgroup['markets']
             for market in markets:
-                if (market['name'] == "1x2"):
+                if market['name'] == "1x2":
                     home_odd = float(market['outcomes'][0]['value'])
                     draw_odd = float(market['outcomes'][1]['value'])
                     away_odd = float(market['outcomes'][2]['value'])
+                    home_draw_away = [home_odd, draw_odd, away_odd]
+                    wager_types.append({"1X2": home_draw_away})
 
-                if (market['name'] == "Draw No Bet" and len(market['outcomes']) == 2):
+                if market['name'] == "Draw No Bet" and len(market['outcomes']) == 2:
                     draw_no_bet.extend((float(market['outcomes'][0]['value']), float(market['outcomes'][1]['value'])))
+                    wager_types.append({"draw_no_bet": draw_no_bet})
 
-                if (market['name'] == "Double Chance" and len(market['outcomes']) == 3):
-                    double_chance.extend((float(market['outcomes'][0]['value']), float(market['outcomes'][1]['value']),
-                               float(market['outcomes'][2]['value'])))
+                if market['name'] == "Double Chance" and len(market['outcomes']) == 3:
+                    double_chance.extend((float(market['outcomes'][0]['value']), float(market['outcomes'][2]['value']),float(market['outcomes'][1]['value'])))
+                    wager_types.append({"double_chance": double_chance})
 
-                if market['entityName'] == "Total Goals - Total Goals 1.5" and (league == "England-Premier League" or league == "England-EFL Cup" or league == "England-League One" or league == "Scotland-Premiership" or league == "England-League Two"):
+                if market['entityName'] == "Total Goals - Total Goals 1.5":
                     over_one_five_o = float(market['outcomes'][1]['value'])
                     over_one_five_u = float(market['outcomes'][0]['value'])
+                    over_one_five = [over_one_five_o, over_one_five_u]
+                    wager_types.append({"over_one_five": over_one_five})
 
-                if market['entityName'] == "Total Goals - Total Goals 2.5" and (league == "England-Premier League" or league == "England-EFL Cup" or league == "England-League One" or league == "Scotland-Premiership" or league == "England-League Two"):
+                if market['entityName'] == "Total Goals - Total Goals 2.5":
                     over_two_five_o = float(market['outcomes'][1]['value'])
                     over_two_five_u = float(market['outcomes'][0]['value'])
+                    over_two_five = [over_two_five_o, over_two_five_u]
+                    wager_types.append({"over_two_five": over_two_five})
 
-                if market['entityName'] == "Total Goals - Total Goals 3.5" and (league == "England-Premier League" or league == "England-EFL Cup" or league == "England-League One" or league == "Scotland-Premiership" or league == "England-League Two"):
+                if market['entityName'] == "Total Goals - Total Goals 4.5":
+                    over_two_five_o = float(market['outcomes'][1]['value'])
+                    over_two_five_u = float(market['outcomes'][0]['value'])
+                    over_four_five = [over_two_five_o, over_two_five_u]
+                    wager_types.append({"over_four_five": over_four_five})
+
+                if market['entityName'] == "Total Goals - Total Goals 5.5":
+                    over_two_five_o = float(market['outcomes'][1]['value'])
+                    over_two_five_u = float(market['outcomes'][0]['value'])
+                    over_five_five = [over_two_five_o, over_two_five_u]
+                    wager_types.append({"over_five_five": over_five_five})
+
+                if market['entityName'] == "Total Goals - Total Goals 3.5":
                     over_three_five_o = float(market['outcomes'][1]['value'])
                     over_three_five_u = float(market['outcomes'][0]['value'])
-
-                if market['name'] == "Total Goals - Over/Under" and (league == "Scotland-Championship" or league == "Scotland-League One" or league == "Scotland-League Two"):
-                    outcomes = market['outcomes']
-                    for name in outcomes:
-                        if name['name'] == "Over 1.5":
-                            over_one_five_o = float(name['value'])
-                        if name['name'] == "Under 1.5":
-                            over_one_five_u = float(name['value'])
-                        if name['name'] == "Over 2.5":
-                            over_two_five_o = float(name['value'])
-                        if name['name'] == "Under 2.5":
-                            over_two_five_u = float(name['value'])
-                        if name['name'] == "Over 3.5":
-                            over_three_five_o = float(name['value'])
-                        if name['name'] == "Under 3.5":
-                            over_three_five_u = float(name['value'])
+                    over_three_five = [over_three_five_o, over_three_five_u]
+                    wager_types.append({"over_three_five": over_three_five})
 
                 if market['name'] == "Both Teams to Score":
+                    ggyes = float(market['outcomes'][1]['value'])
                     ggno = float(market['outcomes'][0]['value'])
-                    ggyes = float(market['outcomes'][-1]['value'])
+                    over_three_five = [ggyes, ggno]
+                    wager_types.append({"gg": over_three_five})
 
-        if (marketgroup['name'] == '1st Half'):
+        if marketgroup['name'] == '1st Half':
             markets2 = marketgroup['markets']
             for market in markets2:
-                if (market['entityName'] == "First Half Result" and len(market['outcomes']) == 3):
-                    fasthalf1X2.extend((float(market['outcomes'][0]['value']), float(market['outcomes'][1]['value']),
-                               float(market['outcomes'][2]['value'])))
+                if market['entityName'] == "First Half Double Chance" and len(market['outcomes']) == 3:
+                    fasthalf_dc.extend((float(market['outcomes'][0]['value']), float(market['outcomes'][2]['value']),float(market['outcomes'][1]['value'])))
+                    wager_types.append({"fasthalf_dc": fasthalf_dc})
+                if market['entityName'] == "First Half Result" and len(market['outcomes']) == 3:
+                    fasthalf1X2.extend((float(market['outcomes'][0]['value']), float(market['outcomes'][1]['value']),float(market['outcomes'][2]['value'])))
+                    wager_types.append({"fasthalf1X2": fasthalf1X2})
+                if market['entityName'] == "Half Time Goals - Over/Under 0.5" and len(market['outcomes']) == 2:
+                    over_ofive_five_first_half.extend((float(market['outcomes'][1]['value']),float(market['outcomes'][0]['value'])))
+                    wager_types.append({"over_ofive_five_first_half": over_ofive_five_first_half})
+                if market['entityName'] == "Half Time Goals - Over/Under 1.5" and len(market['outcomes']) == 2:
+                    over_one_five_first_half.extend((float(market['outcomes'][1]['value']),float(market['outcomes'][0]['value'])))
+                    wager_types.append({"over_one_five_first_half": over_one_five_first_half})
+                if market['entityName'] == "Half Time Goals - Over/Under 2.5" and len(market['outcomes']) == 2:
+                    over_two_five_first_half.extend((float(market['outcomes'][1]['value']),float(market['outcomes'][0]['value'])))
+                    wager_types.append({"over_two_five_first_half": over_two_five_first_half})
+                if market['entityName'] == "Both Teams To Score In 1st Half" and len(market['outcomes']) == 2:
+                    gg_firsthalf.extend((float(market['outcomes'][1]['value']),float(market['outcomes'][0]['value'])))
+                    wager_types.append({"gg_firsthalf": gg_firsthalf})
+                if market['entityName'] == f"{match['eventNames'][0]} First Half Goals - Over/Under 0.5" and len(market['outcomes']) == 2:
+                    first_half_home_team_overunder05.extend((float(market['outcomes'][1]['value']),float(market['outcomes'][0]['value'])))
+                    wager_types.append({"first_half_home_team_overunder05": first_half_home_team_overunder05})
+                if market['entityName'] == f"{match['eventNames'][0]} First Half Goals - Over/Under 1.5" and len(market['outcomes']) == 2:
+                    first_half_home_team_overunder15.extend((float(market['outcomes'][1]['value']),float(market['outcomes'][0]['value'])))
+                    wager_types.append({"first_half_home_team_overunder15": first_half_home_team_overunder15})
+                if market['entityName'] == f"{match['eventNames'][-1]} First Half Goals - Over/Under 0.5" and len(market['outcomes']) == 2:
+                    first_half_away_team_overunder05.extend((float(market['outcomes'][1]['value']),float(market['outcomes'][0]['value'])))
+                    wager_types.append({"first_half_away_team_overunder05": first_half_away_team_overunder05})
+                if market['entityName'] == f"{match['eventNames'][-1]} First Half Goals - Over/Under 1.5" and len(market['outcomes']) == 2:
+                    first_half_away_team_overunder15.extend((float(market['outcomes'][1]['value']),float(market['outcomes'][0]['value'])))
+                    wager_types.append({"first_half_away_team_overunder15": first_half_away_team_overunder15})
+                if market['entityName'] == f"{match['eventNames'][-1]} First Half Goals - Over/Under 2.5" and len(market['outcomes']) == 2:
+                    first_half_away_team_overunder25.extend((float(market['outcomes'][1]['value']),float(market['outcomes'][0]['value'])))
+                    wager_types.append({"first_half_away_team_overunder25": first_half_away_team_overunder25})
+                if market['entityName'] == f"{match['eventNames'][0]} First Half Goals - Over/Under 2.5" and len(market['outcomes']) == 2:
+                    first_half_home_team_overunder25.extend((float(market['outcomes'][1]['value']),float(market['outcomes'][0]['value'])))
+                    wager_types.append({"first_half_home_team_overunder25": first_half_home_team_overunder25})
+                if market['entityName'] == "First Half Goals – odd/even" and len(market['outcomes']) == 2:
+                    odd_even_firsthalf.extend((float(market['outcomes'][1]['value']),float(market['outcomes'][0]['value'])))
+                    wager_types.append({"odd_even_firsthalf": odd_even_firsthalf})
+        if marketgroup['name'] == '2nd Half':
+            markets2 = marketgroup['markets']
+            for market in markets2:
+                if market['entityName'] == "Second Half Double Chance" and len(market['outcomes']) == 3:
+                    secondhalf_dc.extend((float(market['outcomes'][0]['value']), float(market['outcomes'][2]['value']),
+                                          float(market['outcomes'][1]['value'])))
+                    wager_types.append({"secondhalf_dc": secondhalf_dc})
+                if market['entityName'] == "Second Half Result" and len(market['outcomes']) == 3:
+                    second1X2.extend((float(market['outcomes'][0]['value']), float(market['outcomes'][1]['value']),
+                                      float(market['outcomes'][2]['value'])))
+                    wager_types.append({"second1X2": second1X2})
+                if market['entityName'] == "Second Half Total Goals - Over/Under 0.5" and len(market['outcomes']) == 2:
+                    over_ofive_five_second_half.extend(
+                        (float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"over_ofive_five_second_half": over_ofive_five_second_half})
+
+                if market['entityName'] == "Second Half Total Goals - Over/Under 1.5" and len(market['outcomes']) == 2:
+                    over_one_five_second_half.extend(
+                        (float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"over_one_five_second_half": over_one_five_second_half})
+
+                if market['entityName'] == "Second Half Total Goals - Over/Under 2.5" and len(market['outcomes']) == 2:
+                    over_two_five_second_half.extend(
+                        (float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"over_two_five_second_half": over_two_five_second_half})
+
+                if market['entityName'] == "Both Teams To Score In 2nd Half" and len(market['outcomes']) == 2:
+                    gg_secondhalf.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"gg_secondhalf": gg_secondhalf})
+
+                if market['entityName'] == f"{match['eventNames'][0]} Second Half Goals - Over/Under 0.5" and len(
+                        market['outcomes']) == 2:
+                    second_half_home_team_overunder05.extend(
+                        (float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"second_half_home_team_overunder05": second_half_home_team_overunder05})
+
+                if market['entityName'] == f"{match['eventNames'][0]} Second Half Goals - Over/Under 1.5" and len(
+                        market['outcomes']) == 2:
+                    second_half_home_team_overunder15.extend(
+                        (float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"second_half_home_team_overunder15": second_half_home_team_overunder15})
+
+                if market['entityName'] == f"{match['eventNames'][0]} Second Half Goals - Over/Under 2.5" and len(
+                        market['outcomes']) == 2:
+                    second_half_home_team_overunder25.extend(
+                        (float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"second_half_home_team_overunder25": second_half_home_team_overunder25})
+
+                if market['entityName'] == f"{match['eventNames'][-1]} First Half Goals - Over/Under 0.5" and len(
+                        market['outcomes']) == 2:
+                    second_half_away_team_overunder05.extend(
+                        (float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"second_half_away_team_overunder05": second_half_away_team_overunder05})
+
+                if market['entityName'] == f"{match['eventNames'][-1]} First Half Goals - Over/Under 2.5" and len(
+                        market['outcomes']) == 2:
+                    second_half_away_team_overunder25.extend(
+                        (float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"second_half_away_team_overunder25": second_half_away_team_overunder25})
+
+                if market['entityName'] == f"{match['eventNames'][-1]} First Half Goals - Over/Under 1.5" and len(
+                        market['outcomes']) == 2:
+                    second_half_away_team_overunder15.extend(
+                        (float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"second_half_away_team_overunder15": second_half_away_team_overunder15})
+
+                if market['entityName'] == "Second Half Goals – odd/even" and len(market['outcomes']) == 2:
+                    odd_even_secondhalf.extend(
+                        (float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"odd_even_secondhalf": odd_even_secondhalf})
+
+        if marketgroup['name'] == 'Goals':
+            markets2 = marketgroup['markets']
+            for market in markets2:
+                if market['entityName'] == "First Team to Score" and len(market['outcomes']) == 3:
+                    first_team_to_score.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value']),float(market['outcomes'][2]['value'])))
+                    wager_types.append({"first_team_to_score": first_team_to_score})
+
+                if market['entityName'] == "Last Team to Score" and len(market['outcomes']) == 3:
+                    last_team_to_score.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value']),float(market['outcomes'][2]['value'])))
+                    wager_types.append({"last_team_to_score": last_team_to_score})
+
+                if market['entityName'] == f"{match['eventNames'][0]} - Clean Sheet - tcs" and len(market['outcomes']) == 2:
+                    home_clean_sheet.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"home_clean_sheet": home_clean_sheet})
+
+                if market['entityName'] == f"{match['eventNames'][-1]} - Clean Sheet - tcs" and len(market['outcomes']) == 2:
+                    away_clean_sheet.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"away_clean_sheet": away_clean_sheet})
+
+                if market['entityName'] == f"{match['eventNames'][0]} Total Goals - Over/Under 1.5" and len(market['outcomes']) == 2:
+                    home_team_overunder15.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"home_team_overunder15": home_team_overunder15})
+
+                if market['entityName'] == f"{match['eventNames'][0]} Total Goals - Over/Under 0.5" and len(market['outcomes']) == 2:
+                    home_team_overunder05.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"home_team_overunder05": home_team_overunder05})
+
+                if market['entityName'] == f"{match['eventNames'][0]} Total Goals - Over/Under 2.5" and len(market['outcomes']) == 2:
+                    home_team_overunder25.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"home_team_overunder25": home_team_overunder25})
+                if market['entityName'] == f"{match['eventNames'][-1]} Total Goals - Over/Under 2.5" and len(market['outcomes']) == 2:
+                    away_team_overunder25.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"away_team_overunder25": away_team_overunder25})
+                if market['entityName'] == f"{match['eventNames'][-1]} Total Goals - Over/Under 1.5" and len(market['outcomes']) == 2:
+                    away_team_overunder15.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"away_team_overunder15": away_team_overunder15})
+                if market['entityName'] == f"{match['eventNames'][-1]} Total Goals - Over/Under 0.5" and len(market['outcomes']) == 2:
+                    away_team_overunder05.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"away_team_overunder05": away_team_overunder05})
 
 
-    home_draw_away = [home_odd, draw_odd, away_odd]
+        if marketgroup['name'] == 'Corners':
+            markets2 = marketgroup['markets']
+            for market in markets2:
+                if market['entityName'] == "First Team to Score" and len(market['outcomes']) == 3:
+                    first_team_to_score.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value']),float(market['outcomes'][2]['value'])))
+                    wager_types.append({"first_team_to_score": first_team_to_score})
+
+                if market['entityName'] == "Last Team to Score" and len(market['outcomes']) == 3:
+                    last_team_to_score.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value']),float(market['outcomes'][2]['value'])))
+                    wager_types.append({"last_team_to_score": last_team_to_score})
+
+                if market['entityName'] == f"{match['eventNames'][0]} - Clean Sheet - tcs" and len(market['outcomes']) == 2:
+                    home_clean_sheet.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"home_clean_sheet": home_clean_sheet})
+
+                if market['entityName'] == f"{match['eventNames'][-1]} - Clean Sheet - tcs" and len(market['outcomes']) == 2:
+                    away_clean_sheet.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"away_clean_sheet": away_clean_sheet})
+
+                if market['entityName'] == f"{match['eventNames'][0]} Total Goals - Over/Under 1.5" and len(market['outcomes']) == 2:
+                    home_team_overunder15.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"home_team_overunder15": home_team_overunder15})
+
+                if market['entityName'] == f"{match['eventNames'][0]} Total Goals - Over/Under 0.5" and len(market['outcomes']) == 2:
+                    home_team_overunder05.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"home_team_overunder05": home_team_overunder05})
+
+                if market['entityName'] == f"{match['eventNames'][0]} Total Goals - Over/Under 2.5" and len(market['outcomes']) == 2:
+                    home_team_overunder25.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"home_team_overunder25": home_team_overunder25})
+                if market['entityName'] == f"{match['eventNames'][-1]} Total Goals - Over/Under 2.5" and len(market['outcomes']) == 2:
+                    away_team_overunder25.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"away_team_overunder25": away_team_overunder25})
+                if market['entityName'] == f"{match['eventNames'][-1]} Total Goals - Over/Under 1.5" and len(market['outcomes']) == 2:
+                    away_team_overunder15.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"away_team_overunder15": away_team_overunder15})
+                if market['entityName'] == f"{match['eventNames'][-1]} Total Goals - Over/Under 0.5" and len(market['outcomes']) == 2:
+                    away_team_overunder05.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"away_team_overunder05": away_team_overunder05})
+
+
+
     handicap1 = []  # -1.5 / 1.5
-    over_one_five = [over_one_five_o, over_one_five_u]
-    over_two_five = [over_two_five_o, over_two_five_u]
-    over_three_five = [over_three_five_o, over_three_five_u]
     gg = [ggyes, ggno]
     away2_home1X = [away_odd, double_chance[0]]
     home1_awayX2 = [home_odd, double_chance[2]]
     X_away12 = [draw_odd, double_chance[1]]
 
-    wager_types.append({"1X2": home_draw_away})
-    wager_types.append({"draw_no_bet": draw_no_bet})
-    wager_types.append({"double_chance": double_chance})
-    wager_types.append({"over_one_five": over_one_five})
-    wager_types.append({"over_two_five": over_two_five})
-    wager_types.append({"over_three_five": over_three_five})
-    wager_types.append({"fasthalf1X2": fasthalf1X2})
-    wager_types.append({"gg": gg})
-    wager_types.append({"21X": away2_home1X})
-    wager_types.append({"12X": home1_awayX2})
-    wager_types.append({"X12": X_away12})
-
+    # wager_types.append({"21X": away2_home1X})
+    # wager_types.append({"12X": home1_awayX2})
+    # wager_types.append({"X12": X_away12})
     games['wager_types'] = wager_types
     return games
 
@@ -186,10 +433,8 @@ def process_league(league_dict):
     for league_name, league_id in league_dict.items():
         return  league_name, league_id
 
-
 def main():
     bookie_name = 'nairabet'
-
 
     leagues = [
         {"England Premier League": "EN_PR"},

@@ -116,9 +116,15 @@ def exctract_odds(match, league, bookie_name):
         if market_name == "Home To Win Either Half":
             homeyes = match_odds[0]['Outcome']['OddOutcome']
             homeno = match_odds[1]['Outcome']['OddOutcome']
+            draw_no_bet = [homeyes, homeno]
+            wager_types.append({"home_to_win_either_half": draw_no_bet})
+
         if market_name == "Away To Win Either Half":
             awayyes = match_odds[0]['Outcome']['OddOutcome']
             awayno = match_odds[1]['Outcome']['OddOutcome']
+            draw_no_bet = [awayyes, awayno]
+            wager_types.append({"away_to_win_either_half": draw_no_bet})
+
 
     market_ids = [531 ,16]
     odds_market = api_call_odds(match['ItemID'])

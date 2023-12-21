@@ -61,7 +61,6 @@ def api_call_odds(match_id):
     response = request_function(url, headers, payload)
     return response['Value']['GE']
 
-
 def exctract_odds(match, league, bookie_name):
     games = {}
     wager_types = []
@@ -88,6 +87,8 @@ def exctract_odds(match, league, bookie_name):
     first_team_to_score_first_half = []  # hometeam, draw, away_team
     home_team_overunder15 = []
     home_team_overunder25 = []
+    odd_even_home = []
+    odd_even_away = []
     home_team_overunder05 = []
     away_team_overunder15 = []
     away_team_overunder25 = []
@@ -121,6 +122,9 @@ def exctract_odds(match, league, bookie_name):
         elif market == 49:
             draw_no_bet.append(x['E'][0][0]['C'])
             draw_no_bet.append(x['E'][1][0]['C'])
+        elif market == 9934:
+            odd_even.append(x['E'][0][0]['C'])
+            odd_even.append(x['E'][1][0]['C'])
         elif market == 17:
             over_two_five.append(x['E'][0][4]['C'])
             over_two_five.append(x['E'][1][4]['C'])
@@ -128,6 +132,10 @@ def exctract_odds(match, league, bookie_name):
             over_one_five.append(x['E'][1][2]['C'])
             over_three_five.append(x['E'][0][6]['C'])
             over_three_five.append(x['E'][1][6]['C'])
+            over_four_five.append(x['E'][0][8]['C'])
+            over_four_five.append(x['E'][1][8]['C'])
+            over_five_five.append(x['E'][0][10]['C'])
+            over_five_five.append(x['E'][1][10]['C'])
 
     # wager_types.append({"draw_no_bet": draw_no_bet})
     wager_types.append({"double_chance": double_chance})
