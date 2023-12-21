@@ -1,1 +1,118 @@
 11:24:14 : No login button
+11:25:02 : No login button
+11:30:48 : 3440 Freedom Lane, Dalton, GA 30721
+11:33:18 : No login button
+11:33:19 : pop up closed
+11:33:42 : 3440 Freedom Lane, Dalton, GA 30721
+11:36:12 : No login button
+11:36:12 : pop up closed
+11:36:34 : 3440 Freedom Lane, Dalton, GA 30721
+11:51:39 : 3440 Freedom Ln, Dalton, GA 30721
+11:54:09 : No login button
+11:54:10 : pop up closed
+11:55:24 : 3440 Freedom Ln, Dalton, GA 30721
+11:57:54 : No login button
+11:57:55 : Close details
+11:58:20 : 3440 Freedom Ln, Dalton, GA 30721
+11:58:36 : pop up closed
+11:58:48 : 3440 Freedom Ln, Dalton, GA 30721
+13:27:29 : 3440 Freedom Ln, Dalton, GA 30721
+13:27:40 : 3440 Freedom Ln, Dalton, GA 30721
+13:27:55 : 3440 Freedom Ln, Dalton, GA 30721
+13:28:06 : 3440 Freedom Ln, Dalton, GA 30721
+13:31:39 : 3440 Freedom Ln, Dalton, GA 30721
+13:31:57 : 3440 Freedom Ln, Dalton, GA 30721
+13:32:12 : 3440 Freedom Ln, Dalton, GA 30721
+13:32:27 : 3440 Freedom Ln, Dalton, GA 30721
+13:35:57 : 3440 Freedom Ln, Dalton, GA 30721
+13:36:08 : 3440 Freedom Ln, Dalton, GA 30721
+13:36:24 : 3440 Freedom Ln, Dalton, GA 30721
+13:36:44 : 3440 Freedom Ln, Dalton, GA 30721
+13:36:59 : 3440 Freedom Ln, Dalton, GA 30721
+13:41:40 : 3440 Freedom Ln, Dalton, GA 30721
+13:41:50 : 3440 Freedom Ln, Dalton, GA 30721
+13:42:07 : 3440 Freedom Ln, Dalton, GA 30721
+13:42:22 : 3440 Freedom Ln, Dalton, GA 30721
+13:45:38 : 3440 Freedom Ln, Dalton, GA 30721
+13:45:50 : 3440 Freedom Ln, Dalton, GA 30721
+13:47:05 : 3440 Freedom Ln, Dalton, GA 30721
+13:47:51 : 3440 Freedom Ln, Dalton, GA 30721
+16:14:17 : 3440 Freedom Ln, Dalton, GA 30721
+16:14:35 : 3440 Freedom Ln, Dalton, GA 30721
+16:15:18 : 3440 Freedom Ln, Dalton, GA 30721
+16:16:18 : 3440 Freedom Ln, Dalton, GA 30721
+16:17:08 : 3440 Freedom Ln, Dalton, GA 30721
+17:53:40 : 3440 Freedom Ln, Dalton, GA 30721
+17:53:57 : 3440 Freedom Ln, Dalton, GA 30721
+17:54:47 : 3440 Freedom Ln, Dalton, GA 30721
+17:55:38 : 3440 Freedom Ln, Dalton, GA 30721
+18:07:42 : 3440 Freedom Ln, Dalton, GA 30721
+18:07:53 : 3440 Freedom Ln, Dalton, GA 30721
+18:08:42 : 3440 Freedom Ln, Dalton, GA 30721
+18:09:29 : 3440 Freedom Ln, Dalton, GA 30721
+20:15:48 : 3440 Freedom Ln, Dalton, GA 30721
+20:16:14 : 3440 Freedom Ln, Dalton, GA 30721
+20:17:11 : 3440 Freedom Ln, Dalton, GA 30721
+20:17:32 : 3440 Freedom Ln, Dalton, GA 30721
+20:17:54 : 3440 Freedom Ln, Dalton, GA 30721
+20:18:14 : 3440 Freedom Ln, Dalton, GA 30721
+20:18:37 : 3440 Freedom Ln, Dalton, GA 30721
+20:19:21 : 3440 Freedom Ln, Dalton, GA 30721
+20:19:49 : 3440 Freedom Ln, Dalton, GA 30721
+20:20:31 : 3440 Freedom Ln, Dalton, GA 30721
+20:29:50 : 3440 Freedom Ln, Dalton, GA 30721
+20:30:14 : 3440 Freedom Ln, Dalton, GA 30721
+20:31:18 : 3440 Freedom Ln, Dalton, GA 30721
+20:32:16 : 3440 Freedom Ln, Dalton, GA 30721
+20:33:03 : 3440 Freedom Ln, Dalton, GA 30721
+22:46:38 : 3440 Freedom Ln, Dalton, GA 30721
+22:46:47 : 3440 Freedom Ln, Dalton, GA 30721
+22:47:07 : 3440 Freedom Ln, Dalton, GA 30721
+22:47:22 : 3440 Freedom Ln, Dalton, GA 30721
+22:47:39 : 3440 Freedom Ln, Dalton, GA 30721
+22:51:19 : 3440 Freedom Ln, Dalton, GA 30721
+22:51:30 : 3440 Freedom Ln, Dalton, GA 30721
+22:51:47 : 3440 Freedom Ln, Dalton, GA 30721
+22:52:03 : 3440 Freedom Ln, Dalton, GA 30721
+22:52:19 : 3440 Freedom Ln, Dalton, GA 30721
+22:52:34 : 3440 Freedom Ln, Dalton, GA 30721
+22:52:50 : 3440 Freedom Ln, Dalton, GA 30721
+22:53:10 : 3440 Freedom Ln, Dalton, GA 30721
+22:53:28 : 3440 Freedom Ln, Dalton, GA 30721
+23:19:27 : 3440 Freedom Ln, Dalton, GA 30721
+23:19:39 : 3440 Freedom Ln, Dalton, GA 30721
+23:20:37 : 3440 Freedom Ln, Dalton, GA 30721
+23:21:18 : 3440 Freedom Ln, Dalton, GA 30721
+23:25:59 : 3440 Freedom Ln, Dalton, GA 30721
+23:26:13 : 3440 Freedom Ln, Dalton, GA 30721
+23:26:29 : 3440 Freedom Ln, Dalton, GA 30721
+23:30:02 : 3440 Freedom Ln, Dalton, GA 30721
+23:30:13 : 3440 Freedom Ln, Dalton, GA 30721
+23:30:30 : 3440 Freedom Ln, Dalton, GA 30721
+23:31:03 : 3440 Freedom Ln, Dalton, GA 30721
+23:31:18 : 3440 Freedom Ln, Dalton, GA 30721
+23:31:32 : 3440 Freedom Ln, Dalton, GA 30721
+23:34:40 : 3440 Freedom Ln, Dalton, GA 30721
+23:34:52 : 3440 Freedom Ln, Dalton, GA 30721
+23:35:25 : 3440 Freedom Ln, Dalton, GA 30721
+23:35:44 : 3440 Freedom Ln, Dalton, GA 30721
+23:36:00 : 3440 Freedom Ln, Dalton, GA 30721
+23:40:30 : 3440 Freedom Ln, Dalton, GA 30721
+23:40:43 : 3440 Freedom Ln, Dalton, GA 30721
+23:41:15 : 3440 Freedom Ln, Dalton, GA 30721
+23:41:30 : 3440 Freedom Ln, Dalton, GA 30721
+23:41:44 : 3440 Freedom Ln, Dalton, GA 30721
+23:41:58 : 3440 Freedom Ln, Dalton, GA 30721
+23:42:14 : 3440 Freedom Ln, Dalton, GA 30721
+23:42:58 : 3440 Freedom Ln, Dalton, GA 30721
+23:46:24 : 3440 Freedom Ln, Dalton, GA 30721
+23:46:34 : 3440 Freedom Ln, Dalton, GA 30721
+23:46:54 : 3440 Freedom Ln, Dalton, GA 30721
+23:47:12 : 3440 Freedom Ln, Dalton, GA 30721
+23:51:23 : 3440 Freedom Ln, Dalton, GA 30721
+23:51:37 : 3440 Freedom Ln, Dalton, GA 30721
+23:51:53 : 3440 Freedom Ln, Dalton, GA 30721
+23:52:37 : 3440 Freedom Ln, Dalton, GA 30721
+23:52:50 : 3440 Freedom Ln, Dalton, GA 30721
+23:58:24 : 3440 Freedom Ln, Dalton, GA 30721
+23:58:35 : 3440 Freedom Ln, Dalton, GA 30721

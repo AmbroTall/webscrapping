@@ -6,8 +6,8 @@ from datetime import datetime
 def db_gapubs_connect():
     # Establish a connection to the first database
     conn1 = mysql.connector.connect(
-        host='168.119.4.62',
-        user='helixhel_oldcrawlersusr',
+        host='144.76.112.25',
+        user='helixhelloworld_oldcrawlersusr',
         password='NdSZIAfVZHoA',
         database='helixhel_oldcrawlersdb',
     )

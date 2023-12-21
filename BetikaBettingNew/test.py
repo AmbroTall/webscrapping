@@ -1,20 +1,112 @@
-home_team = "Manchester United"
-options = ["Man United", "Man City"]
+from selenium import webdriver
+import undetected_chromedriver as uc
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.webdriver.support.ui import Select
+from  data import url,username,passwordc,password,day,year
+import time
+import json
+import random
+import sqlite3
 
-if len(home_team.split(" ")) > 1:
-    home_team = home_team.split(" ")
+driver = uc.Chrome()
 
-perfect_match = None  # Initialize a variable to store the perfect match
+def land_first_page():
+    driver.get(url)
 
-for home_word in home_team:
-    for option in options:
-        if home_word in option.split(" "):
-            perfect_match = option  # Store the perfect match
-            break  # Exit the inner loop if a match is found
-    if perfect_match:  # Exit the outer loop if a perfect match is found
-        break
+def first_name():
+    username_field = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.ID,'firstName'))
+                )
+    username_field.send_keys(username)
+    clickable = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.ID,'collectNameNext'))
+                )
+    clickable.click()
+def birth_gender():
+    day_field = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.ID,'day'))
+                )
+    day_field.send_keys(day)
 
-if perfect_match:
-    home_team = perfect_match  # Update the home_team variable with the perfect match
+    month_field = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.ID,'month'))
+                )
+    if month_field.tag_name == 'select':
+            select = Select(month_field)
+            select.select_by_value('4')
+    else:
+        print("The 'month' element is not a select input.")
 
-print(home_team)  # Print the updated value of home_team
+
+    year_field = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.ID,'year'))
+                )
+    year_field.send_keys(year)
+
+    gender_field = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.ID,'gender'))
+                )
+    if gender_field.tag_name == 'select':
+        select = Select(gender_field)
+        select.select_by_value('1')
+    else:
+        print("The 'gender' element is not a select input.")
+
+        next = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.ID,'birthdaygenderNext'))
+                )
+        next.click()
+
+def email():
+    select = WebDriverWait(driver, 10).until(
+                        EC.presence_of_element_located((By.ID,'selectionc0'))
+                    )
+    time.sleep(2)
+        # select.text
+    select.click()
+
+    clicknext = WebDriverWait(driver, 10).until(
+                        EC.presence_of_element_located((By.ID,'next'))
+                    )
+    clicknext.click()
+def password():
+    password_field = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH,'//*[@id="passwd"]/div[1]/div/div[1]/input'))
+                )
+
+    password_field.send_keys(password)
+    time.sleep(2)
+    passwordc_field = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH,'//*[@id="confirm-passwd"]/div[1]/div/div[1]/input'))
+                )
+    passwordc_field.send_keys(passwordc)
+    time.sleep(2)
+    passwordbutton = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.ID,'createpasswordNext'))
+                )
+    passwordbutton.click()
+
+def verification():
+    time.sleep(100)
+
+
+if __name__ == '__main__':
+    try:
+        land_first_page()
+        first_name()
+        birth_gender()
+        email()
+        password()
+        verification()
+    except Exception as e:
+        print("error:", e)
+
+
+
+
+
+

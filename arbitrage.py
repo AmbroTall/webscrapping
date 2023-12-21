@@ -162,27 +162,30 @@ def odi_basketball():
 
     odibets = []
     for i in r:
-        matches = i["matches"]
-        for match in matches:
-            if len(match["markets"]) >= 1:
-                game = {}
-                date_time = match["start_time"]
-                home_team = match["home_team"]
-                away_team = match["away_team"]
-                away_team_odds = match["markets"][0]["outcomes"][2]["odd_value"]
-                home_team_odds = match["markets"][0]["outcomes"][0]["odd_value"]
-                print(date_time)
-                print(f"{home_team} - {home_team_odds}")
-                print(f"{away_team} - {away_team_odds}")
-                print()
+        try:
+            matches = i["matches"]
+            for match in matches:
+                if len(match["markets"]) >= 1:
+                    game = {}
+                    date_time = match["start_time"]
+                    home_team = match["home_team"]
+                    away_team = match["away_team"]
+                    away_team_odds = match["markets"][0]["outcomes"][2]["odd_value"]
+                    home_team_odds = match["markets"][0]["outcomes"][0]["odd_value"]
+                    print(date_time)
+                    print(f"{home_team} - {home_team_odds}")
+                    print(f"{away_team} - {away_team_odds}")
+                    print()
 
-                game["time"] = date_time
-                game["home_team"] = home_team
-                game["away_team"] = away_team
-                game["home_odds"] = home_team_odds
-                game["away_odds"] = away_team_odds
+                    game["time"] = date_time
+                    game["home_team"] = home_team
+                    game["away_team"] = away_team
+                    game["home_odds"] = home_team_odds
+                    game["away_odds"] = away_team_odds
 
-                odibets.append(game)
+                    odibets.append(game)
+        except:
+            pass
     return sorted(odibets, key=lambda x: x['time'])
 
 def betika_basketball():
@@ -228,6 +231,37 @@ def betika_basketball():
 
         betika.append(game)
     return betika
+
+# def arbitrage_calc(odds1, odds2, total_stake):
+#     # Calculate the implied probabilities of each outcome
+#     prob1 = 1 / odds1
+#     prob2 = 1 / odds2
+# 
+#     # Calculate the total implied probability
+#     total_prob = prob1 + prob2
+# 
+#     # Calculate the fair odds for each outcome
+#     fair_odds1 = prob1 / total_prob
+#     fair_odds2 = prob2 / total_prob
+# 
+#     # Calculate the stake for each outcome
+#     stake1 = (total_stake * fair_odds1) / (fair_odds1 + fair_odds2)
+#     stake2 = (total_stake * fair_odds2) / (fair_odds1 + fair_odds2)
+# 
+#     # Calculate the possible winnings for each outcome
+#     winnings1 = stake1 * odds1
+#     winnings2 = stake2 * odds2
+# 
+#     # Calculate the guaranteed profit
+#     guaranteed_profit = (total_stake / total_prob) - total_stake
+# 
+#     # Return the results as a dictionary
+#     return {f'stake1 for SportPesa with odds {odds1}': round(stake1, 2),
+#             f'stake2 for Odi with odds {odds2}': round(stake2, 2),
+#             'winnings1': round(winnings1, 2),
+#             'winnings2': round(winnings2, 2),
+#             'guaranteed_profit': round(guaranteed_profit, 2)}
+
 def arbitrage_calc(odds1, bookie1,odds2,bookie2, total_stake):
     # Calculate the implied probabilities of each outcome
     prob1 = 1 / odds1
@@ -258,41 +292,41 @@ def arbitrage_calc(odds1, bookie1,odds2,bookie2, total_stake):
             'winnings2': round(winnings2, 2),
             'guaranteed_profit': round(guaranteed_profit, 2)}
 
-# def caller_function(odds_1_player_1,odds_1_player_2,odds_2_player_1,odds_2_player_2 ):
-#     odds_1_player_1 = float(odds_1_player_1)
-#     odds_1_player_2 = float(odds_1_player_2)
-#     odds_2_player_1 = float(odds_2_player_1)
-#     odds_2_player_2 = float(odds_2_player_2)
-#     # Arbitrage calculations
-#     prob_player_1_bookmaker_1 = 1 / odds_1_player_1
-#     prob_player_1_bookmaker_2 = 1 / odds_2_player_2
-#     total_prob_player_1 = prob_player_1_bookmaker_1 + prob_player_1_bookmaker_2
-#
-#     print("Prob 1", total_prob_player_1)
-#     prob_player_2_bookmaker_1 = 1 / odds_1_player_2
-#     prob_player_2_bookmaker_2 = 1 / odds_2_player_1
-#     total_prob_player_2 = prob_player_2_bookmaker_1 + prob_player_2_bookmaker_2
-#
-#     print("Prob 2", total_prob_player_2)
-#
-#     arbitrage_margin_player_1 = 1 - total_prob_player_1
-#     arbitrage_margin_player_2 = 1 - total_prob_player_2
-#
-#     if arbitrage_margin_player_2 > 0:
-#         print("Arbitrage opportunity found!1")
-#         print(f"Bookmaker 1 with odds {odds_1_player_2} || and Bookmaker 2 with odd {odds_2_player_1}")
-#         potential_profit = arbitrage_calc(odds_1_player_2, odds_2_player_1, 2000)
-#         print("Potential profit: $", potential_profit)
-#         return potential_profit
-#     elif arbitrage_margin_player_1 > 0:
-#         print("Arbitrage opportunity found!2")
-#         print(f"Bookmaker 1 with odds {odds_1_player_1} || and Bookmaker 2 with odd {odds_2_player_2}")
-#         potential_profit = arbitrage_calc(odds_1_player_1, odds_2_player_2, 2000)
-#         print("Potential profit: $", potential_profit)
-#         return potential_profit
-#     else:
-#         print("No arbitrage opportunity")
-#         return "😢"
+def caller_function(odds_1_player_1,odds_1_player_2,odds_2_player_1,odds_2_player_2 ):
+    odds_1_player_1 = float(odds_1_player_1)
+    odds_1_player_2 = float(odds_1_player_2)
+    odds_2_player_1 = float(odds_2_player_1)
+    odds_2_player_2 = float(odds_2_player_2)
+    # Arbitrage calculations
+    prob_player_1_bookmaker_1 = 1 / odds_1_player_1
+    prob_player_1_bookmaker_2 = 1 / odds_2_player_2
+    total_prob_player_1 = prob_player_1_bookmaker_1 + prob_player_1_bookmaker_2
+
+    print("Prob 1", total_prob_player_1)
+    prob_player_2_bookmaker_1 = 1 / odds_1_player_2
+    prob_player_2_bookmaker_2 = 1 / odds_2_player_1
+    total_prob_player_2 = prob_player_2_bookmaker_1 + prob_player_2_bookmaker_2
+
+    print("Prob 2", total_prob_player_2)
+
+    arbitrage_margin_player_1 = 1 - total_prob_player_1
+    arbitrage_margin_player_2 = 1 - total_prob_player_2
+
+    if arbitrage_margin_player_2 > 0:
+        print("Arbitrage opportunity found!1")
+        print(f"Bookmaker 1 with odds {odds_1_player_2} || and Bookmaker 2 with odd {odds_2_player_1}")
+        potential_profit = arbitrage_calc(odds_1_player_2, odds_2_player_1, 50000)
+        print("Potential profit: $", potential_profit)
+        return potential_profit
+    elif arbitrage_margin_player_1 > 0:
+        print("Arbitrage opportunity found!2")
+        print(f"Bookmaker 1 with odds {odds_1_player_1} || and Bookmaker 2 with odd {odds_2_player_2}")
+        potential_profit = arbitrage_calc(odds_1_player_1, odds_2_player_2, 50000)
+        print("Potential profit: $", potential_profit)
+        return potential_profit
+    else:
+        print("No arbitrage opportunity")
+        return "😢"
 
 def caller_function(odds_1_player_1, odds_1_player_2, odds_2_player_1, odds_2_player_2, odds_3_player_1, odds_3_player_2):
     bookmakers = ["sport_pesa", "betika", "odi"]
@@ -319,7 +353,7 @@ def caller_function(odds_1_player_1, odds_1_player_2, odds_2_player_1, odds_2_pl
     if best_combination is not None:
         print("Arbitrage opportunity found!")
         print(f"{best_combination[0]} with odds {best_combination[2]} || and {best_combination[1]} with odd {best_combination[3]}")
-        potential_profit = arbitrage_calc(best_combination[2],best_combination[0], best_combination[3],best_combination[1], 2000)
+        potential_profit = arbitrage_calc(best_combination[2],best_combination[0], best_combination[3],best_combination[1], 50000)
         print("Potential profit: $", potential_profit)
         return potential_profit, best_combination[0], best_combination[1]
     else:

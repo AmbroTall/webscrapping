@@ -110,3 +110,41 @@
 05:06:40 : 239 Shakespeare Drive, Clayton, GA 30525
 05:06:43 : Tax Map & Parcel K01073A, Burke County, GA 1073
 05:06:47 : 208 Choctaw Street, Warner Robins, GA 31088
+05:06:51 : 4239 Ga Hwy 32E, Nicholls, GA 31554
+05:06:54 : 3246 Lakeview Pkwy, Villa Rica, GA 3246
+05:06:58 : 431 Goldfinch Drive, Augusta, GA 30907
+05:07:01 : 2449 Terrace Trail, Decatur, GA 2449
+05:07:04 : King Tract Caney Branch Road, Kingsland, GA 31548
+05:07:06 : 105 Rockview Lane, Covington, GA 30016
+05:07:09 : 2741 Blacks Bluff Road, Rome, GA 2741
+05:07:15 : Tax Map & Parcel K01074C, Burke County, GA 1074
+05:07:17 : 110 Roe Street, Sylvester, GA 2021
+05:07:20 : 2481 Terrace Trail, Decatur, GA 2481
+05:07:24 : 399 Chestnut Street, Social Circle, GA -1
+05:07:29 : 4783 Rosebrook Ct, Smyrna, GA 30080
+05:07:32 : 307 Lorch Street, Savannah, GA 31401
+05:07:35 : Oakhurst Subdivision And As Shown By A Plat And Survey Thereof Made By Merritt & Walker, Engineers, GA 1949
+05:07:38 : 5250 Parks Road, Cumming, GA 5250
+05:07:41 : All Of Lot Thirty-Six (36), Junction Ridge Subdivision, GA 825
+05:07:44 : 122 Boyd Road, Rome, GA 30161
+05:07:46 : 1722 Whisperwood Street, Albany, GA 31721
+05:07:48 : 1638 Broomfield Way, Lawrenceville, GA 30044
+05:07:57 : 2174 River Road, Ellenwood, GA 2174
+05:08:00 : 5941 Warner Road, Columbus, GA 31909
+05:08:04 : 3414 Timothy Lane, Gainesville, GA 30504
+05:08:07 : 17 Jans Meadows Street, Stockbridge, GA 30281
+05:08:11 : All That Tract Or Parcel Of Land Lying In Dekalb County Described As Follows: District 18, Land Lot 125, GA 26486
+05:08:14 : 4928 Quailwood Drive, Flowery Branch, GA 30542
+05:08:20 : 3488 Warpath Road, Macon, GA 3488
+05:08:23 : Toombs County Superior Court, 100 Courthouse Square, Lyons, GA 30436
+05:08:29 : 8445 Hwy 53 E, Dawsonville, GA 30534
+05:08:33 : 1043 Sylvian Drive, Macon, GA 1043
+05:08:36 : 4323D Gulley Road, Toccoa, GA 30577
+05:08:38 : 1765 Berkshire Court, Snellville, GA 30078
+05:08:41 : 4895 Poplar Springs, Gainesville, GA 30502
+05:08:45 : 403 Rosemary Court, Stateboro, GA 1998
+05:08:48 : 110 Big Jim Drive, Hephzibah, GA 30815
+05:08:51 : 204 Railroad Street, Brooklet, Bulloch County, GA 30405
+05:08:53 : The Toombs County Superior Court, 100 Courthouse Square, Lyons, GA 30436
+05:08:56 : 188 Third Street, Macon, GA 31201
+05:08:59 : 2563 Lake Capri Drive, Conyers, GA 30012

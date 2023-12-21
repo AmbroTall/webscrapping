@@ -1,132 +1,63 @@
-import requests
-import json
+from itertools import combinations
 
-def login_truthfinder():
-    url = "https://api2.truthfinder.com/v1/authenticate"
 
-    payload = json.dumps({
-        "email": "cashpro@cashprohomebuyers.com",
-        "password": "tech6491",
-        "sessionId": "1d565c79",
-        "sessionCreated": "1695449537"
-    })
-    headers = {
-        'authority': 'api2.truthfinder.com',
-        'accept': '*/*',
-        'accept-language': 'en-US,en;q=0.9',
-        'api-key': 'B7QbTIt3PtAID67cRtfQwrgzL0H3qU5buaxp17PoZ98',
-        'app-id': 'tf-web',
-        'content-type': 'application/json',
-        'device-id': 'ba3be71b-83f8-4b43-bdcb-aa9d52eb8367',
-        'origin': 'https://www.truthfinder.com',
-        'referer': 'https://www.truthfinder.com/login',
-        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Linux"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-site',
-        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
-        'Cookie': '__cf_bm=Ha6rl_lgi9_ykeTFajsG8MsCR9cX8XjlwiMoSim4Jlw-1695461085-0-AWaMc2g2Ov5Yq1cE/OQnxDikV26HN3oqwugWO6Akbv5kCH/Mt2kVMSDTt4N5yfscEh5oSzDZDTreRy21F7IsT56YSeg7zUd55YU6DPWpuWw4'
-    }
+def calculate_arbitrage(outcomes):
+    total_implied_probability = sum(1 / odd for odd in outcomes)
+    arbitrage_percentage = (1 - total_implied_probability) / total_implied_probability * 100
+    return arbitrage_percentage, total_implied_probability
 
-    response = requests.request("POST", url, headers=headers, data=payload)
-    r = response.json()
-    token = r['accessToken']
-    print(token)
-    return token
+def arbitrage_calc(odds, total_stake):
+    prob = [1 / odd for odd in odds]
+    total_prob = sum(prob)
 
-def truth_search_address(address):
-    url = f"https://us-autocomplete-pro.api.smartystreets.com/lookup?auth-id=2617637110263865&search={address}"
-    base = "https://www.truthfinder.com/dashboard/reports/"
+    stakes = [(total_stake * p / total_prob) for p in prob]
+    winnings = [stake * odd for stake, odd in zip(stakes, odds)]
+    guaranteed_profit = (total_stake / total_prob) - total_stake
 
-    payload = {}
-    headers = {
-        'authority': 'us-autocomplete-pro.api.smartystreets.com',
-        'accept': '*/*',
-        'accept-language': 'en-US,en;q=0.9',
-        'origin': 'https://www.truthfinder.com',
-        'referer': 'https://www.truthfinder.com/dashboard',
-        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Linux"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'cross-site',
-        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36'
-    }
+    return {
+        f'stake{i + 1} for Bookmaker {i + 1} with odds {odds[i]}': round(stakes[i], 2)
+        for i in range(len(odds))
+    }, {
+        f'winnings{i + 1}': round(winnings[i], 2)
+        for i in range(len(odds))
+    }, round(guaranteed_profit, 2)
 
-    response = requests.request("GET", url, headers=headers, data=payload)
-    r = response.json()['suggestions']
-    if r:
-        for address in r:
-            print(address)
-            if address['state'] == "GA":
-                # ga:dalton:30721:3440freedomln
-                url = f"{base}{address['state'].lower()}:{address['city'].lower()}:{address['zipcode']}:{address['street_line'].lower().replace(' ', '')}"
-                return url
-    return None
+def find_arbitrage_combinations_two_way(bookmaker_data, min_profit_percentage=0, fixed_stake=1000):
+    arbitrage_combinations = []
 
-def report_truthfinder(address, jwt):
-    url = f"https://api2.truthfinder.com/v1/me/records/{address.split('/')[-1]}/report?defer_extended_data=false"
+    num_bookmakers = len(bookmaker_data)
 
-    payload = {}
-    headers = {
-        'authority': 'api2.truthfinder.com',
-        'accept': '*/*',
-        'accept-language': 'en-US,en;q=0.9',
-        'api-key': 'B7QbTIt3PtAID67cRtfQwrgzL0H3qU5buaxp17PoZ98',
-        'app-id': 'tf-web',
-        'authorization': f'Bearer {jwt}',
-        'device-id': 'ba3be71b-83f8-4b43-bdcb-aa9d52eb8367',
-        'origin': 'https://www.truthfinder.com',
-        'referer': 'https://www.truthfinder.com/dashboard/reports/ga:dalton:30721:3440freedomln',
-        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Linux"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-site',
-        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
-        'Cookie': '__cf_bm=wLzTbwmTQl8ITfizbSI_Eb9wxMELAsTMZP4qSWbO0Io-1695463099-0-AQGIa5LuYsilxmSwBqLwgLEG8IhjZCL7A80kzkPZelMRSDJ30G11U9kiGlyjjdToAVliim+cgxHXcpiuhMr9q4Wf+axArSwREeI+CHNy2w/V'
-    }
+    for home_index, away_index in combinations(range(num_bookmakers), 2):
+        home_bookie = bookmaker_data[home_index]["bookname"]
+        away_bookie = bookmaker_data[away_index]["bookname"]
+        home_team = bookmaker_data[home_index]["home_team"]
+        away_team = bookmaker_data[away_index]["away_team"]
 
-    response = requests.request("GET", url, headers=headers, data=payload)
-    r = response.json()
-    print(r)
-    return r
+        # Changed the combination to use the first and last odds
+        outcome_combination = [
+            bookmaker_data[home_index]["odds"][0],
+            bookmaker_data[away_index]["odds"][1]
+        ]
 
-def send_request_truthfinder(jwt, url):
-    headers = {
-        'authority': 'api2.truthfinder.com',
-        'accept': '*/*',
-        'accept-language': 'en-US,en;q=0.9',
-        'api-key': 'B7QbTIt3PtAID67cRtfQwrgzL0H3qU5buaxp17PoZ98',
-        'app-id': 'tf-web',
-        'authorization': f'Bearer {jwt}',
-        'device-id': 'ba3be71b-83f8-4b43-bdcb-aa9d52eb8367',
-        'origin': 'https://www.truthfinder.com',
-        'referer': 'https://www.truthfinder.com/dashboard/reports/ga:dalton:30721:3440freedomln',
-        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Linux"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-site',
-        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
-        'Cookie': '__cf_bm=wLzTbwmTQl8ITfizbSI_Eb9wxMELAsTMZP4qSWbO0Io-1695463099-0-AQGIa5LuYsilxmSwBqLwgLEG8IhjZCL7A80kzkPZelMRSDJ30G11U9kiGlyjjdToAVliim+cgxHXcpiuhMr9q4Wf+axArSwREeI+CHNy2w/V'
-    }
-    response = requests.request("GET", url, headers=headers)
-    print(response.text)
+        arbitrage_percentage, total_implied_probability = calculate_arbitrage(outcome_combination)
 
-def main():
-    address_db = '3440 Freedom Lane'
-    jwt_token = login_truthfinder()
-    url = truth_search_address(address_db)
-    print(send_request_truthfinder(jwt_token, url))
-    if url:
-        r = report_truthfinder(url, jwt_token)
-    return url
+        if arbitrage_percentage > min_profit_percentage:
+            stakes_distribution, winnings, guaranteed_profit = arbitrage_calc(outcome_combination, fixed_stake)
 
-print(main())
+            arbitrage_combinations.append({
+                "event": bookmaker_data[home_index]["event"],
+                "home_bookie": home_bookie,
+                "away_bookie": away_bookie,
+                "home_team": home_team,
+                "away_team": away_team,
+                "combination": outcome_combination,
+                "implied_probability": total_implied_probability,
+                "arbitrage_percentage": arbitrage_percentage,
+                "stakes_distribution": stakes_distribution,
+                "winnings": winnings,
+                "guaranteed_profit": guaranteed_profit
+            })
+
+    return arbitrage_combinations
+
 

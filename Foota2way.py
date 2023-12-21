@@ -196,7 +196,7 @@ def caller_function(odds_1_player_1,odds_1_player_2,odds_2_player_1,odds_2_playe
     odds_1_player_2 = float(odds_1_player_2)
     odds_2_player_1 = float(odds_2_player_1)
     odds_2_player_2 = float(odds_2_player_2)
-    # Arbitrage calculations
+    # Arbitrage ccalcualculations
     prob_player_1_bookmaker_1 = 1 / odds_1_player_1
     prob_player_1_bookmaker_2 = 1 / odds_2_player_2
     total_prob_player_1 = prob_player_1_bookmaker_1 + prob_player_1_bookmaker_2
@@ -214,13 +214,13 @@ def caller_function(odds_1_player_1,odds_1_player_2,odds_2_player_1,odds_2_playe
     if arbitrage_margin_player_2 > 0:
         # print("Arbitrage opportunity found!1")
         # print(f"Bookmaker 1 with odds {odds_1_player_2} || and Bookmaker 2 with odd {odds_2_player_1}")
-        potential_profit = arbitrage_calc(odds_1_player_2, odds_2_player_1, 2000)
+        potential_profit = arbitrage_calc(odds_1_player_2, odds_2_player_1, 50000)
         # print("Potential profit: $", potential_profit)
         return potential_profit
     elif arbitrage_margin_player_1 > 0:
         # print("Arbitrage opportunity found!2")
         # print(f"Bookmaker 1 with odds {odds_1_player_1} || and Bookmaker 2 with odd {odds_2_player_2}")
-        potential_profit = arbitrage_calc(odds_1_player_1, odds_2_player_2, 2000)
+        potential_profit = arbitrage_calc(odds_1_player_1, odds_2_player_2, 50000)
         # print("Potential profit: $", potential_profit)
         return potential_profit
     else:
@@ -228,7 +228,8 @@ def caller_function(odds_1_player_1,odds_1_player_2,odds_2_player_1,odds_2_playe
         return "😢"
 
 odi = odi_football()
+print(odi)
 sport = sport_pesa()
-print()
+print(sport)
 merged_list = merge_odds_lists(sport, odi)
 print("hello",merged_list)
