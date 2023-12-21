@@ -17,7 +17,7 @@ import requests
 chrome_options = Options()
 chrome_options.add_argument("--headless")  # Run in headless mode without a GUI
 # min_time_to_place = 160
-time_to_place_over =150
+time_to_place_over = 300
 stake = 20
 def get_quarter_info(quarter):
     if quarter == "firstquarter":
@@ -574,6 +574,8 @@ class Login:
                 print("3")
                 prediction, percentage = predict_over_under(quarter_scores, int(remaining_quarter_secs), outcome, int(total_quarter_secs))
                 print("4")
+                if prediction.lower() == "under":
+                    return None
                 bet, bet_placed_outcome = prepare_bet(event_id, prediction, selections, sequence, market_id)
                 print("5")
                 weka_kitu = self.place_bet_api(bet, stake)

@@ -1,4 +1,3 @@
-# Two way arbs
 import json
 import os
 from itertools import combinations, product, groupby
@@ -6,6 +5,7 @@ from operator import itemgetter
 from Levenshtein import distance
 from odibet import odi_bets as odibet
 from sportpesa import sport_pesa as sportpesa
+from betika import betika as betika
 import logging
 import time
 import concurrent.futures
@@ -18,10 +18,11 @@ from fuzzywuzzy import fuzz, process
 all_main_functions = {
     "odi": odibet,
     "sportpesa": sportpesa,
+    "betika": betika,
 }
 
 sender_email = 'ambrosetall@gmail.com'
-receiver_emails = ['maziwamrefuajab@gmail.com', ]
+receiver_emails = ['maziwamrefuajab@gmail.com', 'paolosiroko@gmail.com ']
 
 
 def send_mail(email, table_data):

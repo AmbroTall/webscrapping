@@ -71,6 +71,7 @@ def odi_bets():
             odibets.append(matches)
         else:
             pass
+    print(len(odibets))
     return sorted(odibets, key=lambda x: x['time'])
 
 def exctract_odds(id, game):
