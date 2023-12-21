@@ -101,14 +101,13 @@ def exctract_odds(match, league, bookie_name):
     corners_overunder125 = []
     corners_overunder135 = []
 
-    corners_overunder65_3way = []
-    corners_overunder75_3way = []
-    corners_overunder85_3way = []
-    corners_overunder95_3way = []
-    corners_overunder105_3way = []
-    corners_overunder115_3way = []
-    corners_overunder125_3way = []
-    corners_overunder135_3way = []
+    corners_overunder7_3way = []
+    corners_overunder8_3way = []
+    corners_overunder9_3way = []
+    corners_overunder10_3way = []
+    corners_overunder11_3way = []  #over under exactly
+    corners_overunder12_3way = []
+    corners_overunder13_3way = []
 
 
     home_clean_sheet = []
@@ -356,46 +355,72 @@ def exctract_odds(match, league, bookie_name):
                     wager_types.append({"away_team_overunder05": away_team_overunder05})
 
 
+        if marketgroup['name'] == 'Others':
+            markets2 = marketgroup['markets']
+            for market in markets2:
+                if market['entityName'] == f"{match['eventNames'][0]} Total Goals - Odd/Even":
+                    hometeam_odd_even.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"hometeam_odd_even": hometeam_odd_even})
+
+                if market['entityName'] == f"{match['eventNames'][-1]} Total Goals - Odd/Even":
+                    awayteam_odd_even.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"awayteam_odd_even": awayteam_odd_even})
+
         if marketgroup['name'] == 'Corners':
             markets2 = marketgroup['markets']
             for market in markets2:
-                if market['entityName'] == "First Team to Score" and len(market['outcomes']) == 3:
-                    first_team_to_score.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value']),float(market['outcomes'][2]['value'])))
-                    wager_types.append({"first_team_to_score": first_team_to_score})
+                if market['entityName'] == "Total Corners" and market['entityId'] == 107213452:
+                    corners_overunder65.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"corners_overunder65": corners_overunder65})
+                if market['entityName'] == "Total Corners" and market['entityId'] == 107213453:
+                    corners_overunder75.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"corners_overunder75": corners_overunder75})
+                if market['entityName'] == "Total Corners" and market['entityId'] == 107213454:
+                    corners_overunder85.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"corners_overunder85": corners_overunder85})
+                if market['entityName'] == "Total Corners" and market['entityId'] == 107213456:
+                    corners_overunder105.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"corners_overunder105": corners_overunder105})
+                if market['entityName'] == "Total Corners" and market['entityId'] == 107213455:
+                    corners_overunder95.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"corners_overunder95": corners_overunder95})
+                if market['entityName'] == "Total Corners" and market['entityId'] == 107213457:
+                    corners_overunder115.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"corners_overunder115": corners_overunder115})
+                if market['entityName'] == "Total Corners" and market['entityId'] == 107213458:
+                    corners_overunder125.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"corners_overunder125": corners_overunder125})
+                if market['entityName'] == "Total Corners" and market['entityId'] == 107213459:
+                    corners_overunder135.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"corners_overunder135": corners_overunder135})
 
-                if market['entityName'] == "Last Team to Score" and len(market['outcomes']) == 3:
-                    last_team_to_score.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value']),float(market['outcomes'][2]['value'])))
-                    wager_types.append({"last_team_to_score": last_team_to_score})
+                if market['entityName'] == "3-Way Corners - Over/Exact/Under 7":
+                    corners_overunder7_3way.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value']),float(market['outcomes'][2]['value'])))
+                    wager_types.append({"corners_overunder7_3way": corners_overunder7_3way})
 
-                if market['entityName'] == f"{match['eventNames'][0]} - Clean Sheet - tcs" and len(market['outcomes']) == 2:
-                    home_clean_sheet.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
-                    wager_types.append({"home_clean_sheet": home_clean_sheet})
+                if market['entityName'] == "3-Way Corners - Over/Exact/Under 8":
+                    corners_overunder8_3way.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value']),float(market['outcomes'][2]['value'])))
+                    wager_types.append({"corners_overunder8_3way": corners_overunder8_3way})
 
-                if market['entityName'] == f"{match['eventNames'][-1]} - Clean Sheet - tcs" and len(market['outcomes']) == 2:
-                    away_clean_sheet.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
-                    wager_types.append({"away_clean_sheet": away_clean_sheet})
+                if market['entityName'] == "3-Way Corners - Over/Exact/Under 9":
+                    corners_overunder9_3way.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value']),float(market['outcomes'][2]['value'])))
+                    wager_types.append({"corners_overunder9_3way": corners_overunder9_3way})
 
-                if market['entityName'] == f"{match['eventNames'][0]} Total Goals - Over/Under 1.5" and len(market['outcomes']) == 2:
-                    home_team_overunder15.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
-                    wager_types.append({"home_team_overunder15": home_team_overunder15})
+                if market['entityName'] == "3-Way Corners - Over/Exact/Under 10":
+                    corners_overunder10_3way.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value']),float(market['outcomes'][2]['value'])))
+                    wager_types.append({"corners_overunder10_3way": corners_overunder10_3way})
 
-                if market['entityName'] == f"{match['eventNames'][0]} Total Goals - Over/Under 0.5" and len(market['outcomes']) == 2:
-                    home_team_overunder05.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
-                    wager_types.append({"home_team_overunder05": home_team_overunder05})
+                if market['entityName'] == "3-Way Corners - Over/Exact/Under 11":
+                    corners_overunder11_3way.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value']),float(market['outcomes'][2]['value'])))
+                    wager_types.append({"corners_overunder11_3way": corners_overunder11_3way})
 
-                if market['entityName'] == f"{match['eventNames'][0]} Total Goals - Over/Under 2.5" and len(market['outcomes']) == 2:
-                    home_team_overunder25.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
-                    wager_types.append({"home_team_overunder25": home_team_overunder25})
-                if market['entityName'] == f"{match['eventNames'][-1]} Total Goals - Over/Under 2.5" and len(market['outcomes']) == 2:
-                    away_team_overunder25.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
-                    wager_types.append({"away_team_overunder25": away_team_overunder25})
-                if market['entityName'] == f"{match['eventNames'][-1]} Total Goals - Over/Under 1.5" and len(market['outcomes']) == 2:
-                    away_team_overunder15.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
-                    wager_types.append({"away_team_overunder15": away_team_overunder15})
-                if market['entityName'] == f"{match['eventNames'][-1]} Total Goals - Over/Under 0.5" and len(market['outcomes']) == 2:
-                    away_team_overunder05.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
-                    wager_types.append({"away_team_overunder05": away_team_overunder05})
+                if market['entityName'] == "3-Way Corners - Over/Exact/Under 12":
+                    corners_overunder12_3way.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value']),float(market['outcomes'][2]['value'])))
+                    wager_types.append({"corners_overunder12_3way": corners_overunder12_3way})
 
+                if market['entityName'] == "3-Way Corners - Over/Exact/Under 13":
+                    corners_overunder13_3way.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value']),float(market['outcomes'][2]['value'])))
+                    wager_types.append({"corners_overunder13_3way": corners_overunder13_3way})
 
 
     handicap1 = []  # -1.5 / 1.5
@@ -476,8 +501,11 @@ def main():
             league_data = []
 
             for match in match_details:
+                try:
                     league_wager_dic =  exctract_odds(match, league_name, bookie_name)
                     league_data.append(league_wager_dic)
+                except:
+                    continue
             liga[league_name] = league_data
             bookmaker_data.append(liga)
             print("nairabet", bookmaker_data)
