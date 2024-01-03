@@ -122,9 +122,12 @@ def exctract_odds(match, league, bookie_name):
         elif market == 49:
             draw_no_bet.append(x['E'][0][0]['C'])
             draw_no_bet.append(x['E'][1][0]['C'])
-        elif market == 9934:
-            odd_even.append(x['E'][0][0]['C'])
+        elif market == 91:
+            odd_even_home.append(x['E'][1][0]['C'])
+            odd_even_home.append(x['E'][0][0]['C'])
+        elif market == 10043:
             odd_even.append(x['E'][1][0]['C'])
+            odd_even.append(x['E'][0][0]['C'])
         elif market == 17:
             over_two_five.append(x['E'][0][4]['C'])
             over_two_five.append(x['E'][1][4]['C'])

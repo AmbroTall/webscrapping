@@ -22,7 +22,7 @@ all_main_functions = {
 }
 
 sender_email = 'ambrosetall@gmail.com'
-receiver_emails = ['maziwamrefuajab@gmail.com', 'paolosiroko@gmail.com ']
+receiver_emails = ['maziwamrefuajab@gmail.com', 'felixodero2016gmail.com']
 
 
 def send_mail(email, table_data):
@@ -271,7 +271,6 @@ def prepare_matches_calc_arbs(matches):
                     match_data['bookname'] = bookie_name
                     match_data['event'] = key
                     match_data['time'] = match['time']
-
                     match_data['home_team'] = match['home_team']
                     match_data['away_team'] = match['away_team']
                     match_data['odds'] = values
@@ -462,8 +461,7 @@ def main():
         # Calculate elapsed timefind_arbitrage_combinations
         elapsed_time = end_time - start_time
         print(f"Total Elapsed Time: {elapsed_time:.2f} seconds")
-        time.sleep(90)
-
+        time.sleep(5)
 
 if __name__ == '__main__':
     main()

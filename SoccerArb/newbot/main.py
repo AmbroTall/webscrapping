@@ -625,6 +625,7 @@ def group_teams_matches(matches_lists, wager_type):
                         ["Guaranteed Profit", arb['guaranteed_profit']],
                     ]
                     print(tabulate(table_data, headers=["Attribute", "Value"], tablefmt="grid"))
+                    # if arb['arbitrage_percentage'] > 2:
                     save_arbs(arb, table_data)
                     # Add a separator line between each combination
                     print("\n" + "-" * 40 + "\n")
@@ -642,6 +643,7 @@ def group_teams_matches(matches_lists, wager_type):
                         ["Winnings", arb['winnings']],
                         ["Guaranteed Profit", arb['guaranteed_profit']],
                     ]
+                    # if arb['arbitrage_percentage'] > 2:
                     save_arbs(arb, table_data)
                     print(tabulate(table_data, headers=["Attribute", "Value"], tablefmt="grid"))
                     # Add a separator line between each combination

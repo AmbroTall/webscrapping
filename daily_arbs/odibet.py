@@ -97,9 +97,13 @@ def exctract_odds(id, game):
             wager_types.append({"1X2": home_draw_away})
 
         if market['sub_type_id'] == "10":
-            dc1X = market['outcomes'][0]['odd_value']
-            dc12 = market['outcomes'][1]['odd_value']
-            dcX2 = market['outcomes'][2]['odd_value']
+            for x in market['outcomes']:
+                if x['outcome_key'] == "1 or 2":
+                    dc12 = x['odd_value']
+                elif x['outcome_key'] == "X or 2":
+                    dcX2 = x['odd_value']
+                else:
+                    dc1X = x['odd_value']
             home_draw_away = [dc1X, dc12, dcX2]
             wager_types.append({"dc": home_draw_away})
 

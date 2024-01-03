@@ -176,25 +176,25 @@ def exctract_odds(match, league, bookie_name):
             first_team_to_score_2nd_half.extend((eventgame['outcomes'][1]['outcomeOdds'], eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][2]['outcomeOdds']))
 
         if (eventgame['gameName'] == "1st half - Under/Over 0.5 goals"):
-            over_ofive_five_first_half.extend((eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][1]['outcomeOdds']))
+            over_ofive_five_first_half.extend((eventgame['outcomes'][1]['outcomeOdds'], eventgame['outcomes'][0]['outcomeOdds']))
         if (eventgame['gameName'] == "1st half - Under/Over 1.5 goals"):
-            over_one_five_first_half.extend((eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][1]['outcomeOdds']))
+            over_one_five_first_half.extend((eventgame['outcomes'][1]['outcomeOdds'], eventgame['outcomes'][0]['outcomeOdds']))
         if (eventgame['gameName'] == "1st half - Under/Over 2.5 goals"):
-            over_two_five_first_half.extend((eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][1]['outcomeOdds']))
+            over_two_five_first_half.extend((eventgame['outcomes'][1]['outcomeOdds'], eventgame['outcomes'][0]['outcomeOdds']))
 
         if (eventgame['gameName'] == f"1st half - {name[0].strip()} Under/Over 0.5"):
-            first_half_home_team_overunder05.extend((eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][1]['outcomeOdds']))
+            first_half_home_team_overunder05.extend((eventgame['outcomes'][1]['outcomeOdds'], eventgame['outcomes'][0]['outcomeOdds']))
         if (eventgame['gameName'] == f"1st half - {name[0].strip()} Under/Over 1.5"):
-            first_half_home_team_overunder15.extend((eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][1]['outcomeOdds']))
+            first_half_home_team_overunder15.extend((eventgame['outcomes'][1]['outcomeOdds'], eventgame['outcomes'][0]['outcomeOdds']))
         if (eventgame['gameName'] == f"1st half - {name[0].strip()} Under/Over 2.5"):
-            first_half_home_team_overunder25.extend((eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][1]['outcomeOdds']))
+            first_half_home_team_overunder25.extend((eventgame['outcomes'][1]['outcomeOdds'], eventgame['outcomes'][0]['outcomeOdds']))
 
         if (eventgame['gameName'] == f"1st half - {name[1].strip()} Under/Over 0.5"):
-            first_half_away_team_overunder05.extend((eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][1]['outcomeOdds']))
+            first_half_away_team_overunder05.extend((eventgame['outcomes'][1]['outcomeOdds'], eventgame['outcomes'][0]['outcomeOdds']))
         if (eventgame['gameName'] == f"1st half - {name[1].strip()} Under/Over 1.5"):
-            first_half_away_team_overunder15.extend((eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][1]['outcomeOdds']))
+            first_half_away_team_overunder15.extend((eventgame['outcomes'][1]['outcomeOdds'], eventgame['outcomes'][0]['outcomeOdds']))
         if (eventgame['gameName'] == f"1st half - {name[1].strip()} Under/Over 2.5"):
-            first_half_away_team_overunder25.extend((eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][1]['outcomeOdds']))
+            first_half_away_team_overunder25.extend((eventgame['outcomes'][1]['outcomeOdds'], eventgame['outcomes'][0]['outcomeOdds']))
 
 
         if (eventgame['gameName'] == f"2nd half - {name[0].strip()} Under/Over 0.5 goals"):
@@ -231,7 +231,7 @@ def exctract_odds(match, league, bookie_name):
             gg_secondhalf.extend((eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][1]['outcomeOdds']))
 
         if (eventgame['gameName'] == f"{name[0].strip()} Under/Over 1.5 goals"):
-            home_team_overunder15.extend((eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][1]['outcomeOdds']))
+            home_team_overunder15.extend((eventgame['outcomes'][1]['outcomeOdds'], eventgame['outcomes'][0]['outcomeOdds']))
 
         if (eventgame['gameName'] == f"{name[0].strip()} - Odd/Even"):
             hometeam_odd_even.extend((eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][1]['outcomeOdds']))
@@ -260,19 +260,19 @@ def exctract_odds(match, league, bookie_name):
 
 
         if (eventgame['gameName'] == f"{name[0].strip()} Under/Over 0.5 goals"):
-            home_team_overunder05.extend((eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][1]['outcomeOdds']))
+            home_team_overunder05.extend((eventgame['outcomes'][1]['outcomeOdds'], eventgame['outcomes'][0]['outcomeOdds']))
 
         if (eventgame['gameName'] == f"{name[0].strip()} Under/Over 2.5 goals"):
-            home_team_overunder25.extend((eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][1]['outcomeOdds']))
+            home_team_overunder25.extend((eventgame['outcomes'][1]['outcomeOdds'], eventgame['outcomes'][0]['outcomeOdds']))
 
         if (eventgame['gameName'] == f"{name[1].strip()} Under/Over 1.5 goals"):
-            away_team_overunder15.extend((eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][1]['outcomeOdds']))
+            away_team_overunder15.extend((eventgame['outcomes'][1]['outcomeOdds'], eventgame['outcomes'][0]['outcomeOdds']))
 
         if (eventgame['gameName'] == f"{name[1].strip()} Under/Over 0.5 goals"):
-            away_team_overunder05.extend((eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][1]['outcomeOdds']))
+            away_team_overunder05.extend((eventgame['outcomes'][1]['outcomeOdds'], eventgame['outcomes'][0]['outcomeOdds']))
 
         if (eventgame['gameName'] == f"{name[1].strip()} Under/Over 2.5 goals"):
-            away_team_overunder25.extend((eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][1]['outcomeOdds']))
+            away_team_overunder25.extend((eventgame['outcomes'][1]['outcomeOdds'], eventgame['outcomes'][0]['outcomeOdds']))
         if (eventgame['gameName'] == "Total goals - Odd/Even"):
             odd_even.extend((eventgame['outcomes'][0]['outcomeOdds'], eventgame['outcomes'][1]['outcomeOdds']))
         if (eventgame['gameName'] == "1st half - Odd/Even"):

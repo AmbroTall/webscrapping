@@ -241,7 +241,7 @@ def main():
     # leagues = [{"England Premier League": 170880} ]
     leagues = [{"England Premier League": 170880}, {"England Championship": 170881}, {"England League One": 995354},
                {"England League Two": 995355}, {"Scotland Premiership": 941378}, {"Scotland Championship": 1075222},
-               {"Scotland League One": 1076436}, {"Scotland League Two": 1076689}]
+               {"Scotland League One": 1076436}, {"Scotland League Two": 1076689}, {"Northern Ireland":1078221},{"France League One": 950503},{"France League Two":958691},{"Laliga":180928},{"Laliga 2":180929}, {"Japan League": 1787481}, {"German Bundesliga":180923}, {"German Bundesliga 2":180924},{"German DFB Pokal":180924}, {"Italy Serie A": 167856}, {"Italy Serie B": 907202}, {"Italy Coppa Italia": 1042342}, {"Netherlands Eredivisie" : 1016657},{"Greece Super League 1": 1018979},{"England FA":708732},{"Copa del Ray": 1125043}]
 
     bookmaker_data = []
     for league in leagues:
@@ -259,15 +259,19 @@ def main():
                 "Scotland Championship": "Scotland-Championship",
                 "Scotland League One": "Scotland-League One",
                 "Scotland League Two": "Scotland-League Two",
+                # +++++++++++++ BenchMark +++++++++++++
+                # "Northern Ireland": "Northern Ireland",
+                # "France League One": "France League One",
+                # "France League One": "France League One",
             }
             # Check if the league_name is in the mapping dictionary, if yes, update it
-            if league_name in league_mapping:
-                league_name = league_mapping[league_name]
-
-            # Testing Function To See if teams are correctly named
-            testing = testing_function(bookie_name, league_name)
-            missing_names = check_team_names_in_match_details(testing, match_details)
-            print("**** This are the missing matches", missing_names)
+            # if league_name in league_mapping:
+            #     league_name = league_mapping[league_name]
+            #
+            # # Testing Function To See if teams are correctly named
+            # testing = testing_function(bookie_name, league_name)
+            # missing_names = check_team_names_in_match_details(testing, match_details)
+            # print("**** This are the missing matches", missing_names)
 
             liga = {}
             league_data = []
