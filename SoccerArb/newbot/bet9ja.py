@@ -80,11 +80,15 @@ def exctract_odds(match, league, bookie_name):
 
     games['match_id'] = match['ID']
     # Get the team mapping for the specified bookie and league
-    team_mapping = map_teams(bookie_name, league)
+    # team_mapping = map_teams(bookie_name, league)
+    #
+    # # Use the default team names if mapping is available, otherwise use the original names
+    # games['home_team'] = team_mapping.get(teams[0].strip(), teams[0].strip())
+    # games['away_team'] = team_mapping.get(teams[1].strip(), teams[1].strip())
 
     # Use the default team names if mapping is available, otherwise use the original names
-    games['home_team'] = team_mapping.get(teams[0].strip(), teams[0].strip())
-    games['away_team'] = team_mapping.get(teams[1].strip(), teams[1].strip())
+    games['home_team'] = teams[0].strip()
+    games['away_team'] = teams[1].strip()
 
     games['time'] = convert_date_string_to_unix(match['STARTDATE'])
 
@@ -279,8 +283,9 @@ def main():
             for match in match_details:
                 try:
                     league_wager_dic = exctract_odds(match, league_name, bookie_name)
+
                     league_data.append(league_wager_dic)
-                except:
+                except Exception as e:
                     continue
             liga[league_name] = league_data
             bookmaker_data.append(liga)

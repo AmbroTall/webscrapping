@@ -22,7 +22,7 @@ all_main_functions = {
 }
 
 sender_email = 'ambrosetall@gmail.com'
-receiver_emails = ['maziwamrefuajab@gmail.com', 'felixodero2016gmail.com']
+receiver_emails = ['maziwamrefuajab@gmail.com', 'paolosiroko@gmail.com']
 
 
 def send_mail(email, table_data):
@@ -338,8 +338,11 @@ def check_unique_booknames(match_data):
     return True
 
 def group_matches(matches_lists, wager_type):
+    print("matches_lists", len(matches_lists))
+
     # Sort the list based on time, home_name, and away_name using word matching
     matches_lists.sort(key=lambda x: (x['time'], x['home_team'], x['away_team']))
+    print("matches_lists_two", matches_lists)
 
     # Group matches by time, home_name, and away_name
     grouped_matches = {}
@@ -347,10 +350,14 @@ def group_matches(matches_lists, wager_type):
     current_group = []
 
     for match in matches_lists:
+        print("match", match)
+
         match_key = (match['time'], match['home_team'], match['away_team'])
 
         if current_key is None or match_team_names(match_key[1], current_key[1]) and match_team_names(match_key[2], current_key[2]):
             current_group.append(match)
+            print("Appending Current Group", match)
+            print("Appending Current Group", current_group)
         else:
             grouped_matches[current_key] = current_group
             current_group = [match]

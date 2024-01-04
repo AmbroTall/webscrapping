@@ -31,16 +31,16 @@ from tabulate import tabulate
 all_main_functions = {
     "bet9ja": bet9ja_main,
     "betbonanza": betbonanza_main,
-    "sunbet": sunbet_main,
-    "merrybet": merrybet_main,
-    "sportybet": sportybet_main,
-    "22bet": z22bet_main,
-    "nairabet": nairabet_main,
+    # "sunbet": sunbet_main,
+    # "merrybet": merrybet_main,
+    # "sportybet": sportybet_main,
+    # "22bet": z22bet_main,
+    # "nairabet": nairabet_main,
     "dafabet": dafabet_main,
     "betking": betking_main,
     # "bet188": bet188_main,
-    "ps3838": ps3838_main,
-    "parimatch": parimatch_main,
+    # "ps3838": ps3838_main,
+    # "parimatch": parimatch_main,
 }
 
 sender_email = 'ambrosetall@gmail.com'
@@ -78,7 +78,7 @@ def delete_jwt_file(file_path='jwt_token.txt'):
     if os.path.exists(file_path):
         os.remove(file_path)
         print(f"Deleted {file_path}")
-def fetch_all_matches(all_main_functions, max_execution_time=500, max_retries=5):
+def fetch_all_matches(all_main_functions, max_execution_time=1000, max_retries=5):
     results = {}
 
     def execute_function(name, func):
@@ -263,34 +263,66 @@ def prepare_matches_calc_arbs(results):
     home_draw_win = []
     draw_no_bet = []
     double_chance = []
+    handicap1 = []  # -1.5 / 1.5
     over_one_five = []
     over_two_five = []
     over_three_five = []
     fasthalf1X2 = []
     gg = []
-    away2_home1X = []
-    home1_awayX2 = []
-    X_away12 = []
 
     draw_no_bet_first_half = []
+    draw_no_bet_second_half = []
     over_ofive_five = []
     over_ofive_five_first_half = []
     over_one_five_first_half = []
     over_two_five_first_half = []
+    over_ofive_five_second_half = []
+    over_one_five_second_half = []
+    over_two_five_second_half = []
+    away2_home1X = []
+    home1_awayX2 = []
+    X_away12 = []
     over_four_five = []
     over_five_five = []
     fasthalf_dc = []
-
+    secondhalf_dc = []
     gg_firsthalf = []
+    gg_secondhalf = []
     odd_even = []
     odd_even_firsthalf = []
+    odd_even_secondhalf = []
+    hometeam_odd_even = []
+    awayteam_odd_even = []
     first_team_to_score = []  # hometeam, draw, away_team
+    first_team_to_score_1st_half = []  # hometeam, draw, away_team
+    first_team_to_score_2nd_half = []  # hometeam, draw, away_team
+    last_team_to_score = []  # hometeam, draw, away_team
     home_team_overunder15 = []
     home_team_overunder25 = []
     home_team_overunder05 = []
     away_team_overunder15 = []
     away_team_overunder25 = []
     away_team_overunder05 = []
+    home_clean_sheet = []
+    away_clean_sheet = []
+    home_clean_sheet_first_half = []
+    away_clean_sheet_first_half = []
+    home_clean_sheet_second_half = []
+    away_clean_sheet_second_half = []
+    first_half_home_team_overunder15 = []
+    first_half_home_team_overunder25 = []
+    first_half_home_team_overunder05 = []
+    first_half_away_team_overunder15 = []
+    first_half_away_team_overunder25 = []
+    first_half_away_team_overunder05 = []
+
+    second_half_home_team_overunder15 = []
+    second_half_home_team_overunder25 = []
+    second_half_home_team_overunder05 = []
+    second_half_away_team_overunder15 = []
+    second_half_away_team_overunder25 = []
+    second_half_away_team_overunder05 = []
+    second1X2 = []
 
     # Now all_arbitrage_results contains the data from the JSON file
     for key, value in results.items():
@@ -304,7 +336,7 @@ def prepare_matches_calc_arbs(results):
                     # print(match)
                     home_team = match['home_team']
                     away_team = match['away_team']
-                    # time = match['time']
+                    time = match['time']
                     wager_types = match['wager_types']
                     for wager in wager_types:
                         # print(wager)
@@ -314,6 +346,8 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -332,6 +366,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -341,6 +376,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -350,6 +386,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -359,6 +396,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -368,6 +406,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -377,6 +416,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -386,6 +426,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -395,6 +436,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -404,6 +446,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -413,6 +456,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -422,15 +466,27 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
                             draw_no_bet_first_half.append(match_data)
+                        if key == "draw_no_bet_second_half":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            draw_no_bet_second_half.append(match_data)
                         if key == "over_ofive_five":
                             match_data = {}
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -440,6 +496,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -449,6 +506,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -458,6 +516,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -467,6 +526,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -476,6 +536,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -485,6 +546,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -494,6 +556,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -503,6 +566,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -512,6 +576,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -521,6 +586,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -530,6 +596,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -539,6 +606,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -548,6 +616,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -557,6 +626,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -566,6 +636,7 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
@@ -575,24 +646,392 @@ def prepare_matches_calc_arbs(results):
                             match_data['bookname'] = bookie_name
                             match_data['league'] = league_name
                             match_data['event'] = key
+                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
                             away_team_overunder05.append(match_data)
+                        if key == "over_ofive_five_second_half":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            over_ofive_five_second_half.append(match_data)
 
-    return testing, home_draw_win, draw_no_bet, double_chance, over_one_five, over_two_five, over_three_five, fasthalf1X2, gg, away2_home1X, home1_awayX2, X_away12, draw_no_bet_first_half, over_ofive_five, over_ofive_five_first_half, over_one_five_first_half, over_two_five_first_half, over_four_five, over_five_five, fasthalf_dc, gg_firsthalf, odd_even, odd_even_firsthalf, first_team_to_score, home_team_overunder15, home_team_overunder25, home_team_overunder05, away_team_overunder15, away_team_overunder25, away_team_overunder05
+                        if key == "over_ofive_five_second_half":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            over_ofive_five_second_half.append(match_data)
 
+                        if key == "over_one_five_second_half":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            over_one_five_second_half.append(match_data)
+                        if key == "over_two_five_second_half":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            over_two_five_second_half.append(match_data)
+                        if key == "secondhalf_dc":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            secondhalf_dc.append(match_data)
+                        if key == "gg_secondhalf":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            gg_secondhalf.append(match_data)
+                        if key == "odd_even_secondhalf":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            odd_even_secondhalf.append(match_data)
+                        if key == "hometeam_odd_even":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            hometeam_odd_even.append(match_data)
+                        if key == "awayteam_odd_even":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            awayteam_odd_even.append(match_data)
+                        if key == "first_team_to_score_1st_half":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            first_team_to_score_1st_half.append(match_data)
+                        if key == "first_team_to_score_2nd_half":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            first_team_to_score_2nd_half.append(match_data)
+                        if key == "last_team_to_score":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            last_team_to_score.append(match_data)
+                        if key == "home_clean_sheet":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            home_clean_sheet.append(match_data)
+                        if key == "home_clean_sheet":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            home_clean_sheet.append(match_data)
+                        if key == "away_clean_sheet":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            away_clean_sheet.append(match_data)
+                        if key == "home_clean_sheet_first_half":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            home_clean_sheet_first_half.append(match_data)
+                        if key == "away_clean_sheet_first_half":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            away_clean_sheet_first_half.append(match_data)
+                        if key == "away_clean_sheet_first_half":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            away_clean_sheet_first_half.append(match_data)
+                        if key == "home_clean_sheet_second_half":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            home_clean_sheet_second_half.append(match_data)
+                        if key == "away_clean_sheet_second_half":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            away_clean_sheet_second_half.append(match_data)
+                        if key == "first_half_home_team_overunder15":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            first_half_home_team_overunder15.append(match_data)
+                        if key == "first_half_home_team_overunder25":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            first_half_home_team_overunder25.append(match_data)
+                        if key == "first_half_home_team_overunder05":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            first_half_home_team_overunder05.append(match_data)
+                        if key == "first_half_away_team_overunder15":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            first_half_away_team_overunder15.append(match_data)
+                        if key == "first_half_away_team_overunder25":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            first_half_away_team_overunder25.append(match_data)
+                        if key == "first_half_away_team_overunder05":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            first_half_away_team_overunder05.append(match_data)
+                        if key == "second_half_home_team_overunder15":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            second_half_home_team_overunder15.append(match_data)
+
+                        if key == "second_half_home_team_overunder25":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            second_half_home_team_overunder25.append(match_data)
+                        if key == "second_half_home_team_overunder05":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            second_half_home_team_overunder05.append(match_data)
+                        if key == "second_half_away_team_overunder15":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            second_half_away_team_overunder15.append(match_data)
+                        if key == "second_half_away_team_overunder25":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            second_half_away_team_overunder25.append(match_data)
+
+                        if key == "second_half_away_team_overunder05":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            second_half_away_team_overunder05.append(match_data)
+
+                        if key == "second1X2":
+                            match_data = {}
+                            match_data['bookname'] = bookie_name
+                            match_data['league'] = league_name
+                            match_data['event'] = key
+                            match_data['time'] = time
+                            match_data['home_team'] = home_team
+                            match_data['away_team'] = away_team
+                            match_data['odds'] = values
+                            second1X2.append(match_data)
+
+    return testing, awayteam_odd_even,hometeam_odd_even, second_half_away_team_overunder05, second1X2,home_clean_sheet_second_half,second_half_away_team_overunder25, second_half_away_team_overunder15,second_half_home_team_overunder25,second_half_home_team_overunder05, second_half_home_team_overunder15,first_half_away_team_overunder05,first_half_away_team_overunder25,first_half_home_team_overunder05,first_half_away_team_overunder15, first_half_home_team_overunder25,first_half_home_team_overunder15,away_clean_sheet_second_half, over_ofive_five_second_half,away_clean_sheet_first_half,home_clean_sheet_first_half, away_clean_sheet,home_clean_sheet,last_team_to_score,first_team_to_score_2nd_half,first_team_to_score_1st_half,odd_even_secondhalf,gg_secondhalf,secondhalf_dc,over_two_five_second_half,over_one_five_second_half,draw_no_bet_second_half,home_draw_win, draw_no_bet, double_chance, over_one_five, over_two_five, over_three_five, fasthalf1X2, gg, away2_home1X, home1_awayX2, X_away12, draw_no_bet_first_half, over_ofive_five, over_ofive_five_first_half, over_one_five_first_half, over_two_five_first_half, over_four_five, over_five_five, fasthalf_dc, gg_firsthalf, odd_even, odd_even_firsthalf, first_team_to_score, home_team_overunder15, home_team_overunder25, home_team_overunder05, away_team_overunder15, away_team_overunder25, away_team_overunder05
+
+def split_and_sort_team_names(team_name):
+    return sorted(team_name.lower().split(), key=len, reverse=True)
+
+def match_team_names(name1, name2):
+    names1 = split_and_sort_team_names(name1)
+    names2 = split_and_sort_team_names(name2)
+
+    # Check if any words from home team match with any words from away team
+    return any(word1 == word2 for word1 in names1 for word2 in names2)
 
 def group_teams_matches(matches_lists, wager_type):
     # Sort the list based on home and away team names
-    matches_lists.sort(key=itemgetter('home_team', 'away_team', 'league'))
+    # matches_lists.sort(key=itemgetter('home_team', 'away_team', 'league'))
+    # arbs_opportunities = []
+    # games = []
+    # # Group matches by home and away team names
+    # grouped_matches = {key: list(group) for key, group in groupby(matches_lists, key=itemgetter('home_team', 'away_team', 'league'))}
+    # # Iterate over groups and calculate arbitrage
+    # grouped_matches.items()
+
+    matches_lists.sort(key=itemgetter('time', 'home_team', 'away_team', 'league'))
     arbs_opportunities = []
     games = []
-    # Group matches by home and away team names
-    grouped_matches = {key: list(group) for key, group in
-                       groupby(matches_lists, key=itemgetter('home_team', 'away_team', 'league'))}
-    # Iterate over groups and calculate arbitrage
-    grouped_matches.items()
+    # Group matches by home and away team names using modified logic
+    grouped_matches = {}
+
+    print(matches_lists)
+
+    for key, group in groupby(matches_lists, key=itemgetter('home_team', 'away_team','time')):
+        matched_key = None
+        for existing_key in grouped_matches:
+            home_team, away_team, league = key
+            existing_home_team, existing_away_team, existing_league = existing_key
+
+            if match_team_names(home_team, existing_home_team) and match_team_names(away_team,existing_away_team) and league == existing_league:
+                matched_key = existing_key
+                break
+
+        if matched_key:
+            grouped_matches[matched_key].extend(list(group))
+        else:
+            grouped_matches[key] = list(group)
+
     for key, matches in grouped_matches.items():
         # +++++ Debugging +++++
         games.append(matches)
@@ -710,11 +1149,11 @@ def main():
         results = fetch_all_matches_job()
 
     # Schedule the job every 8 minutes
-    schedule.every(6).minutes.do(fetch_all_matches_and_update_results)
+    # schedule.every(6).minutes.do(fetch_all_matches_and_update_results)
 
     while True:
-        # Run pending scheduled jobs
-        schedule.run_pending()
+        # # Run pending scheduled jobs
+        # schedule.run_pending()
 
         # Record start time
         start_time = time.time()
@@ -724,18 +1163,18 @@ def main():
 
         # TESTING DATA
         # results = fetch_all_matches(all_main_functions)
-        # json_filename = 'arbitrage_results.json'
-        # Save the combined data back to the JSON file
+        # json_filename = 'arbitrage_wager_results.json'
+        # # Save the combined data back to the JSON file
         # with open(json_filename, 'r') as json_file:
         #     results = json.load(json_file)
         # Save the results to the JSON file
         # with open(json_filename, 'w') as json_file:
         #     json.dump(results, json_file)
 
-        testing, home_draw_win, draw_no_bet, double_chance, over_one_five, over_two_five, over_three_five, fasthalf1X2, gg, away2_home1X, home1_awayX2, X_away12, draw_no_bet_first_half, over_ofive_five, over_ofive_five_first_half, over_one_five_first_half, over_two_five_first_half, over_four_five, over_five_five, fasthalf_dc, gg_firsthalf, odd_even, odd_even_firsthalf, first_team_to_score, home_team_overunder15, home_team_overunder25, home_team_overunder05, away_team_overunder15, away_team_overunder25, away_team_overunder05 = prepare_matches_calc_arbs(results)
-        calculate_arbs = {"3_way_arbs": [home_draw_win, double_chance,first_team_to_score, fasthalf1X2,fasthalf_dc],
-                          "2_way_arbs": [over_ofive_five, away_team_overunder05,home_team_overunder15,away_team_overunder25, away_team_overunder15,  home_team_overunder05, home_team_overunder25, odd_even_firsthalf, odd_even,gg_firsthalf, over_five_five,over_four_five, over_two_five_first_half, over_one_five_first_half, over_ofive_five_first_half, draw_no_bet, draw_no_bet_first_half, over_three_five, over_two_five, over_one_five, gg, away2_home1X,
-                                         home1_awayX2, X_away12]}
+        testing,awayteam_odd_even,hometeam_odd_even, second_half_away_team_overunder05, second1X2, home_clean_sheet_second_half, second_half_away_team_overunder25, second_half_away_team_overunder15, second_half_home_team_overunder25, second_half_home_team_overunder05, second_half_home_team_overunder15, first_half_away_team_overunder05, first_half_away_team_overunder25, first_half_home_team_overunder05, first_half_away_team_overunder15, first_half_home_team_overunder25, first_half_home_team_overunder15, away_clean_sheet_second_half, over_ofive_five_second_half, away_clean_sheet_first_half, home_clean_sheet_first_half, away_clean_sheet, home_clean_sheet, last_team_to_score, first_team_to_score_2nd_half, first_team_to_score_1st_half, odd_even_secondhalf, gg_secondhalf, secondhalf_dc, over_two_five_second_half, over_one_five_second_half, draw_no_bet_second_half, home_draw_win, draw_no_bet, double_chance, over_one_five, over_two_five, over_three_five, fasthalf1X2, gg, away2_home1X, home1_awayX2, X_away12, draw_no_bet_first_half, over_ofive_five, over_ofive_five_first_half, over_one_five_first_half, over_two_five_first_half, over_four_five, over_five_five, fasthalf_dc, gg_firsthalf, odd_even, odd_even_firsthalf, first_team_to_score, home_team_overunder15, home_team_overunder25, home_team_overunder05, away_team_overunder15, away_team_overunder25, away_team_overunder05= prepare_matches_calc_arbs(results)
+        calculate_arbs = {"3_way_arbs": [home_draw_win, double_chance,first_team_to_score, fasthalf1X2,fasthalf_dc,first_team_to_score,first_team_to_score_1st_half,first_team_to_score_2nd_half,second1X2,last_team_to_score, fasthalf_dc,secondhalf_dc ],
+                          "2_way_arbs": [over_ofive_five,away_team_overunder25,away_team_overunder15,away_team_overunder05,home_clean_sheet, first_half_away_team_overunder15,first_half_home_team_overunder05,first_half_home_team_overunder25, first_half_home_team_overunder15,away_clean_sheet_second_half, home_clean_sheet_second_half,away_clean_sheet, home_clean_sheet,home_clean_sheet_first_half,away_clean_sheet_first_half,first_half_away_team_overunder25,first_half_away_team_overunder05, second_half_away_team_overunder05,second_half_away_team_overunder25, second_half_away_team_overunder15,second_half_home_team_overunder05,second_half_home_team_overunder25, second_half_home_team_overunder15,away_team_overunder05,home_team_overunder15,away_team_overunder25, away_team_overunder15,  home_team_overunder05, home_team_overunder25, odd_even_firsthalf, odd_even,gg_firsthalf, over_five_five,over_four_five, over_two_five_first_half, over_one_five_first_half, over_ofive_five_first_half, draw_no_bet, draw_no_bet_first_half, over_three_five, over_two_five, over_one_five, gg, away2_home1X,
+                                         home1_awayX2, X_away12, home_team_overunder05,home_team_overunder25,home_team_overunder15,awayteam_odd_even,hometeam_odd_even,odd_even_secondhalf,odd_even_firsthalf,odd_even,gg_secondhalf,gg_firsthalf,over_two_five_second_half,over_one_five_second_half, over_ofive_five_second_half,over_two_five_first_half,over_one_five_first_half,over_ofive_five_first_half,over_ofive_five, draw_no_bet_second_half,draw_no_bet_first_half, ]}
 
         for key, value in calculate_arbs.items():
             if key == "3_way_arbs":

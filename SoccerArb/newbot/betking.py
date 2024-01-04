@@ -66,13 +66,15 @@ def exctract_odds(match, league, bookie_name):
     games['match_id'] = match['ItemID']
     teams = match['ItemName'].split(" - ")
 
-    # Get the team mapping for the specified bookie and league
-    team_mapping = map_teams(bookie_name, league)
-
-
-    # Use the default team names if mapping is available, otherwise use the original names
-    games['home_team'] = team_mapping.get(teams[0], teams[0])
-    games['away_team'] = team_mapping.get(teams[-1], teams[-1])
+    # # Get the team mapping for the specified bookie and league
+    # team_mapping = map_teams(bookie_name, league)
+    #
+    #
+    # # Use the default team names if mapping is available, otherwise use the original names
+    # games['home_team'] = team_mapping.get(teams[0], teams[0])
+    # games['away_team'] = team_mapping.get(teams[-1], teams[-1])
+    games['home_team'] = teams[0]
+    games['away_team'] = teams[-1]
 
     # Parse the timestamp string
     dt = datetime.fromisoformat( match['ItemDate'])
@@ -317,8 +319,24 @@ def main():
         {"Scotland Premiership": 1522762},
         {"Scotland Championship": 1522766},
         {"Scotland League One": 1982205},
-        {"Scotland League Two": 4794385}
+        {"Scotland League Two": 4794385},
+        {"Northern Ireland": 1522772},
+        {"France League One": 1104},
+        {"France League Two": 1179},
+        {"Laliga": 1108},
+        {"Laliga 2": 6274},
+        {"Copa del Ray": 16156},
+        {"German Bundesliga": 1007},
+        {"German Bundesliga 2": 1025},
+        {"Italy Serie A": 3775},
+        {"Italy Serie B": 3776},
+        {"Italy Coppa Italia": 3092},
+        {"Netherlands Eredivisie": 1522637},
+        {"Greece Super League 1": 1522629},
+        {"Superatten": 23144},
+        {"England FA": 20647}
     ]
+
     bookmaker_data = []
     for league in leagues:
         try:
@@ -338,13 +356,13 @@ def main():
                 "Scotland League Two": "Scotland-League Two",
             }
             # Check if the league_name is in the mapping dictionary, if yes, update it
-            if league_name in league_mapping:
-                league_name = league_mapping[league_name]
-
-            # Testing Function To See if teams are correctly named
-            testing = testing_function(bookie_name, league_name)
-            missing_names = check_team_names_in_match_details(testing, match_details)
-            print("**** This are the missing matches", missing_names)
+            # if league_name in league_mapping:
+            #     league_name = league_mapping[league_name]
+            #
+            # # Testing Function To See if teams are correctly named
+            # testing = testing_function(bookie_name, league_name)
+            # missing_names = check_team_names_in_match_details(testing, match_details)
+            # print("**** This are the missing matches", missing_names)
 
             liga = {}
             league_data = []

@@ -7,14 +7,14 @@ import itertools
 # +++++++++++++++++++++++++Previous Days Tasks+++++++++++++++++++++++++++++
 today_date = datetime.now()
 # Calculate yesterday's date by subtracting one day
-yesterday_date = today_date - timedelta(days=4)
+yesterday_date = today_date - timedelta(days=1)
 # Format yesterday's date as a string in the desired format
 today_date = yesterday_date.strftime("%Y-%m-%d")
 
 
 # today_date = datetime.now().strftime("%Y-%m-%d")
 # Define the number of tasks and  task duration in minutes
-num_tasks = 32
+num_tasks = 40
 task_duration_minutes = 15
 
 def get_session(username, password):
@@ -165,25 +165,25 @@ def add_tasks_function(task_titles):
             update_task("Living Lab Scales", "Getting updates Umar", today_date, "MEETING UPDATE", start_time, finish_time, "Scales API Development", task_id,jwt=jwt)
             # Perform specific logic at 11:30 AM and 11:45 AM
             print(f"Meeting {i+1:02}: Start time {start_time} - Finish time {finish_time}")
-        elif start_time == "11:15 PM":
-            update_task("Living Lab Scales", "Updating attendance of the daily meeting", today_date, "MEETING UPDATE", start_time, finish_time, "Scales API Development", task_id,jwt=jwt)
-            # Perform specific logic at 11:30 AM and 11:45 AM
-            print(f"Meeting {i+1:02}: Start time {start_time} - Finish time {finish_time}")
-        elif start_time == "11:30 PM":
-            update_task("Living Lab Scales", "Attending daily meeting", today_date, "MEETING UPDATE", start_time, finish_time, "Scales API Development", task_id,jwt=jwt)
-            # Perform specific logic at 11:30 AM and 11:45 AM
-            print(f"Meeting {i+1:02}: Start time {start_time} - Finish time {finish_time}")
-        elif start_time == "15:15 PM":
-            update_task("Living Lab Scales", "Updating tasks in team management software", today_date, "MEETING UPDATE", start_time, finish_time, "Scales API Development", task_id,jwt=jwt)
-            # Perform specific logic at 11:30 AM and 11:45 AM
-            print(f"Meeting {i+1:02}: Start time {start_time} - Finish time {finish_time}")
-
-        elif start_time == "15:45 PM":
-            update_task("Living Lab Scales", "Meeting with Heena and Tijani regarding the target population API", today_date, "MEETING UPDATE", start_time, finish_time, "Scales API Development", task_id,jwt=jwt)
-            # Perform specific logic at 11:30 AM and 11:45 AM
-            print(f"Meeting {i+1:02}: Start time {start_time} - Finish time {finish_time}")
+        # elif start_time == "11:15 PM":
+        #     update_task("Living Lab Scales", "Updating attendance of the daily meeting", today_date, "MEETING UPDATE", start_time, finish_time, "Scales API Development", task_id,jwt=jwt)
+        #     # Perform specific logic at 11:30 AM and 11:45 AM
+        #     print(f"Meeting {i+1:02}: Start time {start_time} - Finish time {finish_time}")
+        # elif start_time == "11:30 PM":
+        #     update_task("Living Lab Scales", "Attending daily meeting", today_date, "MEETING UPDATE", start_time, finish_time, "Scales API Development", task_id,jwt=jwt)
+        #     # Perform specific logic at 11:30 AM and 11:45 AM
+        #     print(f"Meeting {i+1:02}: Start time {start_time} - Finish time {finish_time}")
+        # elif start_time == "15:15 PM":
+        #     update_task("Living Lab Scales", "Updating tasks in team management software", today_date, "MEETING UPDATE", start_time, finish_time, "Scales API Development", task_id,jwt=jwt)
+        #     # Perform specific logic at 11:30 AM and 11:45 AM
+        #     print(f"Meeting {i+1:02}: Start time {start_time} - Finish time {finish_time}")
+        #
+        # elif start_time == "15:45 PM":
+        #     update_task("Living Lab Scales", "Meeting with Heena and Tijani regarding the target population API", today_date, "MEETING UPDATE", start_time, finish_time, "Scales API Development", task_id,jwt=jwt)
+        #     # Perform specific logic at 11:30 AM and 11:45 AM
+        #     print(f"Meeting {i+1:02}: Start time {start_time} - Finish time {finish_time}")
         elif start_time == "11:45 PM":
-            update_task("Living Lab Scales", "Meeting with Norah explaining the master link", today_date, "MEETING UPDATE", start_time, finish_time, "Scales API Development", task_id,jwt=jwt)
+            update_task("Living Lab Scales", "Meeting with Norah explaining to address the likert get request endpoint", today_date, "MEETING UPDATE", start_time, finish_time, "Scales API Development", task_id,jwt=jwt)
             # Perform specific logic at 11:30 AM and 11:45 AM
             print(f"Meeting {i+1:02}: Start time {start_time} - Finish time {finish_time}")
 
@@ -203,33 +203,40 @@ def add_tasks_function(task_titles):
 
 
 task_titles = [
-    "Meeting with Tijani to gather feedback on the Likert scale implementation.",
-    "Meeting with team lead to plan and prioritize tasks for the upcoming sprint.",
-    "Meeting with team lead to discuss potential enhancements to the report module.",
-    "Meeting with Umar to troubleshoot and resolve any technical issues with the NPS Lite integration.",
-    "Meeting with Tijani to finalize the design and layout of the integrated scales in the report module.",
-    "Tijani presented a detailed walkthrough of the Stapel scale implementation.",
-    "Umar shared progress updates on addressing the errors and challenges faced.",
-    "Meeting with team lead to evaluate the overall project progress and identify areas for improvement.",
-    "Meeting with team lead to explore opportunities for team training and skill development.",
-    "Meeting with Umar to conduct a code review and ensure code quality standards are met.",
-    "Meeting with Tijani to conduct user acceptance testing (UAT) for the integrated scales.",
-    "Tijani provided insights into user feedback gathered during the UAT phase.",
-    "Umar presented a revised implementation plan to overcome the encountered errors.",
-    "Meeting with team lead to strategize for the successful deployment of the report module.",
-    "Meeting with team lead to discuss post-deployment monitoring and maintenance plans.",
-    "Meeting with team lead and discussing progress updates.",
-    "Meeting with team lead and getting the agendas.",
-    "Meeting with team lead and discussing Umar's inconsistency.",
-    "Meeting with team lead and discussing Tijani's positive urgency.",
-    "Meeting with team lead and discussing the report module for the scales.",
-    "Meeting with team lead and discussing the next phase after master link implementation.",
-    "Meeting with Umar and getting updates regarding NPS Lite integration to the report module.",
-    "Meeting with team lead and discussing report module designs and charts to display information.",
-    "Meeting with Tijani to oversee the implementation of the report module having integrated 3 scales: Likert, Stapel, and NPS.",
-    "Tijani demonstrated a sample report of the Likert scale.",
-    "Umar gave excuses, saying he faced errors.",
+    "Reviewing the project timeline with Norah.",
+    "Conducting a code review session with Umar.",
+    "Brainstorming ideas for the upcoming feature with the team.",
+    "Testing the latest front-end changes in the experimental branch.",
+    "Checking in with Heena about her progress on the backend enhancements.",
+    "Documenting key findings from the recent research on data visualization.",
+    "Holding a team meeting to discuss the current challenges and solutions.",
+    "Providing feedback on Tijani's latest code implementation.",
+    "Updating the team calendar with important deadlines.",
+    "Creating a presentation for the next client meeting.",
+    "Reviewing the attendance records for the week.",
+    "Analyzing the efficiency of the current task management system.",
+    "Sharing insights from the recent industry conference with the team.",
+    "Setting up a training session for new team members.",
+    "Collaborating with Norah on optimizing the master link implementation.",
+    "Brainstorming creative ideas for improving the user interface.",
+    "Conducting a knowledge-sharing session on the latest technologies.",
+    "Verifying the accuracy of the backend data.",
+    "Sending out reminders for the upcoming sprint review.",
+    "Reviewing and updating the team's coding standards document.",
+    "Investigating potential improvements for the backend infrastructure.",
+    "Collaborating with Heena on refining the API documentation.",
+    "Assisting Umar in troubleshooting a reported bug.",
+    "Optimizing the database queries for better performance.",
+    "Planning a team-building activity for the upcoming month.",
+    "Investigating new libraries or tools for chart visualization.",
+    "Conducting a retrospective meeting to evaluate the last sprint.",
+    "Creating a checklist for the upcoming code deployment.",
+    "Reviewing the project's budget and resource allocation.",
+    "Analyzing the user feedback received during the last demo.",
+    "Scheduling a one-on-one session with Tijani to discuss his goals.",
+    "Updating the project dashboard with the latest metrics."
 ]
+
 print(len(task_titles))
 print(add_tasks_function(task_titles))
 
