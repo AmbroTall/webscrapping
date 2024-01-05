@@ -5,16 +5,16 @@ import json
 import itertools
 
 # +++++++++++++++++++++++++Previous Days Tasks+++++++++++++++++++++++++++++
-today_date = datetime.now()
-# Calculate yesterday's date by subtracting one day
-yesterday_date = today_date - timedelta(days=1)
-# Format yesterday's date as a string in the desired format
-today_date = yesterday_date.strftime("%Y-%m-%d")
+# today_date = datetime.now()
+# # Calculate yesterday's date by subtracting one day
+# yesterday_date = today_date - timedelta(days=1)
+# # Format yesterday's date as a string in the desired format
+# today_date = yesterday_date.strftime("%Y-%m-%d")
 
 
-# today_date = datetime.now().strftime("%Y-%m-%d")
+today_date = datetime.now().strftime("%Y-%m-%d")
 # Define the number of tasks and  task duration in minutes
-num_tasks = 40
+num_tasks = 45
 task_duration_minutes = 15
 
 def get_session(username, password):
@@ -162,7 +162,7 @@ def add_tasks_function(task_titles):
 
         # Do your task-related actions here, such as filling in the task details.
         if start_time == "11:00 AM":
-            update_task("Living Lab Scales", "Getting updates Umar", today_date, "MEETING UPDATE", start_time, finish_time, "Scales API Development", task_id,jwt=jwt)
+            update_task("Living Lab Scales", "Attending meeting stand up", today_date, "MEETING UPDATE", start_time, finish_time, "Scales API Development", task_id,jwt=jwt)
             # Perform specific logic at 11:30 AM and 11:45 AM
             print(f"Meeting {i+1:02}: Start time {start_time} - Finish time {finish_time}")
         # elif start_time == "11:15 PM":
@@ -203,38 +203,48 @@ def add_tasks_function(task_titles):
 
 
 task_titles = [
-    "Reviewing the project timeline with Norah.",
-    "Conducting a code review session with Umar.",
-    "Brainstorming ideas for the upcoming feature with the team.",
-    "Testing the latest front-end changes in the experimental branch.",
-    "Checking in with Heena about her progress on the backend enhancements.",
-    "Documenting key findings from the recent research on data visualization.",
-    "Holding a team meeting to discuss the current challenges and solutions.",
-    "Providing feedback on Tijani's latest code implementation.",
-    "Updating the team calendar with important deadlines.",
-    "Creating a presentation for the next client meeting.",
-    "Reviewing the attendance records for the week.",
-    "Analyzing the efficiency of the current task management system.",
-    "Sharing insights from the recent industry conference with the team.",
-    "Setting up a training session for new team members.",
-    "Collaborating with Norah on optimizing the master link implementation.",
-    "Brainstorming creative ideas for improving the user interface.",
-    "Conducting a knowledge-sharing session on the latest technologies.",
-    "Verifying the accuracy of the backend data.",
-    "Sending out reminders for the upcoming sprint review.",
-    "Reviewing and updating the team's coding standards document.",
-    "Investigating potential improvements for the backend infrastructure.",
-    "Collaborating with Heena on refining the API documentation.",
-    "Assisting Umar in troubleshooting a reported bug.",
-    "Optimizing the database queries for better performance.",
-    "Planning a team-building activity for the upcoming month.",
-    "Investigating new libraries or tools for chart visualization.",
-    "Conducting a retrospective meeting to evaluate the last sprint.",
-    "Creating a checklist for the upcoming code deployment.",
-    "Reviewing the project's budget and resource allocation.",
-    "Analyzing the user feedback received during the last demo.",
-    "Scheduling a one-on-one session with Tijani to discuss his goals.",
-    "Updating the project dashboard with the latest metrics."
+    "Discuss the logic of qsort algorithm in the report module with Heena.",
+    "Discuss the logic of qsort algorithm with Tijani.",
+    "View the presentation made by Umar.",
+    "View suggestions from Tijani regarding the q sort scale.",
+    "Review percent sum implementation in the report module.",
+    "Connect with Norh regarding the ranking scale front end.",
+    "Attend the daily stand-up meeting.",
+    "Modify the likert get response endpoint.",
+    "Give updates to Heena regarding the team progress.",
+    "Reach out to Rao to get updates from the ranking scale.",
+    "Update tasks.",
+    "Encourage teammates on the importance of the meeting.",
+    "Track the weekly agenda and ensure we finish what's possible on time.",
+    "Get feedback from Norah that she won't be with the team until next week.",
+    "Discuss the logic of qsort algorithm in the report module with Heena.",
+    "Discuss the logic of qsort algorithm with Tijani.",
+    "View the presentation made by Umar.",
+    "View suggestions from Tijani regarding the q sort scale.",
+    "Review percent sum implementation in the report module.",
+    "Connect with Norh regarding the ranking scale front end.",
+    "Attend the daily stand-up meeting.",
+    "Modify the likert get response endpoint.",
+    "Give updates to Heena regarding the team progress.",
+    "Reach out to Rao to get updates from the ranking scale.",
+    "Update tasks.",
+    "Encourage teammates on the importance of the meeting.",
+    "Track the weekly agenda and ensure we finish what's possible on time.",
+    "Get feedback from Norah that she won't be with the team until next week.",
+    "Discuss the logic of qsort algorithm in the report module with Heena.",
+    "Discuss the logic of qsort algorithm with Tijani.",
+    "View the presentation made by Umar.",
+    "View suggestions from Tijani regarding the q sort scale.",
+    "Review percent sum implementation in the report module.",
+    "Connect with Norh regarding the ranking scale front end.",
+    "Attend the daily stand-up meeting.",
+    "Modify the likert get response endpoint.",
+    "Give updates to Heena regarding the team progress.",
+    "Reach out to Rao to get updates from the ranking scale.",
+    "Update tasks.",
+    "Encourage teammates on the importance of the meeting.",
+    "Track the weekly agenda and ensure we finish what's possible on time.",
+    "Get feedback from Norah that she won't be with the team until next week."
 ]
 
 print(len(task_titles))

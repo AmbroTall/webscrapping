@@ -233,22 +233,52 @@ def exctract_odds(match, league, bookie_name):
                     gg_firsthalf = [ggyes, ggno]
                     wager_types.append({"gg_firsthalf": gg_firsthalf})
                 if market['entityName'] == f"{match['eventNames'][0]} First Half Goals - Over/Under 0.5" and len(market['outcomes']) == 2:
-                    first_half_home_team_overunder05.extend((float(market['outcomes'][1]['value']),float(market['outcomes'][0]['value'])))
+                    for x in market['outcomes']:
+                        if x['id'].lower() == "over":
+                            ggyes = x['value']
+                        if x['id'].lower() == "under":
+                            ggno = x['value']
+                    first_half_home_team_overunder05 = [float(ggyes), float(ggno)]
                     wager_types.append({"first_half_home_team_overunder05": first_half_home_team_overunder05})
                 if market['entityName'] == f"{match['eventNames'][0]} First Half Goals - Over/Under 1.5" and len(market['outcomes']) == 2:
-                    first_half_home_team_overunder15.extend((float(market['outcomes'][1]['value']),float(market['outcomes'][0]['value'])))
+                    for x in market['outcomes']:
+                        if x['id'].lower() == "over":
+                            ggyes = x['value']
+                        if x['id'].lower() == "under":
+                            ggno = x['value']
+                    first_half_home_team_overunder15 = [float(ggyes), float(ggno)]
                     wager_types.append({"first_half_home_team_overunder15": first_half_home_team_overunder15})
                 if market['entityName'] == f"{match['eventNames'][-1]} First Half Goals - Over/Under 0.5" and len(market['outcomes']) == 2:
-                    first_half_away_team_overunder05.extend((float(market['outcomes'][1]['value']),float(market['outcomes'][0]['value'])))
+                    for x in market['outcomes']:
+                        if x['id'].lower() == "over":
+                            ggyes = x['value']
+                        if x['id'].lower() == "under":
+                            ggno = x['value']
+                    first_half_away_team_overunder05 = [float(ggyes), float(ggno)]
                     wager_types.append({"first_half_away_team_overunder05": first_half_away_team_overunder05})
                 if market['entityName'] == f"{match['eventNames'][-1]} First Half Goals - Over/Under 1.5" and len(market['outcomes']) == 2:
-                    first_half_away_team_overunder15.extend((float(market['outcomes'][1]['value']),float(market['outcomes'][0]['value'])))
+                    for x in market['outcomes']:
+                        if x['id'].lower() == "over":
+                            ggyes = x['value']
+                        if x['id'].lower() == "under":
+                            ggno = x['value']
+                    first_half_away_team_overunder15 = [float(ggyes), float(ggno)]
                     wager_types.append({"first_half_away_team_overunder15": first_half_away_team_overunder15})
                 if market['entityName'] == f"{match['eventNames'][-1]} First Half Goals - Over/Under 2.5" and len(market['outcomes']) == 2:
-                    first_half_away_team_overunder25.extend((float(market['outcomes'][1]['value']),float(market['outcomes'][0]['value'])))
+                    for x in market['outcomes']:
+                        if x['id'].lower() == "over":
+                            ggyes = x['value']
+                        if x['id'].lower() == "under":
+                            ggno = x['value']
+                    first_half_away_team_overunder25 = [float(ggyes), float(ggno)]
                     wager_types.append({"first_half_away_team_overunder25": first_half_away_team_overunder25})
                 if market['entityName'] == f"{match['eventNames'][0]} First Half Goals - Over/Under 2.5" and len(market['outcomes']) == 2:
-                    first_half_home_team_overunder25.extend((float(market['outcomes'][1]['value']),float(market['outcomes'][0]['value'])))
+                    for x in market['outcomes']:
+                        if x['id'].lower() == "over":
+                            ggyes = x['value']
+                        if x['id'].lower() == "under":
+                            ggno = x['value']
+                    first_half_home_team_overunder25 = [float(ggyes), float(ggno)]
                     wager_types.append({"first_half_home_team_overunder25": first_half_home_team_overunder25})
                 if market['entityName'] == "First Half Goals – odd/even" and len(market['outcomes']) == 2:
                     odd_even_firsthalf.extend((float(market['outcomes'][1]['value']),float(market['outcomes'][0]['value'])))
@@ -280,8 +310,17 @@ def exctract_odds(match, league, bookie_name):
                     wager_types.append({"over_two_five_second_half": over_two_five_second_half})
 
                 if market['entityName'] == "Both Teams To Score In 2nd Half" and len(market['outcomes']) == 2:
-                    gg_secondhalf.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    for x in market['outcomes']:
+                        if x['id'].lower() == "yes":
+                            ggyes = x['value']
+                        if x['id'].lower() == "no":
+                            ggno = x['value']
+                    gg_secondhalf = [float(ggyes), float(ggno)]
                     wager_types.append({"gg_secondhalf": gg_secondhalf})
+
+                if market['entityName'] == "Both Teams To Score In 1st Half" and len(market['outcomes']) == 2:
+                    gg_firsthalf.extend((float(market['outcomes'][1]['value']), float(market['outcomes'][0]['value'])))
+                    wager_types.append({"gg_firsthalf": gg_firsthalf})
 
                 if market['entityName'] == f"{match['eventNames'][0]} Second Half Goals - Over/Under 0.5" and len(
                         market['outcomes']) == 2:
@@ -498,7 +537,77 @@ def process_league(league_dict):
     for league_name, league_id in league_dict.items():
         return  league_name, league_id
 
-def main():
+# def main():
+#     bookie_name = 'nairabet'
+#
+#     leagues = [
+#         {"England Premier League": "EN_PR"},
+#         {"England Championship": "EN_D1"},
+#         {"England League One": "EN_D2"},
+#         {"England League Two": "EN_D3"},
+#         {"Scotland Premiership": "LD_SP"},
+#         {"Scotland Championship": "SCOTLAND_CHAMPIONSHIP"},
+#         {"Scotland League One": "SCOTLAND_LEAGUE_ONE"},
+#         {"Scotland League Two": "SCOTLAND_LEAGUE_TWO"},
+#         {"Northern Ireland": "NORTHERN_IRELAND_PREMIER_LEAGUE"},
+#         {"France League One": "FR_L1"},
+#         {"France League Two": "FRANCE_LIGUE_2"},
+#         {"Laliga": "ES_PL"},
+#         {"Copa del Ray": "SPAIN_CUP"},
+#         {"Laliga 2": "SPAIN_SEGUNDA_DIVISION"},
+#         {"German Bundesliga": "DE_BL"},
+#         {"German Bundesliga 2": "GERMANY_BUNDESLIGA_2"},
+#         {"Italy Serie A": "IT_SA"},
+#         {"Italy Serie B": "ITALY_SERIE_B"},
+#         {"Italy Coppa Italia": "ITALY_CUP"},
+#         {"Netherlands Eredivisie": "NETHERLANDS_EREDIVISIE"},
+#         {"Greece Super League 1": "GREECE_SUPER_LEAGUE"},
+#         {"England FA": "EN_FA"},
+#     ]
+#     bookmaker_data = []
+#     for league in leagues:
+#         try:
+#             print(league)
+#             league_name, league_id = process_league(league)
+#             match_details = api_calls_events(f"{league_id}")
+#
+#             league_mapping = {
+#                 "England Premier League": "England-Premier League",
+#                 "England Championship": "England-EFL Cup",
+#                 "England League One": "England-League One",
+#                 "England League Two": "England-League Two",
+#                 "Scotland Premiership": "Scotland-Premiership",
+#                 "Scotland Championship": "Scotland-Championship",
+#                 "Scotland League One": "Scotland-League One",
+#                 "Scotland League Two": "Scotland-League Two",
+#             }
+#             # Check if the league_name is in the mapping dictionary, if yes, update it
+#             # if league_name in league_mapping:
+#             #     league_name = league_mapping[league_name]
+#             #
+#             # # Testing Function To See if teams are correctly named
+#             # testing = testing_function(bookie_name, league_name)
+#             # missing_names = check_team_names_in_match_details(testing, match_details)
+#             # print("**** This are the missing matches", missing_names)
+#
+#             liga = {}
+#             league_data = []
+#
+#             for match in match_details:
+#                 try:
+#                     league_wager_dic =  exctract_odds(match, league_name, bookie_name)
+#                     league_data.append(league_wager_dic)
+#                 except:
+#                     continue
+#             liga[league_name] = league_data
+#             bookmaker_data.append(liga)
+#             print("nairabet", bookmaker_data)
+#         except Exception as e:
+#             print("Ambrose", e)
+#             continue
+#     return bookmaker_data
+
+def main(league):
     bookie_name = 'nairabet'
 
     leagues = [
@@ -526,51 +635,38 @@ def main():
         {"England FA": "EN_FA"},
     ]
     bookmaker_data = []
-    for league in leagues:
-        try:
-            print(league)
-            league_name, league_id = process_league(league)
-            match_details = api_calls_events(f"{league_id}")
+    try:
+        print(league)
+        # Find the league dictionary based on the provided league name
+        selected_league = next((item for item in leagues if league in item), None)
 
-            league_mapping = {
-                "England Premier League": "England-Premier League",
-                "England Championship": "England-EFL Cup",
-                "England League One": "England-League One",
-                "England League Two": "England-League Two",
-                "Scotland Premiership": "Scotland-Premiership",
-                "Scotland Championship": "Scotland-Championship",
-                "Scotland League One": "Scotland-League One",
-                "Scotland League Two": "Scotland-League Two",
-            }
-            # Check if the league_name is in the mapping dictionary, if yes, update it
-            # if league_name in league_mapping:
-            #     league_name = league_mapping[league_name]
-            #
-            # # Testing Function To See if teams are correctly named
-            # testing = testing_function(bookie_name, league_name)
-            # missing_names = check_team_names_in_match_details(testing, match_details)
-            # print("**** This are the missing matches", missing_names)
+        if selected_league:
+            league_name, league_id = process_league(selected_league)
+            match_details = api_calls_events(f"{league_id}")
 
             liga = {}
             league_data = []
 
             for match in match_details:
                 try:
-                    league_wager_dic =  exctract_odds(match, league_name, bookie_name)
+                    league_wager_dic = exctract_odds(match, league_name, bookie_name)
                     league_data.append(league_wager_dic)
-                except:
+                except Exception as e:
                     continue
+
             liga[league_name] = league_data
             bookmaker_data.append(liga)
             print("nairabet", bookmaker_data)
-        except Exception as e:
-            print("Ambrose", e)
-            continue
-    return bookmaker_data
+            return bookmaker_data
+        else:
+            print(f"No matching league found for {league}")
+    except Exception as e:
+        print("Ambrose", e)
+        # continue
 
 if __name__ == '__main__':
     start_time = time.time()
-    games = main()
+    games = main("England Premier League")
     end_time = time.time()
     # Calculate elapsed time
     elapsed_time_seconds = end_time - start_time

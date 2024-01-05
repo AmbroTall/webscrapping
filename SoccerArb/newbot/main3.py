@@ -1,3 +1,4 @@
+
 import json
 import os
 
@@ -27,7 +28,70 @@ import smtplib
 from email.mime.text import MIMEText
 from tabulate import tabulate
 
-# Create a list of all the main functions with their corresponding names
+keys_array = [
+    "England Premier League",
+    "England Championship",
+    "England League One",
+    "England League Two",
+    "Scotland Premiership",
+    "Scotland Championship",
+    "Scotland League One",
+    "Scotland League Two",
+    "Irish Premier",
+    "Northern Ireland",
+    "France League One",
+    "France League Two",
+    "Laliga",
+    "Copa del Ray",
+    "Laliga 2",
+    "German Bundesliga",
+    "German Bundesliga 2",
+    "German Bundesliga 3",
+    "German DFB Pokal",
+    "Italy Serie A",
+    "Italy Serie B",
+    "Italy Coppa Italia",
+    "Netherlands Eredivisie",
+    "Netherlands Erste Division",
+    "Czech Liga 1",
+    "Greece Super League 1",
+    "Swedish Allsvenska",
+    "Superatten",
+    "Danish Superligan",
+    "England FA",
+]
+
+def fetch_all_matches_for_league(all_main_functions, league_key, max_execution_time=1000, max_retries=5):
+    results_for_league = {}
+    def execute_function(name, func, key):
+        try:
+            result = func(key)
+            return name, result
+        except Exception as e:
+            logging.error(f"Function {name} failed with exception: {e}")
+            return name, None
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=len(all_main_functions)) as executor:
+        futures = {name: executor.submit(execute_function, name, func, key) for name, func in all_main_functions.items() for key in keys_array if key.startswith(league_key)}
+
+        for retry in range(max_retries):
+            for name, future in futures.items():
+                try:
+                    name, result = future.result(timeout=max_execution_time)
+                    if result is not None:
+                        results_for_league[name] = result
+                except concurrent.futures.TimeoutError:
+                    logging.warning(f"Function {name} timed out. Restarting... (Retry {retry + 1}/{max_retries})")
+                    future.cancel()
+                    key = next((k for k in keys_array if k.startswith(league_key)), None)
+                    if key:
+                        restarted_future = executor.submit(execute_function, name, all_main_functions[name], key)
+                        futures[name] = restarted_future
+
+        executor.shutdown(wait=True)
+
+    return results_for_league
+
 all_main_functions = {
     "bet9ja": bet9ja_main,
     "betbonanza": betbonanza_main,
@@ -38,8 +102,8 @@ all_main_functions = {
     "nairabet": nairabet_main,
     "dafabet": dafabet_main,
     "betking": betking_main,
-    # "bet188": bet188_main,
-    # "ps3838": ps3838_main,
+    # # "bet188": bet188_main,
+    "ps3838": ps3838_main,
     "parimatch": parimatch_main,
 }
 
@@ -78,36 +142,6 @@ def delete_jwt_file(file_path='jwt_token.txt'):
     if os.path.exists(file_path):
         os.remove(file_path)
         print(f"Deleted {file_path}")
-def fetch_all_matches(all_main_functions, max_execution_time=1000, max_retries=5):
-    results = {}
-
-    def execute_function(name, func):
-        try:
-            result = func()
-            return name, result
-        except Exception as e:
-            logging.error(f"Function {name} failed with exception: {e}")
-            return name, None
-
-    with concurrent.futures.ThreadPoolExecutor(max_workers=len(all_main_functions)) as executor:
-        futures = {name: executor.submit(execute_function, name, func) for name, func in all_main_functions.items()}
-
-        for retry in range(max_retries):
-            for name, future in futures.items():
-                try:
-                    name, result = future.result(timeout=max_execution_time)
-                    if result is not None:
-                        results[name] = result
-                except concurrent.futures.TimeoutError:
-                    logging.warning(f"Function {name} timed out. Restarting... (Retry {retry + 1}/{max_retries})")
-                    future.cancel()
-                    restarted_future = executor.submit(execute_function, name, all_main_functions[name])
-                    futures[name] = restarted_future
-
-        executor.shutdown(wait=True)
-
-    return results
-
 
 def calculate_arbitrage(outcomes):
     total_implied_probability = sum(1 / odd for odd in outcomes)
@@ -171,48 +205,6 @@ def find_arbitrage_combinations_two_way(bookmaker_data, min_profit_percentage=0,
                 best_arbitrage = current_arbitrage
 
     return best_arbitrage
-
-
-# def find_arbitrage_combinations(bookmaker_data, min_profit_percentage=0, fixed_stake=1000):
-#     arbitrage_combinations = []
-#
-#     num_bookmakers = len(bookmaker_data)
-#
-#     for home_index, draw_index, away_index in product(range(num_bookmakers), repeat=3):
-#         home_bookie = bookmaker_data[home_index]["bookname"]
-#         draw_bookie = bookmaker_data[draw_index]["bookname"]
-#         away_bookie = bookmaker_data[away_index]["bookname"]
-#         home_team = bookmaker_data[home_index]["home_team"]
-#         away_team = bookmaker_data[away_index]["away_team"]
-#
-#         outcome_combination = [
-#             bookmaker_data[home_index]["odds"][0],
-#             bookmaker_data[draw_index]["odds"][1],
-#             bookmaker_data[away_index]["odds"][2]
-#         ]
-#
-#         arbitrage_percentage, total_implied_probability = calculate_arbitrage(outcome_combination)
-#
-#         if arbitrage_percentage > min_profit_percentage:
-#             stakes_distribution, winnings, guaranteed_profit = arbitrage_calc(outcome_combination, fixed_stake)
-#
-#             arbitrage_combinations.append({
-#                 "event": bookmaker_data[home_index]["event"],  # Add the event field here
-#                 "home_bookie": home_bookie,
-#                 "draw_bookie": draw_bookie,
-#                 "away_bookie": away_bookie,
-#                 "home_team": home_team,
-#                 "away_team": away_team,
-#                 "combination": outcome_combination,
-#                 "implied_probability": total_implied_probability,
-#                 "arbitrage_percentage": arbitrage_percentage,
-#                 "stakes_distribution": stakes_distribution,
-#                 "winnings": winnings,
-#                 "guaranteed_profit": guaranteed_profit
-#             })
-#
-#     return arbitrage_combinations
-
 
 def find_arbitrage_combinations(bookmaker_data, min_profit_percentage=0, fixed_stake=1000):
     best_arbitrage = None
@@ -336,7 +328,11 @@ def prepare_matches_calc_arbs(results):
                     # print(match)
                     home_team = match['home_team']
                     away_team = match['away_team']
-                    time = match['time']
+                    if match['time'] > 1000000000000:
+                        # Assuming the timestamp is in milliseconds, convert it to seconds
+                        time /= 1000
+                    else:
+                        time = match['time']
                     wager_types = match['wager_types']
                     for wager in wager_types:
                         # print(wager)
@@ -347,20 +343,21 @@ def prepare_matches_calc_arbs(results):
                             match_data['league'] = league_name
                             match_data['event'] = key
                             match_data['time'] = time
-                            match_data['time'] = time
                             match_data['home_team'] = home_team
                             match_data['away_team'] = away_team
                             match_data['odds'] = values
                             home_draw_win.append(match_data)
 
-                            # match_data2 = {}
-                            # match_data2['bookname'] = bookie_name
-                            # match_data2['league'] = league_name
-                            # match_data2['event'] = key
-                            # match_data2['home_team'] = home_team
-                            # match_data2['away_team'] = away_team
-                            # match_data2['odds'] = [values[0], values[-1]]
-                            # testing.append(match_data2)
+                            match_data2 = {}
+                            match_data2['bookname'] = bookie_name
+                            match_data2['league'] = league_name
+                            match_data2['event'] = key
+                            match_data2['time'] = time
+                            match_data2['home_team'] = home_team
+                            match_data2['away_team'] = away_team
+                            match_data2['odds'] = [values[0], values[-1]]
+                            testing.append(match_data2)
+                            print(match_data2)
                         if key == "draw_no_bet":
                             match_data = {}
                             match_data['bookname'] = bookie_name
@@ -993,47 +990,45 @@ def split_and_sort_team_names(team_name):
     return sorted(team_name.lower().split(), key=len, reverse=True)
 
 def match_team_names(name1, name2):
+    # Define keywords to exclude from matching
+    exclusion_keywords = ["fc", "f.c","city","united","utd"]
+
+    # Split and sort team names
     names1 = split_and_sort_team_names(name1)
     names2 = split_and_sort_team_names(name2)
 
-    # Check if any words from home team match with any words from away team
-    return any(word1 == word2 for word1 in names1 for word2 in names2)
+    # Check if any words from home team match with any words from away team, excluding certain keywords
+    return any(word1 == word2 for word1 in names1 for word2 in names2 if word1.lower() not in exclusion_keywords and word2.lower() not in exclusion_keywords)
 
 def group_teams_matches(matches_lists, wager_type):
-    # Sort the list based on home and away team names
-    # matches_lists.sort(key=itemgetter('home_team', 'away_team', 'league'))
-    # arbs_opportunities = []
-    # games = []
-    # # Group matches by home and away team names
-    # grouped_matches = {key: list(group) for key, group in groupby(matches_lists, key=itemgetter('home_team', 'away_team', 'league'))}
-    # # Iterate over groups and calculate arbitrage
-    # grouped_matches.items()
-
     matches_lists.sort(key=itemgetter('time', 'home_team', 'away_team', 'league'))
     arbs_opportunities = []
     games = []
-    # Group matches by home and away team names using modified logic
+    # Group matches by time, home_name, and away_name
     grouped_matches = {}
+    current_key = None
+    current_group = []
 
-    print(matches_lists)
+    # print(matches_lists)
+    for match in matches_lists:
 
-    for key, group in groupby(matches_lists, key=itemgetter('home_team', 'away_team','time')):
-        matched_key = None
-        for existing_key in grouped_matches:
-            home_team, away_team, league = key
-            existing_home_team, existing_away_team, existing_league = existing_key
+        match_key = (match['time'], match['home_team'], match['away_team'])
 
-            if match_team_names(home_team, existing_home_team) and match_team_names(away_team,existing_away_team) and league == existing_league:
-                matched_key = existing_key
-                break
-
-        if matched_key:
-            grouped_matches[matched_key].extend(list(group))
+        if current_key is None or match_team_names(match_key[1], current_key[1]) and match_team_names(match_key[2], current_key[2]):
+            current_group.append(match)
         else:
-            grouped_matches[key] = list(group)
+            grouped_matches[current_key] = current_group
+            current_group = [match]
 
-    for key, matches in grouped_matches.items():
+        current_key = match_key
+
+    if current_group:
+        grouped_matches[current_key] = current_group
+
+    for key, matchess in grouped_matches.items():
         # +++++ Debugging +++++
+        matches = [match for match in matchess if match['odds']]
+
         games.append(matches)
         min_profit_percentage = 0
         fixed_stake = 1000
@@ -1048,7 +1043,7 @@ def group_teams_matches(matches_lists, wager_type):
                 arbs_opportunities.append(arb)
                 if "home" in arb['home_team'].lower() or "away" in arb['away_team'].lower():
                     continue
-                if wager_type == "three_way":
+                if wager_type == "three_way" and arb['home_bookie'] != arb['draw_bookie'] != arb['away_bookie']:
                     table_data = [
                         ["Event", arb['event']],
                         ["Home Bookie", arb['home_bookie']],
@@ -1064,11 +1059,11 @@ def group_teams_matches(matches_lists, wager_type):
                         ["Guaranteed Profit", arb['guaranteed_profit']],
                     ]
                     print(tabulate(table_data, headers=["Attribute", "Value"], tablefmt="grid"))
-                    # if arb['arbitrage_percentage'] > 2:
-                    save_arbs(arb, table_data)
+                    if arb['arbitrage_percentage'] > 2:
+                        save_arbs(arb, table_data)
                     # Add a separator line between each combination
                     print("\n" + "-" * 40 + "\n")
-                elif wager_type == "two_way":
+                elif wager_type == "two_way" and arb['home_bookie'] != arb['away_bookie']:
                     table_data = [
                         ["Event", arb['event']],
                         ["Home Bookie", arb['home_bookie']],
@@ -1082,8 +1077,8 @@ def group_teams_matches(matches_lists, wager_type):
                         ["Winnings", arb['winnings']],
                         ["Guaranteed Profit", arb['guaranteed_profit']],
                     ]
-                    # if arb['arbitrage_percentage'] > 2:
-                    save_arbs(arb, table_data)
+                    if arb['arbitrage_percentage'] > 2:
+                        save_arbs(arb, table_data)
                     print(tabulate(table_data, headers=["Attribute", "Value"], tablefmt="grid"))
                     # Add a separator line between each combination
                     print("\n" + "-" * 40 + "\n")
@@ -1132,75 +1127,60 @@ def save_arbs(arbitrage_data, table_data):
     else:
         print("Arbitrage data already exists. Not saving.")
 
-
-def fetch_all_matches_job():
-    results = fetch_all_matches(all_main_functions)
-    return results
-
-
 def main():
-    results = None
-    # Delete the JWT file when needed
-    delete_jwt_file()
-    # Define the job to fetch all matches
-    def fetch_all_matches_and_update_results():
-        # Access the outer (nonlocal) results variable
-        nonlocal results
-        results = fetch_all_matches_job()
-
-    # Schedule the job every 8 minutes
-    # schedule.every(6).minutes.do(fetch_all_matches_and_update_results)
-
+    print("Ambrose")
     while True:
-        # # Run pending scheduled jobs
-        # schedule.run_pending()
+        # Loop over each league in keys_array and fetch results concurrently
+        for league_key in keys_array:
+            try:
+                # Record start time
+                start_time = time.time()
 
-        # Record start time
-        start_time = time.time()
+                # Fetch All Matches
+                results = fetch_all_matches_for_league(all_main_functions, league_key)
+                # print(f"Results for {league_key}: {results}")
 
-        # Fetch all matches
-        fetch_all_matches_and_update_results()
+                # TESTING DATA
+                # json_filename = 'arbitrage_main2_results.json'
+                # # Save the combined data back to the JSON file
+                # with open(json_filename, 'r') as json_file:
+                #     results = json.load(json_file)
+                # Save the results to the JSON file
+                # with open(json_filename, 'w') as json_file:
+                #     json.dump(results, json_file)
 
-        # TESTING DATA
-        # results = fetch_all_matches(all_main_functions)
-        # json_filename = 'arbitrage_wager_results.json'
-        # # Save the combined data back to the JSON file
-        # with open(json_filename, 'r') as json_file:
-        #     results = json.load(json_file)
-        # Save the results to the JSON file
-        # with open(json_filename, 'w') as json_file:
-        #     json.dump(results, json_file)
+                testing,awayteam_odd_even,hometeam_odd_even, second_half_away_team_overunder05, second1X2, home_clean_sheet_second_half, second_half_away_team_overunder25, second_half_away_team_overunder15, second_half_home_team_overunder25, second_half_home_team_overunder05, second_half_home_team_overunder15, first_half_away_team_overunder05, first_half_away_team_overunder25, first_half_home_team_overunder05, first_half_away_team_overunder15, first_half_home_team_overunder25, first_half_home_team_overunder15, away_clean_sheet_second_half, over_ofive_five_second_half, away_clean_sheet_first_half, home_clean_sheet_first_half, away_clean_sheet, home_clean_sheet, last_team_to_score, first_team_to_score_2nd_half, first_team_to_score_1st_half, odd_even_secondhalf, gg_secondhalf, secondhalf_dc, over_two_five_second_half, over_one_five_second_half, draw_no_bet_second_half, home_draw_win, draw_no_bet, double_chance, over_one_five, over_two_five, over_three_five, fasthalf1X2, gg, away2_home1X, home1_awayX2, X_away12, draw_no_bet_first_half, over_ofive_five, over_ofive_five_first_half, over_one_five_first_half, over_two_five_first_half, over_four_five, over_five_five, fasthalf_dc, gg_firsthalf, odd_even, odd_even_firsthalf, first_team_to_score, home_team_overunder15, home_team_overunder25, home_team_overunder05, away_team_overunder15, away_team_overunder25, away_team_overunder05= prepare_matches_calc_arbs(results)
+                print(f"\n\n This is my testing {testing} \n\n")
+                calculate_arbs = {"3_way_arbs": [home_draw_win, double_chance,first_team_to_score, fasthalf1X2,fasthalf_dc,first_team_to_score,first_team_to_score_1st_half,first_team_to_score_2nd_half,second1X2,last_team_to_score, fasthalf_dc,secondhalf_dc ],
+                                  "2_way_arbs": [over_ofive_five,away_team_overunder25,away_team_overunder15,away_team_overunder05,home_clean_sheet, first_half_away_team_overunder15,first_half_home_team_overunder05,first_half_home_team_overunder25, first_half_home_team_overunder15,away_clean_sheet_second_half, home_clean_sheet_second_half,away_clean_sheet, home_clean_sheet,home_clean_sheet_first_half,away_clean_sheet_first_half,first_half_away_team_overunder25,first_half_away_team_overunder05, second_half_away_team_overunder05,second_half_away_team_overunder25, second_half_away_team_overunder15,second_half_home_team_overunder05,second_half_home_team_overunder25, second_half_home_team_overunder15,away_team_overunder05,home_team_overunder15,away_team_overunder25, away_team_overunder15,  home_team_overunder05, home_team_overunder25, odd_even_firsthalf, odd_even,gg_firsthalf, over_five_five,over_four_five, over_two_five_first_half, over_one_five_first_half, over_ofive_five_first_half, draw_no_bet, draw_no_bet_first_half, over_three_five, over_two_five, over_one_five, gg, away2_home1X,
+                                                 home1_awayX2, X_away12, home_team_overunder05,home_team_overunder25,home_team_overunder15,awayteam_odd_even,hometeam_odd_even,odd_even_secondhalf,odd_even_firsthalf,odd_even,gg_secondhalf,gg_firsthalf,over_two_five_second_half,over_one_five_second_half, over_ofive_five_second_half,over_two_five_first_half,over_one_five_first_half,over_ofive_five_first_half,over_ofive_five, draw_no_bet_second_half,draw_no_bet_first_half, ]}
 
-        testing,awayteam_odd_even,hometeam_odd_even, second_half_away_team_overunder05, second1X2, home_clean_sheet_second_half, second_half_away_team_overunder25, second_half_away_team_overunder15, second_half_home_team_overunder25, second_half_home_team_overunder05, second_half_home_team_overunder15, first_half_away_team_overunder05, first_half_away_team_overunder25, first_half_home_team_overunder05, first_half_away_team_overunder15, first_half_home_team_overunder25, first_half_home_team_overunder15, away_clean_sheet_second_half, over_ofive_five_second_half, away_clean_sheet_first_half, home_clean_sheet_first_half, away_clean_sheet, home_clean_sheet, last_team_to_score, first_team_to_score_2nd_half, first_team_to_score_1st_half, odd_even_secondhalf, gg_secondhalf, secondhalf_dc, over_two_five_second_half, over_one_five_second_half, draw_no_bet_second_half, home_draw_win, draw_no_bet, double_chance, over_one_five, over_two_five, over_three_five, fasthalf1X2, gg, away2_home1X, home1_awayX2, X_away12, draw_no_bet_first_half, over_ofive_five, over_ofive_five_first_half, over_one_five_first_half, over_two_five_first_half, over_four_five, over_five_five, fasthalf_dc, gg_firsthalf, odd_even, odd_even_firsthalf, first_team_to_score, home_team_overunder15, home_team_overunder25, home_team_overunder05, away_team_overunder15, away_team_overunder25, away_team_overunder05= prepare_matches_calc_arbs(results)
-        calculate_arbs = {"3_way_arbs": [home_draw_win, double_chance,first_team_to_score, fasthalf1X2,fasthalf_dc,first_team_to_score,first_team_to_score_1st_half,first_team_to_score_2nd_half,second1X2,last_team_to_score, fasthalf_dc,secondhalf_dc ],
-                          "2_way_arbs": [over_ofive_five,away_team_overunder25,away_team_overunder15,away_team_overunder05,home_clean_sheet, first_half_away_team_overunder15,first_half_home_team_overunder05,first_half_home_team_overunder25, first_half_home_team_overunder15,away_clean_sheet_second_half, home_clean_sheet_second_half,away_clean_sheet, home_clean_sheet,home_clean_sheet_first_half,away_clean_sheet_first_half,first_half_away_team_overunder25,first_half_away_team_overunder05, second_half_away_team_overunder05,second_half_away_team_overunder25, second_half_away_team_overunder15,second_half_home_team_overunder05,second_half_home_team_overunder25, second_half_home_team_overunder15,away_team_overunder05,home_team_overunder15,away_team_overunder25, away_team_overunder15,  home_team_overunder05, home_team_overunder25, odd_even_firsthalf, odd_even,gg_firsthalf, over_five_five,over_four_five, over_two_five_first_half, over_one_five_first_half, over_ofive_five_first_half, draw_no_bet, draw_no_bet_first_half, over_three_five, over_two_five, over_one_five, gg, away2_home1X,
-                                         home1_awayX2, X_away12, home_team_overunder05,home_team_overunder25,home_team_overunder15,awayteam_odd_even,hometeam_odd_even,odd_even_secondhalf,odd_even_firsthalf,odd_even,gg_secondhalf,gg_firsthalf,over_two_five_second_half,over_one_five_second_half, over_ofive_five_second_half,over_two_five_first_half,over_one_five_first_half,over_ofive_five_first_half,over_ofive_five, draw_no_bet_second_half,draw_no_bet_first_half, ]}
+                for key, value in calculate_arbs.items():
+                    if key == "3_way_arbs":
+                        # print(value)
+                        for x in value:
+                            try:
+                                games, arbs_opportunities = group_teams_matches(x, "three_way")
+                                print(arbs_opportunities)
+                            except:
+                                continue
+                    if key == "2_way_arbs":
+                        for x in value:
+                            try:
+                                games, arbs_opportunities = group_teams_matches(x, "two_way")
+                                print(arbs_opportunities)
+                            except:
+                                continue
 
-        for key, value in calculate_arbs.items():
-            if key == "3_way_arbs":
-                # print(value)
-                for x in value:
-                    try:
-                        games, arbs_opportunities = group_teams_matches(x, "three_way")
-                        print(arbs_opportunities)
-                    except:
-                        continue
-            if key == "2_way_arbs":
-                for x in value:
-                    try:
-                        games, arbs_opportunities = group_teams_matches(x, "two_way")
-                        print(arbs_opportunities)
-                    except:
-                        continue
+                # Record end time
+                end_time = time.time()
 
-        # Record end time
-        end_time = time.time()
-
-        # Calculate elapsed timefind_arbitrage_combinations
-        elapsed_time = end_time - start_time
-        print(f"Total Elapsed Time: {elapsed_time:.2f} seconds")
-        time.sleep(90)
-
+                # Calculate elapsed timefind_arbitrage_combinations
+                elapsed_time = end_time - start_time
+                print(f"Total Elapsed Time: {elapsed_time:.2f} seconds")
+                time.sleep(1)
+            except:
+                continue
 
 if __name__ == '__main__':
     main()

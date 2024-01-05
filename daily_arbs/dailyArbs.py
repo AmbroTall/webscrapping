@@ -121,7 +121,7 @@ def calculate_arbitrage(outcomes):
     return arbitrage_percentage, total_implied_probability
 
 
-def find_arbitrage_combinations_two_way(bookmaker_data, min_profit_percentage=0, fixed_stake=1000):
+def find_arbitrage_combinations_two_way(bookmaker_data, min_profit_percentage=0, fixed_stake=50000):
     best_arbitrage = None
     num_bookmakers = len(bookmaker_data)
 
@@ -161,7 +161,7 @@ def find_arbitrage_combinations_two_way(bookmaker_data, min_profit_percentage=0,
     return best_arbitrage
 
 
-def find_arbitrage_combinations(bookmaker_data, min_profit_percentage=0, fixed_stake=1000):
+def find_arbitrage_combinations(bookmaker_data, min_profit_percentage=0, fixed_stake=50000):
     best_arbitrage = None
 
     num_bookmakers = len(bookmaker_data)
@@ -338,11 +338,9 @@ def check_unique_booknames(match_data):
     return True
 
 def group_matches(matches_lists, wager_type):
-    print("matches_lists", len(matches_lists))
-
+    print("Matches List")
     # Sort the list based on time, home_name, and away_name using word matching
     matches_lists.sort(key=lambda x: (x['time'], x['home_team'], x['away_team']))
-    print("matches_lists_two", matches_lists)
 
     # Group matches by time, home_name, and away_name
     grouped_matches = {}
@@ -350,14 +348,11 @@ def group_matches(matches_lists, wager_type):
     current_group = []
 
     for match in matches_lists:
-        print("match", match)
 
         match_key = (match['time'], match['home_team'], match['away_team'])
 
         if current_key is None or match_team_names(match_key[1], current_key[1]) and match_team_names(match_key[2], current_key[2]):
             current_group.append(match)
-            print("Appending Current Group", match)
-            print("Appending Current Group", current_group)
         else:
             grouped_matches[current_key] = current_group
             current_group = [match]
@@ -373,7 +368,7 @@ def group_matches(matches_lists, wager_type):
         # +++++ Debugging +++++
         games.append(matches)
         min_profit_percentage = 0
-        fixed_stake = 1000
+        fixed_stake = 50000
         try:
             if len(matches) > 1 and check_unique_booknames(matches):
                 print(f"Key : {key} Match : {len(matches)} {matches}")
@@ -435,7 +430,7 @@ def group_matches(matches_lists, wager_type):
 def main():
     while True:
         results = fetch_all_matches(all_main_functions)
-        # print("This are the results", results)
+        print("This are the results", results)
 
         # Record start time
         start_time = time.time()

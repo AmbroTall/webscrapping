@@ -89,11 +89,14 @@ def exctract_odds(id, game):
 
     for market in odds_market:
         if market['sub_type_id'] == "1":
-            home_odd = market['outcomes'][0]['odd_value']
-            away_odd = market['outcomes'][2]['odd_value']
-            draw_odd = market['outcomes'][1]['odd_value']
-
-            home_draw_away = [home_odd, draw_odd, away_odd]
+            for x in market['outcomes']:
+                if x['outcome_key'] == "1":
+                    home = x['odd_value']
+                elif x['outcome_key'] == "X":
+                    draw = x['odd_value']
+                else:
+                    away = x['odd_value']
+            home_draw_away = [home, draw, away]
             wager_types.append({"1X2": home_draw_away})
 
         if market['sub_type_id'] == "10":
@@ -112,7 +115,6 @@ def exctract_odds(id, game):
             ggno = market['outcomes'][1]['odd_value']
             home_draw_away = [ggyes, ggno]
             wager_types.append({"gg": home_draw_away})
-
     try:
         for x in wager_types:
             for key, value in x.items():
