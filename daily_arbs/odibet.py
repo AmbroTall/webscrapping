@@ -3,6 +3,7 @@ import time
 import pytz
 import requests
 
+
 def odds_call_api(event_id):
     url = f"https://odibets.com/pxy/sportsbook?id={event_id}&category_id=&sub_type_id=&sportsbook=sportsbook&ua=Mozilla%2F5.0+(X11%3B+Linux+x86_64)+AppleWebKit%2F537.36+(KHTML,+like+Gecko)+Chrome%2F119.0.0.0+Safari%2F537.36&resource=sportevent"
 
@@ -27,6 +28,8 @@ def odds_call_api(event_id):
     response = requests.request("GET", url, headers=headers, data=payload)
     r = response.json()['data']['markets']
     return r
+
+
 def odi_bets():
     url = "https://odibets.com/pxy/sportsbook?sport_id=soccer&day=&country_id=&sort_by=&sub_type_id=&competition_id=&hour=&filter=&cs=&hs=&sportsbook=sportsbook&ua=Mozilla%2F5.0+(X11%3B+Linux+x86_64)+AppleWebKit%2F537.36+(KHTML,+like+Gecko)+Chrome%2F119.0.0.0+Safari%2F537.36&resource=sport"
 
@@ -74,11 +77,12 @@ def odi_bets():
     print(len(odibets))
     return sorted(odibets, key=lambda x: x['time'])
 
+
 def exctract_odds(id, game):
     wager_types = []
     draw_no_bet = []
     double_chance = []
-    handicap1 = [] # -1.5 / 1.5
+    handicap1 = []  # -1.5 / 1.5
     over_one_five = []
     over_two_five = []
     over_three_five = []
@@ -147,4 +151,3 @@ if __name__ == '__main__':
     elapsed_time_minutes = elapsed_time_seconds / 60
     print(f"Elapsed Time: {elapsed_time_seconds:.2f} seconds ({elapsed_time_minutes:.2f} minutes)")
     print("This is my output", games)
-

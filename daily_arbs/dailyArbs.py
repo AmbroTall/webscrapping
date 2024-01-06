@@ -211,6 +211,7 @@ def prepare_matches_calc_arbs(matches):
     array_21X = []
     array_12X = []
     array_X12 = []
+    array_12 = []
     for key, matches in matches.items():
         bookie_name = key
         for match in matches:
@@ -227,6 +228,15 @@ def prepare_matches_calc_arbs(matches):
                     match_data['away_team'] = match['away_team']
                     match_data['odds'] = values
                     array_1X2.append(match_data)
+
+                    match_data2 = {}
+                    match_data2['bookname'] = bookie_name
+                    match_data2['event'] = "1 or 2 Risk!"
+                    match_data2['time'] = match['time']
+                    match_data2['home_team'] = match['home_team']
+                    match_data2['away_team'] = match['away_team']
+                    match_data2['odds'] = [values[0],values[-1]]
+                    array_12.append(match_data2)
                 if key == "dc":
                     match_data = {}
                     match_data['bookname'] = bookie_name
