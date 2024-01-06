@@ -121,7 +121,7 @@ def calculate_arbitrage(outcomes):
     return arbitrage_percentage, total_implied_probability
 
 
-def find_arbitrage_combinations_two_way(bookmaker_data, min_profit_percentage=0, fixed_stake=50000):
+def find_arbitrage_combinations_two_way(bookmaker_data, min_profit_percentage=0, fixed_stake=1000):
     best_arbitrage = None
     num_bookmakers = len(bookmaker_data)
 
@@ -161,7 +161,7 @@ def find_arbitrage_combinations_two_way(bookmaker_data, min_profit_percentage=0,
     return best_arbitrage
 
 
-def find_arbitrage_combinations(bookmaker_data, min_profit_percentage=0, fixed_stake=50000):
+def find_arbitrage_combinations(bookmaker_data, min_profit_percentage=0, fixed_stake=1000):
     best_arbitrage = None
 
     num_bookmakers = len(bookmaker_data)
@@ -379,7 +379,7 @@ def group_matches(matches_lists, wager_type):
         # +++++ Debugging +++++
         games.append(matches)
         min_profit_percentage = 0
-        fixed_stake = 50000
+        fixed_stake = 1000
         try:
             if len(matches) > 1 and check_unique_booknames(matches):
                 print(f"Key : {key} Match : {len(matches)} {matches}")
