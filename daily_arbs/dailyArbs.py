@@ -285,7 +285,8 @@ def prepare_matches_calc_arbs(matches):
                     match_data['away_team'] = match['away_team']
                     match_data['odds'] = values
                     array_X12.append(match_data)
-    return array_1X2, array_gg, array_21X, array_12X, array_X12, array_dc
+
+    return array_12, array_1X2, array_gg, array_21X, array_12X, array_X12, array_dc
 
 
 def is_arbitrage_data_unique(existing_data, new_arbitrage_data):
@@ -445,10 +446,10 @@ def main():
         # Record start time
         start_time = time.time()
 
-        array_1X2, array_gg, array_21X, array_12X, array_X12, array_dc = prepare_matches_calc_arbs(results)
+        array_12, array_1X2, array_gg, array_21X, array_12X, array_X12, array_dc = prepare_matches_calc_arbs(results)
 
         calculate_arbs = {"3_way_arbs": [array_1X2, array_dc],
-                          "2_way_arbs": [array_gg, array_21X, array_12X, array_X12]}
+                          "2_way_arbs": [array_12, array_gg, array_21X, array_12X, array_X12]}
 
         for key, value in calculate_arbs.items():
             if key == "3_way_arbs":
