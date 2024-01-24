@@ -17,7 +17,7 @@ import requests
 chrome_options = Options()
 chrome_options.add_argument("--headless")  # Run in headless mode without a GUI
 # min_time_to_place = 160
-time_to_place_over = 150
+time_to_place_over = 160
 
 def get_quarter_info(quarter):
     quarter_lower = quarter.lower().strip()

@@ -19,8 +19,8 @@ website = 'https://twitter.com/i/flow/login'
 # path = '/home/ambrose/Documents/chromedriver'
 driver = uc.Chrome(options=options)
 
-username = "ambrosetall@gmail.com"
-password = "ambroseTall3436"
+username = "paolosiroko@gmail.com"
+password = "$Kwendo@2023"
 driver.get(website)
 
 def login_twitter():
