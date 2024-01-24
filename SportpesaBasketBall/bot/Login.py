@@ -17,20 +17,19 @@ import requests
 chrome_options = Options()
 chrome_options.add_argument("--headless")  # Run in headless mode without a GUI
 # min_time_to_place = 160
-time_to_place_over = 160
-
+time_to_place_over = 220
+stake = 20
 def get_quarter_info(quarter):
-    quarter_lower = quarter.lower().strip()
-    if quarter_lower == "firstquarter":
+    if quarter == "firstquarter":
         quarter_no = 1
         quarter_name = "1ST"
-    elif quarter_lower == "secondquarter":
+    elif quarter == "secondquarter":
         quarter_no = 2
         quarter_name = "2ND"
-    elif quarter_lower == "thirdquarter":
+    elif quarter == "thirdquarter":
         quarter_no = 3
         quarter_name = "3RD"
-    elif quarter_lower == "fourthquarter":
+    elif quarter == "fourthquarter":
         quarter_no = 4
         quarter_name = "4TH"
     else:
@@ -38,7 +37,20 @@ def get_quarter_info(quarter):
         return None  # Handle the case where there's no match
     return quarter_no, quarter_name
 
+def get_scores_by_phase(score_by_phases, current_phase):
+    home_score = score_by_phases.get('homeScore', {}).get(f'phase{current_phase}', 0)
+    away_score = score_by_phases.get('awayScore', {}).get(f'phase{current_phase}', 0)
+    total_score = home_score + away_score
 
+    return home_score, away_score, total_score
+
+def time_str_to_seconds(time_str):
+    try:
+        minutes, seconds = map(int, time_str.split(':'))
+        total_seconds = (minutes * 60) + seconds
+        return total_seconds
+    except ValueError:
+        print("Invalid time format. Please provide time in 'mm:ss' format.")
 def find_below_260_or_nearest_second(dictionary_list):
     nearest_second = None
     min_time_diff = float("inf")
@@ -57,6 +69,7 @@ def find_below_260_or_nearest_second(dictionary_list):
         if time_to_wait > 0:
             print(f"Waiting for {time_to_wait} seconds...")
             time.sleep(time_to_wait)
+            print("This is my team selected currently", nearest_second)
             return nearest_second  # Return the nearest to 260
         return None  # Return None if no suitable "remaining_quarter_secs" values found
 
@@ -160,10 +173,8 @@ def report_module(event_id, home_team, away_team, remaining_quarter_seconds, pre
 
 class Login:
     def __init__(self):
-        session = requests.Session()
-        driver = webdriver.Chrome(options=chrome_options)
-        self.driver = driver
-        self.session = session
+        self.session  = requests.Session()
+        self.driver = webdriver.Chrome(options=chrome_options)
 
     def quit_automation(self):
         self.driver.quit()
@@ -204,7 +215,8 @@ class Login:
         for cookie in cookies:
             self.session.cookies.set(cookie['name'], cookie['value'])
 
-        print("Logging in successfully ...")
+        print("----------------Logging in successfully----------------")
+        print("****************Bot started successfully****************")
         self.quit_automation()
 
 
@@ -296,8 +308,10 @@ class Login:
         }
         response = self.session.get(url, headers=headers, data=payload)
         r = response.json()
-        bets_placed = r['bets']
-        return bets_placed
+        if r['bets']:
+            bets_placed = r['bets']
+            return bets_placed
+        return None
 
     def place_bet_api(self, bet, stake):
         url = "https://www.ke.sportpesa.com/api/live/place"
@@ -331,7 +345,6 @@ class Login:
             'sec-ch-ua-mobile': '?0',
             'sec-ch-ua-platform': '"Linux"'
         }
-        print("Session", self.session)
         print(f"Payload \n {payload} \n")
         response = self.session.post(url, headers=headers, data=payload_json)
         r = response.json()
@@ -341,11 +354,14 @@ class Login:
 
     def request_function(self, url, headers, payload):
         while True:
-            response = requests.request("GET", url, headers=headers, data=payload)
-            r = response.json()
-            time.sleep(2)
-            if r:
-                return r
+            try:
+                response = requests.request("GET", url, headers=headers, data=payload)
+                r = response.json()
+                time.sleep(1)
+                if r:
+                    return r
+            except Exception as e:
+                print("Restarting Request Function, Lazima Points Ambrose", e)
 
     def extract_integer_from_text(self, value):
         text = value
@@ -355,41 +371,46 @@ class Login:
             number = match.group()
             return int(number)
 
-    def quater_scores_api(self, event_id, quater):
-        url = f"https://sportpesa.betstream.betgenius.com/betstream-view/basketballscorecentre/sportpesabasketballscorecentre/json?eventId={event_id}&cb=1688197270322"
+
+    def quater_scores_api(self, event_id, quater=0):
+        url = f"https://sportpesa.betstream.betgenius.com/widget-data/multisportgametracker?productName=sportpesa&region=&country=KE&fixtureId={event_id}&activeContent=court&sport=Basketball&sportId=4&getAllTabsData=false&matchActionsSourceId=&culture\\[0\\]=en-US&live=false&phase="
 
         payload = {}
         headers = {
             'authority': 'sportpesa.betstream.betgenius.com',
-            'accept': '*/*',
+            'accept': 'application/json',
             'accept-language': 'en-US,en;q=0.9',
-            'cache-control': 'no-cache',
-            'referer': f'https://sportpesa.betstream.betgenius.com/betstream-view/basketballscorecentre/sportpesabasketballscorecentre/html?eventId={event_id}',
-            'sec-ch-ua': '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"',
+            'content-type': 'application/json',
+            'if-none-match': 'W/"64e-71wGlGbuN5wzRYnjBy6SBsomjek"',
+            'referer': 'https://sportpesa.betstream.betgenius.com/betstream-view/basketballscorecentre/sportpesabasketballscorecentre/html?eventId=10430757',
+            'sec-ch-ua': '"Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
             'sec-ch-ua-mobile': '?0',
             'sec-ch-ua-platform': '"Linux"',
             'sec-fetch-dest': 'empty',
             'sec-fetch-mode': 'cors',
             'sec-fetch-site': 'same-origin',
-            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
+            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+            'x-requested-with': 'XMLHttpRequest'
         }
-
         r = self.request_function(url, headers, payload)
-        data = r['Scoreboard']
-        league = data['CompetitionName']
-        teams_playing = data['DisplayName']
-        total_home = data['FirstDisplayed']['GameScore']
-        total_away = data['SecondDisplayed']['GameScore']
-        home_team_quarter_scores = data['FirstDisplayed']['QuarterScores'][quater - 1]['Value']
-        away_team_quarter_scores = data['SecondDisplayed']['QuarterScores'][quater - 1]['Value']
-        total_quarter_secs = data['Clock']['NumberOfQuarterSeconds']
-        remaining_quarter_secs_static = data['Clock']['SecondsRemainingInQuarter']
-        remaining_secs = r['Commentary']['Actions'][0]['Action']['QuarterTimeRemaining']
-        remaining_quarter_secs = int(remaining_secs) / 1000
-        # Quarter Scores
-        total_scores = int(home_team_quarter_scores) + int(away_team_quarter_scores)
-        game_total_scores = int(total_home) + int(total_away)
-        return total_scores, total_quarter_secs, remaining_quarter_secs, game_total_scores
+        season_names_array = ['NBA', 'CBA', 'FIBA']
+
+        # if r['data']['scoreboardInfo'] and r['data']['scoreboardInfo']['clockAction']['event'] == 'start':
+        if r['data']['scoreboardInfo']:
+
+            if any(season_name in r['data']['matchInfo']['seasonName'] for season_name in season_names_array):
+                total_quarter_secs = 720
+            else:
+                total_quarter_secs = 600
+
+            current_home_score, current_away_score, total_scores = get_scores_by_phase(r['data']['scoreboardInfo']['scoreByPhases'],r['data']['scoreboardInfo']['currentPhase'])
+            # home_time_outs = r['homeTimeoutsLeft']
+            # away_time_outs = r['awayTimeoutsLeft']
+            clock = time_str_to_seconds(r['data']['scoreboardInfo']['timeRemainingInPhase'])
+            remaining_quarter_secs= time_str_to_seconds(r['data']['scoreboardInfo']['clockAction']['clock'])
+            game_total_scores = int(r['data']['scoreboardInfo']['awayScore']) + int(r['data']['scoreboardInfo']['homeScore'])
+            return total_scores, total_quarter_secs, remaining_quarter_secs, game_total_scores
+        return None
 
     def find_odd(self, market_selections, quarter_name):
         for x in market_selections:
@@ -471,24 +492,28 @@ class Login:
         all_games = []
 
         for index, x in enumerate(events, start=0):
-            games = {}
-            event_id = x["id"]
-            home_team = x["competitors"][0]['name']
-            away_team = x["competitors"][1]['name']
-            quarter = x['state']['period']
-            status = x['state']['status']
-            if status == "STARTED":
-                quarter_no, quarter_name = get_quarter_info(quarter)
-                print("Hello quarter", quarter_no, quarter_name)
-                _, _, remaining_quarter_secs, _ = self.quater_scores_api(event_id, quarter_no)
-                games['position'] = index
-                games['event_id'] = event_id
-                games['remaining_quarter_secs'] = int(remaining_quarter_secs)
-                games['quarter_name'] = quarter_name
-                games['quarter_no'] = quarter_no
-                games['away_team'] = away_team
-                games['home_team'] = home_team
-                all_games.append(games)
+            try:
+                games = {}
+                event_id = x["id"]
+                home_team = x["competitors"][0]['name']
+                away_team = x["competitors"][1]['name']
+                quarter = x['state']['period']
+                status = x['state']['status']
+                if status == "STARTED" and quarter.lower().strip() != "overtime" and quarter.lower().strip() != "fourthquarter":
+                    quarter = quarter.lower().strip()
+                    quarter_no, quarter_name = get_quarter_info(quarter)
+                    _, _, remaining_quarter_secs, _ = self.quater_scores_api(event_id, quarter_no)
+                    games['position'] = index
+                    games['event_id'] = event_id
+                    games['remaining_quarter_secs'] = int(remaining_quarter_secs)
+                    games['quarter_name'] = quarter_name
+                    games['quarter_no'] = quarter_no
+                    games['away_team'] = away_team
+                    games['home_team'] = home_team
+                    all_games.append(games)
+                    print("Games", games)
+            except:
+                continue
 
         result = find_below_260_or_nearest_second(all_games)
         if result is not None:
@@ -499,6 +524,7 @@ class Login:
         else:
             print("Waiting for 5 min (Teams on Break) ... ")
             time.sleep(300)
+            print("Arising")
 
     def prediction_function(self, event_id, quarter_no, market_selections, quarter_name):
         # Get real live scores
@@ -523,46 +549,51 @@ class Login:
 
 
     def placing_bet_logic_api(self, event_id, quarter_no, quarter_name, home_team, away_team):
-        i = 0
         while True:
-            if i > 10:
-                return False
             try:
-                confirm_betslip = self.check_placed_bets()
-                print(confirm_betslip)
-                if len(confirm_betslip) > 0:
-                    # Iterate through the selections in the 'bets' data
-                    for bet in confirm_betslip:
-                        selections = bet['selections']
-                        for selection in selections:
-                            if selection['eventId'] == event_id:
-                                print("\n******🤑💰 Bet Placed Successfully 💰🤑******\n")
-                                return None
+                try:
+                    confirm_betslip = self.check_placed_bets()
+                    print(confirm_betslip)
+                    if confirm_betslip is not None:
+                        # Iterate through the selections in the 'bets' data
+                        for bet in confirm_betslip:
+                            selections = bet['selections']
+                            for selection in selections:
+                                if selection['eventId'] == event_id:
+                                    print("\n******🤑💰 Bet Placed Successfully 💰🤑******\n")
+                                    return None
+                except:
+                    print("Not placed")
                 print("Betting logic")
                 quarter_scores, total_quarter_secs, remaining_quarter_secs, _ = self.quater_scores_api(event_id, quarter_no)
+                print(remaining_quarter_secs)
                 if remaining_quarter_secs < 120:
                     return None
                 print("2")
                 odds, selections, sequence, market_id, status, outcome = self.markets_odds(event_id, quarter_name)
                 print("3")
                 prediction, percentage = predict_over_under(quarter_scores, int(remaining_quarter_secs), outcome, int(total_quarter_secs))
-
                 print("4")
+                if prediction.lower() == "under":
+                    return None
                 bet, bet_placed_outcome = prepare_bet(event_id, prediction, selections, sequence, market_id)
-
                 print("5")
-                weka_kitu = self.place_bet_api(bet, 20)
+                weka_kitu = self.place_bet_api(bet, stake)
                 print("This is my bet", outcome, odds, prediction, bet_placed_outcome)
                 report_module(event_id, home_team, away_team, remaining_quarter_secs, bet_placed_outcome, quarter_scores, odds,quarter_no, percentage)
             except Exception as e:
-                i += 1
                 print("Retrying to place after missing on first ...", e)
-                time.sleep(3)
 
     def loop_till_time_is_reached(self,event_id, quarter_no):
         print("Looping to find time")
+        # time_to_sleep = None
         while True:
             _, _, remaining_quarter_secs, _ = self.quater_scores_api(event_id, quarter_no)
+            # print("time_to sleep", time_to_sleep, remaining_quarter_secs)
+            # print(time_to_sleep and (remaining_quarter_secs - time_to_place_over) == time_to_sleep)
+            # if time_to_sleep and (remaining_quarter_secs - time_to_place_over) == time_to_sleep:
+            #     return None
+
             if remaining_quarter_secs > time_to_place_over:
                 time_to_sleep = remaining_quarter_secs - time_to_place_over
                 print(f"Waiting seconds : {time_to_sleep}")

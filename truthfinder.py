@@ -1,88 +1,74 @@
-import pickle
-import time
-from selenium import webdriver
+import datetime
 import undetected_chromedriver as uc
-from selenium.webdriver.common.proxy import Proxy, ProxyType
+import mysql.connector
+import requests
+from selenium.webdriver.chrome.options import Options
+from selenium import webdriver
+
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.select import Select
-from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.support.ui import Select, WebDriverWait
 
+import time
 import os
+from database import get_data
+import json
+import sqlite3
 
-# Current Directory
-current_directory = os.getcwd()
+options = Options()
+# options.add_argument("--headless")  # Run in headless mode if needed
+# options.add_argument("--no-sandbox")
+# options.add_argument("--disable-dev-shm-usage")
+# options.add_argument("--disable-gpu")
+website = 'https://app.propstream.com/'
+driver = webdriver.Chrome(options=options)
+web_email = "cashpro@cashprohomebuyers.com"
+web_password = "l.ZtLZX}e_vT"
 
-def init_driver():
-    drivers_path = os.path.join(current_directory, 'drivers')
-    firefox_browse = False
-    if firefox_browse:
-        path_to_driver = os.path.join(drivers_path, "geckodriver.exe")
-        browser = webdriver.Firefox(executable_path=path_to_driver)
-    else:
-        # path_to_driver = os.path.join(drivers_path, "chromedriver.exe")
-        # browser = webdriver.Chrome(executable_path=path_to_driver)
-        browser = uc.Chrome()
+truth_email = "cashpro@cashprohomebuyers.com"
+truth_pwd = "tech6491"
 
-    browser.maximize_window()
-    browser.implicitly_wait(30)
+propstream_email = "jewelercart@gmail.com"
+propstream_pwd = "Taqwah79@@"
 
-    return browser
+propstream_session = requests.Session()
+truthfinder_session = requests.Session()
+def log(msg):
+    print(f"LOG: {msg}")
+    if not os.path.isdir("logs"):
+        os.mkdir("logs")
+
+    now = datetime.datetime.now()
+    today = now.strftime("%Y-%m-%d")
+    time = now.strftime("%H:%M:%S")
+    with open(f"logs/{today}.txt", "a+") as log_file:
+        log_file.write(f"{time} : {msg}\n")
+
+
+def start_page():
+    driver.get(website)
+
+    login_propstream()
+
+
+def switch_tabs_webmail(no):
+    driver.switch_to.window(driver.window_handles[no])
+
 
 def verify_human():
-    time.sleep(15)
+    time.sleep(5)
     try:
-        iframe = driver.find_element(By.TAG_NAME,"iframe")
-        print(len(driver.find_elements(By.TAG_NAME,"iframe")))
+        iframe = driver.find_element(By.TAG_NAME, "iframe")
         driver.switch_to.frame(iframe)
-        # time.sleep(120)
 
-        input_elements = driver.find_element(By.CLASS_NAME, "mark")
+        input_elements = driver.find_element(By.TAG_NAME, "input")
         input_elements.click()
         time.sleep(5)
         driver.switch_to.default_content()
-    except NoSuchElementException:
+    except:
         print("No iframe found")
-def login_to_truthfinder(email, password):
-    time.sleep(120)
-    email_input = try_catch('//*[@id="login"]/div/div[2]/form/div[1]/input')
-    email_input.send_keys(email)
 
-    password_input = driver.find_element(By.XPATH, '//*[@id="login"]/div/div[2]/form/div[2]/input')
-    password_input.send_keys(password)
-    time.sleep(3)
-    login_btn = driver.find_element(By.XPATH, '//*[@id="login"]/div/div[2]/form/div[3]/button')
-    login_btn.click()
-# def login_to_truthfinder(email, password):
-#     WebDriverWait(driver, 10).until(
-#         EC.element_to_be_clickable(
-#             (By.XPATH, '//*[@id="login"]/div/div[2]/form/div[1]/input'),  # Element filtration
-#         )
-#     )
-#
-#     email_input = driver.find_element(By.XPATH, '//*[@id="login"]/div/div[2]/form/div[1]/input')
-#     email_input.send_keys(email)
-#
-#     password_input = driver.find_element(By.XPATH, '//*[@id="login"]/div/div[2]/form/div[2]/input')
-#     password_input.send_keys(password)
-#
-#     login_btn = driver.find_element(By.XPATH, '//*[@id="login"]/div/div[2]/form/div[3]/button')
-#     login_btn.click()
 
-def open_webmail():
-    print("Opening webmail...")
-    driver.execute_script("window.open('http://client1.jewelercart.com:2096/');")
-    driver.switch_to.window(driver.window_handles[0])
-
-def verification_by_email():
-    WebDriverWait(driver, 30).until(
-        EC.element_to_be_clickable(
-            (By.XPATH, '//*[@id="verification"]/div/div[2]/button'),  # Element filtration
-            )
-    )
-    verification_btn = driver.find_element(By.XPATH, '//*[@id="verification"]/div/div[2]/button')
-    verification_btn.click()
 def try_catch(xpath):
     max_attempts = 5
     current_attempt = 1
@@ -94,38 +80,32 @@ def try_catch(xpath):
         except Exception as e:
             print(f"Attempt {current_attempt} failed with error: {e}")
             if current_attempt < max_attempts:
-                # driver.refresh()
+                driver.refresh()
                 print("Retrying...")
             else:
                 print("Max attempts reached. Moving on to the next part of the code.")
 
         current_attempt += 1
 
-def switch_tabs_webmail():
-    driver.switch_to.window(driver.window_handles[1])
-    print("this is my current url", driver.current_url)
-# def login_to_email(email, password):  #Gmail
-#     email_input = driver.find_element(By.ID, 'identifierId')
-#     email_input.send_keys(email)
-#     next_button = driver.find_element(By.XPATH, "//span[text()='Next']")
-#     next_button.click()
-#     time.sleep(5)  # wait for next page to load
-#
-#     # enter password and click sign in button
-#     password_input = driver.find_element(By.XPATH, "//input[@type='password']")
-#     password_input.send_keys(password)
-#     signin_button = driver.find_element(By.XPATH, "//span[text()='Next']")
-#     signin_button.click()
-#     time.sleep(5)  # wait for sign-in to complete
-#
-#     conversation_link = driver.find_element(By.XPATH, "(//span[@class='bog'])[1]")
-#     conversation_link.click()
-#     time.sleep(5)  # wait for conversation to load
-#
-#     # click the first hyperlink in the conversation
-#     verify_link = driver.find_element(By.XPATH, "//a[text()='VERIFY ACCOUNT']")
-#     verify_link.click()
-#     time.sleep(2)
+def login_to_truthfinder(email, password):
+    email_input = driver.find_element(By.XPATH,'//*[@id="login"]/div/div[2]/form/div[1]/input')
+    email_input.send_keys(email)
+
+    password_input = driver.find_element(By.XPATH, '//*[@id="login"]/div/div[2]/form/div[2]/input')
+    password_input.send_keys(password)
+    time.sleep(3)
+    login_btn = driver.find_element(By.XPATH, '//*[@id="login"]/div/div[2]/form/div[3]/button')
+    login_btn.click()
+
+    cookies = driver.get_cookies()
+
+    # Print the cookies
+    for cookie in cookies:
+        truthfinder_session.cookies.set(cookie['name'], cookie['value'])
+
+    print("Logging in successfully ...")
+    time.sleep(2)
+
 
 def login_to_email(email, password):
     # By passing Your connection is not private
@@ -159,8 +139,9 @@ def login_to_email(email, password):
     login_btn = driver.find_element(By.ID, 'login_submit')
     login_btn.click()
 
+
 def click_mail_to_verify():
-    WebDriverWait(driver, 30).until(
+    WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable(
             (By.ID, 'messagelist'),
         )
@@ -174,194 +155,425 @@ def click_mail_to_verify():
             (By.ID, 'messagelist'),
         )
     )
+    wait = WebDriverWait(driver, 150)
 
-    msg = driver.find_element(By.XPATH, '//*[@id]/td[2]/span[4]/a/span')
+    msg = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id]/td[2]/span[4]/a/span')))
+
     msg.click()
 
     msg_frame = driver.switch_to.frame("messagecontframe")
 
-    verify_account = driver.find_element(By.XPATH, '//*[@id="message-htmlpart1"]/div/center/div/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td[2]/a')
+    verify_account = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="message-htmlpart1"]/div/center/div/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td[2]/a')))
     verify_account.click()
 
-def dashboard():
-    time.sleep(3)
-    driver.close()
-    time.sleep(3)
-    driver.switch_to.window(driver.window_handles[1])
-    driver.close()
-    time.sleep(2)
-    driver.switch_to.window(driver.window_handles[0])
-    time.sleep(2)
-    driver.refresh()
-
-def click_address_search():
-    time.sleep(3)
-    driver.refresh()
-    try:
-        WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable(
-                (By.XPATH, "//span[text()='Address']"),
-            )
-        )
-    except:
-        driver.refresh()
-        time.sleep(2)
-
-    street = '3440 Freedom Lane'
-    city = 'Dalton'
-    zip_add = '30721'
-    address_button = driver.find_element(By.XPATH, "//span[text()='Address']")
-    address_button.click()
-
-    street_address = WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable(
-                (By.XPATH, '//*[@id="dashboard"]/div[1]/div/div/div/div/form/div/div[1]/input'),
-            )
-        )
-    street_address.send_keys(street)
-    time.sleep(1)
-    city_address = WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable(
-                (By.XPATH, '//*[@id="dashboard"]/div[1]/div/div/div/div/form/div/div[2]/input'),
-            )
-        )
-    city_address.send_keys(city)
-    time.sleep(1)
-    state = driver.find_element(By.XPATH, '//*[@id="dashboard"]/div[1]/div/div/div/div/form/div/div[3]/div/select')
-    dropdown = Select(state)
-    dropdown.select_by_visible_text('Georgia')
-    time.sleep(1)
-    zip_address = WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable(
-                (By.XPATH, '//*[@id="dashboard"]/div[1]/div/div/div/div/form/div/div[4]/input'),
-            )
-        )
-    zip_address.send_keys(zip_add)
-    time.sleep(1)
-    search_btn = driver.find_element(By.XPATH, '//*[@id="dashboard"]/div[1]/div/div/div/div/form/div/div[5]/button')
-    search_btn.click()
-    time.sleep(2)
-
-def click_property_report():
-    try:
-        iframe = driver.find_element(By.TAG_NAME, "iframe")
-        driver.switch_to.frame(iframe)
-    except:
-        print("Hello this is iframe 1")
-    links = driver.find_elements(By.TAG_NAME, "a")
-    for x in links:
-        if x.text == "OPEN REPORT":
-            print("I found it")
-            x.click()
-    # driver.switch_to.default_content()
-    time.sleep(2)
-
-# passs the name to get the owner reports of the property
-def click_residents():
-    identity = "ROBERTS JOSEPH"
-    links = driver.find_elements(By.CLASS_NAME, "nav-text")
-    for x in links:
-        print(x.text, "\n")
-        if x.text == "RESIDENTS":
-            x.click()
-        # print(x.text, '\n')
-    residents = WebDriverWait(driver, 30).until(
+def verification_by_email():
+    WebDriverWait(driver, 30).until(
         EC.element_to_be_clickable(
-            (By.XPATH, '//*[@id="site-main"]/div/div[4]/div/div[1]/div/div/div/div[1]/a[2]'),
+            (By.XPATH, '//*[@id="verification"]/div/div[2]/button'),  # Element filtration
         )
     )
-    residents.click()
-    time.sleep(2)
-    owners = driver.find_elements(By.XPATH, "//div[@class='ui-grid outer-gutter-xx-small residents-subsection-item']")
-    for x in owners:
-        name = x.find_element(By.TAG_NAME,"p").text
-        print(name)
-        link = x.find_element(By.TAG_NAME,"a")
-        print(link.text)
-        # Pass here the name
-        if len(name.split()) > len(identity.split()):
-            longer_name = name
-            shorter_name = identity
-        else:
-            longer_name = identity
-            shorter_name = name
+    verification_btn = driver.find_element(By.XPATH, '//*[@id="verification"]/div/div[2]/button')
+    verification_btn.click()
 
-        longer_name = longer_name.lower()
-        shorter_name = shorter_name.lower()
-        if all(name in longer_name for name in shorter_name.split()):
-            link.click()
-            break
-        else:
-            print(longer_name)
-            print(shorter_name)
-            print("The names are different.")
-    time.sleep(5)
-    driver.switch_to.default_content()
-
-    contacts = driver.find_elements(By.CLASS_NAME, "nav-text")
-    # print(contacts)
-    for x in contacts:
-        print(x.text, "\n")
-        if x.text == "CONTACT":
-            x.click()
-            break
-    time.sleep(5)
-    phone_nos = []
-    # Extract all phone numbers
-    phone_numbers = driver.find_elements(By.CLASS_NAME, 'phone-subsection-item')
-    for x in phone_numbers:
-        phone_no = x.find_element(By.CLASS_NAME, "phone-number")
-        print(phone_no.text)
-        phone_nos.append(phone_no.text)
-
-    print(phone_nos)
-    emails = []
-    # extract all emails
-    mails = driver.find_elements(By.XPATH, "//div[@class='ui-div email-subsection-item']")
-    for x in mails:
-        mail = x.find_element(By.TAG_NAME, "h5")
-        print(mail.text)
-        emails.append(mail.text)
-
-if __name__ == '__main__':
-    print("--Starts--")
-    truth_email = "cashhomebuyersincusa@gmail.com"
-    truth_password = "tech6491"
-
-    web_email = "cashpro@cashprohomebuyers.com"
-    web_password = "l.ZtLZX}e_vT"
-
-    link = "https://www.truthfinder.com/login"
-
-    print("Initializing webdriver...")
-    driver = init_driver()
-    print('Loading: "{}"'.format(link))
-    open_webmail()
-    driver.get(
-        'https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&hl=en&flowName=GlifWebSignIn&flowEntry=ServiceLogin')
-    google_cookies = pickle.load(
-        open("/home/ambrose/PycharmProjects/WebScraping/webscrapping/twitterBots/bot/google_cookies.pkl", "rb"))
-
-    for cookie in google_cookies:
-        cookie['domain'] = ".google.com"
+def login_propstream():
+    while True:
         try:
-            driver.add_cookie(cookie)
-        except Exception as e:
-            pass
+            driver.get(website)
+            # Explicit Wait until username is visible
+            email_input = WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, "//input[@name='username']") ))
+            email_input.clear()
+            time.sleep(2)
+            email_input.send_keys(propstream_email)
+            # Explicit Wait until password input is visible
+            password_input = driver.find_element(By.XPATH, "//input[@name='password']")  # Element filtration
+            time.sleep(2)
 
-    driver.get(link)
-    time.sleep(10)
-    # verify_human()
-    print('Connection Security ByPassed...')
-    login = login_to_truthfinder(truth_email, truth_password)
-    verification = verification_by_email()
-    open_webmail = switch_tabs_webmail()
-    time.sleep(35)
-    login_to_mail = login_to_email(web_email, web_password)
-    dashboard = dashboard()
-    click_address_search()
-    click_property_report()
-    click_residents()
-    time.sleep(9999)
-    print("\n--Finish--")
+            password_input.send_keys(propstream_pwd)
+            login_btn = driver.find_element(By.XPATH, '//*[@id="form-content"]/form/button')
+            time.sleep(2)
+            login_btn.click()
+            driver.maximize_window()
+            wait = WebDriverWait(driver, 30)
 
+            # Define the XPath for the element you want to wait for
+            element_xpath = '//*[@id="alert"]/div/div/div/div/div/div/div[2]/button/span'
+
+            # Wait until the element is visible
+            element = wait.until(EC.visibility_of_element_located((By.XPATH, element_xpath)))
+            # Get the cookies
+            cookies = driver.get_cookies()
+
+            # Print the cookies
+            for cookie in cookies:
+                propstream_session.cookies.set(cookie['name'], cookie['value'])
+
+            print("Logging in successfully ...")
+            return True
+        except:
+            driver.refresh()
+            try:
+                wait = WebDriverWait(driver, 30)
+                # Wait until the element is visible
+                element = wait.until(EC.visibility_of_element_located((By.XPATH, element_xpath)))
+                # Get the cookies
+                cookies = driver.get_cookies()
+
+                # Print the cookies
+                for cookie in cookies:
+                    propstream_session.cookies.set(cookie['name'], cookie['value'])
+
+                print("Logging in successfully ...")
+                time.sleep(2)
+                driver.close()
+            except:
+                driver.refresh()
+                continue
+
+def request_function(url, headers, payload):
+    try:
+        response = propstream_session.get(url, headers=headers, data=payload)
+        r = response.json()
+        print(r)
+        time.sleep(1)
+        if r:
+            return r
+    except:
+        response = propstream_session.get(url, headers=headers, data=payload)
+        r = response.json()
+        print(r)
+        time.sleep(1)
+        if r:
+            return r
+
+def popstream_information(address):
+    url = f"https://app.propstream.com/eqbackend/resource/auth/ps4/property/suggestionsnew?q={address}"
+
+    payload = {}
+    headers = {
+        'authority': 'app.propstream.com',
+        'accept': '*/*',
+        'accept-language': 'en-US,en;q=0.9',
+        'referer': 'https://app.propstream.com/search',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Linux"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+    }
+
+    r = request_function(url, headers, payload)
+    for property in r:
+        if property['stateCode'] == "GA":
+            return r[0]['id']
+    return None
+
+def get_propstream_address_details(id):
+    print("Prop Stream Scrapping Property Information")
+    url = f"https://app.propstream.com/eqbackend/resource/auth/ps4/property/{id}?m=F"
+
+    payload = {}
+    headers = {
+        'authority': 'app.propstream.com',
+        'accept': '*/*',
+        'accept-language': 'en-US,en;q=0.9',
+        'referer': 'https://app.propstream.com/search/1743767474',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Linux"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+    }
+
+    r = request_function(url, headers, payload)
+    if r:
+        scrapped_data = {
+            'beds': r['ownerProperty'].get('beds', ''),
+            'baths': r['ownerProperty'].get('bathrooms', ''),
+            'sqFt': r['ownerProperty'].get('squareFeet', ''),
+            'lot_size': r['ownerProperty'].get('lot_size', ''),
+            'year_built': r.get('yearBuilt', ''),
+            'APN': r.get('apn', ''),
+            'property_type': r.get('landUse', ''),
+            'status': r.get('marketStatus', ''),
+            'distressed': r.get('distressed', ''),
+            'short_scale': r.get('shortSale', ''),
+            'HOA_COA': r.get('hoaPresent', ''),
+            'owner_type': r.get('ownerType', ''),
+            'owner_status': r.get('ownerOccupancy', ''),
+            'occupancy': r.get('occupancy', ''),
+            'length_of_ownership': r.get('ownershipLength', ''),
+            'purchase_method': r.get('purchaseMethod', ''),
+            'county': r['address'].get('countyName', ''),
+            'estimated_value': r['ownerProperty'].get('estimatedValue', ''),
+            'last_year': r['estimatedValueGraph']['series'][0]['points'][0].get('value', ''),
+            'properties': r.get('propertiesOwned', ''),
+            'avg_sale_price': r.get('compSaleAmount', ''),
+            'days_on_market': r.get('compDaysOnMarket', ''),
+            'open_mortgages': r['ownerProperty'].get('openLiens', ''),
+            'est_mortgage_balance': r['ownerProperty'].get('openMortgageBalance', ''),
+            'involuntary_liens': "",
+            'total_involuntary_amt': "",
+            'public_record': r['ownerProperty'].get('lastSaleAmount', ''),
+            'MLS': "",
+            'est_equity': r['ownerProperty'].get('estimatedEquity', ''),
+            'linked_properties': "",
+            'monthly_rent': r.get('rentAmount', ''),
+            'gross_yield': r.get('grossYield', ''),
+            'owner_1_name': r.get('owner1FullName', ''),
+            'owner_2_name': r.get('owner2FullName', '')
+        }
+        return scrapped_data
+
+def save_data_to_mysql(data):
+    try:
+        # Connect to the MySQL database
+        conn_mysql = mysql.connector.connect(
+            host='144.76.112.25',
+            user='helixhelloworld_oldcrawlersusr',
+            password='NdSZIAfVZHoA',
+            database='helixhel_oldcrawlersdb',
+        )
+        cursor_mysql = conn_mysql.cursor()
+
+        # Insert data into the MySQL table
+        keys = ', '.join(data.keys())
+        placeholders = ', '.join(['%s' for _ in data.keys()])
+        values = tuple(data.values())
+        query = f"INSERT INTO properties_two ({keys}) VALUES ({placeholders})"
+        cursor_mysql.execute(query, values)
+
+        # Commit the changes to MySQL
+        conn_mysql.commit()
+        conn_mysql.close()
+        print("Data saved to MySQL successfully!")
+    except mysql.connector.Error as e:
+        print("An error occurred while saving data to MySQL:", str(e))
+
+
+def save_data_to_databases(data):
+    try:
+        # Connect to the SQLite database or create a new one if it doesn't exist
+        conn_sqlite = sqlite3.connect('property_data.db')
+        cursor_sqlite = conn_sqlite.cursor()
+
+        # Insert data into the SQLite table
+        keys = ', '.join(data.keys())
+        placeholders = ', '.join(['?' for _ in data.keys()])
+        values = tuple(data.values())
+        query = f"INSERT INTO properties_two ({keys}) VALUES ({placeholders})"
+        cursor_sqlite.execute(query, values)
+
+        # Commit the changes to SQLite and MySQL
+        conn_sqlite.commit()
+        conn_sqlite.close()
+        save_data_to_mysql(data)
+        print("Data saved to both SQLite successfully!")
+    except (sqlite3.Error, mysql.connector.Error) as e:
+        print("An error occurred while saving data:", str(e))
+
+
+def fetch_all_ids_from_sqlite():
+    try:
+        # Connect to the SQLite database or create a new one if it doesn't exist
+        conn = sqlite3.connect("property_data.db")
+        cursor = conn.cursor()
+
+        # Fetch all the IDs from the table
+        select_ids_query = f"SELECT ga_id FROM properties_two"
+        cursor.execute(select_ids_query)
+        rows = cursor.fetchall()
+
+        # Extract the IDs from the fetched rows
+        ids = [row[0] for row in rows]
+        # Close the database connection
+        conn.close()
+        return ids
+    except sqlite3.Error as e:
+        print("An error occurred while fetching IDs from SQLite:", str(e))
+        return []
+
+def truth_finder_search(q):
+    url = f"https://us-autocomplete-pro.api.smartystreets.com/lookup?auth-id=2617637110263865&search={q}"
+
+    payload = {}
+    headers = {
+        'authority': 'us-autocomplete-pro.api.smartystreets.com',
+        'accept': '*/*',
+        'accept-language': 'en-US,en;q=0.9',
+        'origin': 'https://www.truthfinder.com',
+        'referer': 'https://www.truthfinder.com/dashboard',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Linux"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'cross-site',
+        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36'
+    }
+
+    r = request_function(url, headers, payload)
+    if r['suggestions']:
+        if len(r['suggestions']) > 0:
+            for x in r['suggestions']:
+                if x['state'] == "GA":
+                    return f"{x['state']}:{x['city']}:{x['zipcode']}:{x['street_line'].strip().replace(' ','')}"
+    return None
+
+def report_truthfinder(address, jwt, scrapped_data):
+    print("Report Truth Finder",address.split('/')[-1])
+    url = f"https://api2.truthfinder.com/v1/me/records/{address.split('/')[-1]}/report?defer_extended_data=false"
+
+    payload = {}
+    headers = {
+        'authority': 'api2.truthfinder.com',
+        'accept': '*/*',
+        'accept-language': 'en-US,en;q=0.9',
+        'api-key': 'B7QbTIt3PtAID67cRtfQwrgzL0H3qU5buaxp17PoZ98',
+        'app-id': 'tf-web',
+        'authorization': f'Bearer {jwt}',
+        'device-id': 'ba3be71b-83f8-4b43-bdcb-aa9d52eb8367',
+        'origin': 'https://www.truthfinder.com',
+        'referer': 'https://www.truthfinder.com/dashboard/reports/ga:dalton:30721:3440freedomln',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Linux"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'Cookie': '__cf_bm=wLzTbwmTQl8ITfizbSI_Eb9wxMELAsTMZP4qSWbO0Io-1695463099-0-AQGIa5LuYsilxmSwBqLwgLEG8IhjZCL7A80kzkPZelMRSDJ30G11U9kiGlyjjdToAVliim+cgxHXcpiuhMr9q4Wf+axArSwREeI+CHNy2w/V'
+    }
+
+    response = requests.request("GET", url, headers=headers, data=payload)
+    r = response.json()
+    print(r)
+    if r:
+        try:
+            scrapped_data["phone_numbers"] = f"{[x['number'] for x in r['phones']] if r['phones'] else ''}"
+            scrapped_data["email_contacts"] = f"{[x['address'] for x in r['emails']] if r['emails'] else ''}"
+        except:
+            print(f"This are the phone numbers {r['phones']}")
+            print(f"This are the phone numbers {r['emails']}")
+
+    return scrapped_data
+
+def login_truthfinder_jwt_refresh():
+    url = "https://api2.truthfinder.com/v1/authenticate"
+
+    payload = json.dumps({
+        "email": "cashpro@cashprohomebuyers.com",
+        "password": "tech6491",
+        "sessionId": "1d565c79",
+        "sessionCreated": "1695449537"
+    })
+    headers = {
+        'authority': 'api2.truthfinder.com',
+        'accept': '*/*',
+        'accept-language': 'en-US,en;q=0.9',
+        'api-key': 'B7QbTIt3PtAID67cRtfQwrgzL0H3qU5buaxp17PoZ98',
+        'app-id': 'tf-web',
+        'content-type': 'application/json',
+        'device-id': 'ba3be71b-83f8-4b43-bdcb-aa9d52eb8367',
+        'origin': 'https://www.truthfinder.com',
+        'referer': 'https://www.truthfinder.com/login',
+        'sec-ch-ua': '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Linux"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        'Cookie': '__cf_bm=Ha6rl_lgi9_ykeTFajsG8MsCR9cX8XjlwiMoSim4Jlw-1695461085-0-AWaMc2g2Ov5Yq1cE/OQnxDikV26HN3oqwugWO6Akbv5kCH/Mt2kVMSDTt4N5yfscEh5oSzDZDTreRy21F7IsT56YSeg7zUd55YU6DPWpuWw4'
+    }
+
+    response = requests.request("POST", url, headers=headers, data=payload)
+    print("token response", response)
+    r = response.json()
+    token = r['accessToken']
+    return token
+def names_match(text_words, name_words):
+    name_word_count = sum(1 for word in name_words if word in text_words)
+    return name_word_count >= 2
+
+
+def truth_finder_find_resident_report(url, name):
+    print("truth_finder_find_resident_report")
+    driver.get(url)
+    wait = WebDriverWait(driver, 30)
+    # Wait until the element is visible
+    wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "nav-items")))
+    time.sleep(2)
+
+    links = driver.find_elements(By.CLASS_NAME, "nav-text")
+    for x in links:
+        if x.text.lower() == "residents":
+            x.click()
+
+    residents_container = wait.until(EC.visibility_of_element_located((By.XPATH, '//div[@class="ui-div residents-subsection-items"]')))
+    residents_containers = residents_container.find_elements(By.XPATH, '//div[@class="ui-grid outer-gutter-xx-small residents-subsection-item"]')
+    for resident in residents_containers:
+        text = resident.text.lower()
+        if names_match(text,name):
+            report_link = resident.find_element(By.TAG_NAME, 'a').get_attribute('href')
+            time.sleep(2)
+            try:
+                driver.get(report_link)
+            except:
+                driver.get(report_link)
+            wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "nav-items")))
+            truth_finder_url = driver.current_url
+            report_link = truth_finder_url
+            time.sleep(2)
+            return report_link,truth_finder_url
+    return None
+
+def main():
+    print("Welcome to real estate scrapper")
+    gapubs_data = get_data()
+    print("Gapubs Records ==", len(gapubs_data))
+    print("Truth Finder Login Successfully")
+    exisiting_ids = fetch_all_ids_from_sqlite()
+
+    # step 1 Login
+    # step 1 Login
+    start_page()
+    time.sleep(2)
+    db_data_holder = []
+    count = 0
+    print("Starting Scrapping Popstream and Truth Finder")
+    for x in reversed(gapubs_data):
+        address = json.loads(x)
+        if address["Street"] != "" and address["Zip_Code"] != "" and address['Id'] not in exisiting_ids:
+            print("Record no", count)
+            # address_db = '3440 Freedom Ln, Dalton, GA 30721'
+            address_db = f'{address["Street"]}, {address["City"]}, GA {address["Zip_Code"]}'
+            log(address_db)
+            try:
+                # step 2 Propstream information (TruthFinder Code)
+                property_id = popstream_information(address_db)
+                print("1")
+                if property_id:
+                    propstream_property_details = get_propstream_address_details(property_id)
+                    name_words = propstream_property_details.get('owner_1_name', '')
+                    propstream_property_details['name'] = address_db
+                    propstream_property_details['url'] = f"https://app.propstream.com/search/{property_id}"
+                    propstream_property_details['ga_id'] = address['Id']
+                    print("PropStream Dictionary", propstream_property_details)
+
+                    print("Final Data Scrapped", propstream_property_details)
+                    save_data_to_databases(propstream_property_details)
+                time.sleep(2)  # Wait for the information to load
+                count += 1
+                continue
+            except Exception as e:
+                count += 1
+                driver.refresh()
+                print(e)
+                continue
+    return db_data_holder
+
+print(main())

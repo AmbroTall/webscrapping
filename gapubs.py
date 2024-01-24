@@ -63,10 +63,10 @@ def init_driver():
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
     options.add_argument('--disable-notifications')
-    options.add_argument("--headless")  # Run in headless mode if needed
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--disable-gpu")
+    # options.add_argument("--headless")  # Run in headless mode if needed
+    # options.add_argument("--no-sandbox")
+    # options.add_argument("--disable-dev-shm-usage")
+    # options.add_argument("--disable-gpu")
     if not dev:
         pass
 
@@ -133,6 +133,8 @@ def count_total_records(driver):
         time.sleep(w)
     except:
         n = 10
+
+    print("No of n I think is", n)
     return n
 
 def get_all_pages(link, driver, limited, database, source, env):
@@ -190,13 +192,14 @@ def get_all_pages(link, driver, limited, database, source, env):
             for x in range(1, len(button_list) + 1):
                 if not env and num_records >= limited:
                     break
+
                 page_url = driver.current_url
                 web_data = list()
                 id = 2 + x
                 if id < 10:
                     id = f'0{id}'
                 # t = driver.find_element(By.XPATH,f'//*[@id="ctl00_ContentPlaceHolder1_WSExtendedGridNP1_GridView1_ctl{id}_btnView2"]')
-                print("+++++++++++++++++START++++++++++++++++++\n")
+                print(f"+++++++++++++++++START++++++++++++++++++ {id}\n")
                 try:
                     t = WebDriverWait(driver, 30).until(
                         EC.element_to_be_clickable(
@@ -204,17 +207,19 @@ def get_all_pages(link, driver, limited, database, source, env):
                             # Element filtration
                         )
                     )
+                    driver.execute_script("arguments[0].scrollIntoView();", t)
+                    t.click()
                 except:
                     driver.refresh()
-
-                next_article = WebDriverWait(driver, 30).until(
-                    EC.element_to_be_clickable(
-                        (By.ID, "ctl00_ContentPlaceHolder1_WSExtendedGridNP1_GridView1_ctl01_lblTotalPages"),
-                        # Element filtration
+                    t = WebDriverWait(driver, 30).until(
+                        EC.element_to_be_clickable(
+                            (By.XPATH,
+                             f'//*[@id="ctl00_ContentPlaceHolder1_WSExtendedGridNP1_GridView1_ctl{id}_btnView2"]'),
+                            # Element filtration
+                        )
                     )
-                )
-                driver.execute_script("arguments[0].scrollIntoView();", t)
-                t.click()
+                    driver.execute_script("arguments[0].scrollIntoView();", t)
+                    t.click()
                 # driver, data = get_data(driver, 'GA')
                 has_data = False
                 try:
@@ -229,16 +234,28 @@ def get_all_pages(link, driver, limited, database, source, env):
                         database.gapub(data)
                     except:
                         print_log("Unable to insert: {}".format(page_url), True)
-
-                back = WebDriverWait(driver, 30).until(
-                    EC.element_to_be_clickable(
-                        (By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_PublicNoticeDetailsBody1_hlBackFromBodyTop"]'),
-                        # Element filtration
+                try:
+                    back = WebDriverWait(driver, 30).until(
+                        EC.element_to_be_clickable(
+                            (By.XPATH, '//*[@id="ctl00_ContentPlaceHolder1_PublicNoticeDetailsBody1_hlBackFromBodyTop"]'),
+                            # Element filtration
+                        )
                     )
-                )
-                driver.execute_script(
-                    "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});",
-                    back)
+                    driver.execute_script(
+                        "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});",
+                        back)
+                except:
+                    driver.refresh()
+                    back = WebDriverWait(driver, 30).until(
+                        EC.element_to_be_clickable(
+                            (By.XPATH,
+                             '//*[@id="ctl00_ContentPlaceHolder1_PublicNoticeDetailsBody1_hlBackFromBodyTop"]'),
+                            # Element filtration
+                        )
+                    )
+                    driver.execute_script(
+                        "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});",
+                        back)
                 print(back.text)
                 back.click()
                 num_records += 1
@@ -416,6 +433,7 @@ def main(param):
 
     if parse:
         browser, all_pages = get_all_pages(site_link, browser, limit, db, "GaPub", prod)
+
         n = len(all_pages)
 
         message = "Parsing Limited {} Page(s)...".format(limit) if n > limit else "Parsing {} Page(s)...".format(n)

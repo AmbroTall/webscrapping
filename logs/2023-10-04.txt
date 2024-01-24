@@ -44,3 +44,207 @@
 00:29:19 : 552 Filter Plant Road, Summerville, GA 30747
 00:29:27 : 47 Maddox Rd Se, Acworth, GA 30102
 00:30:19 : 504 Firethorn Ct, Villa Rica, GA 30180
+00:36:08 : 552 Filter Plant Road, Summerville, GA 30747
+00:36:20 : 47 Maddox Rd Se, Acworth, GA 30102
+00:37:10 : 504 Firethorn Ct, Villa Rica, GA 30180
+00:37:23 : 27 Martin Luther King Drive, Cartersville, GA 30120
+00:41:06 : 552 Filter Plant Road, Summerville, GA 30747
+00:41:22 : 47 Maddox Rd Se, Acworth, GA 30102
+00:41:59 : 504 Firethorn Ct, Villa Rica, GA 30180
+00:42:43 : 27 Martin Luther King Drive, Cartersville, GA 30120
+00:42:47 : 1304 Avon Avenue Sw, Atlanta, GA 30310
+00:42:52 : 2337 Abner Place Nw, Atlanta, GA 30318
+00:42:56 : 2398 Herring Road Sw, Atlanta, GA 30311
+00:43:01 : 342 Schoen Street Se, Atlanta, GA 30315
+00:43:05 : 108 Wellington Street Sw, Atlanta, GA 30314
+00:43:09 : 165 Edwards Street Sw, Atlanta, GA 30314
+00:43:13 : 156 Hyacinth Avenue Nw, Atlanta, GA 30314
+00:43:17 : 1636 Sandtown Road Sw, Atlanta, GA 30311
+00:43:21 : 183 Linkwood Road Nw, Atlanta, GA 30318
+00:43:25 : 719 Caron Circle Nw, Atlanta, GA 30318
+00:43:28 : 1220 Second Street Nw, Atlanta, GA 30318
+00:43:31 : 1705 Spooner Road, Douglas, GA 31533
+00:43:35 : 3044 Griggs Ct, Augusta, GA 30906
+00:44:43 : 323 Sleepy Hollow Ct, Martinez, GA 30907
+00:44:49 : 1202 Atlanta Hwy, Gainesville, GA 30501
+00:45:22 : 105 Dogwood Circle, Gainesville, GA 30501
+00:45:32 : 164 Beacon Drive, Maysville, GA 30558
+00:51:32 : 552 Filter Plant Road, Summerville, GA 30747
+00:51:44 : 47 Maddox Rd Se, Acworth, GA 30102
+00:52:36 : 504 Firethorn Ct, Villa Rica, GA 30180
+00:53:21 : 27 Martin Luther King Drive, Cartersville, GA 30120
+00:53:26 : 1304 Avon Avenue Sw, Atlanta, GA 30310
+00:53:30 : 2337 Abner Place Nw, Atlanta, GA 30318
+00:53:35 : 2398 Herring Road Sw, Atlanta, GA 30311
+00:53:40 : 342 Schoen Street Se, Atlanta, GA 30315
+00:53:44 : 108 Wellington Street Sw, Atlanta, GA 30314
+00:53:48 : 165 Edwards Street Sw, Atlanta, GA 30314
+00:53:51 : 156 Hyacinth Avenue Nw, Atlanta, GA 30314
+00:53:55 : 1636 Sandtown Road Sw, Atlanta, GA 30311
+00:53:58 : 183 Linkwood Road Nw, Atlanta, GA 30318
+00:54:01 : 719 Caron Circle Nw, Atlanta, GA 30318
+00:54:06 : 1220 Second Street Nw, Atlanta, GA 30318
+00:54:13 : 1705 Spooner Road, Douglas, GA 31533
+00:54:16 : 3044 Griggs Ct, Augusta, GA 30906
+00:55:02 : 323 Sleepy Hollow Ct, Martinez, GA 30907
+00:55:08 : 1202 Atlanta Hwy, Gainesville, GA 30501
+00:55:52 : 105 Dogwood Circle, Gainesville, GA 30501
+00:56:00 : 164 Beacon Drive, Maysville, GA 30558
+00:56:07 : 6710 Stillmeadow Drive, Cumming, GA 30040
+00:56:14 : 110 Glen Eagle Way, Mcdonough, GA 30253
+00:56:52 : 407 Sorrow Road, Stockbridge, GA 30281
+00:56:58 : 4000 Harness Ln, Conyers, GA 30013
+01:03:41 : 552 Filter Plant Road, Summerville, GA 30747
+01:03:50 : 47 Maddox Rd Se, Acworth, GA 30102
+01:04:31 : 504 Firethorn Ct, Villa Rica, GA 30180
+01:11:38 : 552 Filter Plant Road, Summerville, GA 30747
+01:11:48 : 47 Maddox Rd Se, Acworth, GA 30102
+01:12:34 : 504 Firethorn Ct, Villa Rica, GA 30180
+01:13:20 : 27 Martin Luther King Drive, Cartersville, GA 30120
+01:13:27 : 1304 Avon Avenue Sw, Atlanta, GA 30310
+01:13:30 : 2337 Abner Place Nw, Atlanta, GA 30318
+01:13:34 : 2398 Herring Road Sw, Atlanta, GA 30311
+01:13:37 : 342 Schoen Street Se, Atlanta, GA 30315
+01:13:41 : 108 Wellington Street Sw, Atlanta, GA 30314
+01:13:44 : 165 Edwards Street Sw, Atlanta, GA 30314
+01:13:48 : 156 Hyacinth Avenue Nw, Atlanta, GA 30314
+01:13:52 : 1636 Sandtown Road Sw, Atlanta, GA 30311
+01:13:56 : 183 Linkwood Road Nw, Atlanta, GA 30318
+01:14:00 : 719 Caron Circle Nw, Atlanta, GA 30318
+01:14:04 : 1220 Second Street Nw, Atlanta, GA 30318
+01:14:07 : 1705 Spooner Road, Douglas, GA 31533
+01:14:13 : 3044 Griggs Ct, Augusta, GA 30906
+01:15:00 : 323 Sleepy Hollow Ct, Martinez, GA 30907
+01:15:04 : 1202 Atlanta Hwy, Gainesville, GA 30501
+01:15:55 : 105 Dogwood Circle, Gainesville, GA 30501
+01:16:03 : 164 Beacon Drive, Maysville, GA 30558
+01:16:08 : 6710 Stillmeadow Drive, Cumming, GA 30040
+01:16:12 : 110 Glen Eagle Way, Mcdonough, GA 30253
+01:17:02 : 407 Sorrow Road, Stockbridge, GA 30281
+01:17:09 : 4000 Harness Ln, Conyers, GA 30013
+01:18:03 : 3408 Charter Ct, Conyers, GA 30013
+01:18:57 : 3219 Quincey Xing, Conyers, GA 30013
+01:19:21 : 3505 Tiffany Drive, Conyers, GA 30013
+01:19:23 : 1200 Brookside Drive Ne, Conyers, GA 30012
+01:19:35 : 113 Willow Drive, Guyton, GA 31312
+01:19:42 : 20 Clydesdale Ct, Newnan, GA 30263
+01:20:26 : 101 Woodland Court, Warner Robins, GA 31088
+01:20:33 : 1505 Windsor Road, Perry, GA 31069
+01:20:38 : 4014 Radford Gay Road, Dearing, GA 30808
+01:20:41 : 314 S. Grady Street, Portal, GA 30450
+01:20:45 : 5072 Woodridge Way, Tucker, GA 30084
+01:21:35 : 1021 Stewarts Creek, Greensboro, GA 30642
+01:21:38 : 3367 Raes Creek Road, Marietta, GA 30008
+01:21:45 : 1405 Hawthorne Ave Se, Smyrna, GA 30080
+01:22:33 : 1267 Misty Valley Court, Lawtenceville, GA 30045
+01:22:38 : 2218 Perkerson Mill Road, Austell, GA 30106
+01:22:40 : 7254 Bridgeport Ct, Austell, GA 30168
+01:23:29 : 94 Vann Dr Nw, Rome, GA 30165
+01:24:23 : 2486 Alston Drive, Marietta, GA 30062
+01:24:30 : 1726 Wilkerson Rd Sw, Rome, GA 30165
+01:25:17 : 226 Coosawattee Avenue, Rome, GA 30165
+01:25:22 : 21 Summit Drive, Lindale, GA 30147
+01:25:25 : 1414 Sienna Drive, Dalton, GA 30721
+01:25:29 : 770 Anna Ln, Alpharetta, GA 30004
+01:26:12 : 580 Hutchens Road, Hapeville, GA 30354
+01:26:17 : 1093 Liberty Pkwy Nw, Atlanta, GA 30318
+01:26:59 : 301 Larry Drive, Waynesboro, GA 30830
+01:27:08 : 109 Kayleigh Street, Waynesboro, GA 30830
+01:27:11 : 960 Old Antioch Road, Carrollton, GA 30117
+01:27:15 : 40 Buddy Faust Road, Crawford, GA 30630
+01:27:19 : 201 Park Stone Way, Marietta, GA 30066
+01:27:22 : 1210 Kenway Circle Se, Smyrna, GA 30082
+01:27:25 : 2934 Creek Park Drive, Marietta, GA 30062
+01:27:28 : 6950 Wade Road, Austell, GA 30168
+01:27:32 : 3423 Sweetbrier Road, Albany, GA 31701
+01:27:36 : 255 Boulder Road, Rome, GA 30161
+01:27:39 : 117 Hornet Drive, Brunswick, GA 31525
+01:27:43 : 154 Lois St Se, Calhoun, GA 30701
+01:28:24 : 4930 Spring Park Cir, Suwanee, GA 30024
+01:29:08 : 609 Candlewick Ln Nw, Lilburn, GA 30047
+01:29:53 : 810 Deer Oaks Drive, Lawrenceville, GA 30044
+01:29:58 : 140 Cole Walk, Mcdonough, GA 30252
+01:30:45 : 773 Jackson Lake Road, Mcdonough, GA 30252
+01:30:50 : 343 Ashton Place, Mcdonough, GA 30253
+01:30:54 : 170 Laney Road, Mcdonough, GA 30252
+01:30:58 : 302 Ga Highway 224, Perry, GA 31069
+01:31:43 : 101 Deluna Drive, Bonaire, GA 31005
+01:31:49 : 336 Palm Key Pl, Ridgeland, GA 29936
+01:31:55 : 375 Nettles Road, Ridgeland, GA 29936
+01:32:01 : 8715 Islesworth Court, Duluth, GA 30097
+01:32:05 : 5320 Cantrell Road, Dawsonville, GA 30534
+01:32:09 : 4982 Red Oak Drive, Gainesville, GA 30506
+01:32:19 : 6501 New Bethany Road, Buford, GA 30518
+01:48:43 : 224 Jackson Meadows Drive, Hoschton, GA 30548
+01:48:45 : 270 Addington Lane, Waleska, GA 30183
+01:48:53 : 410 Royal Oak Drive, Acworth, GA 30102
+01:48:58 : 3415 Arbor Creek Point, Atlanta, GA 30340
+01:49:02 : 2114 Drew Valley Road, Brookhaven, GA 30319
+01:49:06 : 791 Hillsboro Road, Eatonton, GA 31024
+01:49:09 : 6137 Rockaway Road, Atlanta, GA 30349
+01:49:12 : 2920 Storybook Lane, Grayson, GA 30017
+01:49:16 : 3539 Mulberry Way, Duluth, GA 30096
+01:50:03 : 9714 Kings Road, Gainesville, Forsyth County, GA 30506
+01:50:08 : 610 Audubon Way, Dalton, GA 30720
+01:50:52 : 5913 Walters Loop, Columbus, GA 31907
+01:51:37 : Old Ridge Road, Ellijay, GA 30540
+01:51:44 : Arnold Rd Se, Statham, GA 30666
+01:51:51 : 302 Grayson Street, Rossville, GA 30741
+01:51:57 : 4814 Josephine Street, Columbus, GA 31907
+01:52:07 : 2737 Riderwood Lane, Marietta, GA 30062
+01:52:17 : 1071 Queensgate Drive Se, Smyrna, GA 30082
+01:52:21 : 2498 Blacks Bluff Road, Rome, GA 30161
+01:52:31 : 611 Swift Street, 1008 Blakely Court, GA 1008
+01:52:38 : 4085 Preserve Ln, Snellville, GA 30039
+01:53:25 : 730 Sunshine Road, Ellabell, GA 31308
+01:53:29 : 2804 Crepe Myrtle Court Se, Conyers, GA 30013
+01:53:35 : N-S Highway 40, Kingsland, GA 31548
+01:53:40 : 8001 Tall Pine Drive, Villa Rica, GA 8001
+01:53:44 : 239 Shakespeare Drive, Clayton, GA 30525
+01:53:48 : Tax Map & Parcel K01073A, Burke County, GA 1073
+01:53:52 : 208 Choctaw Street, Warner Robins, GA 31088
+01:53:57 : 4239 Ga Hwy 32E, Nicholls, GA 31554
+01:54:02 : 3246 Lakeview Pkwy, Villa Rica, GA 3246
+01:54:10 : 431 Goldfinch Drive, Augusta, GA 30907
+01:54:15 : 2449 Terrace Trail, Decatur, GA 2449
+01:54:20 : King Tract Caney Branch Road, Kingsland, GA 31548
+01:54:25 : 105 Rockview Lane, Covington, GA 30016
+01:54:31 : 2741 Blacks Bluff Road, Rome, GA 2741
+01:54:37 : Tax Map & Parcel K01074C, Burke County, GA 1074
+01:54:42 : 110 Roe Street, Sylvester, GA 2021
+01:54:46 : 2481 Terrace Trail, Decatur, GA 2481
+01:54:50 : 399 Chestnut Street, Social Circle, GA -1
+01:54:53 : 4783 Rosebrook Ct, Smyrna, GA 30080
+01:54:58 : 307 Lorch Street, Savannah, GA 31401
+01:55:02 : Oakhurst Subdivision And As Shown By A Plat And Survey Thereof Made By Merritt & Walker, Engineers, GA 1949
+01:55:06 : 5250 Parks Road, Cumming, GA 5250
+01:55:11 : All Of Lot Thirty-Six (36), Junction Ridge Subdivision, GA 825
+01:55:15 : 122 Boyd Road, Rome, GA 30161
+01:55:19 : 1722 Whisperwood Street, Albany, GA 31721
+01:55:24 : 1638 Broomfield Way, Lawrenceville, GA 30044
+01:56:08 : 2174 River Road, Ellenwood, GA 2174
+01:56:15 : 5941 Warner Road, Columbus, GA 31909
+01:56:19 : 3414 Timothy Lane, Gainesville, GA 30504
+01:56:24 : 17 Jans Meadows Street, Stockbridge, GA 30281
+01:56:29 : All That Tract Or Parcel Of Land Lying In Dekalb County Described As Follows: District 18, Land Lot 125, GA 26486
+01:56:32 : 4928 Quailwood Drive, Flowery Branch, GA 30542
+01:56:39 : 3488 Warpath Road, Macon, GA 3488
+01:56:45 : Toombs County Superior Court, 100 Courthouse Square, Lyons, GA 30436
+01:56:52 : 8445 Hwy 53 E, Dawsonville, GA 30534
+01:56:57 : 1043 Sylvian Drive, Macon, GA 1043
+01:57:04 : 4323D Gulley Road, Toccoa, GA 30577
+01:57:11 : 1765 Berkshire Court, Snellville, GA 30078
+01:57:16 : 4895 Poplar Springs, Gainesville, GA 30502
+01:57:25 : 403 Rosemary Court, Stateboro, GA 1998
+01:57:31 : 110 Big Jim Drive, Hephzibah, GA 30815
+01:57:38 : 204 Railroad Street, Brooklet, Bulloch County, GA 30405
+01:57:43 : The Toombs County Superior Court, 100 Courthouse Square, Lyons, GA 30436
+01:57:50 : 188 Third Street, Macon, GA 31201
+01:57:57 : 2563 Lake Capri Drive, Conyers, GA 30012
+18:39:45 : 2861 Pine Mountain Circle, Kennesaw, GA 30152
+18:39:53 : 1126 Oakdale Road, Augusta, GA 30904
+18:39:59 : 42 Johnston Road, Griffin, GA 30224
+18:40:06 : 112 Apache Road, Jackson, GA 30233
+18:40:12 : 552 Filter Plant Road, Summerville, GA 30747
+18:40:18 : 47 Maddox Rd Se, Acworth, GA 30102
+18:40:37 : 504 Firethorn Ct, Villa Rica, GA 30180

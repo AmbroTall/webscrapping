@@ -248,7 +248,7 @@ def main():
         {"Scotland Premiership": 29042},
         {"Scotland Championship": 23420},
         {"Scotland League One": 25530},
-        {"Scotland League Two": 25531}
+        {"Scotland League Two": 25531},
     ]
     bookmaker_data = []
     for league in leagues:

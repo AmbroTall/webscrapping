@@ -80,11 +80,15 @@ def exctract_odds(match, league, bookie_name):
 
     games['match_id'] = match['ID']
     # Get the team mapping for the specified bookie and league
-    team_mapping = map_teams(bookie_name, league)
+    # team_mapping = map_teams(bookie_name, league)
+    #
+    # # Use the default team names if mapping is available, otherwise use the original names
+    # games['home_team'] = team_mapping.get(teams[0].strip(), teams[0].strip())
+    # games['away_team'] = team_mapping.get(teams[1].strip(), teams[1].strip())
 
     # Use the default team names if mapping is available, otherwise use the original names
-    games['home_team'] = team_mapping.get(teams[0].strip(), teams[0].strip())
-    games['away_team'] = team_mapping.get(teams[1].strip(), teams[1].strip())
+    games['home_team'] = teams[0].strip()
+    games['away_team'] = teams[1].strip()
 
     games['time'] = convert_date_string_to_unix(match['STARTDATE'])
 
@@ -236,38 +240,99 @@ def process_league(league_dict):
         return league_name, league_id
 
 
-def main():
+# def main():
+#     bookie_name = 'bet9ja'
+#     # leagues = [{"England Premier League": 170880} ]
+#     leagues = [{"England Premier League": 170880}, {"England Championship": 170881}, {"England League One": 995354},
+#                {"England League Two": 995355}, {"Scotland Premiership": 941378}, {"Scotland Championship": 1075222},
+#                {"Scotland League One": 1076436}, {"Scotland League Two": 1076689}, {"Northern Ireland":1078221},{"France League One": 950503},{"France League Two":958691},{"Laliga":180928},{"Laliga 2":180929}, {"Japan League": 1787481}, {"German Bundesliga":180923}, {"German Bundesliga 2":180924},{"German DFB Pokal":180924}, {"Italy Serie A": 167856}, {"Italy Serie B": 907202}, {"Italy Coppa Italia": 1042342}, {"Netherlands Eredivisie" : 1016657},{"Greece Super League 1": 1018979},{"England FA":708732},{"Copa del Ray": 1125043}]
+#
+#     bookmaker_data = []
+#     for league in leagues:
+#         try:
+#             print(league)
+#             league_name, league_id = process_league(league)
+#             match_details = api_calls_events(f"{league_id}")
+#
+#             league_mapping = {
+#                 "England Premier League": "England-Premier League",
+#                 "England Championship": "England-EFL Cup",
+#                 "England League One": "England-League One",
+#                 "England League Two": "England-League Two",
+#                 "Scotland Premiership": "Scotland-Premiership",
+#                 "Scotland Championship": "Scotland-Championship",
+#                 "Scotland League One": "Scotland-League One",
+#                 "Scotland League Two": "Scotland-League Two",
+#                 # +++++++++++++ BenchMark +++++++++++++
+#                 # "Northern Ireland": "Northern Ireland",
+#                 # "France League One": "France League One",
+#                 # "France League One": "France League One",
+#             }
+#             # Check if the league_name is in the mapping dictionary, if yes, update it
+#             # if league_name in league_mapping:
+#             #     league_name = league_mapping[league_name]
+#             #
+#             # # Testing Function To See if teams are correctly named
+#             # testing = testing_function(bookie_name, league_name)
+#             # missing_names = check_team_names_in_match_details(testing, match_details)
+#             # print("**** This are the missing matches", missing_names)
+#
+#             liga = {}
+#             league_data = []
+#
+#             for match in match_details:
+#                 try:
+#                     league_wager_dic = exctract_odds(match, league_name, bookie_name)
+#
+#                     league_data.append(league_wager_dic)
+#                 except Exception as e:
+#                     continue
+#             liga[league_name] = league_data
+#             bookmaker_data.append(liga)
+#             print("bet9ja", bookmaker_data)
+#         except Exception as e:
+#             print("Ambrose", e)
+#             continue
+#     return bookmaker_data
+
+def main(league):
     bookie_name = 'bet9ja'
-    # leagues = [{"England Premier League": 170880} ]
-    leagues = [{"England Premier League": 170880}, {"England Championship": 170881}, {"England League One": 995354},
-               {"England League Two": 995355}, {"Scotland Premiership": 941378}, {"Scotland Championship": 1075222},
-               {"Scotland League One": 1076436}, {"Scotland League Two": 1076689}]
+    leagues = [
+        {"England Premier League": 170880},
+        {"England Championship": 170881},
+        {"England League One": 995354},
+        {"England League Two": 995355},
+        {"Scotland Premiership": 941378},
+        {"Scotland Championship": 1075222},
+        {"Scotland League One": 1076436},
+        {"Scotland League Two": 1076689},
+        {"Northern Ireland": 1078221},
+        {"France League One": 950503},
+        {"France League Two": 958691},
+        {"Laliga": 180928},
+        {"Laliga 2": 180929},
+        {"Japan League": 1787481},
+        {"German Bundesliga": 180923},
+        {"German Bundesliga 2": 180924},
+        {"German DFB Pokal": 180924},
+        {"Italy Serie A": 167856},
+        {"Italy Serie B": 907202},
+        {"Italy Coppa Italia": 1042342},
+        {"Netherlands Eredivisie": 1016657},
+        {"Greece Super League 1": 1018979},
+        {"England FA": 708732},
+        {"Copa del Ray": 1125043}
+    ]
 
     bookmaker_data = []
-    for league in leagues:
-        try:
-            print(league)
-            league_name, league_id = process_league(league)
+    try:
+        print(league)
+        # Find the league dictionary based on the provided league name
+        selected_league = next((item for item in leagues if league in item), None)
+
+        if selected_league:
+            league_name, league_id = process_league(selected_league)
             match_details = api_calls_events(f"{league_id}")
-
-            league_mapping = {
-                "England Premier League": "England-Premier League",
-                "England Championship": "England-EFL Cup",
-                "England League One": "England-League One",
-                "England League Two": "England-League Two",
-                "Scotland Premiership": "Scotland-Premiership",
-                "Scotland Championship": "Scotland-Championship",
-                "Scotland League One": "Scotland-League One",
-                "Scotland League Two": "Scotland-League Two",
-            }
-            # Check if the league_name is in the mapping dictionary, if yes, update it
-            if league_name in league_mapping:
-                league_name = league_mapping[league_name]
-
-            # Testing Function To See if teams are correctly named
-            testing = testing_function(bookie_name, league_name)
-            missing_names = check_team_names_in_match_details(testing, match_details)
-            print("**** This are the missing matches", missing_names)
 
             liga = {}
             league_data = []
@@ -276,15 +341,18 @@ def main():
                 try:
                     league_wager_dic = exctract_odds(match, league_name, bookie_name)
                     league_data.append(league_wager_dic)
-                except:
+                except Exception as e:
                     continue
+
             liga[league_name] = league_data
             bookmaker_data.append(liga)
             print("bet9ja", bookmaker_data)
-        except Exception as e:
-            print("Ambrose", e)
-            continue
-    return bookmaker_data
+            return bookmaker_data
+        else:
+            print(f"No matching league found for {league}")
+    except Exception as e:
+        print("Ambrose", e)
+        # continue
 
 
 if __name__ == '__main__':

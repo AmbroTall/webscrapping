@@ -49,7 +49,6 @@ Polish_1_Liga = ['Arka Gdynia', 'Lechia Gdansk', 'Odra Opole', 'Tychy', 'Motor L
 German_Bundesliga_3 = ['Regensburg', 'Dynamo Dresden', 'Verl', 'Sandhausen', 'Ulm', 'FC Ingolstadt', 'Erzgebirge Aue', 'RW Essen', 'Saarbrucken', 'Preuss. Munster', 'Unterhaching', 'Dortmund B', 'Bielefeld', 'Viktoria Koln', '1860 Munchen', 'Hallescher', 'VfB Lubeck', 'Mannheim','MSV Duisburg','Freiburg B']
 German_Bundesliga_2 = ['Sankt Pauli', 'Holstein Kiel', 'Hamburger SV','Greuther Furth','Dusseldorf', 'Hannover 96','Hertha Berlin','Elversberg','Paderborn', 'FC Nurnberg','Wehen Wiesbaden','Magdeburg', 'Schalke 04','Karlsruher SC','Kaiserslautern','Hansa Rostock','Braunschweig','Osnabruck']
 # ------------------------------------ Part Two ------------------------------------
-
 German_Bundesliga_1 = ['Bayer 04 Leverkusen', 'FC Bayern Munchen','RB Leipzig','Stuttgart','Dortmund', 'Freiburg','Hoffenheim','Frankfurt','Wolfsburg','Augsburg',"M'gladbach",'Heidenheim','Bochum','W. Bremen','Union Berlin','Koln','Mainz','Darmstadt']
 Italy_Serie_A = ['Inter Milan', 'Juventus','AC Milan','Bologna','Napoli','Fiorentina','Atalanta','AS Roma','Torino','Monza','Lazio','Lecce','Frosinone','Genoa','Sassuolo','Cagliari','Udinese','Empoli','Hellas Verona','Salernitana']
 Italy_Serie_B = ['Parma','Venezia','Como','Catanzaro','Cremonese','Cittadella','Palermo','Modena','Brescia','Sampdoria','Bari','Sudtirol','Cosenza','Pisa','Ternana','Reggiana','Ascoli','Spezia','Lecco','FeralpiSalo']
@@ -117,7 +116,6 @@ def return_df(df=None):
     # Apply the custom function to all columns
     df = df.applymap(extract_values)
     df.to_csv("default.csv")
-
     return df
 
 # print(df.columns)

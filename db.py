@@ -14,9 +14,9 @@ class Mysql:
 		self.dev = dev
 		db_base = "helixhel_oldcrawlersdb"
 		config = {
-			'user': "helixhel_oldcrawlersusr",
+			'user': "helixhelloworld_oldcrawlersusr",
 			'password': "NdSZIAfVZHoA",
-			'host': "168.119.4.62",
+			'host': "144.76.112.25",
 			'database': db_base
 		}
 

@@ -1,1 +1,7 @@
 22:12:09 : 3440 Freedom Lane, Dalton, GA 30721
+22:14:39 : No login button
+22:14:39 : pop up closed
+22:15:13 : 3440 Freedom Lane, Dalton, GA 30721
+22:17:43 : No login button
+22:17:44 : pop up closed
+22:18:11 : 3440 Freedom Lane, Dalton, GA 30721
